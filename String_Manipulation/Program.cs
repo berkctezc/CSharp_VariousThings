@@ -9,6 +9,7 @@ namespace String_Manipulation
     {
         static void Main(string[] args)
         {
+            Console.WriteLine("START POINT");
             StringConversion();
             StringAsArray();
             EscapeString();
@@ -19,6 +20,11 @@ namespace String_Manipulation
             PadAndTrim();
             SearchingString();
             OrderingStrings();
+            TestingEquality();
+            GettingASubstring();
+            ReplacingText();
+            InsertingText();
+            RemovingText();
         }
 
         private static void StringConversion()
@@ -262,6 +268,102 @@ namespace String_Manipulation
 
         }
 
+        private static void TestingEquality()
+        {
+            EqualityHelper("Bob", "Mary");
+            EqualityHelper(null, "");
+            EqualityHelper("", " ");
+            EqualityHelper("Bob", "bob");
+        }
+
+        private static void EqualityHelper(string? testA, string? testB)
+        {
+            bool resultsBoolean;
+
+            resultsBoolean = string.Equals(testA, testB);
+            if (resultsBoolean)
+            {
+                Console.WriteLine($"Equals: '{testA ?? "null"}' equals '{testB ?? "null"}'");
+            }
+            else
+            {
+                Console.WriteLine($"Equals: '{testA ?? "null"}' does not equal '{testB ?? "null"}'");
+            }
+
+            resultsBoolean = string.Equals(testA, testB, StringComparison.InvariantCultureIgnoreCase);
+            if (resultsBoolean)
+            {
+                Console.WriteLine($"Equals (ignore case): '{testA ?? "null"}' equals '{testB ?? "null"}'");
+            }
+            else
+            {
+                Console.WriteLine($"Equals (ignore case): '{testA ?? "null"}' does not equal '{testB ?? "null"}'");
+            }
+
+            resultsBoolean = testA == testB;
+            if (resultsBoolean)
+            {
+                Console.WriteLine($"==: '{testA ?? "null"}' equals '{testB ?? "null"}'");
+            }
+            else
+            {
+                Console.WriteLine($"==: '{testA ?? "null"}' does not equal '{testB ?? "null"}'");
+            }
+            Console.WriteLine("---");
+        }
+
+        private static void GettingASubstring()
+        {
+            string testString = "This is a test of substring. Let's see how its testing works out.";
+            string results;
+
+            results = testString.Substring(5); // start from 5 to end
+            Console.WriteLine(results);
+
+            results = testString.Substring(5, 4);  // start from 5 , go 4 characters
+            Console.WriteLine(results);
+
+
+            Console.WriteLine(seperator);
+        }
+
+        private static void ReplacingText()
+        {
+            string testString = "This is a test of replace. Let's see how its testing Works out for test.";
+            string results;
+
+            results = testString.Replace("test", "trial");
+            Console.WriteLine(results);
+
+            results = testString.Replace(" test ", " trial ");
+            Console.WriteLine(results);
+
+            results = testString.Replace("works", "makes", StringComparison.InvariantCultureIgnoreCase);
+            Console.WriteLine(results);
+
+            Console.WriteLine(seperator);
+        }
+
+        private static void InsertingText()
+        {
+            string testString = "This is a test of insert. Let's see how its testing Works out for test.";
+            string results;
+
+            results = testString.Insert(5, "(test) ");
+            Console.WriteLine(results);
+        }
+
+        private static void RemovingText()
+        {
+            string testString = "This is a test of remove. Let's see how its testing Works out for test.";
+            string results;
+
+            results = testString.Remove(25);
+            Console.WriteLine(results);
+
+            results = testString.Remove(14,10);
+            Console.WriteLine(results);
+        }
 
 
         //  variables
