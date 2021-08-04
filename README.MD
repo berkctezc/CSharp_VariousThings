@@ -1,6 +1,6 @@
 # Various things in C# and .NET
 
-Demo projects to get familiar with certain practices and referencing later
+Demo projects to get familiar with certain concepts, practices and for referencing later including beginner to advanced stuff.
 
 ## Topics
 
@@ -8,7 +8,8 @@ Demo projects to get familiar with certain practices and referencing later
 | :--: | :--: | :--: | :--: | :--: | :--: |
 |   String Manipulation   | String_Manipulation |   Console   | https://youtu.be/ioi__WRETk4 | General Usage | None |
 |   Abstract Classes   | Abstract_Classes_Library, Abstract_Classes_ConsoleUI | Console + ClassLib | https://youtu.be/jRkmPRk5j2E | General Knowledge | None |
-| Interfaces | Interfaces_ClassLibrary, Interfaces_ConsoleUI, | Console + ClassLib | https://youtu.be/A7qwuFnyIpM | General Knowledge |  |
+| Interfaces | Interfaces_ClassLibrary, Interfaces_ConsoleUI, | Console + ClassLib | https://youtu.be/A7qwuFnyIpM | General Knowledge | None |
+| Async / Await |  | WPF | https://youtu.be/2moh18sh5p4 | Intermediate | None |
 
 ## Resources
 
