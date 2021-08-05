@@ -1,0 +1,21 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net5.0-windows</TargetFramework>
+    <UseWindowsForms>true</UseWindowsForms>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="PersonText.txt" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="PersonText.txt" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\XUnitDemo_ClassLibrary\XUnitDemo_ClassLibrary.csproj" />
+  </ItemGroup>
+
+</Project>
