@@ -43,6 +43,12 @@ namespace Async_Advanced
             catch (OperationCanceledException)
             {
                 resultsWindow.Text += $"The async download was cancelled. {Environment.NewLine}";
+                
+            }           
+            catch (Exception)
+            {
+                resultsWindow.Text += $"URL is Wrong {Environment.NewLine}";
+                
             }
 
             watch.Stop();

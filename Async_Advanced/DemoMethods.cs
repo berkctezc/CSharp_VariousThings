@@ -130,7 +130,14 @@ namespace Async_Advanced
             var client = new WebClient();
 
             output.WebsiteUrl = websiteURL;
-            output.WebsiteData = client.DownloadString(websiteURL);
+            try
+            {
+                output.WebsiteData = client.DownloadString(websiteURL);
+            }
+            catch (WebException e)
+            {
+                Console.WriteLine(e);
+            }
 
             return output;
         }
