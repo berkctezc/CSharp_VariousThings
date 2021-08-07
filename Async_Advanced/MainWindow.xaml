@@ -1,0 +1,29 @@
+﻿<Window x:Class="Async_Advanced.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="631" Width="800">
+    <Grid Margin="0,0,0,9">
+        <Label Content="Advanced Async Demo&#xD;&#xA;" HorizontalAlignment="Left" Margin="24,6,0,0"
+               VerticalAlignment="Top" Width="737" FontSize="36" Height="57" />
+        <Button x:Name="ButtonNormal" Click="ButtonNormal_Click" Content="Normal Execute" HorizontalAlignment="Left"
+                Margin="14,78,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.58,0.553" Width="597" FontSize="20"
+                FontWeight="Normal" Height="45" />
+        <Button x:Name="ButtonAsync" Click="ButtonAsync_Click" Content="Async Execute" HorizontalAlignment="Left"
+                Margin="15,134,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.58,0.553" Width="295"
+                FontSize="20" FontWeight="Normal" Height="41" />
+        <Button x:Name="ButtonParallelAsync" Click="ButtonParallelAsync_Click" Content="Parallel Async Execute"
+                HorizontalAlignment="Left" Margin="319,133,0,0" VerticalAlignment="Top"
+                RenderTransformOrigin="0.58,0.553" Width="291" FontSize="20" FontWeight="Normal" Height="41" />
+        <Button x:Name="ButtonCancel" Click="ButtonCancel_Click" Content="Cancel Operation" HorizontalAlignment="Left"
+                Margin="620,77,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.58,0.553" Width="172"
+                FontSize="20" FontWeight="Normal" Height="98" />
+        <TextBlock x:Name="resultsWindow" HorizontalAlignment="Left" Margin="22,235,0,0" TextWrapping="Wrap"
+                   VerticalAlignment="Top" Height="366" Width="767" />
+        <ProgressBar x:Name="dashboardProgress" HorizontalAlignment="Center" Height="32" Margin="0,187,0,0"
+                     VerticalAlignment="Top" Width="765" />
+
+    </Grid>
+</Window>
