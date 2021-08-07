@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Net;
+using System.Threading.Tasks;
 using System.Windows;
 
 namespace Async_Programming
@@ -24,20 +25,65 @@ namespace Async_Programming
             resultsWindow.Text += $"Total execution time:{watch.ElapsedMilliseconds}";
         }
 
-
-        private void ButtonAsync_Click(object sender, RoutedEventArgs e)
+        private async void ButtonAsync_Click(object sender, RoutedEventArgs e)
         {
+            var watch = Stopwatch.StartNew();
 
+            await RunDownloadAsync();
+
+            watch.Stop();
+
+            resultsWindow.Text += $"Total execution time:{watch.ElapsedMilliseconds}";
+        }
+
+        private async void ButtonParallelAsync_Click(object sender, RoutedEventArgs e)
+        {
+            var watch = Stopwatch.StartNew();
+
+            await RunDownloadParallelAsync();
+
+            watch.Stop();
+
+            resultsWindow.Text += $"Total execution time:{watch.ElapsedMilliseconds}";
         }
 
         private void RunDownloadSync()
         {
-            List<string> websites = PrepData();
+            var websites = PrepData();
 
             foreach (string site in websites)
             {
-                WebsiteDataModel results = DownloadWebsite(site);
+                var results = DownloadWebsite(site);
                 ReportWebsiteInfo(results);
+            }
+        }
+
+        private async Task RunDownloadAsync()
+        {
+            var websites = PrepData();
+
+            foreach (string site in websites)
+            {
+                var results = await Task.Run(() => DownloadWebsite(site));
+                ReportWebsiteInfo(results);
+            }
+        }
+
+        private async Task RunDownloadParallelAsync()
+        {
+            var websites = PrepData();
+            var tasks = new List<Task<WebsiteDataModel>>();
+
+            foreach (var site in websites)
+            {
+                tasks.Add(DownloadWebsiteAsync(site));
+            }
+
+            var results = await Task.WhenAll(tasks);
+
+            foreach (var item in results)
+            {
+                ReportWebsiteInfo(item);
             }
         }
 
@@ -46,13 +92,24 @@ namespace Async_Programming
             resultsWindow.Text += $"{data.WebsiteUrl} downloaded: {data.WebsiteData.Length} characters long. {Environment.NewLine}";
         }
 
-        private WebsiteDataModel DownloadWebsite(string site)
+        private static WebsiteDataModel DownloadWebsite(string site)
         {
-            WebsiteDataModel output = new WebsiteDataModel();
+            var output = new WebsiteDataModel();
             WebClient client = new();
 
             output.WebsiteUrl = site;
             output.WebsiteData = client.DownloadString(site);
+
+            return output;
+        }       
+        
+        private async Task<WebsiteDataModel> DownloadWebsiteAsync(string site)
+        {
+            var output = new WebsiteDataModel();
+            WebClient client = new();
+
+            output.WebsiteUrl = site;
+            output.WebsiteData = await client.DownloadStringTaskAsync(site);
 
             return output;
         }
