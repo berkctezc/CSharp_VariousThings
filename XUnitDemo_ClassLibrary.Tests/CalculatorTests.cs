@@ -13,7 +13,7 @@ namespace XUnitDemo_ClassLibrary.Tests
             // Arrange
 
             // Act
-            double actual = Calculator.Add(x, y);
+            var actual = Calculator.Add(x, y);
 
             // Assert
             Assert.Equal(expected, actual);
@@ -25,11 +25,11 @@ namespace XUnitDemo_ClassLibrary.Tests
         {
             // Arrange
             // Act
-            double actual = Calculator.Divide(x, y);
+            var actual = Calculator.Divide(x, y);
             // Assert
             Assert.Equal(expected, actual);
-        }     
-        
+        }
+
         [Fact]
         public void Divide_DivideByZero()
         {
@@ -37,8 +37,8 @@ namespace XUnitDemo_ClassLibrary.Tests
             double expected = 0;
 
             // Act
-            double actual = Calculator.Divide(15,0);
-            
+            var actual = Calculator.Divide(15, 0);
+
             // Assert
             Assert.Equal(expected, actual);
         }

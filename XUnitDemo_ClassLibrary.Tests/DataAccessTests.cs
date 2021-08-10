@@ -10,8 +10,8 @@ namespace XUnitDemo_ClassLibrary.Tests
         [Fact]
         public void AddPersonToPeopleList_ShouldWork()
         {
-            PersonModel newPerson = new PersonModel { FirstName = "Berkcan", LastName = "Tezcaner" };
-            List<PersonModel> people = new List<PersonModel>();
+            var newPerson = new PersonModel { FirstName = "Berkcan", LastName = "Tezcaner" };
+            var people = new List<PersonModel>();
 
             DataAccess.AddPersonToPeopleList(people, newPerson);
 
@@ -24,8 +24,8 @@ namespace XUnitDemo_ClassLibrary.Tests
         [InlineData("", "Tezcaner", "FirstName")]
         public void AddPersonToPeopleList_ShouldFail(string fName, string lName, string param)
         {
-            PersonModel newPerson = new PersonModel { FirstName = fName, LastName = lName };
-            List<PersonModel> people = new List<PersonModel>();
+            var newPerson = new PersonModel { FirstName = fName, LastName = lName };
+            var people = new List<PersonModel>();
 
             Assert.Throws<ArgumentException>(param, () => DataAccess.AddPersonToPeopleList(people, newPerson));
         }
@@ -33,9 +33,9 @@ namespace XUnitDemo_ClassLibrary.Tests
         [Fact]
         public void ConvertModelsToCSV_ShouldWork()
         {
-            PersonModel newPerson1 = new PersonModel { FirstName = "asdfg", LastName = "sadfg" };
-            PersonModel newPerson2 = new PersonModel { FirstName = "asd", LastName = "sadfdaswg" };
-            List<PersonModel> people = new List<PersonModel>();
+            var newPerson1 = new PersonModel { FirstName = "asdfg", LastName = "sadfg" };
+            var newPerson2 = new PersonModel { FirstName = "asd", LastName = "sadfdaswg" };
+            var people = new List<PersonModel>();
 
             DataAccess.AddPersonToPeopleList(people, newPerson1);
             DataAccess.AddPersonToPeopleList(people, newPerson2);
@@ -44,7 +44,7 @@ namespace XUnitDemo_ClassLibrary.Tests
             DataAccess.ConvertModelsToCSV(people);
 
             Assert.True(people.Count == 2);
-            Assert.Contains(newPerson1,people);
+            Assert.Contains(newPerson1, people);
         }
     }
 }
