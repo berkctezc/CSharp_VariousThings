@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace CustomExtensions
+namespace ExtensionDemo
 {
     public static class Extensions
     {

@@ -1,12 +1,11 @@
 ﻿using System;
-using CustomExtensions;
 
 namespace ExtensionDemo
 {
     class Program
     {
         static void Main(string[] args)
-        { 
+        {
             "this is a demo".PrintToConsole();
 
             ISimpleLogger logger = new SimpleLogger();
