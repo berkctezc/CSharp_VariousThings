@@ -95,12 +95,12 @@ namespace MoqDemo_Library.Logic
             }
 
             // Split on both the feet and inches indicators
-            string[] heightParts = heightText.Split(new char[] { '\'', '"' });
+            string[] heightParts = heightText.Split('\'', '"');
 
 
             // Part 0 should be feet, part 1 should be inches
-            if (int.TryParse(heightParts[0], out int feet) == false
-                || double.TryParse(heightParts[1], out double inches) == false)
+            if (int.TryParse(heightParts[0], out var feet) == false
+                || double.TryParse(heightParts[1], out var inches) == false)
             {
                 return (false, 0);
             }

@@ -256,7 +256,7 @@ namespace XUnitDemo_WinFormsUI
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Margin = new System.Windows.Forms.Padding(6);
             this.Name = "Dashboard";
-            this.Text = "Demo Dashboard by Tim Corey";
+            this.Text = "Demo Dashboard";
             this.databaseSectionGroup.ResumeLayout(false);
             this.databaseSectionGroup.PerformLayout();
             this.calculateSection.ResumeLayout(false);

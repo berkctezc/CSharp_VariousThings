@@ -29,8 +29,8 @@ namespace MoqDemo_Tests.Logic
         }
 
         [Theory]
-        [InlineData("Tim", "Corey", "6'8\"", 80)]
-        [InlineData("Charitry", "Corey", "5'4\"", 64)]
+        [InlineData("Tom", "Column", "8'8\"", 104)]
+        [InlineData("Poppers", "Pizza", "5'4\"", 64)]
         public void CreatePerson_Successful(string firstName, string lastName, string heightText, double expectedHeight)
         {
             PersonProcessor processor = new PersonProcessor(null);
@@ -53,10 +53,10 @@ namespace MoqDemo_Tests.Logic
         }
 
         [Theory]
-        [InlineData("Tim#", "Corey", "6'8\"", "firstName")]
-        [InlineData("Charitry", "C88ey", "5'4\"", "lastName")]
-        [InlineData("Jon", "Corey", "SixTwo", "heightText")]
-        [InlineData("", "Corey", "5'11\"", "firstName")]
+        [InlineData("Berkc#", "Tezc", "6'8\"", "firstName")]
+        [InlineData("CBerry", "CTe2zcy", "5'4\"", "lastName")]
+        [InlineData("Jimmy", "Nolan", "SixTwo", "heightText")]
+        [InlineData("", "Murker", "5'11\"", "firstName")]
         public void CreatePerson_ThrowsException(string firstName, string lastName, string heightText, string expectedInvalidParameter)
         {
             PersonProcessor processor = new PersonProcessor(null);
@@ -105,12 +105,12 @@ namespace MoqDemo_Tests.Logic
                 var person = new PersonModel
                 {
                     Id = 1,
-                    FirstName = "Tim",
-                    LastName = "Corey",
+                    FirstName = "Berkcan",
+                    LastName = "Tezcaner",
                     HeightInInches = 80
                 };
                 string sql = "insert into Person (FirstName, LastName, HeightInInches) " +
-                "values ('Tim', 'Corey', 80)";
+                "values ('Berkcan', 'Tezcaner', 80)";
 
                 mock.Mock<ISqliteDataAccess>()
                     .Setup(x => x.SaveData(person, sql));
