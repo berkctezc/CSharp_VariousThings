@@ -15,7 +15,7 @@ namespace ExceptionsDemo_ConsoleUI
                 var result = demo.GrandparentMethod(4);
                 Console.WriteLine($"The value at the given pos is {result}");
             }
-            catch (ArgumentException ex)
+            catch (ArgumentException)
             {
                 Console.WriteLine("Bad argument given!");
             }

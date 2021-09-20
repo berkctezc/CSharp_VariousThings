@@ -129,7 +129,7 @@ namespace MoqDemo_Tests.Logic
         {
             var output = new List<PersonModel>
             {
-                new PersonModel
+                new()
                 {
                     FirstName = "AAA",
                     LastName = "aaa"
