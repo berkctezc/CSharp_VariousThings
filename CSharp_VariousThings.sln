@@ -70,23 +70,27 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MediatRDemo_Api", "MediatRD
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Handling Exceptions", "Handling Exceptions", "{3E9DC6C2-77CE-48EC-A8E4-56AE097E3875}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ExceptionsDemo_ConsoleUI", "ExceptionsDemo_ConsoleUI\ExceptionsDemo_ConsoleUI.csproj", "{F9351808-2E98-449C-8944-268115E6B998}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ExceptionsDemo_ConsoleUI", "ExceptionsDemo_ConsoleUI\ExceptionsDemo_ConsoleUI.csproj", "{F9351808-2E98-449C-8944-268115E6B998}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ExceptionsDemo_Library", "ExceptionsDemo_Library\ExceptionsDemo_Library.csproj", "{BF062430-ED5D-4DBA-9BF5-10AAFD56A1AF}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ExceptionsDemo_Library", "ExceptionsDemo_Library\ExceptionsDemo_Library.csproj", "{BF062430-ED5D-4DBA-9BF5-10AAFD56A1AF}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Moq1", "Moq1", "{EC50F2C2-ABD5-4DE8-A645-4B17463DEA78}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MoqDemo_Library", "MoqDemo_Library\MoqDemo_Library.csproj", "{7169E40A-070F-46C4-A020-39C717C51B8F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MoqDemo_Library", "MoqDemo_Library\MoqDemo_Library.csproj", "{7169E40A-070F-46C4-A020-39C717C51B8F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MoqDemo_ConsoleUI", "MoqDemo_ConsoleUI\MoqDemo_ConsoleUI.csproj", "{BB3ADD22-C712-457B-BAB9-39B4F1521AA7}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MoqDemo_ConsoleUI", "MoqDemo_ConsoleUI\MoqDemo_ConsoleUI.csproj", "{BB3ADD22-C712-457B-BAB9-39B4F1521AA7}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MoqDemo_Tests", "MoqDemo_Tests\MoqDemo_Tests.csproj", "{A117C83C-FE17-4E26-94EF-CF1C48C12FC8}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MoqDemo_Tests", "MoqDemo_Tests\MoqDemo_Tests.csproj", "{A117C83C-FE17-4E26-94EF-CF1C48C12FC8}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Moq2", "Moq2", "{C5E84E5D-9A51-4ED9-BADA-769B05FC0E30}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MockWithMoq_Library", "MockWithMoq_Library\MockWithMoq_Library.csproj", "{AC689425-FD45-4388-9DDD-5D12B89B31AD}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MockWithMoq_Library", "MockWithMoq_Library\MockWithMoq_Library.csproj", "{AC689425-FD45-4388-9DDD-5D12B89B31AD}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MockWithMoq_Library.Tests", "MockWithMoq_Library.Tests\MockWithMoq_Library.Tests.csproj", "{461B22A0-48B5-463C-9A88-FA5A3DD34266}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MockWithMoq_Library.Tests", "MockWithMoq_Library.Tests\MockWithMoq_Library.Tests.csproj", "{461B22A0-48B5-463C-9A88-FA5A3DD34266}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Worker Services", "Worker Services", "{0B464C84-F4E3-4509-983C-0F8446C33FD8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Microsoft_WorkerService", "Microsoft_WorkerService\Microsoft_WorkerService.csproj", "{0CC0F1B2-FBDC-4D81-9546-BE5359646DF8}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -190,6 +194,10 @@ Global
 		{461B22A0-48B5-463C-9A88-FA5A3DD34266}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{461B22A0-48B5-463C-9A88-FA5A3DD34266}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{461B22A0-48B5-463C-9A88-FA5A3DD34266}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0CC0F1B2-FBDC-4D81-9546-BE5359646DF8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0CC0F1B2-FBDC-4D81-9546-BE5359646DF8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0CC0F1B2-FBDC-4D81-9546-BE5359646DF8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0CC0F1B2-FBDC-4D81-9546-BE5359646DF8}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -225,6 +233,7 @@ Global
 		{C5E84E5D-9A51-4ED9-BADA-769B05FC0E30} = {AD9449F2-C149-4F5A-AFF3-640D9865248A}
 		{AC689425-FD45-4388-9DDD-5D12B89B31AD} = {C5E84E5D-9A51-4ED9-BADA-769B05FC0E30}
 		{461B22A0-48B5-463C-9A88-FA5A3DD34266} = {C5E84E5D-9A51-4ED9-BADA-769B05FC0E30}
+		{0CC0F1B2-FBDC-4D81-9546-BE5359646DF8} = {0B464C84-F4E3-4509-983C-0F8446C33FD8}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {40DD54A7-56C5-4FED-9AF4-0550D0EAF60F}
