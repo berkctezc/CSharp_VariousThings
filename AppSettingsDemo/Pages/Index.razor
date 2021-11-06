@@ -1,7 +1,33 @@
 ﻿@page "/"
+@inject IConfiguration _config
 
-<h1>Hello, world!</h1>
+<h1>AppSettings Values</h1>
 
-Welcome to your new app.
+<p>
+    MySetting: @mySetting
+    <br />
+    Subsetting: @subSetting
+    <br />
+    Connection String Value: @connectionString
+</p>
 
-<SurveyPrompt Title="How is Blazor working for you?" />
+
+@code{
+    string mySetting = "";
+    string subSetting = "";
+    string connectionString = "";
+
+    protected override void OnInitialized()
+    {
+        // read value from appsettings
+        // read and override hierarchy appsettings.json > appsettings.Development.json > secrets.json
+        // seperate sensitive data by that and leave it blank in appsettings.json and than you could safely put that in source control
+        mySetting = _config.GetValue<string>("MySetting");
+        subSetting = _config.GetValue<string>("MainSetting:SubSetting");
+        connectionString = _config.GetConnectionString("Default");
+
+        /* secrets.json
+            Right click to project and select Manage User Secrets
+            */
+    }
+}
