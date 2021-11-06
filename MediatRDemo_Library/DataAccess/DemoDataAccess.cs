@@ -6,7 +6,7 @@ namespace MediatRDemo_Library.DataAccess
 {
     public class DemoDataAccess : IDataAccess
     {
-        private List<PersonModel> people = new List<PersonModel>();
+        private readonly List<PersonModel> people = new();
 
         public DemoDataAccess()
         {
@@ -22,7 +22,7 @@ namespace MediatRDemo_Library.DataAccess
 
         public PersonModel InsertPerson(string fname, string lname)
         {
-            PersonModel personToCreate = new PersonModel() { FirstName = fname, LastName = lname };
+            PersonModel personToCreate = new();
             personToCreate.Id = people.Max(x => x.Id) + 1;
             people.Add(personToCreate);
 

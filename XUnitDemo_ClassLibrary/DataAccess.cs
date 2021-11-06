@@ -7,7 +7,7 @@ namespace XUnitDemo_ClassLibrary
 {
     public static class DataAccess
     {
-        private static string personTextFile = "..\\..\\..\\PersonText.txt";
+        private static readonly string personTextFile = "..\\..\\..\\PersonText.txt";
 
         public static void AddNewPerson(PersonModel person)
         {
@@ -36,7 +36,7 @@ namespace XUnitDemo_ClassLibrary
 
         public static List<string> ConvertModelsToCSV(List<PersonModel> people)
         {
-            List<string> output = new List<string>();
+            List<string> output = new();
 
             foreach (PersonModel user in people)
             {
@@ -48,7 +48,7 @@ namespace XUnitDemo_ClassLibrary
 
         public static List<PersonModel> GetAllPeople()
         {
-            List<PersonModel> output = new List<PersonModel>();
+            List<PersonModel> output = new();
             string[] content = File.ReadAllLines(personTextFile);
 
             foreach (string line in content)

@@ -41,9 +41,8 @@ namespace ExceptionsDemo_Library
 
         public int GetNumber(int position)
         {
-            int output = default;
             var numbers = new[] { 1, 4, 7, 2 };
-            output = numbers[position];
+            int output = numbers[position];
             return output;
         }
 

@@ -8,7 +8,7 @@ namespace Abstract_Classes_ConsoleUI
     {
         static void Main(string[] args)
         {
-            List<DataAccess> databases = new List<DataAccess>()
+            List<DataAccess> databases = new()
             {
                 new SqlDataAccess(),
                 new SqliteDataAccess()

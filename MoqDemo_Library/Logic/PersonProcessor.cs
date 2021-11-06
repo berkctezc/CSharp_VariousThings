@@ -7,7 +7,7 @@ namespace MoqDemo_Library.Logic
 {
     public class PersonProcessor : IPersonProcessor
     {
-        ISqliteDataAccess _database;
+        readonly ISqliteDataAccess _database;
 
         public PersonProcessor(ISqliteDataAccess database)
         {
@@ -16,7 +16,7 @@ namespace MoqDemo_Library.Logic
 
         public PersonModel CreatePerson(string firstName, string lastName, string heightText)
         {
-            PersonModel output = new PersonModel();
+            PersonModel output = new();
 
             if (ValidateName(firstName) == true)
             {
@@ -24,7 +24,7 @@ namespace MoqDemo_Library.Logic
             }
             else
             {
-                throw new ArgumentException("The value was not valid", "firstName");
+                throw new ArgumentException("The value was not valid", nameof(firstName));
             }
 
             if (ValidateName(lastName) == true)
@@ -33,7 +33,7 @@ namespace MoqDemo_Library.Logic
             }
             else
             {
-                throw new ArgumentException("The value was not valid", "lastName");
+                throw new ArgumentException("The value was not valid", nameof(lastName));
             }
 
             var height = ConvertHeightTextToInches(heightText);
