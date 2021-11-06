@@ -19,6 +19,7 @@ Demo projects to get familiar with certain topics, concepts, practices and for r
 |            Mocking in Unit Tests             |      MoqDemo_ConsoleUI,  MoqDemo_Library, MoqDemo_Tests      | ClassLib + Console  |                 https://youtu.be/DwbYxP-etMY                 |     Advanced      |       Moq, xUnit       |
 |          Mocking with Moq and xUnit          |        MockWithMoq_Library, MockWithMoq_Library.Tests        |      ClassLib       | https://app.pluralsight.com/library/courses/mocking-moq-xunit/table-of-contents |     Advanced      |       Moq, xUnit       |
 |               Worker Services                |                   WorkerService_Microsoft                    |       Worker        |         https://www.youtube.com/watch?v=PzrTiz_NRKA          |   Intermediate    |        Serilog         |
+|                 AppSettings                  |                       AppSettingsDemo                        |       Blazor        |                 https://youtu.be/_2_qksdQKCE                 |     Beginner      |          None          |
 | **File Operations / Text File Manipulation** |                                                              |                     |                                                              |                   |                        |
 |               **Reflections**                |                                                              |                     |                                                              |                   |                        |
 |                 **Records**                  |                                                              |                     |                                                              |                   |                        |
@@ -32,4 +33,4 @@ Demo projects to get familiar with certain topics, concepts, practices and for r
 
 - [Tim Corey](https://www.youtube.com/channel/UC-ptWR16ITQyYOglXyQmpzw) 
 - [Nick Chapsas](https://www.youtube.com/channel/UCrkPsvLGln62OMZRO6K-llg)
-
+- [PluralSight](https://pluralsight.com)
