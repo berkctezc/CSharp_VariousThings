@@ -1,9 +1,8 @@
 ﻿using System;
-using System.Collections.Generic;
 
-namespace DeskBooker.Core.Tests
+namespace DeskBooker.Core.Domain
 {
-    internal class DeskBookingResult
+    public class DeskBookingResult
     {
         public string FirstName { get; internal set; }
 

@@ -1,8 +1,15 @@
+using DeskBooker.Core.Domain;
+using DeskBooker.Core.Processor;
 using System;
 using Xunit;
 
 namespace DeskBooker.Core.Tests.Processor
 {
+    /*
+     * STEP 1: Get a Red 
+     * STEP 2: Write the minimum code to pass the test
+     * STEP 3: Refactor
+     */
     public class DeskBookingRequestProcessorTests
     {
         [Fact]
