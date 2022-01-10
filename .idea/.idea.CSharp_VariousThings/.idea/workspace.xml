@@ -13,6 +13,7 @@
     <projectFile>Record_Demo/Record_Demo.csproj</projectFile>
     <projectFile>ExceptionsDemo_ConsoleUI/ExceptionsDemo_ConsoleUI.csproj</projectFile>
     <projectFile>MoqDemo_ConsoleUI/MoqDemo_ConsoleUI.csproj</projectFile>
+    <projectFile>YieldDemo/YieldDemo.csproj</projectFile>
     <projectFile profileName="IIS Express">MediatRDemo_Api/MediatRDemo_Api.csproj</projectFile>
     <projectFile profileName="Api">MediatRDemo_Api/MediatRDemo_Api.csproj</projectFile>
     <projectFile profileName="WorkerService_Microsoft">WorkerService_Microsoft/WorkerService_Microsoft.csproj</projectFile>
@@ -29,9 +30,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="8eab9eb6-fced-4f73-803c-4e092de64562" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/InMemoryCachingDataAccess/EmployeeModel.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/InMemoryCachingUI/InMemoryCachingUI.csproj" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/YieldDemo/DataAccess.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/YieldDemo/PersonModel.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/YieldDemo/Program.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/YieldDemo/YieldDemo.csproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.CSharp_VariousThings/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.CSharp_VariousThings/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/CSharp_VariousThings.sln" beforeDir="false" afterPath="$PROJECT_DIR$/CSharp_VariousThings.sln" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.MD" beforeDir="false" afterPath="$PROJECT_DIR$/README.MD" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Record_Demo/Program.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Record_Demo/Record_Demo.csproj" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -53,6 +60,9 @@
     <option name="stateVersion" value="1" />
   </component>
   <component name="ProjectId" id="23VCAjarQeiS9bMgMAkCNE8KMb4" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="autoscrollFromSource" value="true" />
     <option name="autoscrollToSource" value="true" />
@@ -67,7 +77,7 @@
     <property name="settings.editor.selected.configurable" value="HotReloadSettingsPage" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
-  <component name="RunManager" selected=".NET Launch Settings Profile.In-Memory Caching">
+  <component name="RunManager" selected=".NET Project.YieldDemo">
     <configuration name="WorkerService_Microsoft: FolderProfile" type="DotNetMsBuildPublish" factoryName="Publish to IIS">
       <riderPublish publish_profile="FolderProfile.pubxml" pubxml_path="$PROJECT_DIR$/WorkerService_Microsoft/Properties/PublishProfiles/FolderProfile.pubxml" uuid_high="-7782142144439105592" uuid_low="-7970656692393537237" />
       <method v="2" />
@@ -270,6 +280,24 @@
         <option name="Build" />
       </method>
     </configuration>
+    <configuration name="YieldDemo" type="DotNetProject" factoryName=".NET Project">
+      <option name="EXE_PATH" value="" />
+      <option name="PROGRAM_PARAMETERS" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="PASS_PARENT_ENVS" value="1" />
+      <option name="USE_EXTERNAL_CONSOLE" value="0" />
+      <option name="USE_MONO" value="0" />
+      <option name="RUNTIME_ARGUMENTS" value="" />
+      <option name="PROJECT_PATH" value="$PROJECT_DIR$/YieldDemo/YieldDemo.csproj" />
+      <option name="PROJECT_EXE_PATH_TRACKING" value="1" />
+      <option name="PROJECT_ARGUMENTS_TRACKING" value="1" />
+      <option name="PROJECT_WORKING_DIRECTORY_TRACKING" value="1" />
+      <option name="PROJECT_KIND" value="DotNetCore" />
+      <option name="PROJECT_TFM" value="" />
+      <method v="2">
+        <option name="Build" />
+      </method>
+    </configuration>
     <configuration name="AppSettingsDemo" type="LaunchSettings" factoryName=".NET Launch Settings Profile">
       <option name="LAUNCH_PROFILE_PROJECT_FILE_PATH" value="$PROJECT_DIR$/AppSettingsDemo/AppSettingsDemo.csproj" />
       <option name="LAUNCH_PROFILE_TFM" value="net6.0" />
@@ -459,8 +487,16 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1641809726705</updated>
-      <workItem from="1641809733141" duration="5076000" />
+      <workItem from="1641809733141" duration="9010000" />
     </task>
+    <task id="LOCAL-00001" summary="added in memory caching example and changed structure a bit">
+      <created>1641816894874</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1641816894874</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -482,6 +518,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
+    <MESSAGE value="added in memory caching example and changed structure a bit" />
+    <option name="LAST_COMMIT_MESSAGE" value="added in memory caching example and changed structure a bit" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
