@@ -10,7 +10,6 @@
     <projectFile>XUnitDemo_WinFormsUI/XUnitDemo_WinFormsUI.csproj</projectFile>
     <projectFile>Async_Advanced/Async_Advanced.csproj</projectFile>
     <projectFile>ExtensionDemo/ExtensionDemo.csproj</projectFile>
-    <projectFile>Record_Demo/Record_Demo.csproj</projectFile>
     <projectFile>ExceptionsDemo_ConsoleUI/ExceptionsDemo_ConsoleUI.csproj</projectFile>
     <projectFile>MoqDemo_ConsoleUI/MoqDemo_ConsoleUI.csproj</projectFile>
     <projectFile>YieldDemo/YieldDemo.csproj</projectFile>
@@ -19,26 +18,198 @@
     <projectFile profileName="WorkerService_Microsoft">WorkerService_Microsoft/WorkerService_Microsoft.csproj</projectFile>
     <projectFile profileName="IIS Express">AppSettingsDemo/AppSettingsDemo.csproj</projectFile>
     <projectFile profileName="AppSettingsDemo">AppSettingsDemo/AppSettingsDemo.csproj</projectFile>
+    <projectFile profileName="RedisDemo">RedisDemo/RedisDemo.csproj</projectFile>
+    <projectFile profileName="In-Memory Caching">InMemoryCachingUI/InMemoryCachingUI.csproj</projectFile>
+    <projectFile profileName="IIS Express">InMemoryCachingUI/InMemoryCachingUI.csproj</projectFile>
     <projectFile profileName="IIS Express">LoggingDemo/LoggingDemo.csproj</projectFile>
     <projectFile profileName="LoggingDemo">LoggingDemo/LoggingDemo.csproj</projectFile>
-    <projectFile profileName="In-Memory Caching">In-Memory Caching/In-Memory Caching.csproj</projectFile>
-    <projectFile profileName="IIS Express">In-Memory Caching/In-Memory Caching.csproj</projectFile>
-    <projectFile profileName="RedisDemo">RedisDemo/RedisDemo.csproj</projectFile>
     <projectFile profileName="IIS Express">SerilogDemo/SerilogDemo.csproj</projectFile>
     <projectFile profileName="SerilogDemo">SerilogDemo/SerilogDemo.csproj</projectFile>
     <projectFile pubXmlPath="WorkerService_Microsoft/Properties/PublishProfiles/FolderProfile.pubxml">WorkerService_Microsoft/WorkerService_Microsoft.csproj</projectFile>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8eab9eb6-fced-4f73-803c-4e092de64562" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/YieldDemo/DataAccess.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/YieldDemo/PersonModel.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/YieldDemo/Program.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/YieldDemo/YieldDemo.csproj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.CSharp_VariousThings/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.CSharp_VariousThings/.idea/workspace.xml" afterDir="false" />
+    <list default="true" id="8af64bd3-ec8c-4920-8a0f-2c7a1aa1f5aa" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.CSharp_VariousThings/.idea/workspace.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Abstract_Classes_ClassLibrary/Abstract_Classes_ClassLibrary.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/Abstract_Classes_ClassLibrary/Abstract_Classes_ClassLibrary.csproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Abstract_Classes_ClassLibrary/DataAccess.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Abstract_Classes_ClassLibrary/DataAccess.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Abstract_Classes_ClassLibrary/IDataAccess.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Abstract_Classes_ClassLibrary/IDataAccess.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Abstract_Classes_ClassLibrary/SqlDataAccess.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Abstract_Classes_ClassLibrary/SqlDataAccess.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Abstract_Classes_ConsoleUI/Abstract_Classes_ConsoleUI.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/Abstract_Classes_ConsoleUI/Abstract_Classes_ConsoleUI.csproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Abstract_Classes_ConsoleUI/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Abstract_Classes_ConsoleUI/Program.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AppSettingsDemo/App.razor" beforeDir="false" afterPath="$PROJECT_DIR$/AppSettingsDemo/App.razor" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AppSettingsDemo/AppSettingsDemo.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/AppSettingsDemo/AppSettingsDemo.csproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AppSettingsDemo/Pages/Error.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/AppSettingsDemo/Pages/Error.cshtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AppSettingsDemo/Pages/Error.cshtml.cs" beforeDir="false" afterPath="$PROJECT_DIR$/AppSettingsDemo/Pages/Error.cshtml.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AppSettingsDemo/Pages/Index.razor" beforeDir="false" afterPath="$PROJECT_DIR$/AppSettingsDemo/Pages/Index.razor" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AppSettingsDemo/Pages/_Host.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/AppSettingsDemo/Pages/_Host.cshtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AppSettingsDemo/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/AppSettingsDemo/Program.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AppSettingsDemo/Shared/MainLayout.razor" beforeDir="false" afterPath="$PROJECT_DIR$/AppSettingsDemo/Shared/MainLayout.razor" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AppSettingsDemo/Shared/MainLayout.razor.css" beforeDir="false" afterPath="$PROJECT_DIR$/AppSettingsDemo/Shared/MainLayout.razor.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AppSettingsDemo/Shared/NavMenu.razor" beforeDir="false" afterPath="$PROJECT_DIR$/AppSettingsDemo/Shared/NavMenu.razor" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AppSettingsDemo/Shared/NavMenu.razor.css" beforeDir="false" afterPath="$PROJECT_DIR$/AppSettingsDemo/Shared/NavMenu.razor.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AppSettingsDemo/Shared/SurveyPrompt.razor" beforeDir="false" afterPath="$PROJECT_DIR$/AppSettingsDemo/Shared/SurveyPrompt.razor" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AppSettingsDemo/Startup.cs" beforeDir="false" afterPath="$PROJECT_DIR$/AppSettingsDemo/Startup.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AppSettingsDemo/appsettings.Development.json" beforeDir="false" afterPath="$PROJECT_DIR$/AppSettingsDemo/appsettings.Development.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AppSettingsDemo/wwwroot/css/site.css" beforeDir="false" afterPath="$PROJECT_DIR$/AppSettingsDemo/wwwroot/css/site.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Async_Advanced/Async_Advanced.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/Async_Advanced/Async_Advanced.csproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Async_Advanced/MainWindow.xaml.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Async_Advanced/MainWindow.xaml.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Async_Programming/App.xaml" beforeDir="false" afterPath="$PROJECT_DIR$/Async_Programming/App.xaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Async_Programming/App.xaml.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Async_Programming/App.xaml.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Async_Programming/AssemblyInfo.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Async_Programming/AssemblyInfo.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Async_Programming/Async_Programming.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/Async_Programming/Async_Programming.csproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Async_Programming/MainWindow.xaml" beforeDir="false" afterPath="$PROJECT_DIR$/Async_Programming/MainWindow.xaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Async_Programming/MainWindow.xaml.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Async_Programming/MainWindow.xaml.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Autofac_ClassLibrary/Autofac_ClassLibrary.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/Autofac_ClassLibrary/Autofac_ClassLibrary.csproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Autofac_ClassLibrary/Class1.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Autofac_ClassLibrary/Class1.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Autofac_ConsoleUI/Autofac_ConsoleUI.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/Autofac_ConsoleUI/Autofac_ConsoleUI.csproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Autofac_ConsoleUI/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Autofac_ConsoleUI/Program.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/CSharp_VariousThings.sln" beforeDir="false" afterPath="$PROJECT_DIR$/CSharp_VariousThings.sln" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DeskBooker.Core.Tests/DeskBooker.Core.Tests.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/DeskBooker.Core.Tests/DeskBooker.Core.Tests.csproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DeskBooker.Core.Tests/Processor/DeskBookingRequestProcessorTests.cs" beforeDir="false" afterPath="$PROJECT_DIR$/DeskBooker.Core.Tests/Processor/DeskBookingRequestProcessorTests.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DeskBooker.Core/DeskBooker.Core.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/DeskBooker.Core/DeskBooker.Core.csproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ExceptionsDemo_ConsoleUI/ExceptionsDemo_ConsoleUI.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/ExceptionsDemo_ConsoleUI/ExceptionsDemo_ConsoleUI.csproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ExceptionsDemo_ConsoleUI/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ExceptionsDemo_ConsoleUI/Program.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ExceptionsDemo_Library/DemoCode.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ExceptionsDemo_Library/DemoCode.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ExceptionsDemo_Library/ExceptionsDemo_Library.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/ExceptionsDemo_Library/ExceptionsDemo_Library.csproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ExtensionDemo/ExtendSimpleLogger.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ExtensionDemo/ExtendSimpleLogger.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ExtensionDemo/ExtensionDemo.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/ExtensionDemo/ExtensionDemo.csproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ExtensionDemo/ISimpleLogger.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ExtensionDemo/ISimpleLogger.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ExtensionDemo/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ExtensionDemo/Program.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ExtensionDemo/SimpleLogger.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ExtensionDemo/SimpleLogger.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/InMemoryCachingDataAccess/InMemoryCachingDataAccess.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/InMemoryCachingDataAccess/InMemoryCachingDataAccess.csproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/InMemoryCachingUI/InMemoryCachingUI.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/InMemoryCachingUI/InMemoryCachingUI.csproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/InMemoryCachingUI/Shared/MainLayout.razor.css" beforeDir="false" afterPath="$PROJECT_DIR$/InMemoryCachingUI/Shared/MainLayout.razor.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/InMemoryCachingUI/Shared/NavMenu.razor.css" beforeDir="false" afterPath="$PROJECT_DIR$/InMemoryCachingUI/Shared/NavMenu.razor.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/InMemoryCachingUI/wwwroot/css/open-iconic/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/InMemoryCachingUI/wwwroot/css/open-iconic/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/InMemoryCachingUI/wwwroot/css/open-iconic/font/fonts/open-iconic.svg" beforeDir="false" afterPath="$PROJECT_DIR$/InMemoryCachingUI/wwwroot/css/open-iconic/font/fonts/open-iconic.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/InMemoryCachingUI/wwwroot/css/site.css" beforeDir="false" afterPath="$PROJECT_DIR$/InMemoryCachingUI/wwwroot/css/site.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Interfaces_ClassLibrary/CustomerModel.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Interfaces_ClassLibrary/CustomerModel.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Interfaces_ClassLibrary/DigitalProductModel.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Interfaces_ClassLibrary/DigitalProductModel.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Interfaces_ClassLibrary/IProductModel.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Interfaces_ClassLibrary/IProductModel.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Interfaces_ClassLibrary/Interfaces_ClassLibrary.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/Interfaces_ClassLibrary/Interfaces_ClassLibrary.csproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Interfaces_ClassLibrary/PhysicalProductModel.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Interfaces_ClassLibrary/PhysicalProductModel.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Interfaces_ConsoleUI/Interfaces_ConsoleUI.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/Interfaces_ConsoleUI/Interfaces_ConsoleUI.csproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Interfaces_ConsoleUI/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Interfaces_ConsoleUI/Program.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/LoggingDemo/LoggingDemo.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/LoggingDemo/LoggingDemo.csproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/LoggingDemo/Pages/Error.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/LoggingDemo/Pages/Error.cshtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/LoggingDemo/Pages/Error.cshtml.cs" beforeDir="false" afterPath="$PROJECT_DIR$/LoggingDemo/Pages/Error.cshtml.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/LoggingDemo/Pages/Index.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/LoggingDemo/Pages/Index.cshtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/LoggingDemo/Pages/Index.cshtml.cs" beforeDir="false" afterPath="$PROJECT_DIR$/LoggingDemo/Pages/Index.cshtml.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/LoggingDemo/Pages/Privacy.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/LoggingDemo/Pages/Privacy.cshtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/LoggingDemo/Pages/Privacy.cshtml.cs" beforeDir="false" afterPath="$PROJECT_DIR$/LoggingDemo/Pages/Privacy.cshtml.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/LoggingDemo/Pages/Shared/_Layout.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/LoggingDemo/Pages/Shared/_Layout.cshtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/LoggingDemo/Pages/Shared/_ValidationScriptsPartial.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/LoggingDemo/Pages/Shared/_ValidationScriptsPartial.cshtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/LoggingDemo/Pages/_ViewImports.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/LoggingDemo/Pages/_ViewImports.cshtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/LoggingDemo/Pages/_ViewStart.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/LoggingDemo/Pages/_ViewStart.cshtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/LoggingDemo/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/LoggingDemo/Program.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/LoggingDemo/Startup.cs" beforeDir="false" afterPath="$PROJECT_DIR$/LoggingDemo/Startup.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/LoggingDemo/wwwroot/css/site.css" beforeDir="false" afterPath="$PROJECT_DIR$/LoggingDemo/wwwroot/css/site.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/LoggingDemo/wwwroot/lib/bootstrap/dist/css/bootstrap-grid.css" beforeDir="false" afterPath="$PROJECT_DIR$/LoggingDemo/wwwroot/lib/bootstrap/dist/css/bootstrap-grid.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/LoggingDemo/wwwroot/lib/bootstrap/dist/css/bootstrap-reboot.css" beforeDir="false" afterPath="$PROJECT_DIR$/LoggingDemo/wwwroot/lib/bootstrap/dist/css/bootstrap-reboot.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/LoggingDemo/wwwroot/lib/bootstrap/dist/css/bootstrap.css" beforeDir="false" afterPath="$PROJECT_DIR$/LoggingDemo/wwwroot/lib/bootstrap/dist/css/bootstrap.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/LoggingDemo/wwwroot/lib/bootstrap/dist/js/bootstrap.bundle.js" beforeDir="false" afterPath="$PROJECT_DIR$/LoggingDemo/wwwroot/lib/bootstrap/dist/js/bootstrap.bundle.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/LoggingDemo/wwwroot/lib/bootstrap/dist/js/bootstrap.bundle.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/LoggingDemo/wwwroot/lib/bootstrap/dist/js/bootstrap.bundle.js.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/LoggingDemo/wwwroot/lib/bootstrap/dist/js/bootstrap.bundle.min.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/LoggingDemo/wwwroot/lib/bootstrap/dist/js/bootstrap.bundle.min.js.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/LoggingDemo/wwwroot/lib/bootstrap/dist/js/bootstrap.js" beforeDir="false" afterPath="$PROJECT_DIR$/LoggingDemo/wwwroot/lib/bootstrap/dist/js/bootstrap.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/LoggingDemo/wwwroot/lib/bootstrap/dist/js/bootstrap.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/LoggingDemo/wwwroot/lib/bootstrap/dist/js/bootstrap.js.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/LoggingDemo/wwwroot/lib/bootstrap/dist/js/bootstrap.min.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/LoggingDemo/wwwroot/lib/bootstrap/dist/js/bootstrap.min.js.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/LoggingDemo/wwwroot/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.js" beforeDir="false" afterPath="$PROJECT_DIR$/LoggingDemo/wwwroot/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/LoggingDemo/wwwroot/lib/jquery-validation/LICENSE.md" beforeDir="false" afterPath="$PROJECT_DIR$/LoggingDemo/wwwroot/lib/jquery-validation/LICENSE.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/LoggingDemo/wwwroot/lib/jquery-validation/dist/additional-methods.js" beforeDir="false" afterPath="$PROJECT_DIR$/LoggingDemo/wwwroot/lib/jquery-validation/dist/additional-methods.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/LoggingDemo/wwwroot/lib/jquery-validation/dist/jquery.validate.js" beforeDir="false" afterPath="$PROJECT_DIR$/LoggingDemo/wwwroot/lib/jquery-validation/dist/jquery.validate.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/LoggingDemo/wwwroot/lib/jquery/dist/jquery.js" beforeDir="false" afterPath="$PROJECT_DIR$/LoggingDemo/wwwroot/lib/jquery/dist/jquery.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/LoggingDemo/wwwroot/lib/jquery/dist/jquery.min.map" beforeDir="false" afterPath="$PROJECT_DIR$/LoggingDemo/wwwroot/lib/jquery/dist/jquery.min.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MediatRDemo_Api/Controllers/PersonController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/MediatRDemo_Api/Controllers/PersonController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MediatRDemo_Api/MediatRDemo_Api.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/MediatRDemo_Api/MediatRDemo_Api.csproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MediatRDemo_Api/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/MediatRDemo_Api/Program.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MediatRDemo_Api/Startup.cs" beforeDir="false" afterPath="$PROJECT_DIR$/MediatRDemo_Api/Startup.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MediatRDemo_Library/Commands/InsertPersonCommand.cs" beforeDir="false" afterPath="$PROJECT_DIR$/MediatRDemo_Library/Commands/InsertPersonCommand.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MediatRDemo_Library/DataAccess/DemoDataAccess.cs" beforeDir="false" afterPath="$PROJECT_DIR$/MediatRDemo_Library/DataAccess/DemoDataAccess.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MediatRDemo_Library/Handlers/GetPersonListHandler.cs" beforeDir="false" afterPath="$PROJECT_DIR$/MediatRDemo_Library/Handlers/GetPersonListHandler.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MediatRDemo_Library/LibraryMediatREntrypoint.cs" beforeDir="false" afterPath="$PROJECT_DIR$/MediatRDemo_Library/LibraryMediatREntrypoint.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MediatRDemo_Library/MediatRDemo_Library.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/MediatRDemo_Library/MediatRDemo_Library.csproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MediatRDemo_Library/Queries/GetPersonByIdQuery.cs" beforeDir="false" afterPath="$PROJECT_DIR$/MediatRDemo_Library/Queries/GetPersonByIdQuery.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MediatRDemo_Library/Queries/GetPersonListQuery.cs" beforeDir="false" afterPath="$PROJECT_DIR$/MediatRDemo_Library/Queries/GetPersonListQuery.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MediatRDemo_Library/README.MD" beforeDir="false" afterPath="$PROJECT_DIR$/MediatRDemo_Library/README.MD" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MockWithMoq_Library.Tests/CreditCardApplicationEvaluatorShould.cs" beforeDir="false" afterPath="$PROJECT_DIR$/MockWithMoq_Library.Tests/CreditCardApplicationEvaluatorShould.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MockWithMoq_Library.Tests/MockWithMoq_Library.Tests.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/MockWithMoq_Library.Tests/MockWithMoq_Library.Tests.csproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MockWithMoq_Library/CreditCardApplication.cs" beforeDir="false" afterPath="$PROJECT_DIR$/MockWithMoq_Library/CreditCardApplication.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MockWithMoq_Library/CreditCardApplicationDecision.cs" beforeDir="false" afterPath="$PROJECT_DIR$/MockWithMoq_Library/CreditCardApplicationDecision.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MockWithMoq_Library/CreditCardApplicationEvaluator.cs" beforeDir="false" afterPath="$PROJECT_DIR$/MockWithMoq_Library/CreditCardApplicationEvaluator.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MockWithMoq_Library/IFrequentFlyerNumberValidator.cs" beforeDir="false" afterPath="$PROJECT_DIR$/MockWithMoq_Library/IFrequentFlyerNumberValidator.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MockWithMoq_Library/MockWithMoq_Library.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/MockWithMoq_Library/MockWithMoq_Library.csproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MoqDemo_ConsoleUI/Application.cs" beforeDir="false" afterPath="$PROJECT_DIR$/MoqDemo_ConsoleUI/Application.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MoqDemo_ConsoleUI/MoqDemo_ConsoleUI.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/MoqDemo_ConsoleUI/MoqDemo_ConsoleUI.csproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MoqDemo_ConsoleUI/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/MoqDemo_ConsoleUI/Program.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MoqDemo_Library/Logic/PersonProcessor.cs" beforeDir="false" afterPath="$PROJECT_DIR$/MoqDemo_Library/Logic/PersonProcessor.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MoqDemo_Library/Models/PersonModel.cs" beforeDir="false" afterPath="$PROJECT_DIR$/MoqDemo_Library/Models/PersonModel.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MoqDemo_Library/MoqDemo_Library.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/MoqDemo_Library/MoqDemo_Library.csproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MoqDemo_Library/Utilities/SqliteDataAccess.cs" beforeDir="false" afterPath="$PROJECT_DIR$/MoqDemo_Library/Utilities/SqliteDataAccess.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MoqDemo_Tests/Logic/PersonProcessorTests.cs" beforeDir="false" afterPath="$PROJECT_DIR$/MoqDemo_Tests/Logic/PersonProcessorTests.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MoqDemo_Tests/MoqDemo_Tests.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/MoqDemo_Tests/MoqDemo_Tests.csproj" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/README.MD" beforeDir="false" afterPath="$PROJECT_DIR$/README.MD" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Record_Demo/Program.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Record_Demo/Record_Demo.csproj" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/RedisDemo/App.razor" beforeDir="false" afterPath="$PROJECT_DIR$/RedisDemo/App.razor" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/RedisDemo/Data/WeatherForecastService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/RedisDemo/Data/WeatherForecastService.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/RedisDemo/Extensions/DistributedCacheExtensions.cs" beforeDir="false" afterPath="$PROJECT_DIR$/RedisDemo/Extensions/DistributedCacheExtensions.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/RedisDemo/Pages/Error.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/RedisDemo/Pages/Error.cshtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/RedisDemo/Pages/Error.cshtml.cs" beforeDir="false" afterPath="$PROJECT_DIR$/RedisDemo/Pages/Error.cshtml.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/RedisDemo/Pages/FetchData.razor" beforeDir="false" afterPath="$PROJECT_DIR$/RedisDemo/Pages/FetchData.razor" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/RedisDemo/Pages/_Host.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/RedisDemo/Pages/_Host.cshtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/RedisDemo/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/RedisDemo/Program.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/RedisDemo/RedisDemo.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/RedisDemo/RedisDemo.csproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/RedisDemo/Shared/MainLayout.razor.css" beforeDir="false" afterPath="$PROJECT_DIR$/RedisDemo/Shared/MainLayout.razor.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/RedisDemo/_Imports.razor" beforeDir="false" afterPath="$PROJECT_DIR$/RedisDemo/_Imports.razor" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/RedisDemo/wwwroot/css/open-iconic/font/fonts/open-iconic.svg" beforeDir="false" afterPath="$PROJECT_DIR$/RedisDemo/wwwroot/css/open-iconic/font/fonts/open-iconic.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/RedisDemo/wwwroot/css/site.css" beforeDir="false" afterPath="$PROJECT_DIR$/RedisDemo/wwwroot/css/site.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SerilogDemo/Pages/Error.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/SerilogDemo/Pages/Error.cshtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SerilogDemo/Pages/Error.cshtml.cs" beforeDir="false" afterPath="$PROJECT_DIR$/SerilogDemo/Pages/Error.cshtml.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SerilogDemo/Pages/Index.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/SerilogDemo/Pages/Index.cshtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SerilogDemo/Pages/Index.cshtml.cs" beforeDir="false" afterPath="$PROJECT_DIR$/SerilogDemo/Pages/Index.cshtml.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SerilogDemo/Pages/Privacy.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/SerilogDemo/Pages/Privacy.cshtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SerilogDemo/Pages/Privacy.cshtml.cs" beforeDir="false" afterPath="$PROJECT_DIR$/SerilogDemo/Pages/Privacy.cshtml.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SerilogDemo/Pages/Shared/_Layout.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/SerilogDemo/Pages/Shared/_Layout.cshtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SerilogDemo/Pages/Shared/_ValidationScriptsPartial.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/SerilogDemo/Pages/Shared/_ValidationScriptsPartial.cshtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SerilogDemo/Pages/_ViewImports.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/SerilogDemo/Pages/_ViewImports.cshtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SerilogDemo/Pages/_ViewStart.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/SerilogDemo/Pages/_ViewStart.cshtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SerilogDemo/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/SerilogDemo/Program.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SerilogDemo/SerilogDemo.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/SerilogDemo/SerilogDemo.csproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SerilogDemo/Startup.cs" beforeDir="false" afterPath="$PROJECT_DIR$/SerilogDemo/Startup.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SerilogDemo/appsettings.json" beforeDir="false" afterPath="$PROJECT_DIR$/SerilogDemo/appsettings.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SerilogDemo/wwwroot/css/site.css" beforeDir="false" afterPath="$PROJECT_DIR$/SerilogDemo/wwwroot/css/site.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SerilogDemo/wwwroot/lib/bootstrap/dist/css/bootstrap-grid.css" beforeDir="false" afterPath="$PROJECT_DIR$/SerilogDemo/wwwroot/lib/bootstrap/dist/css/bootstrap-grid.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SerilogDemo/wwwroot/lib/bootstrap/dist/css/bootstrap-reboot.css" beforeDir="false" afterPath="$PROJECT_DIR$/SerilogDemo/wwwroot/lib/bootstrap/dist/css/bootstrap-reboot.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SerilogDemo/wwwroot/lib/bootstrap/dist/css/bootstrap.css" beforeDir="false" afterPath="$PROJECT_DIR$/SerilogDemo/wwwroot/lib/bootstrap/dist/css/bootstrap.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SerilogDemo/wwwroot/lib/bootstrap/dist/js/bootstrap.bundle.js" beforeDir="false" afterPath="$PROJECT_DIR$/SerilogDemo/wwwroot/lib/bootstrap/dist/js/bootstrap.bundle.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SerilogDemo/wwwroot/lib/bootstrap/dist/js/bootstrap.bundle.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/SerilogDemo/wwwroot/lib/bootstrap/dist/js/bootstrap.bundle.js.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SerilogDemo/wwwroot/lib/bootstrap/dist/js/bootstrap.bundle.min.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/SerilogDemo/wwwroot/lib/bootstrap/dist/js/bootstrap.bundle.min.js.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SerilogDemo/wwwroot/lib/bootstrap/dist/js/bootstrap.js" beforeDir="false" afterPath="$PROJECT_DIR$/SerilogDemo/wwwroot/lib/bootstrap/dist/js/bootstrap.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SerilogDemo/wwwroot/lib/bootstrap/dist/js/bootstrap.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/SerilogDemo/wwwroot/lib/bootstrap/dist/js/bootstrap.js.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SerilogDemo/wwwroot/lib/bootstrap/dist/js/bootstrap.min.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/SerilogDemo/wwwroot/lib/bootstrap/dist/js/bootstrap.min.js.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SerilogDemo/wwwroot/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.js" beforeDir="false" afterPath="$PROJECT_DIR$/SerilogDemo/wwwroot/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SerilogDemo/wwwroot/lib/jquery-validation/LICENSE.md" beforeDir="false" afterPath="$PROJECT_DIR$/SerilogDemo/wwwroot/lib/jquery-validation/LICENSE.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SerilogDemo/wwwroot/lib/jquery-validation/dist/additional-methods.js" beforeDir="false" afterPath="$PROJECT_DIR$/SerilogDemo/wwwroot/lib/jquery-validation/dist/additional-methods.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SerilogDemo/wwwroot/lib/jquery-validation/dist/jquery.validate.js" beforeDir="false" afterPath="$PROJECT_DIR$/SerilogDemo/wwwroot/lib/jquery-validation/dist/jquery.validate.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SerilogDemo/wwwroot/lib/jquery/dist/jquery.js" beforeDir="false" afterPath="$PROJECT_DIR$/SerilogDemo/wwwroot/lib/jquery/dist/jquery.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SerilogDemo/wwwroot/lib/jquery/dist/jquery.min.map" beforeDir="false" afterPath="$PROJECT_DIR$/SerilogDemo/wwwroot/lib/jquery/dist/jquery.min.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/String_Manipulation/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/String_Manipulation/Program.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/String_Manipulation/String_Manipulation.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/String_Manipulation/String_Manipulation.csproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WorkerService_Microsoft/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/WorkerService_Microsoft/Program.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WorkerService_Microsoft/WorkerService_Microsoft.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/WorkerService_Microsoft/WorkerService_Microsoft.csproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/XUnitDemo_ClassLibrary.Tests/DataAccessTests.cs" beforeDir="false" afterPath="$PROJECT_DIR$/XUnitDemo_ClassLibrary.Tests/DataAccessTests.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/XUnitDemo_ClassLibrary.Tests/XUnitDemo_ClassLibrary.Tests.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/XUnitDemo_ClassLibrary.Tests/XUnitDemo_ClassLibrary.Tests.csproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/XUnitDemo_ClassLibrary/Calculator.cs" beforeDir="false" afterPath="$PROJECT_DIR$/XUnitDemo_ClassLibrary/Calculator.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/XUnitDemo_ClassLibrary/DataAccess.cs" beforeDir="false" afterPath="$PROJECT_DIR$/XUnitDemo_ClassLibrary/DataAccess.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/XUnitDemo_ClassLibrary/Models/PersonModel.cs" beforeDir="false" afterPath="$PROJECT_DIR$/XUnitDemo_ClassLibrary/Models/PersonModel.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/XUnitDemo_ClassLibrary/XUnitDemo_ClassLibrary.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/XUnitDemo_ClassLibrary/XUnitDemo_ClassLibrary.csproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/XUnitDemo_WinFormsUI/Dashboard.cs" beforeDir="false" afterPath="$PROJECT_DIR$/XUnitDemo_WinFormsUI/Dashboard.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/XUnitDemo_WinFormsUI/Dashboard.resx" beforeDir="false" afterPath="$PROJECT_DIR$/XUnitDemo_WinFormsUI/Dashboard.resx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/XUnitDemo_WinFormsUI/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/XUnitDemo_WinFormsUI/Program.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/XUnitDemo_WinFormsUI/XUnitDemo_WinFormsUI.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/XUnitDemo_WinFormsUI/XUnitDemo_WinFormsUI.csproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/xUnitTutorial/Calculator.cs" beforeDir="false" afterPath="$PROJECT_DIR$/xUnitTutorial/Calculator.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/xUnitTutorial/CalculatorTests.cs" beforeDir="false" afterPath="$PROJECT_DIR$/xUnitTutorial/CalculatorTests.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/xUnitTutorial/CollectionBehaviourOverride.cs" beforeDir="false" afterPath="$PROJECT_DIR$/xUnitTutorial/CollectionBehaviourOverride.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/xUnitTutorial/GuidGeneratorTestsOne.cs" beforeDir="false" afterPath="$PROJECT_DIR$/xUnitTutorial/GuidGeneratorTestsOne.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/xUnitTutorial/xUnitTutorial.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/xUnitTutorial/xUnitTutorial.csproj" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -48,23 +219,11 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="GitSEFilterConfiguration">
-    <file-type-list>
-      <filtered-out-file-type name="LOCAL_BRANCH" />
-      <filtered-out-file-type name="REMOTE_BRANCH" />
-      <filtered-out-file-type name="TAG" />
-      <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
-    </file-type-list>
-  </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
-  <component name="ProjectId" id="23VCAjarQeiS9bMgMAkCNE8KMb4" />
-  <component name="ProjectLevelVcsManager">
-    <ConfirmationsSetting value="2" id="Add" />
-  </component>
+  <component name="ProjectId" id="244BqSwQWXaJzmQSXdAVXXROnr0" />
   <component name="ProjectViewState">
-    <option name="autoscrollFromSource" value="true" />
     <option name="autoscrollToSource" value="true" />
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -73,11 +232,9 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="nodejs_package_manager_path" value="npm" />
-    <property name="settings.editor.selected.configurable" value="HotReloadSettingsPage" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
-  <component name="RunManager" selected=".NET Project.YieldDemo">
+  <component name="RunManager" selected=".NET Project.Abstract_Classes_ConsoleUI">
     <configuration name="WorkerService_Microsoft: FolderProfile" type="DotNetMsBuildPublish" factoryName="Publish to IIS">
       <riderPublish publish_profile="FolderProfile.pubxml" pubxml_path="$PROJECT_DIR$/WorkerService_Microsoft/Properties/PublishProfiles/FolderProfile.pubxml" uuid_high="-7782142144439105592" uuid_low="-7970656692393537237" />
       <method v="2" />
@@ -226,24 +383,6 @@
         <option name="Build" />
       </method>
     </configuration>
-    <configuration name="Record_Demo" type="DotNetProject" factoryName=".NET Project">
-      <option name="EXE_PATH" value="" />
-      <option name="PROGRAM_PARAMETERS" value="" />
-      <option name="WORKING_DIRECTORY" value="" />
-      <option name="PASS_PARENT_ENVS" value="1" />
-      <option name="USE_EXTERNAL_CONSOLE" value="0" />
-      <option name="USE_MONO" value="0" />
-      <option name="RUNTIME_ARGUMENTS" value="" />
-      <option name="PROJECT_PATH" value="$PROJECT_DIR$/Record_Demo/Record_Demo.csproj" />
-      <option name="PROJECT_EXE_PATH_TRACKING" value="1" />
-      <option name="PROJECT_ARGUMENTS_TRACKING" value="1" />
-      <option name="PROJECT_WORKING_DIRECTORY_TRACKING" value="1" />
-      <option name="PROJECT_KIND" value="DotNetCore" />
-      <option name="PROJECT_TFM" value="" />
-      <method v="2">
-        <option name="Build" />
-      </method>
-    </configuration>
     <configuration name="String_Manipulation" type="DotNetProject" factoryName=".NET Project">
       <option name="EXE_PATH" value="" />
       <option name="PROGRAM_PARAMETERS" value="" />
@@ -328,10 +467,10 @@
         <option name="Build" />
       </method>
     </configuration>
-    <configuration name="In-Memory Caching" type="LaunchSettings" factoryName=".NET Launch Settings Profile">
+    <configuration name="InMemoryCachingUI: IIS Express" type="LaunchSettings" factoryName=".NET Launch Settings Profile">
       <option name="LAUNCH_PROFILE_PROJECT_FILE_PATH" value="$PROJECT_DIR$/InMemoryCachingUI/InMemoryCachingUI.csproj" />
       <option name="LAUNCH_PROFILE_TFM" value="net6.0" />
-      <option name="LAUNCH_PROFILE_NAME" value="In-Memory Caching" />
+      <option name="LAUNCH_PROFILE_NAME" value="IIS Express" />
       <option name="USE_EXTERNAL_CONSOLE" value="0" />
       <option name="USE_MONO" value="0" />
       <option name="RUNTIME_ARGUMENTS" value="" />
@@ -343,10 +482,10 @@
         <option name="Build" />
       </method>
     </configuration>
-    <configuration name="In-Memory Caching: IIS Express" type="LaunchSettings" factoryName=".NET Launch Settings Profile">
+    <configuration name="InMemoryCachingUI: In-Memory Caching" type="LaunchSettings" factoryName=".NET Launch Settings Profile">
       <option name="LAUNCH_PROFILE_PROJECT_FILE_PATH" value="$PROJECT_DIR$/InMemoryCachingUI/InMemoryCachingUI.csproj" />
       <option name="LAUNCH_PROFILE_TFM" value="net6.0" />
-      <option name="LAUNCH_PROFILE_NAME" value="IIS Express" />
+      <option name="LAUNCH_PROFILE_NAME" value="In-Memory Caching" />
       <option name="USE_EXTERNAL_CONSOLE" value="0" />
       <option name="USE_MONO" value="0" />
       <option name="RUNTIME_ARGUMENTS" value="" />
@@ -482,21 +621,13 @@
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="8eab9eb6-fced-4f73-803c-4e092de64562" name="Changes" comment="" />
-      <created>1641809726705</created>
+      <changelist id="8af64bd3-ec8c-4920-8a0f-2c7a1aa1f5aa" name="Changes" comment="" />
+      <created>1642880170353</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1641809726705</updated>
-      <workItem from="1641809733141" duration="9010000" />
+      <updated>1642880170353</updated>
+      <workItem from="1642880180946" duration="356000" />
     </task>
-    <task id="LOCAL-00001" summary="added in memory caching example and changed structure a bit">
-      <created>1641816894874</created>
-      <option name="number" value="00001" />
-      <option name="presentableId" value="LOCAL-00001" />
-      <option name="project" value="LOCAL" />
-      <updated>1641816894874</updated>
-    </task>
-    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -518,26 +649,5 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
-    <MESSAGE value="added in memory caching example and changed structure a bit" />
-    <option name="LAST_COMMIT_MESSAGE" value="added in memory caching example and changed structure a bit" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/InMemoryCachingUI/_Imports.razor</url>
-          <properties documentPath="C:\repos\personal\CSharp_VariousThings\InMemoryCachingUI\_Imports.razor" initialLine="0" isMultiMethodBreakpoint="true">
-            <option name="multiMethodBreakpoint" value="true" />
-            <startOffsets>
-              <option value="-1" />
-            </startOffsets>
-            <endOffsets>
-              <option value="-1" />
-            </endOffsets>
-          </properties>
-          <option name="timeStamp" value="1" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
   </component>
 </project>

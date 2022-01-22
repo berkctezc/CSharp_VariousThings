@@ -6,11 +6,11 @@ public class SampleDataAccess
 {
     private readonly IMemoryCache _cache;
 
-    readonly List<EmployeeModel> Data = new()
+    private readonly List<EmployeeModel> Data = new()
     {
         new EmployeeModel("David", "Bowie"),
         new EmployeeModel("Freddie", "Mercury"),
-        new EmployeeModel("Alice", "Cooper"),
+        new EmployeeModel("Alice", "Cooper")
     };
 
     public SampleDataAccess(IMemoryCache cache)

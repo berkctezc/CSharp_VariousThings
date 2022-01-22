@@ -1,11 +1,10 @@
-﻿namespace Interfaces_ClassLibrary
+﻿namespace Interfaces_ClassLibrary;
+
+public interface ICustomerModel
 {
-    public interface ICustomerModel
-    {
-        string City { get; set; }
-        string EmailAddress { get; set; }
-        string FirstName { get; set; }
-        string LastName { get; set; }
-        string PhoneNumber { get; set; }
-    }
+    string City { get; set; }
+    string EmailAddress { get; set; }
+    string FirstName { get; set; }
+    string LastName { get; set; }
+    string PhoneNumber { get; set; }
 }

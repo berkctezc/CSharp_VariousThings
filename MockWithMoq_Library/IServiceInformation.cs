@@ -1,7 +1,6 @@
-﻿namespace MockWithMoq_Library
+﻿namespace MockWithMoq_Library;
+
+public interface IServiceInformation
 {
-    public interface IServiceInformation
-    {
-        ILicenseData License { get; }
-    }
+    ILicenseData License { get; }
 }

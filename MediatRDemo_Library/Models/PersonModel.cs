@@ -1,9 +1,8 @@
-﻿namespace MediatRDemo_Library.Models
+﻿namespace MediatRDemo_Library.Models;
+
+public class PersonModel
 {
-    public class PersonModel
-    {
-        public int Id { get; set; }
-        public string FirstName { get; set; }
-        public string LastName { get; set; }
-    }
+    public int Id { get; set; }
+    public string FirstName { get; set; }
+    public string LastName { get; set; }
 }

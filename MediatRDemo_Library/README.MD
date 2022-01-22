@@ -2,7 +2,8 @@
 
 ## Data Access
 
-- Firstly we need to create Data Access and models. In this project we used a fake In Memory database with two methods (Read and Create).
+- Firstly we need to create Data Access and models. In this project we used a fake In Memory database with two methods (
+  Read and Create).
 - *todo: move this to SQLite and Dapper.*
 
 ```cs
@@ -36,7 +37,8 @@ namespace Library.DataAccess
 ## Creating Queries and their Handlers
 
 - Install **MediatR** NuGet package to project.
-- Create Queries (As Record or Class) with `<QueryName>Query` naming convention for easy understanding and separation between handlers and commands.
+- Create Queries (As Record or Class) with `<QueryName>Query` naming convention for easy understanding and separation
+  between handlers and commands.
 - Queries should implement **IRequest<>** with return type.
 
 ```cs
@@ -162,7 +164,8 @@ public class InsertPersonHandler : IRequestHandler<InsertPersonCommand, PersonMo
 
 ## Calling from another service or layer (API)
 
-- Install MediatR Dependency Injection package to layer from NuGet (**MediatR.Extensions.Microsoft.DependencyInjection**)
+- Install MediatR Dependency Injection package to layer from NuGet (**
+  MediatR.Extensions.Microsoft.DependencyInjection**)
 
 - Inject **Data Access** and add **MediatR** service in **ConfigureServices**
 
@@ -171,7 +174,7 @@ services.AddSingleton<IDataAccess, DemoDataAccess>();
 services.AddMediatR(typeof(LibraryMediatREntrypoint).Assembly);
 ```
 
-- And in controller inject **IMediator** as _mediator send requests to query 
+- And in controller inject **IMediator** as _mediator send requests to query
 
 ```cs
 namespace Api.Controllers
@@ -204,6 +207,8 @@ namespace Api.Controllers
 }
 ```
 
-- That is it. Notice the mediatr decreases we need to make in Startup class of api and lets say that we need to create a blazor project, wpf project. In all of them the things we will need to do and implement will stay the same and we could focus on the Logic & DataAccess layer for testing and adding stuff.
+- That is it. Notice the mediatr decreases we need to make in Startup class of api and lets say that we need to create a
+  blazor project, wpf project. In all of them the things we will need to do and implement will stay the same and we
+  could focus on the Logic & DataAccess layer for testing and adding stuff.
 - Resources used : Tim Corey https://www.youtube.com/watch?v=yozD5Tnd8nw
 

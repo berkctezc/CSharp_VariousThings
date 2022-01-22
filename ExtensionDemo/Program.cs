@@ -1,19 +1,18 @@
 ﻿using System;
 
-namespace ExtensionDemo
+namespace ExtensionDemo;
+
+internal class Program
 {
-    class Program
+    private static void Main(string[] args)
     {
-        static void Main(string[] args)
-        {
-            "this is a demo".PrintToConsole();
+        "this is a demo".PrintToConsole();
 
-            ISimpleLogger logger = new SimpleLogger();
+        ISimpleLogger logger = new SimpleLogger();
 
-            logger.LogError("This is an error");
-            logger.LogWarning("This is an error");
+        logger.LogError("This is an error");
+        logger.LogWarning("This is an error");
 
-            Console.WriteLine("good bye");
-        }
+        Console.WriteLine("good bye");
     }
 }

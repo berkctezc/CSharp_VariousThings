@@ -1,7 +1,6 @@
-﻿namespace MoqDemo_ConsoleUI
+﻿namespace MoqDemo_ConsoleUI;
+
+public interface IApplication
 {
-    public interface IApplication
-    {
-        void Run();
-    }
+    void Run();
 }

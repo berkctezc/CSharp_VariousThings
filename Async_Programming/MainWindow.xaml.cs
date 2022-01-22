@@ -51,7 +51,7 @@ namespace Async_Programming
         {
             var websites = PrepData();
 
-            foreach (string site in websites)
+            foreach (var site in websites)
             {
                 var results = DownloadWebsite(site);
                 ReportWebsiteInfo(results);
@@ -62,7 +62,7 @@ namespace Async_Programming
         {
             var websites = PrepData();
 
-            foreach (string site in websites)
+            foreach (var site in websites)
             {
                 var results = await Task.Run(() => DownloadWebsite(site));
                 ReportWebsiteInfo(results);
@@ -74,17 +74,11 @@ namespace Async_Programming
             var websites = PrepData();
             var tasks = new List<Task<WebsiteDataModel>>();
 
-            foreach (var site in websites)
-            {
-                tasks.Add(DownloadWebsiteAsync(site));
-            }
+            foreach (var site in websites) tasks.Add(DownloadWebsiteAsync(site));
 
             var results = await Task.WhenAll(tasks);
 
-            foreach (var item in results)
-            {
-                ReportWebsiteInfo(item);
-            }
+            foreach (var item in results) ReportWebsiteInfo(item);
         }
 
         private void ReportWebsiteInfo(WebsiteDataModel data)
@@ -101,8 +95,8 @@ namespace Async_Programming
             output.WebsiteData = client.DownloadString(site);
 
             return output;
-        }       
-        
+        }
+
         private async Task<WebsiteDataModel> DownloadWebsiteAsync(string site)
         {
             var output = new WebsiteDataModel();
@@ -116,7 +110,7 @@ namespace Async_Programming
 
         private List<string> PrepData()
         {
-            List<string> output = new List<string>();
+            var output = new List<string>();
 
             resultsWindow.Text = "";
 

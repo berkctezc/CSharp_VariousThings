@@ -1,6 +1,5 @@
-﻿namespace Autofac_ClassLibrary
+﻿namespace Autofac_ClassLibrary;
+
+public class Class1
 {
-    public class Class1
-    {
-    }
 }

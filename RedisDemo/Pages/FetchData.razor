@@ -14,11 +14,15 @@
 @{
     if (forecasts is null && loadLocation is null)
     {
-        <p><em>Click the button to load the forecast</em></p>
+        <p>
+            <em>Click the button to load the forecast</em>
+        </p>
     }
     else if (forecasts is null)
     {
-        <p><em>Loading</em></p>
+        <p>
+            <em>Loading</em>
+        </p>
     }
     else
     {
@@ -26,23 +30,23 @@
 
         <table class="table">
             <thead>
-                <tr>
-                    <th>Date</th>
-                    <th>Temp. (C)</th>
-                    <th>Temp. (F)</th>
-                    <th>Summary</th>
-                </tr>
+            <tr>
+                <th>Date</th>
+                <th>Temp. (C)</th>
+                <th>Temp. (F)</th>
+                <th>Summary</th>
+            </tr>
             </thead>
             <tbody>
-                @foreach (var forecast in forecasts)
-                {
-                    <tr>
-                        <td>@forecast.Date.ToShortDateString()</td>
-                        <td>@forecast.TemperatureC</td>
-                        <td>@forecast.TemperatureF</td>
-                        <td>@forecast.Summary</td>
-                    </tr>
-                }
+            @foreach (var forecast in forecasts)
+            {
+                <tr>
+                    <td>@forecast.Date.ToShortDateString()</td>
+                    <td>@forecast.TemperatureC</td>
+                    <td>@forecast.TemperatureF</td>
+                    <td>@forecast.Summary</td>
+                </tr>
+            }
             </tbody>
         </table>
     }
@@ -58,7 +62,7 @@
         forecasts = null;
         loadLocation = null;
 
-        string recordKey = "WeatherForecast_" + DateTime.Now.ToString("yyyyMMdd_hhmm");
+        var recordKey = "WeatherForecast_" + DateTime.Now.ToString("yyyyMMdd_hhmm");
 
         forecasts = await cache.GetRecordAsync<WeatherForecast[]>(recordKey);
 
@@ -77,4 +81,5 @@
             isCacheData = "text-danger";
         }
     }
+
 }

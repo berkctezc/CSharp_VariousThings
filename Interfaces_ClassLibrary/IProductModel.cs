@@ -1,10 +1,9 @@
-﻿namespace Interfaces_ClassLibrary
-{
-    public interface IProductModel
-    {
-        string Title { get; set; }
-        bool HasOrderBeenCompleted { get; }
+﻿namespace Interfaces_ClassLibrary;
 
-        void ShipItem(CustomerModel customer);
-    }
+public interface IProductModel
+{
+    string Title { get; set; }
+    bool HasOrderBeenCompleted { get; }
+
+    void ShipItem(CustomerModel customer);
 }
