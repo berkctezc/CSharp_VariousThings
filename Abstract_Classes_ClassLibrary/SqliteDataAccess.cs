@@ -1,26 +1,25 @@
 ﻿using System;
 
-namespace Abstract_Classes_ClassLibrary
+namespace Abstract_Classes_ClassLibrary;
+
+public class SqliteDataAccess : DataAccess
 {
-    public class SqliteDataAccess : DataAccess
+    public override string LoadConnectionString(string name)
     {
-        public override string LoadConnectionString(string name)
-        {
-            string output = base.LoadConnectionString(name);
+        var output = base.LoadConnectionString(name);
 
-            output += " (from SQLite)";
+        output += " (from SQLite)";
 
-            return output;
-        }
+        return output;
+    }
 
-        public override void LoadData(string sql)
-        {
-            Console.WriteLine("Loading SQLite Data");
-        }
+    public override void LoadData(string sql)
+    {
+        Console.WriteLine("Loading SQLite Data");
+    }
 
-        public override void SaveData(string sql)
-        {
-            Console.WriteLine("Saving data to SQLite");
-        }
+    public override void SaveData(string sql)
+    {
+        Console.WriteLine("Saving data to SQLite");
     }
 }

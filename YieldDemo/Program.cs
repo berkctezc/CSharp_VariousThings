@@ -19,20 +19,14 @@ internal static class Program
     {
         var people = DataAccess.GetPeople().Take(4);
 
-        foreach (var person in people)
-        {
-            Console.WriteLine($"Read {person.Name}");
-        }
+        foreach (var person in people) Console.WriteLine($"Read {person.Name}");
     }
 
     private static void Demo2()
     {
         var primeNumbers = Generators.GetPrimeNumbers().Take(10000);
 
-        foreach (var prime in primeNumbers)
-        {
-            Console.WriteLine(prime);
-        }
+        foreach (var prime in primeNumbers) Console.WriteLine(prime);
     }
 }
 
@@ -46,10 +40,7 @@ public static class Generators
 
         while (true)
         {
-            if (IsPrimeNumber(counter))
-            {
-                yield return counter;
-            }
+            if (IsPrimeNumber(counter)) yield return counter;
 
             counter++;
         }
@@ -60,13 +51,11 @@ public static class Generators
         var output = true;
 
         for (var i = 2; i < value / 2; i++)
-        {
             if (value % i == 0)
             {
                 output = false;
                 break;
             }
-        }
 
         return output;
     }

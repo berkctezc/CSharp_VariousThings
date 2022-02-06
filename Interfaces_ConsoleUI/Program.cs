@@ -2,61 +2,56 @@
 using System;
 using System.Collections.Generic;
 
-namespace Interfaces_ConsoleUI
+namespace Interfaces_ConsoleUI;
+
+internal class Program
 {
-    class Program
+    private static void Main(string[] args)
     {
-        static void Main(string[] args)
+        var cart = AddSampleData();
+        var customer = GetCustomer();
+
+        foreach (var prod in cart)
         {
-            List<IProductModel> cart = AddSampleData();
-            CustomerModel customer = GetCustomer();
+            prod.ShipItem(customer);
 
-            foreach(IProductModel prod in cart)
-            {
-                prod.ShipItem(customer);
-
-                if (prod is IDigitalProductModel digital)
-                {
-                    Console.WriteLine($"For the {digital.Title} you have {digital.TotalDownloadsLeft} downloads left.");
-                }
-            }
-
+            if (prod is IDigitalProductModel digital) Console.WriteLine($"For the {digital.Title} you have {digital.TotalDownloadsLeft} downloads left.");
         }
+    }
 
-        private static CustomerModel GetCustomer()
+    private static CustomerModel GetCustomer()
+    {
+        return new CustomerModel
         {
-            return new CustomerModel
-            {
-                FirstName = "Berkcan",
-                LastName = "Tezcaner",
-                City = "Istanbul",
-                EmailAddress = "berkcantezcaner@gmail.com",
-                PhoneNumber = "1234567"
-            };
-        }
+            FirstName = "Berkcan",
+            LastName = "Tezcaner",
+            City = "Istanbul",
+            EmailAddress = "berkcantezcaner@gmail.com",
+            PhoneNumber = "1234567"
+        };
+    }
 
-        private static List<IProductModel> AddSampleData()
-        {
-            List<IProductModel> output = new List<IProductModel>();
+    private static List<IProductModel> AddSampleData()
+    {
+        var output = new List<IProductModel>();
 
-            output.Add(new PhysicalProductModel { Title = "Earbuds" });
-            output.Add(new PhysicalProductModel { Title = "Gym Membership Card" });
-            output.Add(new PhysicalProductModel { Title = "Tripod" });
+        output.Add(new PhysicalProductModel {Title = "Earbuds"});
+        output.Add(new PhysicalProductModel {Title = "Gym Membership Card"});
+        output.Add(new PhysicalProductModel {Title = "Tripod"});
 
 
-            output.Add(new DigitalProductModel { Title = "Amazon Membership" });
-            output.Add(new DigitalProductModel { Title = "WinRar Software Key" });
+        output.Add(new DigitalProductModel {Title = "Amazon Membership"});
+        output.Add(new DigitalProductModel {Title = "WinRar Software Key"});
 
-            DigitalProductModel digitalProduct = new DigitalProductModel { Title = "A Digital Video Game" };
-            output.Add(digitalProduct);
-            output.Add(digitalProduct);
-            output.Add(digitalProduct);
-            output.Add(digitalProduct);
-            output.Add(digitalProduct);
-           
-            output.Add(new CourseProductModel { Title = ".NET Core Programming" });
+        var digitalProduct = new DigitalProductModel {Title = "A Digital Video Game"};
+        output.Add(digitalProduct);
+        output.Add(digitalProduct);
+        output.Add(digitalProduct);
+        output.Add(digitalProduct);
+        output.Add(digitalProduct);
 
-            return output;
-        }
+        output.Add(new CourseProductModel {Title = ".NET Core Programming"});
+
+        return output;
     }
 }

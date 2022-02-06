@@ -1,7 +1,6 @@
-﻿namespace MockWithMoq_Library
+﻿namespace MockWithMoq_Library;
+
+public interface ILicenseData
 {
-    public interface ILicenseData
-    {
-        string LicenseKey { get; }
-    }
+    string LicenseKey { get; }
 }

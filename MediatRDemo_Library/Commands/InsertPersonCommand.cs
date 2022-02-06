@@ -1,21 +1,22 @@
 ﻿using MediatR;
 using MediatRDemo_Library.Models;
 
-namespace MediatRDemo_Library.Commands
+namespace MediatRDemo_Library.Commands;
+
+public record InsertPersonCommand(string FirstName, string LastName) : IRequest<PersonModel>;
+
+#region class
+
+public class CLASS_InsertPersonCommand : IRequest<PersonModel>
 {
-    public record InsertPersonCommand(string FirstName, string LastName) : IRequest<PersonModel>;
+    public string FirstName { get; set; }
+    public string LastName { get; set; }
 
-    #region class
-    public class CLASS_InsertPersonCommand : IRequest<PersonModel>
+    public CLASS_InsertPersonCommand(string firstName, string lastName)
     {
-        public string FirstName { get; set; }
-        public string LastName { get; set; }
-
-        public CLASS_InsertPersonCommand(string firstName, string lastName)
-        {
-            FirstName = firstName;
-            LastName = lastName;
-        }
+        FirstName = firstName;
+        LastName = lastName;
     }
-    #endregion
 }
+
+#endregion

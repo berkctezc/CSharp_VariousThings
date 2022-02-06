@@ -1,9 +1,8 @@
 ﻿using System;
 
-namespace xUnitTutorial
+namespace xUnitTutorial;
+
+public class GuidGenerator
 {
-    public class GuidGenerator
-    {
-        public Guid RandomGuid { get; } = Guid.NewGuid();
-    }
+    public Guid RandomGuid { get; } = Guid.NewGuid();
 }

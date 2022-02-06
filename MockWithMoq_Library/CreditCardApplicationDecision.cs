@@ -1,7 +1,9 @@
-﻿namespace MockWithMoq_Library
+﻿namespace MockWithMoq_Library;
+
+public enum CreditCardApplicationDecision
 {
-    public enum CreditCardApplicationDecision
-    {
-        Unknown, AutoAccepted, AutoDeclined, ReferredToHuman
-    }
+    Unknown,
+    AutoAccepted,
+    AutoDeclined,
+    ReferredToHuman
 }

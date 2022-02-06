@@ -1,12 +1,11 @@
-﻿namespace MoqDemo_Library.Models
-{
-    public class PersonModel
-    {
-        public int Id { get; set; }
-        public string FirstName { get; set; }
-        public string LastName { get; set; }
-        public double HeightInInches { get; set; }
+﻿namespace MoqDemo_Library.Models;
 
-        public string FullName => $"{ FirstName } { LastName }";
-    }
+public class PersonModel
+{
+    public int Id { get; set; }
+    public string FirstName { get; set; }
+    public string LastName { get; set; }
+    public double HeightInInches { get; set; }
+
+    public string FullName => $"{FirstName} {LastName}";
 }

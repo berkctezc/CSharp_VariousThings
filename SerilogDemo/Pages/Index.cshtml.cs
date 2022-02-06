@@ -2,29 +2,28 @@
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.Extensions.Logging;
 
-namespace SerilogDemo.Pages
+namespace SerilogDemo.Pages;
+
+public class IndexModel : PageModel
 {
-    public class IndexModel : PageModel
+    private readonly ILogger<IndexModel> _logger;
+
+    public IndexModel(ILogger<IndexModel> logger)
     {
-        private readonly ILogger<IndexModel> _logger;
+        _logger = logger;
+    }
 
-        public IndexModel(ILogger<IndexModel> logger)
+    public void OnGet()
+    {
+        _logger.LogInformation("You requested the Index Page");
+
+        try
         {
-            _logger = logger;
+            throw new Exception("");
         }
-
-        public void OnGet()
+        catch (Exception ex)
         {
-            _logger.LogInformation("You requested the Index Page");
-
-            try
-            {
-                throw new Exception("");
-            }
-            catch (Exception ex)
-            {
-                _logger.LogError(ex, "exception caught in Index");
-            }
+            _logger.LogError(ex, "exception caught in Index");
         }
     }
 }
