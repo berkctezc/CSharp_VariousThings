@@ -3,80 +3,136 @@ using DeskBooker.Core.Domain;
 using DeskBooker.Core.Processor;
 using Moq;
 using System;
+using System.Collections.Generic;
+using System.Linq;
 using Xunit;
 
-namespace DeskBooker.Core.Tests.Processor
+namespace DeskBooker.Core.Tests.Processor;
+/*
+ * STEP 1: Get a Red (RED)
+ * STEP 2: Write the minimum code to pass the test (GREEN)
+ * STEP 3: Refactor the code without changing functionality (REFACTOR)
+ */
+
+public class DeskBookingRequestProcessorTests
 {
-    /*
-     * STEP 1: Get a Red (RED)
-     * STEP 2: Write the minimum code to pass the test (GREEN)
-     * STEP 3: Refactor the code without changing functionality (REFACTOR)
-     */
+    private readonly DeskBookingRequestProcessor _processor;
+    private readonly DeskBookingRequest _request;
+    private readonly Mock<IDeskBookingRepository> _deskBookingRepositoryMock;
+    private readonly Mock<IDeskRepository> _deskRepositoryMock;
+    private readonly List<Desk> _availableDesks;
 
-    public class DeskBookingRequestProcessorTests
+    public DeskBookingRequestProcessorTests()
     {
-        private readonly DeskBookingRequestProcessor _processor;
-        private readonly DeskBookingRequest _request;
-        private readonly Mock<IDeskBookingRepository> _deskBookingRepositoryMock;
-
-        public DeskBookingRequestProcessorTests()
+        // Arrange
+        _request = new DeskBookingRequest
         {
-            // Arrange
-            _request = new DeskBookingRequest
-            {
-                FirstName = "Berkc",
-                LastName = "Tezc",
-                Email = "berkctezc@github.com",
-                Date = new DateTime(2021, 2, 8)
-            };
+            FirstName = "Berkc",
+            LastName = "Tezc",
+            Email = "berkctezc@github.com",
+            Date = new DateTime(2021, 2, 8)
+        };
 
-            _deskBookingRepositoryMock = new Mock<IDeskBookingRepository>();
-            _processor = new DeskBookingRequestProcessor(
-                _deskBookingRepositoryMock.Object
-            );
+        _availableDesks = new List<Desk> {new Desk() {Id = 7}};
+
+        _deskBookingRepositoryMock = new Mock<IDeskBookingRepository>();
+        _deskRepositoryMock = new Mock<IDeskRepository>();
+        _deskRepositoryMock.Setup(x => x.GetAvailableDesks(_request.Date))
+            .Returns(_availableDesks);
+
+        _processor = new DeskBookingRequestProcessor(
+            _deskBookingRepositoryMock.Object, _deskRepositoryMock.Object
+        );
+    }
+
+    [Fact]
+    public void ShouldReturnDeskBookingResultWithRequestValues()
+    {
+        // Act
+        var result = _processor.BookDesk(_request);
+
+        // Assert
+        Assert.NotNull(result);
+        Assert.Equal(_request.FirstName, result.FirstName);
+        Assert.Equal(_request.LastName, result.LastName);
+        Assert.Equal(_request.Email, result.Email);
+        Assert.Equal(_request.Date, result.Date);
+    }
+
+    [Fact]
+    public void ShouldThrowExceptionIfRequestIsNull()
+    {
+        var exception = Assert.Throws<ArgumentNullException>(() => _processor.BookDesk(null));
+
+        Assert.Equal("request", exception.ParamName);
+    }
+
+    [Fact]
+    public void ShouldSaveDeskBooking()
+    {
+        DeskBooking savedDeskBooking = null;
+        _deskBookingRepositoryMock.Setup(x => x.Save(It.IsAny<DeskBooking>()))
+            .Callback<DeskBooking>(dB => { savedDeskBooking = dB; });
+
+        _processor.BookDesk(_request);
+
+        _deskBookingRepositoryMock.Verify(x => x.Save(It.IsAny<DeskBooking>()), Times.Once);
+
+        Assert.NotNull(savedDeskBooking);
+        Assert.Equal(_request.FirstName, savedDeskBooking.FirstName);
+        Assert.Equal(_request.LastName, savedDeskBooking.LastName);
+        Assert.Equal(_request.Email, savedDeskBooking.Email);
+        Assert.Equal(_request.Date, savedDeskBooking.Date);
+        Assert.Equal(_availableDesks.First().Id, savedDeskBooking.DeskId);
+    }
+
+    [Fact]
+    public void ShouldNotSaveDeskBookingIfNoDeskIsAvailable()
+    {
+        _availableDesks.Clear();
+
+        _processor.BookDesk(_request);
+
+        _deskBookingRepositoryMock.Verify(x => x.Save(It.IsAny<DeskBooking>()), Times.Never);
+    }
+
+    [Theory,
+     InlineData(DeskBookingResultCode.Success, true),
+     InlineData(DeskBookingResultCode.NoDeskAvailable, false),
+    ]
+    public void ShouldReturnExpectedResultCode(DeskBookingResultCode expectedResultCode, bool isDeskAvailable)
+    {
+        if (!isDeskAvailable)
+        {
+            _availableDesks.Clear();
         }
 
-        [Fact]
-        public void ShouldReturnDeskBookingResultWithRequestValues()
-        {
-            // Act
-            DeskBookingResult result = _processor.BookDesk(_request);
+        var result = _processor.BookDesk(_request);
 
-            // Assert
-            Assert.NotNull(result);
-            Assert.Equal(_request.FirstName, result.FirstName);
-            Assert.Equal(_request.LastName, result.LastName);
-            Assert.Equal(_request.Email, result.Email);
-            Assert.Equal(_request.Date, result.Date);
+        Assert.Equal(expectedResultCode, result.Code);
+    }
+
+    [Theory,
+     InlineData(5, true),
+     InlineData(null, false),
+    ]
+    public void ShouldReturnExpectedDeskBookingId(int? expectedDeskBookingId, bool isDeskAvailable)
+    {
+        if (!isDeskAvailable)
+        {
+            _availableDesks.Clear();
         }
-
-        [Fact]
-        public void ShouldThrowExceptionIfRequestIsNull()
+        else
         {
-            var exception = Assert.Throws<ArgumentNullException>(() => _processor.BookDesk(null));
-
-            Assert.Equal("request", exception.ParamName);
-        }
-
-        [Fact]
-        public void ShouldSaveDeskBooking()
-        {
-            DeskBooking savedDeskBooking = null;
             _deskBookingRepositoryMock.Setup(x => x.Save(It.IsAny<DeskBooking>()))
-            .Callback<DeskBooking>(dB =>
-            {
-                savedDeskBooking = dB;
-            });
-
-            _processor.BookDesk(_request);
-
-            _deskBookingRepositoryMock.Verify(x => x.Save(It.IsAny<Deskbooking>()), Times.Once);
-
-            Assert.NotNull(savedDeskBooking);
-            Assert.Equal(_request.FirstName, savedDeskBooking.FirstName);
-            Assert.Equal(_request.FirstName, savedDeskBooking.LastName);
-            Assert.Equal(_request.FirstName, savedDeskBooking.Email);
-            Assert.Equal(_request.FirstName, savedDeskBooking.Date);
+                .Callback<DeskBooking>(deskBooking =>
+                {
+                    deskBooking.Id = expectedDeskBookingId!.Value;
+                });
         }
+
+        var result = _processor.BookDesk(_request);
+
+        Assert.Equal(expectedDeskBookingId, result.DeskBookingId);
     }
 }

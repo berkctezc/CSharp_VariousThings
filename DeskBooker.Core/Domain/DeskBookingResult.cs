@@ -1,14 +1,7 @@
-﻿using System;
+﻿namespace DeskBooker.Core.Domain;
 
-namespace DeskBooker.Core.Domain;
-
-public class DeskBookingResult
+public class DeskBookingResult : DeskBookingBase
 {
-    public string FirstName { get; internal set; }
-
-    public string LastName { get; internal set; }
-
-    public string Email { get; internal set; }
-
-    public DateTime Date { get; internal set; }
+    public DeskBookingResultCode Code { get; set; }
+    public int? DeskBookingId { get; set; }
 }

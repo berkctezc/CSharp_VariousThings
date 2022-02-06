@@ -1,9 +1,9 @@
+using System.Collections;
 using DeskBooker.Core.Domain;
 
-namespace DeskBooker.Core.DataInterface
+namespace DeskBooker.Core.DataInterface;
+
+public interface IDeskBookingRepository
 {
-    public interface IDeskBookingRepository
-    {
-        void Save(DeskBooking deskBooking);
-    }
+    void Save(DeskBooking deskBooking);
 }
