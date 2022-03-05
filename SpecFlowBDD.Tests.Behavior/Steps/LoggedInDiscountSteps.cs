@@ -36,7 +36,7 @@ public class LoggedInDiscountSteps
     }
 
     [Then(@"the basket value is (.*) GBP")]
-    public void ThenTheBasketValueIsGbp(int expected)
+    public void ThenTheBasketValueIsGbp(decimal expected)
     {
         var basketValue = _pricingService.GetBasketTotalAmount(_basket);
         basketValue.Should().Be(expected);
