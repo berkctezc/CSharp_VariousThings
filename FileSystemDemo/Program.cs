@@ -17,7 +17,13 @@ DirectoryOperations(demoFilesPath);
 
 CopyingFiles(demoFilesPath);
 
+var javaFiles = Directory.GetFiles(demoFilesPath,"*.java",SearchOption.AllDirectories);
 
+foreach (var f in javaFiles)
+{
+    Console.WriteLine(f);
+    File.Delete(f);
+}
 
 void FileReading(string path)
 {
