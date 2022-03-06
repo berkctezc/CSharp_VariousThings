@@ -6,7 +6,19 @@
     </PropertyGroup>
 
     <ItemGroup>
-        <ProjectReference Include="..\Interfaces_ClassLibrary\Interfaces_ClassLibrary.csproj"/>
+        <ProjectReference Include="..\Interfaces_ClassLibrary\Interfaces_ClassLibrary.csproj" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <Compile Remove="obj\**" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <EmbeddedResource Remove="obj\**" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <None Remove="obj\**" />
     </ItemGroup>
 
 </Project>
