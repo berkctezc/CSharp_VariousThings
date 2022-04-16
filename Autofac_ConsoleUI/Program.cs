@@ -1,11 +1,8 @@
-﻿using System;
+﻿using Autofac;
+using Autofac_ConsoleUI;
 
-namespace Autofac_ConsoleUI;
+var container = ContainerConfig.Configure();
 
-internal class Program
-{
-    private static void Main(string[] args)
-    {
-        Console.WriteLine("Hello World!");
-    }
-}
+using var scope = container.BeginLifetimeScope();
+var app = scope.Resolve<IApplication>();
+app.Run();
