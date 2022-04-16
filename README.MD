@@ -15,7 +15,7 @@ advanced stuff.
 |                Async / Await                 |                               Async_Programming                               |        WPF         |                           https://youtu.be/2moh18sh5p4                           |   Intermediate    |                     None                     |
 |                Advanced Async                |                                Async_Advanced                                 |        WPF         |                           https://youtu.be/ZTKGRJy5P2M                           |   Intermediate    |                     None                     |
 |      MediatR - Mediator Implementation       | MediatRDemo_Api, MediatRDemo_Library, [README](MediatRDemo_Library/README.MD) |   ClassLib, API    |                           https://youtu.be/yozD5Tnd8nw                           |   Intermediate    |                   MediatR                    |
-|            Mediator From Scratch             |            MediatorFromScratch.Lib, MediatorFromScratch.ConsoleUI             | ClassLib, Console  |                           https://youtu.be/4e83trumwcM                           |   Intermediate    |                     None                     |
+|           _Mediator From Scratch_            |            MediatorFromScratch.Lib, MediatorFromScratch.ConsoleUI             | ClassLib, Console  |                           https://youtu.be/4e83trumwcM                           |   Intermediate    |                     None                     |
 |       Unit Testing with xUnit - Part 1       |  XUnitDemo_ClassLibrary, XUnitDemo_WinFormsUI, XUnitDemo_ClassLibrary.Tests   | WinForms, ClassLib |                           https://youtu.be/ub3P8c87cwk                           |     Advanced      |                    xUnit                     |
 |       Unit Testing with xUnit - Part 2       |                                 xUnitTutorial                                 |      ClassLib      |                           https://youtu.be/2Wp8en1I9oQ                           |     Advanced      |                    xUnit                     |
 |            Mocking in Unit Tests             |               MoqDemo_ConsoleUI, MoqDemo_Library, MoqDemo_Tests               | ClassLib, Console  |                           https://youtu.be/DwbYxP-etMY                           |     Advanced      |                  Moq, xUnit                  |
@@ -36,7 +36,8 @@ advanced stuff.
 |               **Reflections**                |                                                                               |                    |                                                                                  |                   |                                              |
 |                **Delegates**                 |                                                                               |                    |                                                                                  |                   |                                              |
 
-*marked **bold** means incomplete and planned to add*
+* marked **bold** means planned
+* marked _italic_ means incomplete
 
 ## Resources
 
