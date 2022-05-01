@@ -42,6 +42,8 @@ advanced stuff.
 
 ## Resources
 
-- [Tim Corey](https://www.youtube.com/channel/UC-ptWR16ITQyYOglXyQmpzw)
-- [Nick Chapsas](https://www.youtube.com/channel/UCrkPsvLGln62OMZRO6K-llg)
+- [Tim Corey](https://www.youtube.com/user/IAmTimCorey)
+- [Nick Chapsas](https://www.youtube.com/c/Elfocrash)
+- [Raw Coding](https://www.youtube.com/c/RawCoding)
+- [TechBuddy](https://www.youtube.com/c/TechBuddyTR)
 - [PluralSight](https://pluralsight.com)
