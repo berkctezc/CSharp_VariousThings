@@ -154,6 +154,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MockLib.Test", "MockLib.Tes
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Reflection", "Reflection", "{D44B0B96-AD3E-4708-94BC-B19D687282CA}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CreatingFluentAPIs", "CreatingFluentAPIs\CreatingFluentAPIs.csproj", "{B75E077B-D935-4182-91AC-00E69F5348BA}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -344,6 +346,10 @@ Global
 		{40B03C8C-18CE-4476-B82E-56B8B39B99DE}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{40B03C8C-18CE-4476-B82E-56B8B39B99DE}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{40B03C8C-18CE-4476-B82E-56B8B39B99DE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B75E077B-D935-4182-91AC-00E69F5348BA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B75E077B-D935-4182-91AC-00E69F5348BA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B75E077B-D935-4182-91AC-00E69F5348BA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B75E077B-D935-4182-91AC-00E69F5348BA}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -412,6 +418,7 @@ Global
 		{A99AD4A2-07FC-4B3C-9F84-83AE1FC9CAF9} = {D44B0B96-AD3E-4708-94BC-B19D687282CA}
 		{B694B725-D0B5-49FD-92D1-15F23F677681} = {D44B0B96-AD3E-4708-94BC-B19D687282CA}
 		{E3CA17E9-00DC-4142-A303-38D9BDB7C0A3} = {D44B0B96-AD3E-4708-94BC-B19D687282CA}
+		{B75E077B-D935-4182-91AC-00E69F5348BA} = {DE5408C4-F7DE-4566-8FC7-CF37980D8F89}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {40DD54A7-56C5-4FED-9AF4-0550D0EAF60F}
