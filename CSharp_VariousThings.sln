@@ -156,6 +156,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Reflection", "Reflection", 
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CreatingFluentAPIs", "CreatingFluentAPIs\CreatingFluentAPIs.csproj", "{B75E077B-D935-4182-91AC-00E69F5348BA}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HumanizerDemo", "HumanizerDemo\HumanizerDemo.csproj", "{346AC3FF-6BA5-4E50-90AA-681EB53FB101}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -350,6 +352,10 @@ Global
 		{B75E077B-D935-4182-91AC-00E69F5348BA}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B75E077B-D935-4182-91AC-00E69F5348BA}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B75E077B-D935-4182-91AC-00E69F5348BA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{346AC3FF-6BA5-4E50-90AA-681EB53FB101}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{346AC3FF-6BA5-4E50-90AA-681EB53FB101}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{346AC3FF-6BA5-4E50-90AA-681EB53FB101}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{346AC3FF-6BA5-4E50-90AA-681EB53FB101}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -419,6 +425,7 @@ Global
 		{B694B725-D0B5-49FD-92D1-15F23F677681} = {D44B0B96-AD3E-4708-94BC-B19D687282CA}
 		{E3CA17E9-00DC-4142-A303-38D9BDB7C0A3} = {D44B0B96-AD3E-4708-94BC-B19D687282CA}
 		{B75E077B-D935-4182-91AC-00E69F5348BA} = {DE5408C4-F7DE-4566-8FC7-CF37980D8F89}
+		{346AC3FF-6BA5-4E50-90AA-681EB53FB101} = {DE5408C4-F7DE-4566-8FC7-CF37980D8F89}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {40DD54A7-56C5-4FED-9AF4-0550D0EAF60F}
