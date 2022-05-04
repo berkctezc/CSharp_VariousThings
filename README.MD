@@ -50,6 +50,9 @@ advanced stuff.
 - [Nick Chapsas](https://www.youtube.com/c/Elfocrash)
 - [Raw Coding](https://www.youtube.com/c/RawCoding)
 - [TechBuddy](https://www.youtube.com/c/TechBuddyTR)
+- [Dotnet Core Central](https://www.youtube.com/c/DotNetCoreCentral)
+- [SingletonSean](https://www.youtube.com/c/SingletonSean)
+- [Rahul Nath](https://www.youtube.com/c/RahulNath)
 - [PluralSight](https://pluralsight.com)
 
 ## TODO
