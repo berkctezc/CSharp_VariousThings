@@ -1,4 +1,3 @@
-using System.Collections;
 using DeskBooker.Core.Domain;
 
 namespace DeskBooker.Core.DataInterface;
