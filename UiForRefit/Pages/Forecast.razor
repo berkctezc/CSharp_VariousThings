@@ -1,0 +1,43 @@
+﻿@page "/Forecast"
+@using UiForRefit.DataAccess
+@using Refit
+@using System.Globalization
+<h3>Forecast</h3>
+
+@if (_forecasts == null)
+{
+    <p>loading...</p>
+}
+else
+{
+    <table class="table">
+        <thead>
+        <tr>
+            <th>Date</th>
+            <th>Temp (C)</th>
+            <th>Summary</th>
+        </tr>
+        </thead>
+        <tbody>
+        @foreach (var forecast in _forecasts)
+        {
+            <tr>
+                <td>@forecast.Date.ToString(CultureInfo.InvariantCulture)</td>
+                <td>@forecast.TemperatureC.ToString()</td>
+                <td>@forecast.Summary</td>
+            </tr>
+        }
+        </tbody>
+    </table>
+}
+
+@code {
+    private List<WeatherForecast>? _forecasts;
+
+    protected override async Task OnInitializedAsync()
+    {
+        var weatherData = RestService.For<IWeatherData>("https://localhost:5001");
+        _forecasts = await weatherData.GetWeather();
+    }
+
+}
