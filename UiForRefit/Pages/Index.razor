@@ -1,0 +1,60 @@
+﻿@page "/"
+@using UiForRefit.DataAccess
+@inject IGuestData GuestData
+
+@code
+{
+    private List<GuestModel>? _data;
+
+    protected override async Task OnInitializedAsync()
+    {
+        _data = (await GuestData.GetGuests())
+            .OrderBy(x => x.Id).ToList();
+    }
+
+    private async Task AddGuest(GuestModel guest)
+    {
+        await GuestData.CreateGuest(
+            new GuestModel()
+            {
+                Id = _data?.Count + 1 ?? 0,
+                FullName = guest.FullName
+            });
+        _data = await GuestData.GetGuests();
+    }
+
+    private async Task UpdateGuest(int id, GuestModel guest)
+    {
+        guest.FullName = "James Bond";
+        await GuestData.UpdateGuest(id, guest);
+        _data = await GuestData.GetGuests();
+    }
+
+    private async Task DeleteGuest(int id)
+    {
+        await GuestData.DeleteGuest(id);
+        _data = await GuestData.GetGuests();
+    }
+}
+
+@if (_data is not null)
+{
+    foreach (var item in _data)
+    {
+        <div class="row">
+            <div class="col-md-6">
+                <h2>@item.Id.ToString() - @item.FullName</h2>
+                <hr>
+            </div>
+            <div class="col-md-6">
+                <button class="btn btn-primary" @onclick="(e => AddGuest(item))">Duplicate Guest</button>
+                <button class="btn btn-warning" @onclick="(e => UpdateGuest(item.Id, item))">Update Guest</button>
+                <button class="btn btn-danger" @onclick="(e => DeleteGuest(item.Id))">Delete Guest</button>
+            </div>
+        </div>
+    }
+}
+else
+{
+    <p>loading...</p>
+}

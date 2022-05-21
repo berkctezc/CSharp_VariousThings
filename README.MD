@@ -35,8 +35,9 @@ advanced stuff.
 |   Mock with Moq and xUnit    |    ClassLib     |       psight: mocking-moq-xunit        |                MockWithMoq ...                 |                 Moq, xUnit                 |
 |     Fake Data with Bogus     |     Console     |      https://youtu.be/T9pwE1GAr_U      |             FakeDataWithBogus ...              |                   Bogus                    |
 |             gRPC             |  GRPC,Console   |      https://youtu.be/QyxCX2GYHxk      |             GrpcClient, GrpcServer             | Google.Protobuf,Grpc.Net.Client,Grpc.Tools |
+|      Refit REST Client       |   API, Blazor   |      https://youtu.be/HH8drNbai8w      |             ApiForRefit,UiForRefit             | Google.Protobuf,Grpc.Net.Client,Grpc.Tools |
 |       AWS Lambda Intro       |     Lambda      |      https://youtu.be/GZ8_anxgpK8      |                 LambdaDemo ...                 |                    None                    |
-|   Rest API with AWS Lambda   |     Lambda      |      https://youtu.be/rImaNyfKhZk      |          Lambda.Simple,MinimalApi ...          |                    None                    |
+|   Rest API with AWS Lambda   |     Lambda      |      https://youtu.be/rImaNyfKhZk      |            Lambda.Simple,MinimalApi            |                    None                    |
 |          Autofac DI          |     Console     |      https://youtu.be/mCUNrRtVVWY      |                  Autofac ...                   |                  Autofac                   |
 |       DI From Scratch        |     Console     |      https://youtu.be/NSVZa4JuTl8      |                 DIFromScratch                  |                    None                    |
 |      Mock From Scratch       |     Console     |      https://youtu.be/9kEURoqHKZ0      |                  MockLib ...                   |       Microsoft.CodeAnalysis.CSharp        |
