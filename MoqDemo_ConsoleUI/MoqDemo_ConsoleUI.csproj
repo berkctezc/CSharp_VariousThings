@@ -6,11 +6,11 @@
     </PropertyGroup>
 
     <ItemGroup>
-        <PackageReference Include="Autofac" Version="6.3.0"/>
+        <PackageReference Include="Autofac" Version="6.4.0" />
     </ItemGroup>
 
     <ItemGroup>
-        <ProjectReference Include="..\MoqDemo_Library\MoqDemo_Library.csproj"/>
+        <ProjectReference Include="..\MoqDemo_Library\MoqDemo_Library.csproj" />
     </ItemGroup>
 
 </Project>
