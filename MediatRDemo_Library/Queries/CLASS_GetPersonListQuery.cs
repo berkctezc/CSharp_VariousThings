@@ -4,10 +4,6 @@ using MediatRDemo_Library.Models;
 
 namespace MediatRDemo_Library.Queries;
 
-public record GetPersonListQuery() : IRequest<List<PersonModel>>;
-
-#region class
-
-// CLASS EQUIVALENT OF RECORD
-
-#endregion
+public class CLASS_GetPersonListQuery : IRequest<List<PersonModel>>
+{
+}

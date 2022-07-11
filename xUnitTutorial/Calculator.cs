@@ -40,9 +40,3 @@ public class Calculator
         return Value /= value;
     }
 }
-
-internal enum CalculatorState
-{
-    Active,
-    Cleared
-}

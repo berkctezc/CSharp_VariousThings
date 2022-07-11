@@ -4,12 +4,12 @@ using Xunit.Abstractions;
 namespace xUnitTutorial;
 
 [Collection("Guid generator")]
-public class GuidGeneratorTestsOne
+public class GuidGeneratorTestsTwo
 {
     private readonly GuidGenerator _guidGenerator;
     private readonly ITestOutputHelper _output;
 
-    public GuidGeneratorTestsOne(GuidGenerator guidGenerator, ITestOutputHelper output)
+    public GuidGeneratorTestsTwo(GuidGenerator guidGenerator, ITestOutputHelper output)
     {
         _output = output;
         _guidGenerator = guidGenerator;

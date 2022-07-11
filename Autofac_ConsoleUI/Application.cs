@@ -1,11 +1,4 @@
-﻿using Autofac_ClassLibrary;
-
-namespace Autofac_ConsoleUI;
-
-public interface IApplication
-{
-    void Run();
-}
+﻿namespace Autofac_ConsoleUI;
 
 public class Application : IApplication
 {

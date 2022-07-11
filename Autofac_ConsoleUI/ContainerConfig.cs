@@ -1,9 +1,4 @@
-﻿using System.Linq;
-using System.Reflection;
-using Autofac;
-using Autofac_ClassLibrary;
-
-namespace Autofac_ConsoleUI;
+﻿namespace Autofac_ConsoleUI;
 
 public static class ContainerConfig
 {

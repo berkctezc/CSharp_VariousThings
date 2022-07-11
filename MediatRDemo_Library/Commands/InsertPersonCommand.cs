@@ -7,16 +7,4 @@ public record InsertPersonCommand(string FirstName, string LastName) : IRequest<
 
 #region class
 
-public class CLASS_InsertPersonCommand : IRequest<PersonModel>
-{
-    public string FirstName { get; set; }
-    public string LastName { get; set; }
-
-    public CLASS_InsertPersonCommand(string firstName, string lastName)
-    {
-        FirstName = firstName;
-        LastName = lastName;
-    }
-}
-
 #endregion

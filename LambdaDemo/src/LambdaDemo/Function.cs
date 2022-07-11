@@ -32,5 +32,3 @@ public class Function
         return new Casing(input.ToLower(), input.ToUpper());
     }
 }
-
-public record Casing(string Lower, string Upper);

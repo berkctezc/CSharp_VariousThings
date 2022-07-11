@@ -1,7 +1,4 @@
-﻿using System;
-using Autofac_ClassLibrary.Utilities;
-
-namespace Autofac_ClassLibrary;
+﻿namespace Autofac_ClassLibrary;
 
 public class BusinessLogic : IBusinessLogic
 {
@@ -20,13 +17,5 @@ public class BusinessLogic : IBusinessLogic
         _dataAccess.LoadData();
         _dataAccess.SaveData("processed info");
         _logger.Log("finished processing of data");
-    }
-}
-
-public class BetterBusinessLogic : IBusinessLogic
-{
-    public void ProcessData()
-    {
-        Console.WriteLine("processing data with better business logic");
     }
 }
