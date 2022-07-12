@@ -23,7 +23,7 @@ public class LoggedInDiscountSteps
     [Given(@"an empty basket")]
     public void GivenAnEmptyBasket()
     {
-        _basket = new Basket()
+        _basket = new Basket
         {
             User = _user
         };

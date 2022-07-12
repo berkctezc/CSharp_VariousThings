@@ -15,7 +15,7 @@
     private async Task AddGuest(GuestModel guest)
     {
         await GuestData.CreateGuest(
-            new GuestModel()
+            new GuestModel
             {
                 Id = _data?.Count + 1 ?? 0,
                 FullName = guest.FullName

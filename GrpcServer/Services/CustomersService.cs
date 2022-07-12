@@ -32,7 +32,7 @@ public class CustomersService : Customer.CustomerBase
 
     public override async Task GetNewCustomers(NewCustomerRequest request, IServerStreamWriter<CustomerModel> responseStream, ServerCallContext context)
     {
-        var customers = new List<CustomerModel>()
+        var customers = new List<CustomerModel>
         {
             new() {FirstName = "A", Age = 4},
             new() {IsAlive = false, FirstName = "B"},

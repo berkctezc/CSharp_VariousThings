@@ -70,53 +70,49 @@ public class PersonProcessorTests
     [Fact]
     public void LoadPeople_ValidCall()
     {
-        using (var mock = AutoMock.GetLoose())
+        using var mock = AutoMock.GetLoose();
+        mock.Mock<ISqliteDataAccess>()
+            .Setup(x => x.LoadData<PersonModel>("select * from Person"))
+            .Returns(GetSamplePeople());
+
+        var cls = mock.Create<PersonProcessor>();
+        var expected = GetSamplePeople();
+
+        var actual = cls.LoadPeople();
+
+        Assert.True(actual != null);
+        Assert.Equal(expected.Count, actual.Count);
+
+        for (var i = 0; i < expected.Count; i++)
         {
-            mock.Mock<ISqliteDataAccess>()
-                .Setup(x => x.LoadData<PersonModel>("select * from Person"))
-                .Returns(GetSamplePeople());
-
-            var cls = mock.Create<PersonProcessor>();
-            var expected = GetSamplePeople();
-
-            var actual = cls.LoadPeople();
-
-            Assert.True(actual != null);
-            Assert.Equal(expected.Count, actual.Count);
-
-            for (var i = 0; i < expected.Count; i++)
-            {
-                Assert.Equal(expected[i].FirstName, actual[i].FirstName);
-                Assert.Equal(expected[i].LastName, actual[i].LastName);
-            }
+            Assert.Equal(expected[i].FirstName, actual[i].FirstName);
+            Assert.Equal(expected[i].LastName, actual[i].LastName);
         }
     }
 
     [Fact]
     public void SavePeople_ValidCall()
     {
-        using (var mock = AutoMock.GetLoose())
+        using var mock = AutoMock.GetLoose();
+        var person = new PersonModel
         {
-            var person = new PersonModel
-            {
-                Id = 1,
-                FirstName = "Berkcan",
-                LastName = "Tezcaner",
-                HeightInInches = 80
-            };
-            var sql = "insert into Person (FirstName, LastName, HeightInInches) " +
-                      "values ('Berkcan', 'Tezcaner', 80)";
+            Id = 1,
+            FirstName = "Berkcan",
+            LastName = "Tezcaner",
+            HeightInInches = 80
+        };
+        var sql = "insert into Person (FirstName, LastName, HeightInInches) " +
+                  "values ('Berkcan', 'Tezcaner', 80)";
 
-            mock.Mock<ISqliteDataAccess>()
-                .Setup(x => x.SaveData(person, sql));
+        mock.Mock<ISqliteDataAccess>()
+            .Setup(x => x.SaveData(person, sql));
 
-            var cls = mock.Create<PersonProcessor>();
+        var cls = mock.Create<PersonProcessor>();
 
-            cls.SavePerson(person);
+        cls.SavePerson(person);
 
-            mock.Mock<ISqliteDataAccess>()
-                .Verify(x => x.SaveData(person, sql), Times.Exactly(1));
-        }
+        mock.Mock<ISqliteDataAccess>()
+            .Verify(x => x.SaveData(person, sql), Times.Exactly(1));
     }
 
     private List<PersonModel> GetSamplePeople()

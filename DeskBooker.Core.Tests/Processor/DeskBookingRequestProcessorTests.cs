@@ -33,7 +33,7 @@ public class DeskBookingRequestProcessorTests
             Date = new DateTime(2021, 2, 8)
         };
 
-        _availableDesks = new List<Desk> {new Desk() {Id = 7}};
+        _availableDesks = new List<Desk> {new() {Id = 7}};
 
         _deskBookingRepositoryMock = new Mock<IDeskBookingRepository>();
         _deskRepositoryMock = new Mock<IDeskRepository>();

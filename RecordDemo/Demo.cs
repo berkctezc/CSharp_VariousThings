@@ -1,4 +1,6 @@
-﻿public class Demo
+﻿namespace RecordDemo;
+
+public class Demo
 {
     // Immutable - the values cannot be changed
     public record Record1(string FirstName, string LastName);

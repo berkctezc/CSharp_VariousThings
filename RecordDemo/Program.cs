@@ -1,4 +1,4 @@
-﻿using static Demo;
+﻿using static RecordDemo.Demo;
 
 //main
 var recs = new List<Record1>
