@@ -1,19 +1,21 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.Linq;
 using System.Net;
 using System.Threading.Tasks;
 using System.Windows;
 
 namespace Async_Programming
 {
-    public partial class MainWindow : Window
+    public partial class MainWindow
     {
         public MainWindow()
         {
             InitializeComponent();
         }
 
+        [Obsolete("Obsolete")]
         private void ButtonNormal_Click(object sender, RoutedEventArgs e)
         {
             var watch = Stopwatch.StartNew();
@@ -25,6 +27,7 @@ namespace Async_Programming
             resultsWindow.Text += $"Total execution time:{watch.ElapsedMilliseconds}";
         }
 
+        [Obsolete("Obsolete")]
         private async void ButtonAsync_Click(object sender, RoutedEventArgs e)
         {
             var watch = Stopwatch.StartNew();
@@ -36,6 +39,7 @@ namespace Async_Programming
             resultsWindow.Text += $"Total execution time:{watch.ElapsedMilliseconds}";
         }
 
+        [Obsolete("Obsolete")]
         private async void ButtonParallelAsync_Click(object sender, RoutedEventArgs e)
         {
             var watch = Stopwatch.StartNew();
@@ -47,17 +51,18 @@ namespace Async_Programming
             resultsWindow.Text += $"Total execution time:{watch.ElapsedMilliseconds}";
         }
 
+        [Obsolete("Obsolete")]
         private void RunDownloadSync()
         {
             var websites = PrepData();
 
-            foreach (var site in websites)
+            foreach (var results in websites.Select(DownloadWebsite))
             {
-                var results = DownloadWebsite(site);
                 ReportWebsiteInfo(results);
             }
         }
 
+        [Obsolete("Obsolete")]
         private async Task RunDownloadAsync()
         {
             var websites = PrepData();
@@ -69,12 +74,12 @@ namespace Async_Programming
             }
         }
 
+        [Obsolete("Obsolete")]
         private async Task RunDownloadParallelAsync()
         {
             var websites = PrepData();
-            var tasks = new List<Task<WebsiteDataModel>>();
 
-            foreach (var site in websites) tasks.Add(DownloadWebsiteAsync(site));
+            var tasks = websites.Select(DownloadWebsiteAsync).ToList();
 
             var results = await Task.WhenAll(tasks);
 
@@ -86,6 +91,7 @@ namespace Async_Programming
             resultsWindow.Text += $"{data.WebsiteUrl} downloaded: {data.WebsiteData.Length} characters long. {Environment.NewLine}";
         }
 
+        [Obsolete("Obsolete")]
         private static WebsiteDataModel DownloadWebsite(string site)
         {
             var output = new WebsiteDataModel();
@@ -97,7 +103,8 @@ namespace Async_Programming
             return output;
         }
 
-        private async Task<WebsiteDataModel> DownloadWebsiteAsync(string site)
+        [Obsolete("Obsolete")]
+        private static async Task<WebsiteDataModel> DownloadWebsiteAsync(string site)
         {
             var output = new WebsiteDataModel();
             WebClient client = new();

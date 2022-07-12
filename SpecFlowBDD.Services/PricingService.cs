@@ -11,7 +11,7 @@ public class PricingService : IPricingService
 
         var basketValue = basket.Products.Sum(x => x.Price);
 
-        if (basket.User.IsLoggedIn)
+        if (basket.User!.IsLoggedIn)
         {
             return basketValue - (basketValue * 0.05m);
         }

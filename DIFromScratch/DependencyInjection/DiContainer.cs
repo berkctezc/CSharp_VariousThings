@@ -46,6 +46,6 @@ public class DiContainer
 
     public T GetService<T>()
     {
-        return (T) GetService(typeof(T));
+        return ((T) GetService(typeof(T))!);
     }
 }

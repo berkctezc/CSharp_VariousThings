@@ -22,7 +22,7 @@ public static class ServiceCollectionExtensions
             var handlers = GetClassesImplementingInterface(assembly, typeof(IHandler<,>));
 
             requests.ForEach(x =>
-                handlerInfo[x] = handlers.SingleOrDefault(xx => xx == xx.GetInterface("IHandler`2")!.GetGenericArguments()[0]));
+                handlerInfo[x] = handlers.SingleOrDefault(xx => xx == xx.GetInterface("IHandler`2")!.GetGenericArguments()[0])!);
 
             var serviceDescriptor = handlers.Select(x => new ServiceDescriptor(x, x, lifetime));
             services.TryAdd(serviceDescriptor);

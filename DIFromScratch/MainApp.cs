@@ -2,7 +2,8 @@
 
 public class MainApp
 {
-    public async Task StartAsync()
+    public static Task StartAsync()
     {
+        return Task.CompletedTask;
     }
 }

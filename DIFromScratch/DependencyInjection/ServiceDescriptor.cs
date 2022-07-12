@@ -12,7 +12,7 @@ public class ServiceDescriptor
 
     public ServiceDescriptor(object? implementation, ServiceLifeTime lifetime)
     {
-        ServiceType = implementation.GetType();
+        ServiceType = implementation!.GetType();
         Implementation = implementation;
         LifeTime = lifetime;
     }

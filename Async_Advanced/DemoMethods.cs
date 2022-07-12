@@ -28,6 +28,7 @@ namespace Async_Advanced
             return output;
         }
 
+        [Obsolete("Obsolete")]
         public static List<WebsiteDataModel> RunDownloadSync()
         {
             var websites = PrepData();
@@ -42,6 +43,7 @@ namespace Async_Advanced
             return output;
         }
 
+        [Obsolete("Obsolete")]
         public static List<WebsiteDataModel> RunDownloadParallelSync()
         {
             var websites = PrepData();
@@ -56,6 +58,7 @@ namespace Async_Advanced
             return output;
         }
 
+        [Obsolete("Obsolete")]
         public static async Task<List<WebsiteDataModel>> RunDownloadParallelAsyncV2(
             IProgress<ProgressReportModel> progress)
         {
@@ -79,6 +82,7 @@ namespace Async_Advanced
             return output;
         }
 
+        [Obsolete("Obsolete")]
         public static async Task<List<WebsiteDataModel>> RunDownloadAsync(IProgress<ProgressReportModel> progress,
             CancellationToken cancellationToken)
         {
@@ -101,6 +105,7 @@ namespace Async_Advanced
             return output;
         }
 
+        [Obsolete("Obsolete")]
         public static async Task<List<WebsiteDataModel>> RunDownloadParallelAsync()
         {
             var websites = PrepData();
@@ -113,6 +118,7 @@ namespace Async_Advanced
             return new List<WebsiteDataModel>(results);
         }
 
+        [Obsolete("Obsolete")]
         private static async Task<WebsiteDataModel> DownloadWebsiteAsync(string websiteURL)
         {
             var output = new WebsiteDataModel();
@@ -124,6 +130,7 @@ namespace Async_Advanced
             return output;
         }
 
+        [Obsolete("Obsolete")]
         private static WebsiteDataModel DownloadWebsite(string websiteURL)
         {
             var output = new WebsiteDataModel();

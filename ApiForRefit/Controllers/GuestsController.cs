@@ -9,8 +9,8 @@ namespace ApiForRefit.Controllers;
 public class GuestsController : ControllerBase
 {
     private static readonly Faker<GuestModel?> Faker = new Faker<GuestModel?>()
-        .RuleFor(x => x.FullName, x => x.Person.FullName)
-        .RuleFor(x => x.Id, x => x.IndexFaker);
+        .RuleFor(x => x!.FullName, x => x.Person.FullName)
+        .RuleFor(x => x!.Id, x => x.IndexFaker);
 
     private static readonly List<GuestModel?> Guests = Faker.Generate(20);
 
@@ -25,7 +25,7 @@ public class GuestsController : ControllerBase
     [HttpGet("{id}")]
     public GuestModel? Get(int id)
     {
-        return Guests.FirstOrDefault(g => g.Id == id);
+        return Guests.FirstOrDefault(g => g!.Id == id);
     }
 
     // POST api/<GuestsController>
@@ -39,7 +39,7 @@ public class GuestsController : ControllerBase
     [HttpPut("{id}")]
     public void Put(int id, [FromBody] GuestModel? value)
     {
-        Guests.Remove(Guests.FirstOrDefault(g => g.Id == id));
+        Guests.Remove(Guests.FirstOrDefault(g => g!.Id == id));
         Guests.Add(value);
     }
 
@@ -47,6 +47,6 @@ public class GuestsController : ControllerBase
     [HttpDelete("{id}")]
     public void Delete(int id)
     {
-        Guests.Remove(Guests.FirstOrDefault(g => g.Id == id));
+        Guests.Remove(Guests.FirstOrDefault(g => g!.Id == id));
     }
 }

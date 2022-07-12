@@ -22,7 +22,7 @@ public class Mediator : IMediator
         var requestHandlerType = _handlerDetails[requestType];
         var handler = _serviceResolver(requestHandlerType);
 
-        return await (Task<TResponse>) handler.GetType().GetMethod("HandleAsync")
-            .Invoke(handler, new[] {request});
+        return await ((Task<TResponse>) handler.GetType().GetMethod("HandleAsync")!
+            .Invoke(handler, new[] {request})!)!;
     }
 }

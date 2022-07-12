@@ -10,10 +10,10 @@ public class FluentSqlConnection
         IPasswordSelectionStage,
         IConnectionInitializerStage
 {
-    private string _server;
-    private string _database;
-    private string _user;
-    private string _password;
+    private string? _server;
+    private string? _database;
+    private string? _user;
+    private string? _password;
 
     private FluentSqlConnection()
     {
@@ -27,25 +27,25 @@ public class FluentSqlConnection
         return new FluentSqlConnection();
     }
 
-    public IDatabaseSelectionStage ForServer(string server)
+    public IDatabaseSelectionStage ForServer(string? server)
     {
         _server = server;
         return this;
     }
 
-    public IUserSelectionStage AndDatabase(string database)
+    public IUserSelectionStage AndDatabase(string? database)
     {
         _database = database;
         return this;
     }
 
-    public IPasswordSelectionStage AsUser(string user)
+    public IPasswordSelectionStage AsUser(string? user)
     {
         _user = user;
         return this;
     }
 
-    public IConnectionInitializerStage WithPassword(string password)
+    public IConnectionInitializerStage WithPassword(string? password)
     {
         _password = password;
         return this;

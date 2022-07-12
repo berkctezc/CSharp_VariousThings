@@ -13,11 +13,11 @@ public class MyMock<TMockable> where TMockable : class
     {
         var method = (MethodCallExpression) methodCall.Body;
         var methodName = method.Method.Name;
-        _methodInterceptors[methodName] = () => result;
+        _methodInterceptors[methodName] = () => result!;
         return this;
     }
 
-    public TMockable Object => (TMockable) Activator.CreateInstance(CreateType(), _methodInterceptors);
+    public TMockable Object => (TMockable) Activator.CreateInstance(CreateType(), _methodInterceptors)!;
 
     private Type CreateType()
     {

@@ -117,7 +117,7 @@ this.ScenarioInitialize(scenarioInfo);
         [Xunit.SkippableFactAttribute(DisplayName="Logged in users should have a %5 discount")]
         [Xunit.TraitAttribute("FeatureTitle", "Logged In users has a discount")]
         [Xunit.TraitAttribute("Description", "Logged in users should have a %5 discount")]
-        public void LoggedInUsersShouldHaveA5Discount()
+        public void LoggedİnUsersShouldHaveA5Discount()
         {
             string[] tagsOfScenario = ((string[])(null));
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();

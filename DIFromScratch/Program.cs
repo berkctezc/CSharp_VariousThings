@@ -21,7 +21,7 @@ var service2 = container.GetService<ISomeService>();
 
 var mainApp = container.GetService<MainApp>();
 
-await mainApp.StartAsync();
+await MainApp.StartAsync();
 
 service1.PrintGuid();
 service2.PrintGuid();

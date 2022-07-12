@@ -2,5 +2,5 @@
 
 public interface IDatabaseSelectionStage
 {
-    public IUserSelectionStage AndDatabase(string database);
+    public IUserSelectionStage AndDatabase(string? database);
 }

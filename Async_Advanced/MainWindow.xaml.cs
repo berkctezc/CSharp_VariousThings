@@ -15,6 +15,7 @@ namespace Async_Advanced
             InitializeComponent();
         }
 
+        [Obsolete("Obsolete")]
         private void ButtonNormal_Click(object sender, RoutedEventArgs e)
         {
             var watch = Stopwatch.StartNew();
@@ -28,6 +29,7 @@ namespace Async_Advanced
             resultsWindow.Text += $"Total execution time: {elapsedMs}";
         }
 
+        [Obsolete("Obsolete")]
         private async void ButtonAsync_Click(object sender, RoutedEventArgs e)
         {
             var progress = new Progress<ProgressReportModel>();
@@ -61,6 +63,7 @@ namespace Async_Advanced
             PrintResults(e.SitesDownloaded);
         }
 
+        [Obsolete("Obsolete")]
         private async void ButtonParallelAsync_Click(object sender, RoutedEventArgs e)
         {
             Progress<ProgressReportModel> progress = new();

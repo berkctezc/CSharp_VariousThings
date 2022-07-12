@@ -8,5 +8,5 @@ public class Basket
     }
 
     public List<Product> Products { get; init; }
-    public User User { get; init; } = new();
+    public User? User { get; init; } = new();
 }

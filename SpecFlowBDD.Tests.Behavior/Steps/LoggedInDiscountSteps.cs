@@ -7,7 +7,7 @@ namespace SpecFlowBDD.Tests.Behavior.Steps;
 [Binding]
 public class LoggedInDiscountSteps
 {
-    private User _user;
+    private User? _user;
     private Basket _basket = new ();
     private readonly IPricingService _pricingService = new PricingService();
 
