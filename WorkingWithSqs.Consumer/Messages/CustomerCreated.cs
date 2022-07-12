@@ -1,6 +1,6 @@
 ﻿using System.Text.Json.Serialization;
 
-namespace WorkingWithSqs.Publisher.Messages;
+namespace WorkingWithSqs.Consumer.Messages;
 
 public class CustomerCreated : IMessage
 {
