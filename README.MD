@@ -38,6 +38,7 @@ advanced stuff.
 |             gRPC             |  GRPC,Console   |     https://youtu.be/QyxCX2GYHxk      |             GrpcClient, GrpcServer             | Google.Protobuf,Grpc.Net.Client,Grpc.Tools |
 |      Refit REST Client       |   API, Blazor   |     https://youtu.be/HH8drNbai8w      |             ApiForRefit,UiForRefit             | Google.Protobuf,Grpc.Net.Client,Grpc.Tools |
 |       AWS Lambda Intro       |     Lambda      |     https://youtu.be/GZ8_anxgpK8      |                 LambdaDemo ...                 |                    None                    |
+|        AWS SQS Intro         |  ClassLib, API  |     https://youtu.be/7OfUi3h-wmM      |               WorkingWithSqs ...               |                 AWSSDK.SQS                 |
 |   Rest API with AWS Lambda   |     Lambda      |     https://youtu.be/rImaNyfKhZk      |            Lambda.Simple,MinimalApi            |                    None                    |
 |          Autofac DI          |     Console     |     https://youtu.be/mCUNrRtVVWY      |                  Autofac ...                   |                  Autofac                   |
 |       DI From Scratch        |     Console     |     https://youtu.be/NSVZa4JuTl8      |                 DIFromScratch                  |                    None                    |
