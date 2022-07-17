@@ -1,5 +1,3 @@
-using Grpc.Core;
-
 namespace GrpcServer.Services;
 
 public class CustomersService : Customer.CustomerBase

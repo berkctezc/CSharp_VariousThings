@@ -1,13 +1,3 @@
-using MediatR;
-using MediatRDemo_Library;
-using MediatRDemo_Library.DataAccess;
-using Microsoft.AspNetCore.Builder;
-using Microsoft.AspNetCore.Hosting;
-using Microsoft.Extensions.Configuration;
-using Microsoft.Extensions.DependencyInjection;
-using Microsoft.Extensions.Hosting;
-using Microsoft.OpenApi.Models;
-
 namespace MediatRDemo_Api;
 
 public class Startup

@@ -1,9 +1,3 @@
-using System;
-using Microsoft.Extensions.DependencyInjection;
-using Microsoft.Extensions.Hosting;
-using Serilog;
-using Serilog.Events;
-
 namespace WorkerService_Microsoft;
 
 public class Program
@@ -20,7 +14,6 @@ public class Program
         {
             Log.Information("starting up");
             CreateHostBuilder(args).Build().Run();
-            return;
         }
         catch (Exception e)
         {

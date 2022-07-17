@@ -2,8 +2,8 @@
 
 public class Mediator : IMediator
 {
-    private readonly Func<Type, object> _serviceResolver;
     private readonly IDictionary<Type, Type> _handlerDetails;
+    private readonly Func<Type, object> _serviceResolver;
 
     public Mediator(Func<Type, object> serviceResolver, IDictionary<Type, Type> handlerDetails)
     {
@@ -14,10 +14,7 @@ public class Mediator : IMediator
     public async Task<TResponse> SendAsync<TResponse>(IRequest<TResponse> request)
     {
         var requestType = request.GetType();
-        if (!_handlerDetails.ContainsKey(requestType))
-        {
-            throw new Exception($"No handler to handle request of type: {requestType}");
-        }
+        if (!_handlerDetails.ContainsKey(requestType)) throw new Exception($"No handler to handle request of type: {requestType}");
 
         var requestHandlerType = _handlerDetails[requestType];
         var handler = _serviceResolver(requestHandlerType);

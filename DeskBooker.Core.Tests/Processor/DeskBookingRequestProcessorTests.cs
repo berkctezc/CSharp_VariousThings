@@ -1,12 +1,3 @@
-using DeskBooker.Core.DataInterface;
-using DeskBooker.Core.Domain;
-using DeskBooker.Core.Processor;
-using Moq;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using Xunit;
-
 namespace DeskBooker.Core.Tests.Processor;
 /*
  * STEP 1: Get a Red (RED)
@@ -16,11 +7,11 @@ namespace DeskBooker.Core.Tests.Processor;
 
 public class DeskBookingRequestProcessorTests
 {
-    private readonly DeskBookingRequestProcessor _processor;
-    private readonly DeskBookingRequest _request;
+    private readonly List<Desk> _availableDesks;
     private readonly Mock<IDeskBookingRepository> _deskBookingRepositoryMock;
     private readonly Mock<IDeskRepository> _deskRepositoryMock;
-    private readonly List<Desk> _availableDesks;
+    private readonly DeskBookingRequestProcessor _processor;
+    private readonly DeskBookingRequest _request;
 
     public DeskBookingRequestProcessorTests()
     {
@@ -96,40 +87,28 @@ public class DeskBookingRequestProcessorTests
         _deskBookingRepositoryMock.Verify(x => x.Save(It.IsAny<DeskBooking>()), Times.Never);
     }
 
-    [Theory,
-     InlineData(DeskBookingResultCode.Success, true),
-     InlineData(DeskBookingResultCode.NoDeskAvailable, false),
-    ]
+    [Theory]
+    [InlineData(DeskBookingResultCode.Success, true)]
+    [InlineData(DeskBookingResultCode.NoDeskAvailable, false)]
     public void ShouldReturnExpectedResultCode(DeskBookingResultCode expectedResultCode, bool isDeskAvailable)
     {
-        if (!isDeskAvailable)
-        {
-            _availableDesks.Clear();
-        }
+        if (!isDeskAvailable) _availableDesks.Clear();
 
         var result = _processor.BookDesk(_request);
 
         Assert.Equal(expectedResultCode, result.Code);
     }
 
-    [Theory,
-     InlineData(5, true),
-     InlineData(null, false),
-    ]
+    [Theory]
+    [InlineData(5, true)]
+    [InlineData(null, false)]
     public void ShouldReturnExpectedDeskBookingId(int? expectedDeskBookingId, bool isDeskAvailable)
     {
         if (!isDeskAvailable)
-        {
             _availableDesks.Clear();
-        }
         else
-        {
             _deskBookingRepositoryMock.Setup(x => x.Save(It.IsAny<DeskBooking>()))
-                .Callback<DeskBooking>(deskBooking =>
-                {
-                    deskBooking.Id = expectedDeskBookingId!.Value;
-                });
-        }
+                .Callback<DeskBooking>(deskBooking => { deskBooking.Id = expectedDeskBookingId!.Value; });
 
         var result = _processor.BookDesk(_request);
 

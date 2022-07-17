@@ -1,135 +1,123 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Diagnostics;
-using System.Linq;
-using System.Net;
-using System.Threading.Tasks;
-using System.Windows;
+﻿namespace Async_Programming;
 
-namespace Async_Programming
+public partial class MainWindow
 {
-    public partial class MainWindow
+    public MainWindow()
     {
-        public MainWindow()
+        InitializeComponent();
+    }
+
+    [Obsolete("Obsolete")]
+    private void ButtonNormal_Click(object sender, RoutedEventArgs e)
+    {
+        var watch = Stopwatch.StartNew();
+
+        RunDownloadSync();
+
+        watch.Stop();
+
+        resultsWindow.Text += $"Total execution time:{watch.ElapsedMilliseconds}";
+    }
+
+    [Obsolete("Obsolete")]
+    private async void ButtonAsync_Click(object sender, RoutedEventArgs e)
+    {
+        var watch = Stopwatch.StartNew();
+
+        await RunDownloadAsync();
+
+        watch.Stop();
+
+        resultsWindow.Text += $"Total execution time:{watch.ElapsedMilliseconds}";
+    }
+
+    [Obsolete("Obsolete")]
+    private async void ButtonParallelAsync_Click(object sender, RoutedEventArgs e)
+    {
+        var watch = Stopwatch.StartNew();
+
+        await RunDownloadParallelAsync();
+
+        watch.Stop();
+
+        resultsWindow.Text += $"Total execution time:{watch.ElapsedMilliseconds}";
+    }
+
+    [Obsolete("Obsolete")]
+    private void RunDownloadSync()
+    {
+        var websites = PrepData();
+
+        foreach (var results in websites.Select(DownloadWebsite)) ReportWebsiteInfo(results);
+    }
+
+    [Obsolete("Obsolete")]
+    private async Task RunDownloadAsync()
+    {
+        var websites = PrepData();
+
+        foreach (var site in websites)
         {
-            InitializeComponent();
+            var results = await Task.Run(() => DownloadWebsite(site));
+            ReportWebsiteInfo(results);
         }
+    }
 
-        [Obsolete("Obsolete")]
-        private void ButtonNormal_Click(object sender, RoutedEventArgs e)
-        {
-            var watch = Stopwatch.StartNew();
+    [Obsolete("Obsolete")]
+    private async Task RunDownloadParallelAsync()
+    {
+        var websites = PrepData();
 
-            RunDownloadSync();
+        var tasks = websites.Select(DownloadWebsiteAsync).ToList();
 
-            watch.Stop();
+        var results = await Task.WhenAll(tasks);
 
-            resultsWindow.Text += $"Total execution time:{watch.ElapsedMilliseconds}";
-        }
+        foreach (var item in results) ReportWebsiteInfo(item);
+    }
 
-        [Obsolete("Obsolete")]
-        private async void ButtonAsync_Click(object sender, RoutedEventArgs e)
-        {
-            var watch = Stopwatch.StartNew();
+    private void ReportWebsiteInfo(WebsiteDataModel data)
+    {
+        resultsWindow.Text += $"{data.WebsiteUrl} downloaded: {data.WebsiteData.Length} characters long. {Environment.NewLine}";
+    }
 
-            await RunDownloadAsync();
+    [Obsolete("Obsolete")]
+    private static WebsiteDataModel DownloadWebsite(string site)
+    {
+        var output = new WebsiteDataModel();
+        WebClient client = new();
 
-            watch.Stop();
+        output.WebsiteUrl = site;
+        output.WebsiteData = client.DownloadString(site);
 
-            resultsWindow.Text += $"Total execution time:{watch.ElapsedMilliseconds}";
-        }
+        return output;
+    }
 
-        [Obsolete("Obsolete")]
-        private async void ButtonParallelAsync_Click(object sender, RoutedEventArgs e)
-        {
-            var watch = Stopwatch.StartNew();
+    [Obsolete("Obsolete")]
+    private static async Task<WebsiteDataModel> DownloadWebsiteAsync(string site)
+    {
+        var output = new WebsiteDataModel();
+        WebClient client = new();
 
-            await RunDownloadParallelAsync();
+        output.WebsiteUrl = site;
+        output.WebsiteData = await client.DownloadStringTaskAsync(site);
 
-            watch.Stop();
+        return output;
+    }
 
-            resultsWindow.Text += $"Total execution time:{watch.ElapsedMilliseconds}";
-        }
+    private List<string> PrepData()
+    {
+        var output = new List<string>();
 
-        [Obsolete("Obsolete")]
-        private void RunDownloadSync()
-        {
-            var websites = PrepData();
+        resultsWindow.Text = "";
 
-            foreach (var results in websites.Select(DownloadWebsite))
-            {
-                ReportWebsiteInfo(results);
-            }
-        }
+        output.Add("https://stackoverflow.com/");
+        output.Add("https://www.github.com");
+        output.Add("https://www.linkedin.com");
+        output.Add("https://www.google.com");
+        output.Add("https://www.microsoft.com");
+        output.Add("https://tiko.es");
+        output.Add("https://www.youtube.com");
 
-        [Obsolete("Obsolete")]
-        private async Task RunDownloadAsync()
-        {
-            var websites = PrepData();
-
-            foreach (var site in websites)
-            {
-                var results = await Task.Run(() => DownloadWebsite(site));
-                ReportWebsiteInfo(results);
-            }
-        }
-
-        [Obsolete("Obsolete")]
-        private async Task RunDownloadParallelAsync()
-        {
-            var websites = PrepData();
-
-            var tasks = websites.Select(DownloadWebsiteAsync).ToList();
-
-            var results = await Task.WhenAll(tasks);
-
-            foreach (var item in results) ReportWebsiteInfo(item);
-        }
-
-        private void ReportWebsiteInfo(WebsiteDataModel data)
-        {
-            resultsWindow.Text += $"{data.WebsiteUrl} downloaded: {data.WebsiteData.Length} characters long. {Environment.NewLine}";
-        }
-
-        [Obsolete("Obsolete")]
-        private static WebsiteDataModel DownloadWebsite(string site)
-        {
-            var output = new WebsiteDataModel();
-            WebClient client = new();
-
-            output.WebsiteUrl = site;
-            output.WebsiteData = client.DownloadString(site);
-
-            return output;
-        }
-
-        [Obsolete("Obsolete")]
-        private static async Task<WebsiteDataModel> DownloadWebsiteAsync(string site)
-        {
-            var output = new WebsiteDataModel();
-            WebClient client = new();
-
-            output.WebsiteUrl = site;
-            output.WebsiteData = await client.DownloadStringTaskAsync(site);
-
-            return output;
-        }
-
-        private List<string> PrepData()
-        {
-            var output = new List<string>();
-
-            resultsWindow.Text = "";
-
-            output.Add("https://stackoverflow.com/");
-            output.Add("https://www.github.com");
-            output.Add("https://www.linkedin.com");
-            output.Add("https://www.google.com");
-            output.Add("https://www.microsoft.com");
-            output.Add("https://tiko.es");
-            output.Add("https://www.youtube.com");
-
-            return output;
-        }
+        return output;
     }
 }

@@ -1,5 +1,3 @@
-using Xunit;
-
 namespace MockLib.Test;
 
 public class MockTests

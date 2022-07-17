@@ -1,6 +1,4 @@
-﻿using WorkingWithSqs.Consumer.Messages;
-
-namespace WorkingWithSqs.Consumer.Handlers;
+﻿namespace WorkingWithSqs.Consumer.Handlers;
 
 public class CustomerDeletedHandler : IMessageHandler
 {

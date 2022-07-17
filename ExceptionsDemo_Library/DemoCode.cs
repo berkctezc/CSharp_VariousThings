@@ -1,6 +1,4 @@
-﻿using System;
-
-namespace ExceptionsDemo_Library;
+﻿namespace ExceptionsDemo_Library;
 
 public class DemoCode
 {

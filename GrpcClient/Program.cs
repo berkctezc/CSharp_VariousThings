@@ -1,8 +1,4 @@
-﻿using Grpc.Core;
-using Grpc.Net.Client;
-using GrpcServer;
-
-async Task Demo1(ChannelBase channel)
+﻿async Task Demo1(ChannelBase channel)
 {
     var input = new HelloRequest {Name = "Berkc"};
 

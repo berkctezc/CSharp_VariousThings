@@ -1,7 +1,4 @@
-﻿using Microsoft.AspNetCore.Mvc.RazorPages;
-using Microsoft.Extensions.Logging;
-
-namespace LoggingDemo.Pages;
+﻿namespace LoggingDemo.Pages;
 
 public class PrivacyModel : PageModel
 {

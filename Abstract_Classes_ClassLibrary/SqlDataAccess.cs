@@ -1,6 +1,4 @@
-﻿using System;
-
-namespace Abstract_Classes_ClassLibrary;
+﻿namespace Abstract_Classes_ClassLibrary;
 
 public class SqlDataAccess : DataAccess
 {

@@ -1,9 +1,4 @@
-﻿using Amazon;
-using Amazon.SQS;
-using WorkingWithSqs.Publisher;
-using WorkingWithSqs.Publisher.Messages;
-
-var sqsClient = new AmazonSQSClient(RegionEndpoint.EUCentral1);
+﻿var sqsClient = new AmazonSQSClient(RegionEndpoint.EUCentral1);
 
 var publisher = new SqsPublisher(sqsClient);
 
@@ -15,7 +10,7 @@ await publisher.PublishAsync("customers", new CustomerCreated
 
 await Task.Delay(5000);
 
-await publisher.PublishAsync("customers", new CustomerDeleted()
+await publisher.PublishAsync("customers", new CustomerDeleted
 {
-    Id = 1,
+    Id = 1
 });

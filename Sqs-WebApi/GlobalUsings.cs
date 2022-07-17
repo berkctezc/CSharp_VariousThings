@@ -1,6 +1,4 @@
-﻿// Global using directives
-
-global using System.Text.Json;
+﻿global using System.Text.Json;
 global using Amazon.SQS;
 global using Amazon.SQS.Model;
 global using Microsoft.AspNetCore.Mvc;

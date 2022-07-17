@@ -1,8 +1,4 @@
-﻿using Abstract_Classes_ClassLibrary;
-using System;
-using System.Collections.Generic;
-
-namespace Abstract_Classes_ConsoleUI;
+﻿namespace Abstract_Classes_ConsoleUI;
 
 internal class Program
 {

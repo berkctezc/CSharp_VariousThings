@@ -1,5 +1,4 @@
 ﻿@page "/"
-@using UiForRefit.DataAccess
 @inject IGuestData GuestData
 
 @code
@@ -47,9 +46,9 @@
                 <hr>
             </div>
             <div class="col-md-6">
-                <button class="btn btn-primary" @onclick="(e => AddGuest(item))">Duplicate Guest</button>
-                <button class="btn btn-warning" @onclick="(e => UpdateGuest(item.Id, item))">Update Guest</button>
-                <button class="btn btn-danger" @onclick="(e => DeleteGuest(item.Id))">Delete Guest</button>
+                <button class="btn btn-primary" @onclick="e => AddGuest(item)">Duplicate Guest</button>
+                <button class="btn btn-warning" @onclick="e => UpdateGuest(item.Id, item)">Update Guest</button>
+                <button class="btn btn-danger" @onclick="e => DeleteGuest(item.Id)">Delete Guest</button>
             </div>
         </div>
     }

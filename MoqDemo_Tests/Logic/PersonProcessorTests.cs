@@ -1,13 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using Autofac.Extras.Moq;
-using Moq;
-using MoqDemo_Library.Logic;
-using MoqDemo_Library.Models;
-using MoqDemo_Library.Utilities;
-using Xunit;
-
-namespace MoqDemo_Tests.Logic;
+﻿namespace MoqDemo_Tests.Logic;
 
 public class PersonProcessorTests
 {

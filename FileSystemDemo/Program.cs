@@ -6,10 +6,7 @@ var demoFilesPath = $"{projectPath}/demoFiles";
 Console.WriteLine("_Dirs_");
 
 var dirs = Directory.GetDirectories(demoFilesPath, "*", SearchOption.AllDirectories);
-foreach (var dir in dirs)
-{
-    Console.WriteLine($"=>{dir}");
-}
+foreach (var dir in dirs) Console.WriteLine($"=>{dir}");
 
 FileReading(demoFilesPath);
 
@@ -17,7 +14,7 @@ DirectoryOperations(demoFilesPath);
 
 CopyingFiles(demoFilesPath);
 
-var javaFiles = Directory.GetFiles(demoFilesPath,"*.java",SearchOption.AllDirectories);
+var javaFiles = Directory.GetFiles(demoFilesPath, "*.java", SearchOption.AllDirectories);
 
 foreach (var f in javaFiles)
 {
@@ -48,13 +45,9 @@ void DirectoryOperations(string path)
 
     Directory.Delete(@$"{path}/NewDir");
     if (Directory.Exists(@$"{path}/NewDir"))
-    {
         Console.WriteLine("already exists");
-    }
     else
-    {
         Console.WriteLine(Directory.CreateDirectory(@$"{path}/NewDir"));
-    }
 }
 
 void CopyingFiles(string path)
@@ -69,15 +62,11 @@ void CopyingFiles(string path)
     }
 
     for (var i = 0; i < files.Length; i++)
-    {
-        if (!(File.Exists($"{destination}/{i}.db")))
-        {
+        if (!File.Exists($"{destination}/{i}.db"))
             //throws exception when overwrite is false if file exists
             File.Copy(files[i], $"{destination}/{i}.db", false);
-        }
-    }
 
-// for (var i = 0; i < files.Length; i++)
+    // for (var i = 0; i < files.Length; i++)
 // {
 //     if (!(File.Exists($"{destination}/{i}.db")))
 //     {

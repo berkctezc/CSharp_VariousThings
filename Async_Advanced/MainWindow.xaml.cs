@@ -1,96 +1,89 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Diagnostics;
-using System.Threading;
-using System.Windows;
+﻿namespace Async_Advanced;
 
-namespace Async_Advanced
+public partial class MainWindow : Window
 {
-    public partial class MainWindow : Window
+    private readonly CancellationTokenSource cts = new();
+
+    public MainWindow()
     {
-        private readonly CancellationTokenSource cts = new();
+        InitializeComponent();
+    }
 
-        public MainWindow()
+    [Obsolete("Obsolete")]
+    private void ButtonNormal_Click(object sender, RoutedEventArgs e)
+    {
+        var watch = Stopwatch.StartNew();
+
+        var results = DemoMethods.RunDownloadParallelSync();
+        PrintResults(results);
+
+        watch.Stop();
+        var elapsedMs = watch.ElapsedMilliseconds;
+
+        resultsWindow.Text += $"Total execution time: {elapsedMs}";
+    }
+
+    [Obsolete("Obsolete")]
+    private async void ButtonAsync_Click(object sender, RoutedEventArgs e)
+    {
+        var progress = new Progress<ProgressReportModel>();
+        progress.ProgressChanged += ReportProgress;
+
+        var watch = Stopwatch.StartNew();
+
+        try
         {
-            InitializeComponent();
-        }
-
-        [Obsolete("Obsolete")]
-        private void ButtonNormal_Click(object sender, RoutedEventArgs e)
-        {
-            var watch = Stopwatch.StartNew();
-
-            var results = DemoMethods.RunDownloadParallelSync();
+            var results = await DemoMethods.RunDownloadAsync(progress, cts.Token);
             PrintResults(results);
-
-            watch.Stop();
-            var elapsedMs = watch.ElapsedMilliseconds;
-
-            resultsWindow.Text += $"Total execution time: {elapsedMs}";
         }
-
-        [Obsolete("Obsolete")]
-        private async void ButtonAsync_Click(object sender, RoutedEventArgs e)
+        catch (OperationCanceledException)
         {
-            var progress = new Progress<ProgressReportModel>();
-            progress.ProgressChanged += ReportProgress;
-
-            var watch = Stopwatch.StartNew();
-
-            try
-            {
-                var results = await DemoMethods.RunDownloadAsync(progress, cts.Token);
-                PrintResults(results);
-            }
-            catch (OperationCanceledException)
-            {
-                resultsWindow.Text += $"The async download was cancelled. {Environment.NewLine}";
-            }
-            catch (Exception)
-            {
-                resultsWindow.Text += $"URL is Wrong {Environment.NewLine}";
-            }
-
-            watch.Stop();
-            var elapsedMs = watch.ElapsedMilliseconds;
-
-            resultsWindow.Text += $"Total execution time: {elapsedMs}";
+            resultsWindow.Text += $"The async download was cancelled. {Environment.NewLine}";
         }
-
-        private void ReportProgress(object sender, ProgressReportModel e)
+        catch (Exception)
         {
-            dashboardProgress.Value = e.PercentageComplete;
-            PrintResults(e.SitesDownloaded);
+            resultsWindow.Text += $"URL is Wrong {Environment.NewLine}";
         }
 
-        [Obsolete("Obsolete")]
-        private async void ButtonParallelAsync_Click(object sender, RoutedEventArgs e)
-        {
-            Progress<ProgressReportModel> progress = new();
-            progress.ProgressChanged += ReportProgress;
+        watch.Stop();
+        var elapsedMs = watch.ElapsedMilliseconds;
 
-            var watch = Stopwatch.StartNew();
+        resultsWindow.Text += $"Total execution time: {elapsedMs}";
+    }
 
-            var results = await DemoMethods.RunDownloadParallelAsyncV2(progress);
-            PrintResults(results);
+    private void ReportProgress(object sender, ProgressReportModel e)
+    {
+        dashboardProgress.Value = e.PercentageComplete;
+        PrintResults(e.SitesDownloaded);
+    }
 
-            watch.Stop();
-            var elapsedMs = watch.ElapsedMilliseconds;
+    [Obsolete("Obsolete")]
+    private async void ButtonParallelAsync_Click(object sender, RoutedEventArgs e)
+    {
+        Progress<ProgressReportModel> progress = new();
+        progress.ProgressChanged += ReportProgress;
 
-            resultsWindow.Text += $"Total execution time: {elapsedMs}";
-        }
+        var watch = Stopwatch.StartNew();
 
-        private void ButtonCancel_Click(object sender, RoutedEventArgs e)
-        {
-            cts.Cancel();
-        }
+        var results = await DemoMethods.RunDownloadParallelAsyncV2(progress);
+        PrintResults(results);
 
-        private void PrintResults(List<WebsiteDataModel> results)
-        {
-            resultsWindow.Text = "";
-            foreach (var item in results)
-                resultsWindow.Text +=
-                    $"{item.WebsiteUrl} downloaded: {item.WebsiteData.Length} characters long.{Environment.NewLine}";
-        }
+        watch.Stop();
+        var elapsedMs = watch.ElapsedMilliseconds;
+
+        resultsWindow.Text += $"Total execution time: {elapsedMs}";
+    }
+
+    private void ButtonCancel_Click(object sender, RoutedEventArgs e)
+    {
+        cts.Cancel();
+    }
+
+    private void PrintResults(List<WebsiteDataModel> results)
+    {
+        resultsWindow.Text = "";
+        foreach (var item in results)
+            resultsWindow.Text +=
+                $"{item.WebsiteUrl} downloaded: {item.WebsiteData.Length} characters long.{Environment.NewLine}";
     }
 }

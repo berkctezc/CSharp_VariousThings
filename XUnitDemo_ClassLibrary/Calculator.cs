@@ -21,7 +21,6 @@ public class Calculator
     {
         if (y != 0)
             return x / y;
-        else
-            return 0;
+        return 0;
     }
 }

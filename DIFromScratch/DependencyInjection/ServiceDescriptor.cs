@@ -2,14 +2,6 @@
 
 public class ServiceDescriptor
 {
-    public Type ServiceType { get; }
-
-    public Type? ImplementationType { get; set; }
-
-    public object? Implementation { get; internal set; }
-
-    public ServiceLifeTime LifeTime { get; }
-
     public ServiceDescriptor(object? implementation, ServiceLifeTime lifetime)
     {
         ServiceType = implementation!.GetType();
@@ -29,4 +21,12 @@ public class ServiceDescriptor
         LifeTime = lifetime;
         ImplementationType = implementationType;
     }
+
+    public Type ServiceType { get; }
+
+    public Type? ImplementationType { get; set; }
+
+    public object? Implementation { get; internal set; }
+
+    public ServiceLifeTime LifeTime { get; }
 }

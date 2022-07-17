@@ -1,8 +1,3 @@
-using Amazon;
-using Amazon.SQS;
-using WorkingWithSqs.Consumer;
-using WorkingWithSqs.Consumer.Handlers;
-
 var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddHostedService<SqsConsumerService>();

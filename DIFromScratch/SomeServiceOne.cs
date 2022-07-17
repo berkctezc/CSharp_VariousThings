@@ -2,14 +2,14 @@
 
 public class SomeServiceOne : ISomeService
 {
-    private Guid RandomGuid { get; } = Guid.NewGuid();
-
     private readonly IRandomGuidProvider _randomGuidProvider;
 
     public SomeServiceOne(IRandomGuidProvider randomGuidProvider)
     {
         _randomGuidProvider = randomGuidProvider;
     }
+
+    private Guid RandomGuid { get; } = Guid.NewGuid();
 
     public void PrintGuid()
     {

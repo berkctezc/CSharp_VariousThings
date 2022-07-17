@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Windows.Forms;
-using XUnitDemo_ClassLibrary;
-using XUnitDemo_ClassLibrary.Models;
-
-namespace XUnitDemo_WinFormsUI;
+﻿namespace XUnitDemo_WinFormsUI;
 
 public partial class Dashboard : Form
 {

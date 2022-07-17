@@ -5,12 +5,12 @@
     </PropertyGroup>
 
     <ItemGroup>
-        <PackageReference Include="MediatR.Extensions.Microsoft.DependencyInjection" Version="10.0.1" />
-        <PackageReference Include="Swashbuckle.AspNetCore" Version="6.3.2" />
+        <PackageReference Include="MediatR.Extensions.Microsoft.DependencyInjection" Version="10.0.1"/>
+        <PackageReference Include="Swashbuckle.AspNetCore" Version="6.3.2"/>
     </ItemGroup>
 
     <ItemGroup>
-        <ProjectReference Include="..\MediatRDemo_Library\MediatRDemo_Library.csproj" />
+        <ProjectReference Include="..\MediatRDemo_Library\MediatRDemo_Library.csproj"/>
     </ItemGroup>
 
 </Project>

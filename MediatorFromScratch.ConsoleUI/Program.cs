@@ -1,9 +1,4 @@
-﻿using MediatorFromScratch.ConsoleUI;
-using MediatorFromScratch.DependencyInjection;
-using MediatorFromScratch.Lib;
-using Microsoft.Extensions.DependencyInjection;
-
-var serviceProvider = new ServiceCollection()
+﻿var serviceProvider = new ServiceCollection()
     // .AddTransient<PrintToConsole.Handler>()
     .AddMediator(ServiceLifetime.Scoped, typeof(Program))
     .BuildServiceProvider();

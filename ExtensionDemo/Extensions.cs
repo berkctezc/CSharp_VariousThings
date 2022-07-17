@@ -1,6 +1,4 @@
-﻿using System;
-
-namespace ExtensionDemo;
+﻿namespace ExtensionDemo;
 
 public static class Extensions
 {

@@ -1,13 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using MoqDemo_Library.Logic;
-using MoqDemo_Library.Models;
-
-namespace MoqDemo_ConsoleUI;
+﻿namespace MoqDemo_ConsoleUI;
 
 public class Application : IApplication
 {
-    private IPersonProcessor _personProcessor;
+    private readonly IPersonProcessor _personProcessor;
 
     public Application(IPersonProcessor personProcessor)
     {

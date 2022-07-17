@@ -1,9 +1,4 @@
-﻿using DeskBooker.Core.Domain;
-using System;
-using System.Linq;
-using DeskBooker.Core.DataInterface;
-
-namespace DeskBooker.Core.Processor;
+﻿namespace DeskBooker.Core.Processor;
 
 public class DeskBookingRequestProcessor
 {
@@ -48,7 +43,7 @@ public class DeskBookingRequestProcessor
             FirstName = request.FirstName,
             LastName = request.LastName,
             Email = request.Email,
-            Date = request.Date,
+            Date = request.Date
         };
     }
 }

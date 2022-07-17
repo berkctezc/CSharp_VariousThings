@@ -1,6 +1,4 @@
-﻿using System;
-
-namespace ExtensionDemo;
+﻿namespace ExtensionDemo;
 
 public class SimpleLogger : ISimpleLogger
 {

@@ -1,12 +1,4 @@
-﻿using System.Collections.Generic;
-using System.Threading.Tasks;
-using MediatR;
-using MediatRDemo_Library.Commands;
-using MediatRDemo_Library.Models;
-using MediatRDemo_Library.Queries;
-using Microsoft.AspNetCore.Mvc;
-
-namespace MediatRDemo_Api.Controllers;
+﻿namespace MediatRDemo_Api.Controllers;
 
 [Route("api/[controller]")]
 [ApiController]

@@ -1,6 +1,4 @@
-﻿using System.Text.Json.Serialization;
-
-namespace WorkingWithSqs.Publisher.Messages;
+﻿namespace WorkingWithSqs.Publisher.Messages;
 
 public class CustomerCreated : IMessage
 {
@@ -8,6 +6,5 @@ public class CustomerCreated : IMessage
 
     [JsonPropertyName("fullName")] public string FullName { get; set; } = default!;
 
-    [JsonIgnore] 
-    public string MessageTypeName => nameof(CustomerCreated);
+    [JsonIgnore] public string MessageTypeName => nameof(CustomerCreated);
 }

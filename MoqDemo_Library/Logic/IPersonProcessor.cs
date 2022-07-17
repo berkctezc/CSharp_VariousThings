@@ -1,7 +1,4 @@
-﻿using System.Collections.Generic;
-using MoqDemo_Library.Models;
-
-namespace MoqDemo_Library.Logic;
+﻿namespace MoqDemo_Library.Logic;
 
 public interface IPersonProcessor
 {

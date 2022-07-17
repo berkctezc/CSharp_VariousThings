@@ -1,12 +1,4 @@
-﻿using System.Collections.Generic;
-using System.Threading;
-using System.Threading.Tasks;
-using MediatR;
-using MediatRDemo_Library.DataAccess;
-using MediatRDemo_Library.Models;
-using MediatRDemo_Library.Queries;
-
-namespace MediatRDemo_Library.Handlers;
+﻿namespace MediatRDemo_Library.Handlers;
 
 public class GetPersonListHandler : IRequestHandler<GetPersonListQuery, List<PersonModel>>
 {

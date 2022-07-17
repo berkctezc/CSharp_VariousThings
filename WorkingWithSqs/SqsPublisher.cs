@@ -1,9 +1,4 @@
-﻿using System.Text.Json;
-using Amazon.SQS;
-using Amazon.SQS.Model;
-using WorkingWithSqs.Publisher.Messages;
-
-namespace WorkingWithSqs.Publisher;
+﻿namespace WorkingWithSqs.Publisher;
 
 public class SqsPublisher
 {

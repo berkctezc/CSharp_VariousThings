@@ -1,5 +1,3 @@
-using Amazon.Lambda.Core;
-
 /*
 1 - install aws cli
 2 - install dotnet amazon tools
@@ -20,7 +18,11 @@ dotnet lambda deploy-function LambdaDemo
 */
 
 // Assembly attribute to enable the Lambda function's JSON input to be converted into a .NET class.
-[assembly: LambdaSerializer(typeof(Amazon.Lambda.Serialization.SystemTextJson.DefaultLambdaJsonSerializer))]
+
+using Amazon.Lambda.Serialization.SystemTextJson;
+
+[assembly: LambdaSerializer(typeof(DefaultLambdaJsonSerializer))]
+
 namespace LambdaDemo;
 
 public class Function

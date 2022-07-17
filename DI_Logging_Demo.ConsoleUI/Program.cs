@@ -1,10 +1,5 @@
-﻿using DI_Logging_Demo.ConsoleUI;
-using Microsoft.Extensions.Configuration;
-using Microsoft.Extensions.DependencyInjection;
-using Microsoft.Extensions.Hosting;
-using Serilog;
+﻿// Main
 
-// Main
 var builder = new ConfigurationBuilder();
 BuildConfig(builder);
 
@@ -17,10 +12,7 @@ Log.Logger = new LoggerConfiguration()
 Log.Logger.Information("Application Starting");
 
 var host = Host.CreateDefaultBuilder()
-    .ConfigureServices((_, serviceCollection) =>
-    {
-        serviceCollection.AddTransient<IGreetingService, GreetingService>();
-    })
+    .ConfigureServices((_, serviceCollection) => { serviceCollection.AddTransient<IGreetingService, GreetingService>(); })
     .UseSerilog()
     .Build();
 

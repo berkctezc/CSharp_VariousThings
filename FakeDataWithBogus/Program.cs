@@ -1,8 +1,4 @@
-﻿using System.Text.Json;
-using Bogus;
-using FakeDataWithBogus;
-
-Randomizer.Seed = new Random(420); // seed to generate same data always
+﻿Randomizer.Seed = new Random(420); // seed to generate same data always
 
 var fakerBillingDetails = new Faker<BillingDetails>("es") // optional locale option
     .RuleFor(x => x.CustomerName, x => x.Person.FullName)
@@ -15,10 +11,7 @@ var fakerBillingDetails = new Faker<BillingDetails>("es") // optional locale opt
 
 var generatedBillingDetails = fakerBillingDetails.Generate(10);
 
-foreach (var gbd in generatedBillingDetails)
-{
-    Console.WriteLine($"billing details: {JsonSerializer.Serialize(gbd)} \n");
-}
+foreach (var gbd in generatedBillingDetails) Console.WriteLine($"billing details: {JsonSerializer.Serialize(gbd)} \n");
 
 var fakerOrder = new Faker<Order>()
     .RuleFor(x => x.Id, Guid.NewGuid)
@@ -29,10 +22,7 @@ var fakerOrder = new Faker<Order>()
 
 var generatedOrders = fakerOrder.Generate(10);
 
-foreach (var go in generatedOrders)
-{
-    Console.WriteLine($"order: {JsonSerializer.Serialize(go)} \n");
-}
+foreach (var go in generatedOrders) Console.WriteLine($"order: {JsonSerializer.Serialize(go)} \n");
 
 /************************************/
 Console.WriteLine("Generate Forever");

@@ -1,8 +1,3 @@
-using System;
-using System.Collections.Generic;
-using Xunit;
-using XUnitDemo_ClassLibrary.Models;
-
 namespace XUnitDemo_ClassLibrary.Tests;
 
 public class DataAccessTests

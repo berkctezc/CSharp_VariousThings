@@ -1,7 +1,4 @@
-﻿using System;
-using Xunit;
-
-namespace XUnitDemo_ClassLibrary.Tests;
+﻿namespace XUnitDemo_ClassLibrary.Tests;
 
 public class ExamplesTests
 {

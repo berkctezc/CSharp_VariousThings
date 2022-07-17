@@ -1,6 +1,4 @@
-﻿using System.Data;
-
-namespace CreatingFluentAPIs;
+﻿namespace CreatingFluentAPIs;
 
 public interface IConnectionInitializerStage
 {

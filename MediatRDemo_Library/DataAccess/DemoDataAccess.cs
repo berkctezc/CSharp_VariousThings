@@ -1,8 +1,4 @@
-﻿using System.Collections.Generic;
-using System.Linq;
-using MediatRDemo_Library.Models;
-
-namespace MediatRDemo_Library.DataAccess;
+﻿namespace MediatRDemo_Library.DataAccess;
 
 public class DemoDataAccess : IDataAccess
 {

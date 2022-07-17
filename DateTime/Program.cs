@@ -1,6 +1,4 @@
-﻿using System.Globalization;
-
-var sample1 = DateTime.Now;
+﻿var sample1 = DateTime.Now;
 var sample2 = DateTime.UtcNow;
 
 Console.WriteLine(sample1.ToUniversalTime());

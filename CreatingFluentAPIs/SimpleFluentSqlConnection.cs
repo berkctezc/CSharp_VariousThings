@@ -1,13 +1,11 @@
-﻿using System.Data.SqlClient;
-
-namespace CreatingFluentAPIs;
+﻿namespace CreatingFluentAPIs;
 
 public class SimpleFluentSqlConnection
 {
-    private string? _server;
     private string? _database;
-    private string? _user;
     private string? _password;
+    private string? _server;
+    private string? _user;
 
     public SimpleFluentSqlConnection ForServer(string server)
     {

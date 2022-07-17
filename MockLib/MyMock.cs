@@ -1,6 +1,4 @@
-﻿using System.Linq.Expressions;
-using System.Reflection;
-using System.Text;
+﻿using TypeInfo = System.Reflection.TypeInfo;
 
 namespace MockLib;
 
@@ -9,6 +7,8 @@ public class MyMock<TMockable> where TMockable : class
     private readonly Dictionary<string, Func<object>> _methodInterceptors = new();
     private readonly TypeInfo _type = typeof(TMockable).GetTypeInfo();
 
+    public TMockable Object => (TMockable) Activator.CreateInstance(CreateType(), _methodInterceptors)!;
+
     public MyMock<TMockable> MockMethod<TResult>(Expression<Func<TMockable, TResult>> methodCall, TResult result)
     {
         var method = (MethodCallExpression) methodCall.Body;
@@ -16,8 +16,6 @@ public class MyMock<TMockable> where TMockable : class
         _methodInterceptors[methodName] = () => result!;
         return this;
     }
-
-    public TMockable Object => (TMockable) Activator.CreateInstance(CreateType(), _methodInterceptors)!;
 
     private Type CreateType()
     {
@@ -40,14 +38,11 @@ public class MyMock<TMockable> where TMockable : class
             .ForEach(x => sourceCode.AppendLine($"using {x!};"));
 
         sourceCode.AppendLine($"public class {newTypeName} : {typeFullName} {{");
-        sourceCode.AppendLine($"private readonly Dictionary<string, Func<object>> _methodInterceptors;");
+        sourceCode.AppendLine("private readonly Dictionary<string, Func<object>> _methodInterceptors;");
         sourceCode.AppendLine($"public {newTypeName}(Dictionary<string, Func<object>> methodInterceptors) {{ _methodInterceptors = methodInterceptors; }}");
         sourceCode.AppendLine("public object InterceptMethod(string methodName) { if (!_methodInterceptors.ContainsKey(methodName)) { throw new NotImplementedException(); } return _methodInterceptors[methodName](); }");
 
-        foreach (var mockableMethod in GetMockableMethods())
-        {
-            WriteMethod(mockableMethod, sourceCode);
-        }
+        foreach (var mockableMethod in GetMockableMethods()) WriteMethod(mockableMethod, sourceCode);
 
         sourceCode.AppendLine("}");
 
@@ -71,22 +66,16 @@ public class MyMock<TMockable> where TMockable : class
         var i = 0;
 
         foreach (var parameter in mockableMethod.GetParameters())
-        {
             sourceCode.AppendLine(
-                $"{((i++ > 0) ? "," : string.Empty)}{parameter.ParameterType.Name} {parameter.Name}");
-        }
+                $"{(i++ > 0 ? "," : string.Empty)}{parameter.ParameterType.Name} {parameter.Name}");
 
         sourceCode.AppendLine(") { ");
         sourceCode.AppendLine($"var result = InterceptMethod(\"{methodName}\");");
 
         if (typeCode == TypeCode.Object && returnTypeName != "void")
-        {
             sourceCode.AppendLine($"return result as {returnTypeName};");
-        }
         else
-        {
             sourceCode.AppendLine($"return ({returnTypeName})result;");
-        }
 
         sourceCode.AppendLine("}");
     }

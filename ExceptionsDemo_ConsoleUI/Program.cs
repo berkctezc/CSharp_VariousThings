@@ -1,7 +1,4 @@
-﻿using System;
-using ExceptionsDemo_Library;
-
-namespace ExceptionsDemo_ConsoleUI;
+﻿namespace ExceptionsDemo_ConsoleUI;
 
 internal static class Program
 {

@@ -1,5 +1,3 @@
-using Xunit;
-
 namespace XUnitDemo_ClassLibrary.Tests;
 
 public class CalculatorTests

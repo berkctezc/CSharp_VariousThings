@@ -1,10 +1,4 @@
-﻿using System.Globalization;
-using Humanizer;
-using Humanizer.Inflections;
-using Humanizer.Localisation;
-using HumanizerDemo;
-
-var turkishCulture = new CultureInfo("tr-TR");
+﻿var turkishCulture = new CultureInfo("tr-TR");
 
 Vocabularies.Default.AddPlural("boost", "boosters");
 
@@ -60,7 +54,4 @@ var strings = new Func<string>[]
     () => "---"
 };
 
-foreach (var textFunc in strings)
-{
-    Console.WriteLine(textFunc());
-}
+foreach (var textFunc in strings) Console.WriteLine(textFunc());

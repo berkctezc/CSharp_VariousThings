@@ -1,8 +1,3 @@
-using System.Net;
-using System.Text.Json;
-using Amazon.Lambda.Core;
-using Amazon.Lambda.APIGatewayEvents;
-
 /*
  * Created Empty Serverless Lambda
  * setup aws-lambda-tools-defaults.json config
@@ -14,14 +9,15 @@ using Amazon.Lambda.APIGatewayEvents;
  */
 
 // Assembly attribute to enable the Lambda function's JSON input to be converted into a .NET class.
-[assembly: LambdaSerializer(typeof(Amazon.Lambda.Serialization.SystemTextJson.DefaultLambdaJsonSerializer))]
+
+[assembly: LambdaSerializer(typeof(DefaultLambdaJsonSerializer))]
 
 namespace Lambda.SimpleApi;
 
 public class Functions
 {
     /// <summary>
-    /// Default constructor that Lambda will invoke.
+    ///     Default constructor that Lambda will invoke.
     /// </summary>
     public Functions()
     {
@@ -29,7 +25,7 @@ public class Functions
 
 
     /// <summary>
-    /// A Lambda function to respond to HTTP Get methods from API Gateway
+    ///     A Lambda function to respond to HTTP Get methods from API Gateway
     /// </summary>
     /// <param name="request"></param>
     /// <returns>The API Gateway response.</returns>

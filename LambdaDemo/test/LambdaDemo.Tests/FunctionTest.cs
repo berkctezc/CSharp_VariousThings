@@ -1,12 +1,9 @@
-using Xunit;
-using Amazon.Lambda.TestUtilities;
-
 namespace LambdaDemo.Tests;
 
 public class FunctionTest
 {
-    private readonly Function _function;
     private readonly TestLambdaContext _context;
+    private readonly Function _function;
 
     public FunctionTest()
     {

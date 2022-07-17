@@ -1,8 +1,4 @@
-﻿using System;
-using CliWrap;
-using CliWrap.Buffered;
-
-var dockerResults = await Cli.Wrap("docker")
+﻿var dockerResults = await Cli.Wrap("docker")
     .WithArguments(new[] {"--version"})
     .ExecuteBufferedAsync();
 

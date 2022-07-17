@@ -4,7 +4,7 @@ public class Calculator
 {
     private CalculatorState _state = CalculatorState.Cleared;
 
-    public decimal Value { get; private set; } = 0;
+    public decimal Value { get; private set; }
 
     public decimal Add(decimal value)
     {

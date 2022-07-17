@@ -1,6 +1,4 @@
-﻿using Refit;
-
-namespace UiForRefit.DataAccess;
+﻿namespace UiForRefit.DataAccess;
 
 public interface IWeatherData
 {

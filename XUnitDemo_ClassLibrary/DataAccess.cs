@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.IO;
-using XUnitDemo_ClassLibrary.Models;
-
-namespace XUnitDemo_ClassLibrary;
+﻿namespace XUnitDemo_ClassLibrary;
 
 public static class DataAccess
 {

@@ -2,13 +2,13 @@
 
 public class DiServiceCollection
 {
-    private List<ServiceDescriptor> _serviceDescriptors = new();
+    private readonly List<ServiceDescriptor> _serviceDescriptors = new();
 
     public void RegisterSingleton<TService>(TService? implementation)
     {
         _serviceDescriptors.Add(new ServiceDescriptor(implementation, ServiceLifeTime.Singleton));
     }
-    
+
     public void RegisterSingleton<TService, TImplementation>()
         where TImplementation : TService
     {

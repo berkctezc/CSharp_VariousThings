@@ -1,8 +1,7 @@
-﻿namespace Async_Programming
+﻿namespace Async_Programming;
+
+internal class WebsiteDataModel
 {
-    internal class WebsiteDataModel
-    {
-        public string WebsiteUrl { get; set; } = "";
-        public string WebsiteData { get; set; } = "";
-    }
+    public string WebsiteUrl { get; set; } = "";
+    public string WebsiteData { get; set; } = "";
 }

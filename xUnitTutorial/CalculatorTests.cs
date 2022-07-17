@@ -1,8 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using Xunit;
-
-namespace xUnitTutorial;
+﻿namespace xUnitTutorial;
 
 public class CalculatorTests
 {

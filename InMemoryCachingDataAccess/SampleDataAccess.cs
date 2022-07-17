@@ -1,6 +1,4 @@
-﻿using Microsoft.Extensions.Caching.Memory;
-
-namespace InMemoryCachingDataAccess;
+﻿namespace InMemoryCachingDataAccess;
 
 public class SampleDataAccess
 {

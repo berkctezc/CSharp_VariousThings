@@ -6,11 +6,11 @@
     </PropertyGroup>
 
     <ItemGroup>
-      <ProjectReference Include="..\Autofac_ClassLibrary\Autofac_ClassLibrary.csproj" />
+        <ProjectReference Include="..\Autofac_ClassLibrary\Autofac_ClassLibrary.csproj"/>
     </ItemGroup>
 
     <ItemGroup>
-      <PackageReference Include="Autofac" Version="6.4.0" />
+        <PackageReference Include="Autofac" Version="6.4.0"/>
     </ItemGroup>
 
 </Project>

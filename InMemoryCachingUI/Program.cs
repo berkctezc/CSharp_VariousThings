@@ -1,6 +1,3 @@
-using In_Memory_Caching.Data;
-using InMemoryCachingDataAccess;
-
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.

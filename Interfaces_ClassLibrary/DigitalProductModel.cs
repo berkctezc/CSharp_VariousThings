@@ -1,6 +1,4 @@
-﻿using System;
-
-namespace Interfaces_ClassLibrary;
+﻿namespace Interfaces_ClassLibrary;
 
 public class DigitalProductModel : IDigitalProductModel
 {

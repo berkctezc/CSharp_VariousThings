@@ -1,7 +1,4 @@
-﻿using DIFromScratch;
-using DIFromScratch.DependencyInjection;
-
-var services = new DiServiceCollection();
+﻿var services = new DiServiceCollection();
 
 // services.RegisterSingleton(new GetUnixTime());
 // services.RegisterSingleton<GetUnixTime>();

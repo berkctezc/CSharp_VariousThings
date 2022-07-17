@@ -1,9 +1,6 @@
 ﻿@page "/fetchdata"
-
-@using RedisDemo.Data
-@using RedisDemo.Extensions
 @inject WeatherForecastService ForecastService
-@inject Microsoft.Extensions.Caching.Distributed.IDistributedCache cache
+@inject IDistributedCache cache
 
 <h1>Weather forecast</h1>
 

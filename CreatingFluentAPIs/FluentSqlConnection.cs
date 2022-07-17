@@ -1,7 +1,4 @@
-﻿using System.Data;
-using System.Data.SqlClient;
-
-namespace CreatingFluentAPIs;
+﻿namespace CreatingFluentAPIs;
 
 public class FluentSqlConnection
     : IServerSelectionStage,
@@ -10,38 +7,25 @@ public class FluentSqlConnection
         IPasswordSelectionStage,
         IConnectionInitializerStage
 {
-    private string? _server;
     private string? _database;
-    private string? _user;
     private string? _password;
+    private string? _server;
+    private string? _user;
 
     private FluentSqlConnection()
     {
     }
 
-
-    public static IServerSelectionStage CreateConnection(Action<ConnectionConfiguration> config)
+    public IDbConnection Connect()
     {
-        var configuration = new ConnectionConfiguration();
-        config?.Invoke(configuration);
-        return new FluentSqlConnection();
-    }
-
-    public IDatabaseSelectionStage ForServer(string? server)
-    {
-        _server = server;
-        return this;
+        var conn = new SqlConnection($"Server={_server};Database={_database};User Id={_user};Password={_password}");
+        conn.Open();
+        return conn;
     }
 
     public IUserSelectionStage AndDatabase(string? database)
     {
         _database = database;
-        return this;
-    }
-
-    public IPasswordSelectionStage AsUser(string? user)
-    {
-        _user = user;
         return this;
     }
 
@@ -51,10 +35,23 @@ public class FluentSqlConnection
         return this;
     }
 
-    public IDbConnection Connect()
+    public IDatabaseSelectionStage ForServer(string? server)
     {
-        var conn = new SqlConnection($"Server={_server};Database={_database};User Id={_user};Password={_password}");
-        conn.Open();
-        return conn;
+        _server = server;
+        return this;
+    }
+
+    public IPasswordSelectionStage AsUser(string? user)
+    {
+        _user = user;
+        return this;
+    }
+
+
+    public static IServerSelectionStage CreateConnection(Action<ConnectionConfiguration> config)
+    {
+        var configuration = new ConnectionConfiguration();
+        config?.Invoke(configuration);
+        return new FluentSqlConnection();
     }
 }

@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using MoqDemo_Library.Models;
-using MoqDemo_Library.Utilities;
-
-namespace MoqDemo_Library.Logic;
+﻿namespace MoqDemo_Library.Logic;
 
 public class PersonProcessor : IPersonProcessor
 {
@@ -18,19 +13,19 @@ public class PersonProcessor : IPersonProcessor
     {
         PersonModel output = new();
 
-        if (ValidateName(firstName) == true)
+        if (ValidateName(firstName))
             output.FirstName = firstName;
         else
             throw new ArgumentException("The value was not valid", nameof(firstName));
 
-        if (ValidateName(lastName) == true)
+        if (ValidateName(lastName))
             output.LastName = lastName;
         else
             throw new ArgumentException("The value was not valid", nameof(lastName));
 
         var height = ConvertHeightTextToInches(heightText);
 
-        if (height.isValid == true)
+        if (height.isValid)
             output.HeightInInches = height.heightInInches;
         else
             throw new ArgumentException("The value was not valid", "heightText");

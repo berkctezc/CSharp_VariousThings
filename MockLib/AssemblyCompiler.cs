@@ -1,8 +1,4 @@
-﻿using System.Reflection;
-using Microsoft.CodeAnalysis;
-using Microsoft.CodeAnalysis.CSharp;
-
-namespace MockLib;
+﻿namespace MockLib;
 
 internal class AssemblyCompiler
 {
@@ -33,10 +29,7 @@ internal class AssemblyCompiler
         var ms = new MemoryStream();
         var result = compilation.Emit(ms);
 
-        if (!result.Success)
-        {
-            throw new Exception("Compilation failed");
-        }
+        if (!result.Success) throw new Exception("Compilation failed");
 
         return Assembly.Load(ms.ToArray());
     }

@@ -1,5 +1,3 @@
-using GrpcServer.Services;
-
 var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddGrpc();
 

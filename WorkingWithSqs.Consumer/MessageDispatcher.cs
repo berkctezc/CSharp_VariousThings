@@ -1,14 +1,7 @@
-﻿using System.Reflection;
-using WorkingWithSqs.Consumer.Handlers;
-using WorkingWithSqs.Consumer.Messages;
-
-namespace WorkingWithSqs.Consumer;
+﻿namespace WorkingWithSqs.Consumer;
 
 public class MessageDispatcher
 {
-    private readonly IServiceScopeFactory _scopeFactory;
-
-    private readonly Dictionary<string, Type> _messageMappings;
     //     = new()
     // {
     //     {nameof(CustomerCreated), typeof(CustomerCreated)},
@@ -16,6 +9,10 @@ public class MessageDispatcher
     // };
 
     private readonly Dictionary<string, Func<IServiceProvider, IMessageHandler>> _handlers;
+
+    private readonly Dictionary<string, Type> _messageMappings;
+
+    private readonly IServiceScopeFactory _scopeFactory;
     //     = new()
     // {
     //     {nameof(CustomerCreated), p => p.GetRequiredService<CustomerCreatedHandler>()},

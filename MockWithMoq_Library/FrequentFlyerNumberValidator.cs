@@ -1,10 +1,5 @@
-﻿using System;
+﻿namespace MockWithMoq_Library;
 
-namespace MockWithMoq_Library;
-
-/// <summary>
-/// Mock this
-/// </summary>
 public class FrequentFlyerNumberValidator : IFrequentFlyerNumberValidator
 {
     public bool IsValid(string frequentFlyerNumber)

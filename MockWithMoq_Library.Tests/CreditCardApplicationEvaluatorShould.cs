@@ -1,6 +1,3 @@
-using Moq;
-using Xunit;
-
 namespace MockWithMoq_Library.Tests;
 
 public class CreditCardApplicationEvaluatorShould

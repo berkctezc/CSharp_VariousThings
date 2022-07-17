@@ -5,14 +5,14 @@ var recs = new List<Record1>
 {
     new("Stanley", "Kubrick"),
     new("Stanley", "Kubrick"),
-    new("Orson", "Welles"),
+    new("Orson", "Welles")
 };
 
 var classes = new List<Class1>
 {
     new("Stanley", "Kubrick"),
     new("Stanley", "Kubrick"),
-    new("Orson", "Welles"),
+    new("Orson", "Welles")
 };
 
 var (fn, ln) = recs[0];

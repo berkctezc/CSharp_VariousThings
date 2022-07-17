@@ -1,0 +1,10 @@
+﻿global using System.Net;
+global using System.Reflection;
+global using System.Text.Json;
+global using System.Text.Json.Serialization;
+global using Amazon;
+global using Amazon.SQS;
+global using Amazon.SQS.Model;
+global using WorkingWithSqs.Consumer;
+global using WorkingWithSqs.Consumer.Handlers;
+global using WorkingWithSqs.Consumer.Messages;

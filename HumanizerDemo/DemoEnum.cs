@@ -1,6 +1,4 @@
-﻿using System.ComponentModel;
-
-namespace HumanizerDemo;
+﻿namespace HumanizerDemo;
 
 public enum DemoEnum
 {

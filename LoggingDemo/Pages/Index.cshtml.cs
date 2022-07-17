@@ -1,24 +1,16 @@
-﻿using Microsoft.AspNetCore.Mvc.RazorPages;
-using Microsoft.Extensions.Logging;
-using System;
-
-namespace LoggingDemo.Pages;
+﻿namespace LoggingDemo.Pages;
 
 public class IndexModel : PageModel
 {
     private readonly ILogger _logger;
 
-    // public IndexModel(ILogger<IndexModel> logger)
-    // {
-    //     _logger = logger;
-    // }
     public IndexModel(ILoggerFactory factory)
     {
         _logger = factory.CreateLogger("CustomCategory");
     }
 
+    // When index page loads
     public void OnGet()
-        // When index page loads
     {
         _logger.LogTrace("TRACE.");
         _logger.LogDebug("DEBUG.");

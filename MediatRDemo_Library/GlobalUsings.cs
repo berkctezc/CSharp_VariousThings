@@ -1,0 +1,9 @@
+﻿global using System.Collections.Generic;
+global using System.Linq;
+global using System.Threading;
+global using System.Threading.Tasks;
+global using MediatR;
+global using MediatRDemo_Library.Commands;
+global using MediatRDemo_Library.DataAccess;
+global using MediatRDemo_Library.Models;
+global using MediatRDemo_Library.Queries;

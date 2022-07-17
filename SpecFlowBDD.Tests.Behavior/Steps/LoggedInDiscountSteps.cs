@@ -1,15 +1,11 @@
-﻿using FluentAssertions;
-using SpecFlowBDD.Services;
-using TechTalk.SpecFlow;
-
-namespace SpecFlowBDD.Tests.Behavior.Steps;
+﻿namespace SpecFlowBDD.Tests.Behavior.Steps;
 
 [Binding]
 public class LoggedInDiscountSteps
 {
-    private User? _user;
-    private Basket _basket = new ();
     private readonly IPricingService _pricingService = new PricingService();
+    private Basket _basket = new();
+    private User? _user;
 
     [Given(@"a user that is not logged in")]
     public void GivenAUserThatIsNotLoggedIn()

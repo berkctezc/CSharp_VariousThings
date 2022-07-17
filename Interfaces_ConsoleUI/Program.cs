@@ -1,8 +1,4 @@
-﻿using Interfaces_ClassLibrary;
-using System;
-using System.Collections.Generic;
-
-namespace Interfaces_ConsoleUI;
+﻿namespace Interfaces_ConsoleUI;
 
 internal class Program
 {

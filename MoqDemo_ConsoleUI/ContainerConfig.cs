@@ -1,8 +1,4 @@
-﻿using Autofac;
-using MoqDemo_Library.Logic;
-using MoqDemo_Library.Utilities;
-
-namespace MoqDemo_ConsoleUI;
+﻿namespace MoqDemo_ConsoleUI;
 
 public static class ContainerConfig
 {

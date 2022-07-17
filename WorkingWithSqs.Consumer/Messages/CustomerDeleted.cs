@@ -1,6 +1,4 @@
-﻿using System.Text.Json.Serialization;
-
-namespace WorkingWithSqs.Consumer.Messages;
+﻿namespace WorkingWithSqs.Consumer.Messages;
 
 public class CustomerDeleted : IMessage
 {

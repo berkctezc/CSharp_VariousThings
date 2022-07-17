@@ -1,13 +1,11 @@
-﻿using System;
-using System.Diagnostics;
-using System.Globalization;
-using System.Text;
+﻿namespace String_Manipulation;
 
-namespace String_Manipulation;
-
-class Program
+internal static class Program
 {
-    static void Main(string[] args)
+    //  variables
+    public static string seperator = "===========";
+
+    private static void Main(string[] args)
     {
         Console.WriteLine("START POINT");
         StringConversion();
@@ -45,10 +43,7 @@ class Program
         // array operations can be done on strings
         var testString = "Berkcan";
 
-        for (var i = 0; i < testString.Length; i++)
-        {
-            Console.WriteLine(testString[i]);
-        }
+        for (var i = 0; i < testString.Length; i++) Console.WriteLine(testString[i]);
 
         Console.WriteLine(seperator);
     }
@@ -103,10 +98,7 @@ class Program
 
         var test = "";
 
-        for (var i = 0; i < iterations; i++)
-        {
-            test += i;
-        }
+        for (var i = 0; i < iterations; i++) test += i;
         regularStopwatch.Stop();
 
 
@@ -115,10 +107,7 @@ class Program
 
         StringBuilder sb = new();
 
-        for (var i = 0; i < iterations; i++)
-        {
-            sb.Append(i);
-        }
+        for (var i = 0; i < iterations; i++) sb.Append(i);
         builderStopwatch.Stop();
 
         Console.WriteLine($"Regular Stopwatch: {regularStopwatch.ElapsedMilliseconds}ms");
@@ -129,13 +118,13 @@ class Program
 
     private static void WorkingWithArrays()
     {
-        var ages = new int[] { 6, 7, 8, 3, 5 };
+        var ages = new[] {6, 7, 8, 3, 5};
         string results;
 
-        results = String.Concat(ages);
+        results = string.Concat(ages);
         Console.WriteLine(results);
 
-        results = String.Join(",", ages);
+        results = string.Join(",", ages);
         Console.WriteLine(results);
 
         var testString = "Ali,Veli,Ayşe,Fatma";
@@ -252,7 +241,7 @@ class Program
 
     private static void CompareHelper(string? testA, string? testB)
     {
-        var resultsInt = String.Compare(testA, testB);
+        var resultsInt = string.Compare(testA, testB);
         switch (resultsInt)
         {
             case > 0:
@@ -265,7 +254,6 @@ class Program
                 Console.WriteLine($"Compare: {testA ?? "null"} is the same as {testB ?? "null"}");
                 break;
         }
-
     }
 
     private static void TestingEquality()
@@ -282,33 +270,21 @@ class Program
 
         resultsBoolean = string.Equals(testA, testB);
         if (resultsBoolean)
-        {
             Console.WriteLine($"Equals: '{testA ?? "null"}' equals '{testB ?? "null"}'");
-        }
         else
-        {
             Console.WriteLine($"Equals: '{testA ?? "null"}' does not equal '{testB ?? "null"}'");
-        }
 
         resultsBoolean = string.Equals(testA, testB, StringComparison.InvariantCultureIgnoreCase);
         if (resultsBoolean)
-        {
             Console.WriteLine($"Equals (ignore case): '{testA ?? "null"}' equals '{testB ?? "null"}'");
-        }
         else
-        {
             Console.WriteLine($"Equals (ignore case): '{testA ?? "null"}' does not equal '{testB ?? "null"}'");
-        }
 
         resultsBoolean = testA == testB;
         if (resultsBoolean)
-        {
             Console.WriteLine($"==: '{testA ?? "null"}' equals '{testB ?? "null"}'");
-        }
         else
-        {
             Console.WriteLine($"==: '{testA ?? "null"}' does not equal '{testB ?? "null"}'");
-        }
         Console.WriteLine("---");
     }
 
@@ -320,7 +296,7 @@ class Program
         results = testString.Substring(5); // start from 5 to end
         Console.WriteLine(results);
 
-        results = testString.Substring(5, 4);  // start from 5 , go 4 characters
+        results = testString.Substring(5, 4); // start from 5 , go 4 characters
         Console.WriteLine(results);
 
 
@@ -361,11 +337,7 @@ class Program
         results = testString.Remove(25);
         Console.WriteLine(results);
 
-        results = testString.Remove(14,10);
+        results = testString.Remove(14, 10);
         Console.WriteLine(results);
     }
-
-
-    //  variables
-    public static string seperator = "===========";
 }

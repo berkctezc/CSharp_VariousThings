@@ -2,8 +2,9 @@
 
 public class BusinessLogic : IBusinessLogic
 {
-    private readonly ILogger _logger;
     private readonly IDataAccess _dataAccess;
+    private readonly ILogger _logger;
+
     public BusinessLogic(ILogger logger, IDataAccess dataAccess)
     {
         _logger = logger;

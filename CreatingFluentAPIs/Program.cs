@@ -1,6 +1,4 @@
-﻿using CreatingFluentAPIs;
-
-var connection1 = new SimpleFluentSqlConnection()
+﻿var connection1 = new SimpleFluentSqlConnection()
     .ForServer("localhost")
     .AndDatabase("localDb")
     .AsUser("postgres")
@@ -14,4 +12,3 @@ var connection2 = FluentSqlConnection
     .AsUser("postgres")
     .WithPassword("postgres")
     .Connect();
-

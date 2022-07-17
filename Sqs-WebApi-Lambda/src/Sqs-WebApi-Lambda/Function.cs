@@ -1,9 +1,13 @@
-[assembly: LambdaSerializer(typeof(Amazon.Lambda.Serialization.SystemTextJson.DefaultLambdaJsonSerializer))]
+using Amazon.Lambda.Serialization.SystemTextJson;
+
+[assembly: LambdaSerializer(typeof(DefaultLambdaJsonSerializer))]
 
 namespace Sqs_WebApi_Lambda;
 
 public class Function
 {
-    public static async Task FunctionHandler(SQSEvent @event, ILambdaContext context) => 
-        @event.Records.ForEach(e => context.Logger.LogLine($"Processed {e.Body.ToString()}"));
+    public static async Task FunctionHandler(SQSEvent @event, ILambdaContext context)
+    {
+        await Task.Run(() => @event.Records.ForEach(e => context.Logger.LogLine($"Processed {e.Body.ToString()}")));
+    }
 }

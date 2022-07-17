@@ -1,7 +1,4 @@
-﻿using Xunit;
-using Xunit.Abstractions;
-
-namespace xUnitTutorial;
+﻿namespace xUnitTutorial;
 
 [Collection("Guid generator")]
 public class GuidGeneratorTestsOne

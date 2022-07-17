@@ -1,8 +1,4 @@
-﻿using ApiForRefit.Models;
-using Bogus;
-using Microsoft.AspNetCore.Mvc;
-
-namespace ApiForRefit.Controllers;
+﻿namespace ApiForRefit.Controllers;
 
 [Route("api/[controller]")]
 [ApiController]

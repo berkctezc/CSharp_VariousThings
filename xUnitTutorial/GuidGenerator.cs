@@ -1,6 +1,4 @@
-﻿using System;
-
-namespace xUnitTutorial;
+﻿namespace xUnitTutorial;
 
 public class GuidGenerator
 {

@@ -1,9 +1,4 @@
-﻿using System.Reflection;
-using MediatorFromScratch.Lib;
-using Microsoft.Extensions.DependencyInjection;
-using Microsoft.Extensions.DependencyInjection.Extensions;
-
-namespace MediatorFromScratch.DependencyInjection;
+﻿namespace MediatorFromScratch.DependencyInjection;
 
 public static class ServiceCollectionExtensions
 {

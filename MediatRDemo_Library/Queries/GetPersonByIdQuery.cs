@@ -1,7 +1,4 @@
-﻿using MediatR;
-using MediatRDemo_Library.Models;
-
-namespace MediatRDemo_Library.Queries;
+﻿namespace MediatRDemo_Library.Queries;
 
 public record GetPersonByIdQuery(int Id) : IRequest<PersonModel>;
 
