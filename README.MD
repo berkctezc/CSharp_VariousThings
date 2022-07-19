@@ -40,6 +40,7 @@ advanced stuff.
 |       AWS Lambda Intro       |     Lambda      |   https://youtu.be/GZ8_anxgpK8    |                 LambdaDemo ...                 |                    None                    |
 |        AWS SQS Intro         |  ClassLib, API  |   https://youtu.be/7OfUi3h-wmM    |               WorkingWithSqs ...               |                 AWSSDK.SQS                 |
 |        AWS SQS PSight        |   Lambda, API   |  ps: message-queuing-amazon-sqs   |                 Sqs-WebApi ...                 |                 AWSSDK...                  |
+|        AWS S3 PSight         |  ClassLib, API  |   ps: aws-dotnet-core-using-s3    |               S3-LifeBackup ...                |               AWSSDK.S3 ...                |
 |   Rest API with AWS Lambda   |     Lambda      |   https://youtu.be/rImaNyfKhZk    |            Lambda.Simple,MinimalApi            |                    None                    |
 |          Autofac DI          |     Console     |   https://youtu.be/mCUNrRtVVWY    |                  Autofac ...                   |                  Autofac                   |
 |       DI From Scratch        |     Console     |   https://youtu.be/NSVZa4JuTl8    |                 DIFromScratch                  |                    None                    |
