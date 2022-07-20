@@ -10,11 +10,15 @@
 
     <ItemGroup>
         <PackageReference Include="AWSSDK.Extensions.NETCore.Setup" Version="3.7.2" />
-        <PackageReference Include="AWSSDK.S3" Version="3.7.9.25" />
-        <PackageReference Include="Newtonsoft.Json" Version="9.0.1" />
-        <PackageReference Include="Swashbuckle.AspNetCore" Version="6.2.3" />
+        <PackageReference Include="AWSSDK.S3" Version="3.7.9.26" />
+        <PackageReference Include="Newtonsoft.Json" Version="13.0.1" />
+        <PackageReference Include="Swashbuckle.AspNetCore" Version="6.3.1" />
     </ItemGroup>
 
+    <ItemGroup>
+        <InternalsVisibleTo Include="MinimalApiPlayground.Tests" />
+    </ItemGroup>
+    
     <ItemGroup>
       <ProjectReference Include="..\S3-LifeBackup.Core\S3-LifeBackup.Core.csproj" />
       <ProjectReference Include="..\S3-LifeBackup.Infrastructure\S3-LifeBackup.Infrastructure.csproj" />

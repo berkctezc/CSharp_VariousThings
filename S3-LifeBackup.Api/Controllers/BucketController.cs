@@ -1,7 +1,4 @@
-﻿using S3_LifeBackup.Core.Communication.Bucket;
-using S3_LifeBackup.Core.Files;
-
-namespace S3_LifeBackup.Api.Controllers;
+﻿namespace S3_LifeBackup.Api.Controllers;
 
 [ApiController]
 [Route("[controller]")]

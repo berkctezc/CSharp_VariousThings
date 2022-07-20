@@ -1,6 +1,3 @@
-using S3_LifeBackup.Core.Files;
-using S3_LifeBackup.Infrastructure.Repositories;
-
 var builder = WebApplication.CreateBuilder(args);
 var configuration = builder.Configuration;
 

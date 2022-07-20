@@ -1,0 +1,11 @@
+﻿global using System.Net;
+global using System.Net.Http.Json;
+global using Amazon.Extensions.NETCore.Setup;
+global using Amazon.Runtime;
+global using Amazon.S3;
+global using Microsoft.AspNetCore.Mvc.Testing;
+global using Microsoft.AspNetCore.TestHost;
+global using Microsoft.Extensions.DependencyInjection;
+global using Newtonsoft.Json;
+global using S3_LifeBackup.Core.Interfaces;
+global using Xunit;
