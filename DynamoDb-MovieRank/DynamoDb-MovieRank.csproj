@@ -4,11 +4,8 @@
         <TargetFramework>net6.0</TargetFramework>
         <Nullable>enable</Nullable>
         <ImplicitUsings>enable</ImplicitUsings>
-        <EnablePreviewFeatures>True</EnablePreviewFeatures>
+        <RootNamespace>DynamoDb_MovieRank</RootNamespace>
+        <DockerDefaultTargetOS>Linux</DockerDefaultTargetOS>
     </PropertyGroup>
-
-    <ItemGroup>
-        <PackageReference Include="AWSSDK.SQS" Version="3.7.2.79" />
-    </ItemGroup>
 
 </Project>
