@@ -4,7 +4,7 @@ var services = builder.Services;
 services.AddControllers();
 services.AddAWSService<IAmazonDynamoDB>();
 services.AddDefaultAWSOptions(
-    new AWSOptions()
+    new AWSOptions
     {
         Region = RegionEndpoint.EUCentral1
     });

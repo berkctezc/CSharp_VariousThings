@@ -50,7 +50,7 @@ public class FilesRepository : IFilesRepository
     {
         var responses = await _s3Client.ListObjectsAsync(bucketName);
 
-        return responses.S3Objects.Select(b => new ListFilesResponse()
+        return responses.S3Objects.Select(b => new ListFilesResponse
         {
             BucketName = b.BucketName,
             Key = b.Key,
@@ -61,7 +61,7 @@ public class FilesRepository : IFilesRepository
 
     public async Task DownloadFile(string bucketName, string fileName)
     {
-        var downloadRequest = new TransferUtilityDownloadRequest()
+        var downloadRequest = new TransferUtilityDownloadRequest
         {
             BucketName = bucketName,
             Key = fileName,
@@ -95,7 +95,7 @@ public class FilesRepository : IFilesRepository
 
         var s3Key = $"{createdOnUtc:yyyy}/{createdOnUtc:MM}/{createdOnUtc:dd}/{request.Id}";
 
-        var putObjectRequest = new PutObjectRequest()
+        var putObjectRequest = new PutObjectRequest
         {
             BucketName = bucketName,
             Key = s3Key,
@@ -107,7 +107,7 @@ public class FilesRepository : IFilesRepository
 
     public async Task<GetJsonObjectResponse> GetJsonObject(string bucketName, string fileName)
     {
-        var request = new GetObjectRequest()
+        var request = new GetObjectRequest
         {
             BucketName = bucketName,
             Key = fileName

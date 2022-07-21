@@ -16,10 +16,7 @@ public class BucketController : ControllerBase
     {
         var bucketExists = await _bucketRepository.DoesS3BucketExists(bucketName);
 
-        if (bucketExists)
-        {
-            return BadRequest("S3 bucket already exists");
-        }
+        if (bucketExists) return BadRequest("S3 bucket already exists");
 
         var result = await _bucketRepository.CreateBucket(bucketName);
 
@@ -34,10 +31,7 @@ public class BucketController : ControllerBase
     {
         var result = await _bucketRepository.ListBuckets();
 
-        if (result is null)
-        {
-            return NotFound();
-        }
+        if (result is null) return NotFound();
 
         return Ok(result);
     }

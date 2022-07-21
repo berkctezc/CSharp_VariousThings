@@ -42,5 +42,8 @@ public class BucketRepository : IBucketRepository
         });
     }
 
-    public async Task DeleteBucket(string bucketName) => await _s3Client.DeleteBucketAsync(bucketName);
+    public async Task DeleteBucket(string bucketName)
+    {
+        await _s3Client.DeleteBucketAsync(bucketName);
+    }
 }

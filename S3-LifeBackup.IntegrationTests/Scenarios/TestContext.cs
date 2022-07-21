@@ -6,8 +6,8 @@ namespace S3_LifeBackup.IntegrationTests.Scenarios;
 
 public class TestContext : IAsyncLifetime
 {
-    private readonly DockerClient _dockerClient;
     private const string ContainerImageUri = "localstack/localstack";
+    private readonly DockerClient _dockerClient;
     private string _containerId;
 
     public TestContext()
@@ -20,6 +20,11 @@ public class TestContext : IAsyncLifetime
         await PullImage();
 
         await StartContainer();
+    }
+
+    public async Task DisposeAsync()
+    {
+        if (_containerId != null) await _dockerClient.Containers.KillContainerAsync(_containerId, new ContainerKillParameters());
     }
 
     private async Task PullImage()
@@ -49,10 +54,10 @@ public class TestContext : IAsyncLifetime
             {
                 PortBindings = new Dictionary<string, IList<PortBinding>>
                 {
-                    {"9003", new List<PortBinding> {new PortBinding { HostPort = "9003"}}}
+                    {"9003", new List<PortBinding> {new() {HostPort = "9003"}}}
                 }
             },
-            Env = new List<string> { "SERVICES=s3:9003"}
+            Env = new List<string> {"SERVICES=s3:9003"}
         });
 
         _containerId = response.ID;
@@ -64,26 +69,12 @@ public class TestContext : IAsyncLifetime
     {
         var isWindows = RuntimeInformation.IsOSPlatform(OSPlatform.Windows);
 
-        if (isWindows)
-        {
-            return "npipe://./pipe/docker_engine";
-        }
+        if (isWindows) return "npipe://./pipe/docker_engine";
 
         var isLinux = RuntimeInformation.IsOSPlatform(OSPlatform.Linux);
 
-        if (isLinux)
-        {
-            return "unix:/var/run/docker.sock";
-        }
+        if (isLinux) return "unix:/var/run/docker.sock";
 
         throw new Exception("Unable to determine what OS this is running on");
-    }
-
-    public async Task DisposeAsync()
-    {
-        if(_containerId != null)
-        {
-            await _dockerClient.Containers.KillContainerAsync(_containerId, new ContainerKillParameters());
-        }
     }
 }
