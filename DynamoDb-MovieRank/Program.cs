@@ -1,6 +1,34 @@
 var builder = WebApplication.CreateBuilder(args);
-var app = builder.Build();
 
-app.MapGet("/", () => "Hello World!");
+var services = builder.Services;
+services.AddControllers();
+services.AddAWSService<IAmazonDynamoDB>();
+services.AddDefaultAWSOptions(
+    new AWSOptions()
+    {
+        Region = RegionEndpoint.EUCentral1
+    });
+
+services.AddSingleton<IMovieRankService, MovieRankService>();
+services.AddSingleton<IMovieRankRepository, MovieRankRepository>();
+services.AddSingleton<IMapper, Mapper>();
+
+
+services.AddSwaggerGen();
+
+var app = builder.Build();
+var env = builder.Environment;
+
+if (env.IsDevelopment())
+{
+    app.UseDeveloperExceptionPage();
+
+    app.UseSwagger();
+    app.UseSwaggerUI();
+}
+
+app.UseRouting();
+
+app.UseEndpoints(e => { e.MapControllers(); });
 
 app.Run();

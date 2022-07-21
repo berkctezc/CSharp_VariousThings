@@ -8,4 +8,13 @@
         <DockerDefaultTargetOS>Linux</DockerDefaultTargetOS>
     </PropertyGroup>
 
+    <ItemGroup>
+      <ProjectReference Include="..\DynamoDb-MovieRank.Contracts\DynamoDb-MovieRank.Contracts.csproj" />
+      <ProjectReference Include="..\DynamoDb-MovieRank.Libs\DynamoDb-MovieRank.Libs.csproj" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <PackageReference Include="Swashbuckle.AspNetCore" Version="6.4.0" />
+    </ItemGroup>
+
 </Project>
