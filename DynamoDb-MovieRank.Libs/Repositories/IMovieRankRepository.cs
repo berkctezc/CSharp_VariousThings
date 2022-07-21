@@ -2,15 +2,19 @@
 
 public interface IMovieRankRepository
 {
-    Task<IEnumerable<MovieDb>> GetAllItems();
+    Task<ScanResponse> GetAllItems();
 
-    Task<MovieDb> GetMovie(int userId, string movieName);
+    Task<GetItemResponse> GetMovie(int userId, string movieName);
 
-    Task<IEnumerable<MovieDb>> GetUsersRankedMoviesByMovieTitle(int userId, string movieName);
+    Task<QueryResponse> GetUsersRankedMoviesByMovieTitle(int userId, string movieName);
 
-    Task AddMovie(MovieDb movieDb);
+    Task AddMovie(int userId, MovieRankRequest movieRankRequest);
 
-    Task UpdateMovie(MovieDb request);
+    Task UpdateMovie(int userId, MovieUpdateRequest updateRequest);
 
-    Task<IEnumerable<MovieDb>> GetMovieRank(string movieName);
+    Task<QueryResponse> GetMovieRank(string movieName);
+
+    Task CreateDynamoTable(string tableName);
+
+    Task DeleteDynamoDbTable(string tableName);
 }

@@ -2,53 +2,158 @@
 
 public class MovieRankRepository : IMovieRankRepository
 {
-    private readonly DynamoDBContext _context;
+    private const string TableName = "MovieRank";
+    private readonly IAmazonDynamoDB _dynamoDbClient;
 
     public MovieRankRepository(IAmazonDynamoDB dynamoDbClient)
     {
-        _context = new DynamoDBContext(dynamoDbClient);
+        _dynamoDbClient = dynamoDbClient;
     }
 
-    public async Task<IEnumerable<MovieDb>> GetAllItems()
+    public async Task<ScanResponse> GetAllItems()
     {
-        return await _context.ScanAsync<MovieDb>(new List<ScanCondition>()).GetRemainingAsync();
+        var scanRequest = new ScanRequest(TableName);
+        return await _dynamoDbClient.ScanAsync(scanRequest);
     }
 
-    public async Task<MovieDb> GetMovie(int userId, string movieName)
+    public async Task<GetItemResponse> GetMovie(int userId, string movieName)
     {
-        return await _context.LoadAsync<MovieDb>(userId, movieName);
-    }
-
-    public async Task<IEnumerable<MovieDb>> GetUsersRankedMoviesByMovieTitle(int userId, string movieName)
-    {
-        var config = new DynamoDBOperationConfig
+        var request = new GetItemRequest
         {
-            QueryFilter = new List<ScanCondition>
+            TableName = TableName,
+            Key = new Dictionary<string, AttributeValue>
             {
-                new("MovieName", ScanOperator.BeginsWith, movieName)
+                {"UserId", new AttributeValue {N = userId.ToString()}},
+                {"MovieName", new AttributeValue {S = movieName}}
             }
         };
 
-        return await _context.QueryAsync<MovieDb>(userId, config).GetRemainingAsync();
+        return await _dynamoDbClient.GetItemAsync(request);
     }
 
-    public async Task AddMovie(MovieDb movieDb)
+    public async Task<QueryResponse> GetUsersRankedMoviesByMovieTitle(int userId, string movieName)
     {
-        await _context.SaveAsync(movieDb);
-    }
-
-    public async Task UpdateMovie(MovieDb request)
-    {
-        await _context.SaveAsync(request);
-    }
-
-    public async Task<IEnumerable<MovieDb>> GetMovieRank(string movieName)
-    {
-        var config = new DynamoDBOperationConfig
+        var request = new QueryRequest
         {
-            IndexName = "MovieName-index"
+            TableName = TableName,
+            KeyConditionExpression = "UserId = :userId and begins_with (MovieName, :movieName)",
+            ExpressionAttributeValues = new Dictionary<string, AttributeValue>
+            {
+                {":userId", new AttributeValue {N = userId.ToString()}},
+                {":movieName", new AttributeValue {S = movieName}}
+            }
         };
 
-        return await _context.QueryAsync<MovieDb>(movieName, config).GetRemainingAsync();
+        return await _dynamoDbClient.QueryAsync(request);
+    }
+
+    public async Task AddMovie(int userId, MovieRankRequest movieRankRequest)
+    {
+        var request = new PutItemRequest
+        {
+            TableName = TableName,
+            Item = new Dictionary<string, AttributeValue>
+            {
+                {"UserId", new AttributeValue {N = userId.ToString()}},
+                {"MovieName", new AttributeValue {S = movieRankRequest.MovieName}},
+                {"Description", new AttributeValue {S = movieRankRequest.Description}},
+                {"Actors", new AttributeValue {SS = movieRankRequest.Actors}},
+                {"Ranking", new AttributeValue {N = movieRankRequest.Ranking.ToString()}},
+                {"RankedDateTime", new AttributeValue {S = DateTime.UtcNow.ToString()}}
+            }
+        };
+
+        await _dynamoDbClient.PutItemAsync(request);
+    }
+
+    public async Task UpdateMovie(int userId, MovieUpdateRequest updateRequest)
+    {
+        var request = new UpdateItemRequest
+        {
+            TableName = TableName,
+            Key = new Dictionary<string, AttributeValue>
+            {
+                {"UserId", new AttributeValue {N = userId.ToString()}},
+                {"MovieName", new AttributeValue {S = updateRequest.MovieName}}
+            },
+            AttributeUpdates = new Dictionary<string, AttributeValueUpdate>
+            {
+                {
+                    "Ranking", new AttributeValueUpdate
+                    {
+                        Action = AttributeAction.PUT,
+                        Value = new AttributeValue {N = updateRequest.Ranking.ToString()}
+                    }
+                },
+                {
+                    "RankedDateTime", new AttributeValueUpdate
+                    {
+                        Action = AttributeAction.PUT,
+                        Value = new AttributeValue {S = DateTime.UtcNow.ToString()}
+                    }
+                }
+            }
+        };
+
+        await _dynamoDbClient.UpdateItemAsync(request);
+    }
+
+    public async Task<QueryResponse> GetMovieRank(string movieName)
+    {
+        var request = new QueryRequest
+        {
+            TableName = TableName,
+            IndexName = "MovieName-index",
+            KeyConditionExpression = "MovieName = :movieName",
+            ExpressionAttributeValues = new Dictionary<string, AttributeValue>
+            {
+                {":movieName", new AttributeValue {S = movieName}}
+            }
+        };
+
+        return await _dynamoDbClient.QueryAsync(request);
+    }
+
+    public async Task CreateDynamoTable(string tableName)
+    {
+        //Might want to do a check to wait for the table to be created before passing back a response
+
+        var request = new CreateTableRequest
+        {
+            TableName = tableName,
+            AttributeDefinitions = new List<AttributeDefinition>()
+            {
+                new AttributeDefinition
+                {
+                    AttributeName = "Id",
+                    AttributeType = "N"
+                }
+            },
+            KeySchema = new List<KeySchemaElement>()
+            {
+                new KeySchemaElement
+                {
+                    AttributeName = "Id",
+                    KeyType = "HASH"
+                }
+            },
+            ProvisionedThroughput = new ProvisionedThroughput
+            {
+                ReadCapacityUnits = 1,
+                WriteCapacityUnits = 1
+            }
+        };
+
+        await _dynamoDbClient.CreateTableAsync(request);
+    }
+
+    public async Task DeleteDynamoDbTable(string tableName)
+    {
+        var request = new DeleteTableRequest
+        {
+            TableName = tableName
+        };
+
+        await _dynamoDbClient.DeleteTableAsync(request);
     }
 }

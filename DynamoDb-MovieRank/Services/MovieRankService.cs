@@ -2,8 +2,8 @@
 
 public class MovieRankService : IMovieRankService
 {
-    private readonly IMovieRankRepository _movieRankRepository;
     private readonly IMapper _map;
+    private readonly IMovieRankRepository _movieRankRepository;
 
     public MovieRankService(IMovieRankRepository movieRankRepository, IMapper map)
     {
@@ -34,25 +34,19 @@ public class MovieRankService : IMovieRankService
 
     public async Task AddMovie(int userId, MovieRankRequest movieRankRequest)
     {
-        var movieDb = _map.ToMovieDbModel(userId, movieRankRequest);
-
-        await _movieRankRepository.AddMovie(movieDb);
+        await _movieRankRepository.AddMovie(userId, movieRankRequest);
     }
 
     public async Task UpdateMovie(int userId, MovieUpdateRequest request)
     {
-        var response = await _movieRankRepository.GetMovie(userId, request.MovieName);
-
-        var movieDb = _map.ToMovieDbModel(userId, response, request);
-
-        await _movieRankRepository.UpdateMovie(movieDb);
+        await _movieRankRepository.UpdateMovie(userId, request);
     }
 
     public async Task<MovieRankResponse> GetMovieRank(string movieName)
     {
         var response = await _movieRankRepository.GetMovieRank(movieName);
 
-        var overallMovieRanking = Math.Round(response.Select(x => x.Ranking).Average());
+        var overallMovieRanking = Math.Round(response.Items.Select(item => Convert.ToInt32(item["Ranking"].N)).Average());
 
         return new MovieRankResponse
         {

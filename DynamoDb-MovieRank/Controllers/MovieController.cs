@@ -1,9 +1,7 @@
-﻿using Microsoft.AspNetCore.Mvc;
-
-namespace DynamoDb_MovieRank.Controllers;
+﻿namespace DynamoDb_MovieRank.Controllers;
 
 [Route("movies")]
-public class MovieController : ControllerBase
+public class MovieController : Controller
 {
     private readonly IMovieRankService _movieRankService;
 

@@ -5,3 +5,4 @@ global using DynamoDb_MovieRank.Contracts;
 global using DynamoDb_MovieRank.Libs.Mappers;
 global using DynamoDb_MovieRank.Libs.Repositories;
 global using DynamoDb_MovieRank.Services;
+global using Microsoft.AspNetCore.Mvc;
