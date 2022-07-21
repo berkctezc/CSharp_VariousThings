@@ -16,10 +16,6 @@
     </ItemGroup>
 
     <ItemGroup>
-        <InternalsVisibleTo Include="MinimalApiPlayground.Tests"/>
-    </ItemGroup>
-
-    <ItemGroup>
         <ProjectReference Include="..\S3-LifeBackup.Core\S3-LifeBackup.Core.csproj"/>
         <ProjectReference Include="..\S3-LifeBackup.Infrastructure\S3-LifeBackup.Infrastructure.csproj"/>
     </ItemGroup>

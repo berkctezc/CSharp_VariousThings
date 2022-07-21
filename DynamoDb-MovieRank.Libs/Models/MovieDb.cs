@@ -3,11 +3,9 @@
 [DynamoDBTable("MovieRank")]
 public class MovieDb
 {
-    [DynamoDBHashKey]
-    public int UserId { get; set; }
+    [DynamoDBHashKey] public int UserId { get; set; }
 
-    [DynamoDBGlobalSecondaryIndexHashKey]
-    public string MovieName { get; set; }
+    [DynamoDBGlobalSecondaryIndexHashKey] public string MovieName { get; set; }
 
     public string Description { get; set; }
 

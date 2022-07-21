@@ -1,5 +1,3 @@
-using Microsoft.VisualStudio.TestPlatform.TestHost;
-
 namespace S3_LifeBackup.IntegrationTests.Setup;
 
 [Collection("api")]

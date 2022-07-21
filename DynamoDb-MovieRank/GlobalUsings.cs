@@ -1,4 +1,5 @@
-﻿global using Amazon;
+﻿global using System.Runtime.CompilerServices;
+global using Amazon;
 global using Amazon.DynamoDBv2;
 global using Amazon.Extensions.NETCore.Setup;
 global using DynamoDb_MovieRank.Contracts;

@@ -12,6 +12,7 @@ services.AddDefaultAWSOptions(
 services.AddSingleton<IMovieRankService, MovieRankService>();
 services.AddSingleton<IMovieRankRepository, MovieRankRepository>();
 services.AddSingleton<IMapper, Mapper>();
+services.AddSingleton<ISetupService, SetupService>();
 
 
 services.AddSwaggerGen();
@@ -32,3 +33,5 @@ app.UseRouting();
 app.UseEndpoints(e => { e.MapControllers(); });
 
 app.Run();
+
+public partial class Program {}

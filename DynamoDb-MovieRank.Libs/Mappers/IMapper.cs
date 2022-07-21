@@ -2,9 +2,11 @@
 
 public interface IMapper
 {
-    IEnumerable<MovieResponse> ToMovieContract(ScanResponse response);
+    IEnumerable<MovieResponse> ToMovieContract(IEnumerable<MovieDb> items);
 
-    MovieResponse ToMovieContract(GetItemResponse response);
+    MovieResponse ToMovieContract(MovieDb movie);
 
-    IEnumerable<MovieResponse> ToMovieContract(QueryResponse response);
+    MovieDb ToMovieDbModel(int userId, MovieRankRequest movieRankRequest);
+
+    MovieDb ToMovieDbModel(int userId, MovieDb movieDbRequest, MovieUpdateRequest movieUpdateRequest);
 }
