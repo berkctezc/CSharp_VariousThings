@@ -16,6 +16,6 @@ public class SetupService : ISetupService
 
     public async Task DeleteDynamoDbTable(string dynamoDbTableName)
     {
-        await _movieRankRepository.DeleteDynamoDbTable(dynamoDbTableName);
+        await _movieRankRepository.DeleteDynamoTable(dynamoDbTableName);
     }
 }
