@@ -1,0 +1,19 @@
+{
+  "region": "us-east-2",
+  "configuration": "Debug",
+  "framework": "netcoreapp3.1",
+  "self-contained": false,
+  "application": "NETCoreAPI",
+  "environment": "NETCoreAPI-test",
+  "enable-xray": false,
+  "enhanced-health-type": "basic",
+  "additional-options": "\"aws:autoscaling:launchconfiguration,SecurityGroups\"=\"sg-00c5e882e2b9de639,sg-0bf0d2f1f8c94fde3\";\"aws:ec2:vpc,Subnets\"=\"subnet-062124a126eec44d7\"",
+  "solution-stack": "64bit Amazon Linux 2 v1.0.0 running .NET Core",
+  "environment-type": "SingleInstance",
+  "cname": "netcoreapi-test",
+  "instance-type": "t2.micro",
+  "key-pair": "PluralsightDemo",
+  "instance-profile": "aws-elasticbeanstalk-ec2-role",
+  "service-role": "aws-elasticbeanstalk-service-role",
+  "proxy-server": "nginx"
+}
