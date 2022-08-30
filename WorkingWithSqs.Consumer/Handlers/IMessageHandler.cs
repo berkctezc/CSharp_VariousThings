@@ -2,6 +2,6 @@
 
 public interface IMessageHandler
 {
-    public static abstract Type MessageType { get; }
+    public Type MessageType { get; }
     public Task HandleAsync(IMessage message);
 }

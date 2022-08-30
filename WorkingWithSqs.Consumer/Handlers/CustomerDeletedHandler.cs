@@ -16,5 +16,5 @@ public class CustomerDeletedHandler : IMessageHandler
         return Task.CompletedTask;
     }
 
-    public static Type MessageType { get; } = typeof(CustomerDeleted);
+    public Type MessageType { get; } = typeof(CustomerDeleted);
 }
