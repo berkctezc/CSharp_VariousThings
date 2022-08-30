@@ -1,4 +1,6 @@
-﻿namespace S3_LifeBackup.Core.Files;
+﻿using Microsoft.AspNetCore.Http;
+
+namespace S3_LifeBackup.Core.Files;
 
 public interface IFilesRepository
 {
