@@ -1,22 +1,30 @@
 ﻿using System.Diagnostics;
 using System.Text.RegularExpressions;
 
-Module4Clip4();
-//Module4Clip3();
-//Module4Clip2();
-//Module4Clip1();
-//Module3Clip1();
-//Module3Clip2();
-//Module3Clip3();
-//Module3Clip4();
-//Module2Clip4();
-//CharacterClasses();
-//Alternation();
-//GroupingConstructs();
-//BackreferenceConstructs();
-//Pruning();
+Run();
 
-static void Module4Clip4()
+static void Run()
+{
+    OptimizationAndSecurity();
+    CapturingAndBalancingGroups();
+    UnicodeAndCulture();
+    AdvancedTopics();
+    AnchorsAndBoundaries();
+    RegexOptions();
+    LookaheadsLookBehindsAndPruning();
+    BacktrackingAndRunaways();
+    GroupingAndSubstitution();
+    CharacterClasses();
+    Alternation();
+    GroupingConstructs();
+    BackreferenceConstructs();
+    Pruning();
+    PatternMatching();
+    StringSplitting();
+    PatternMatching2();
+}
+
+static void OptimizationAndSecurity()
 {
     Console.WriteLine("Interpreted Regex:");
     const string input = "The quick brown fox jumps over the lazy dog.";
@@ -25,7 +33,7 @@ static void Module4Clip4()
     var interpretedRegex = new Regex("(fox|dog)*");
     for (var i = 0; i < 1000000; i++)
     {
-        var match = interpretedRegex.Match(input);
+        Console.WriteLine(interpretedRegex.Match(input));
     }
 
     timer.Stop();
@@ -35,10 +43,10 @@ static void Module4Clip4()
     Console.WriteLine("Compiled Regex:");
     timer.Reset();
     timer.Start();
-    var compiledRegex = new Regex("(fox|dog)*", RegexOptions.Compiled);
+    var compiledRegex = new Regex("(fox|dog)*", System.Text.RegularExpressions.RegexOptions.Compiled);
     for (var i = 0; i < 1000000; i++)
     {
-        var match = compiledRegex.Match(input);
+        Console.WriteLine(compiledRegex.Match(input));
     }
 
     timer.Stop();
@@ -66,7 +74,7 @@ static void Module4Clip4()
     Console.WriteLine("\tElapsed time: {0}ms", timer.ElapsedMilliseconds);
 
     Console.WriteLine("Timed Regex:");
-    var timedRegex = new Regex("(a+(aa)+(aaa)+(aa)+a+)+b.", RegexOptions.None, TimeSpan.FromSeconds(1));
+    var timedRegex = new Regex("(a+(aa)+(aaa)+(aa)+a+)+b.", System.Text.RegularExpressions.RegexOptions.None, TimeSpan.FromSeconds(1));
     try
     {
         timedRegex.IsMatch("aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaab");
@@ -79,7 +87,7 @@ static void Module4Clip4()
     Console.ReadKey();
 }
 
-static void Module4Clip3()
+static void CapturingAndBalancingGroups()
 {
     var input = "µ"; // Micro Sign
     var pattern = "μ"; // Greek Small Letter Mu
@@ -104,7 +112,7 @@ static void Module4Clip3()
     }
 
     Console.WriteLine("\tWith the RightToLeft option:");
-    foreach (Match match in Regex.Matches(input, pattern, RegexOptions.RightToLeft))
+    foreach (Match match in Regex.Matches(input, pattern, System.Text.RegularExpressions.RegexOptions.RightToLeft))
     {
         Console.WriteLine("\t\tMatch at index {0} of length {1}", match.Index, match.Length);
     }
@@ -123,9 +131,7 @@ static void Module4Clip3()
             {
                 Console.WriteLine("\t\t\t{0}: Group at index {1} of length {2}", group.Value, group.Index, group.Length);
                 foreach (Capture capture in group.Captures)
-                {
                     Console.WriteLine("\t\t\t\t{0}: Capture at index {1} of length {2}", capture.Value, capture.Index, capture.Length);
-                }
             }
         }
     }
@@ -160,7 +166,7 @@ static void Module4Clip3()
     Console.ReadKey();
 }
 
-static void Module4Clip2()
+static void UnicodeAndCulture()
 {
     var input = "❌";
 
@@ -203,12 +209,12 @@ static void Module4Clip2()
     Console.WriteLine("\tMatches without CultureInvariant? {0}",
         Regex.IsMatch(input,
             pattern,
-            RegexOptions.IgnoreCase));
+            System.Text.RegularExpressions.RegexOptions.IgnoreCase));
 
     Console.WriteLine("\tMatches with CultureInvariant? {0}",
         Regex.IsMatch(input,
             pattern,
-            RegexOptions.IgnoreCase | RegexOptions.CultureInvariant));
+            System.Text.RegularExpressions.RegexOptions.IgnoreCase | System.Text.RegularExpressions.RegexOptions.CultureInvariant));
 
     Console.ReadKey();
 }
@@ -218,7 +224,7 @@ static string GetCodePoint(string input, int index)
     return char.IsSurrogatePair(input, index) ? $"U+{char.ConvertToUtf32(input, 0):X8}" : $"U+{char.ConvertToUtf32(input, 0):X4}";
 }
 
-static void Module4Clip1()
+static void AdvancedTopics()
 {
     var input = "a";
 
@@ -236,7 +242,7 @@ static void Module4Clip1()
     Console.ReadKey();
 }
 
-static void Module3Clip4()
+static void BacktrackingAndRunaways()
 {
     var patterns = new List<string>
     {
@@ -274,7 +280,7 @@ static void Module3Clip4()
     Console.ReadKey();
 }
 
-static void Module3Clip3()
+static void LookaheadsLookBehindsAndPruning()
 {
     var patterns = new List<string>
     {
@@ -317,7 +323,7 @@ static void Module3Clip3()
     Console.ReadKey();
 }
 
-static void Module3Clip2()
+static void RegexOptions()
 {
     var patterns = new List<string>
     {
@@ -367,7 +373,7 @@ static void Module3Clip2()
     Console.ReadKey();
 }
 
-static void Module3Clip1()
+static void AnchorsAndBoundaries()
 {
     var patterns = new List<string>
     {
@@ -408,7 +414,7 @@ static void Module3Clip1()
     Console.ReadKey();
 }
 
-static void Module2Clip2()
+static void PatternMatching2()
 {
     var patterns = new List<string> {"\\?", @"\?", Regex.Escape("?")};
     var inputs = new List<string> {"?"};
@@ -429,7 +435,7 @@ static void Module2Clip2()
     Console.ReadKey();
 }
 
-static void Module2Clip3()
+static void StringSplitting()
 {
     var patterns = new List<string>
     {
@@ -469,7 +475,7 @@ static void Module2Clip3()
     Console.ReadKey();
 }
 
-static void Module2Clip4()
+static void GroupingAndSubstitution()
 {
     var patterns = new List<string>
     {
@@ -509,18 +515,12 @@ static void Module2Clip4()
             {
                 Console.WriteLine("\t\tMatch at index {0} with length {1}", match.Index, match.Length);
                 foreach (Group group in match.Groups)
-                {
                     Console.WriteLine("\t\t\tGroup at index {0} has value {1}", group.Index, group.Value);
-                }
             }
 
             Console.WriteLine("Simple replacement results: {0}", Regex.Replace(input, @"(Chicken)(.*) \$(9.99)", @"$1$2 $$0.00"));
-            var results = Regex.Replace(input, pattern, (match) =>
-            {
-                if (match.Groups[1].Value == "Chicken")
-                    return match.Value.Replace(match.Groups[2].Value, "0.00");
-                return match.Value;
-            });
+            var results = Regex.Replace(input, pattern, match => match.Groups[1].Value == "Chicken" ? match.Value.Replace(match.Groups[2].Value, "0.00") : match.Value);
+
             Console.WriteLine("Advanced replacement result: {0}", results);
         });
     });
@@ -545,9 +545,7 @@ static void Pruning()
             {
                 Console.WriteLine("\t\tMatch at index {0} with length {1}.", result.Index, result.Length);
                 foreach (Group group in result.Groups)
-                {
                     Console.WriteLine("\t\t\tGroup {0} has value {1}.", group.Name, group.Value);
-                }
             }
         });
     });
@@ -571,9 +569,7 @@ static void BackreferenceConstructs()
             {
                 Console.WriteLine("\t\tMatch at index {0} with length {1}.", result.Index, result.Length);
                 foreach (Group group in result.Groups)
-                {
                     Console.WriteLine("\t\t\tGroup {0} has value {1}.", group.Name, group.Value);
-                }
             }
         });
     });
@@ -597,9 +593,7 @@ static void GroupingConstructs()
             {
                 Console.WriteLine("\t\tMatch at index {0} with length {1}.", result.Index, result.Length);
                 foreach (Group group in result.Groups)
-                {
                     Console.WriteLine("\t\t\tGroup {0} has value {1}.", group.Name, group.Value);
-                }
             }
         });
     });
