@@ -1,4 +1,5 @@
 ﻿using System.Diagnostics;
+using System.Globalization;
 using System.Text.RegularExpressions;
 
 Run();
@@ -37,8 +38,8 @@ static void OptimizationAndSecurity()
     }
 
     timer.Stop();
-    Console.WriteLine("\tElapsed time: {0}ms", timer.ElapsedMilliseconds);
-    Console.WriteLine("\tCache size: {0}", Regex.CacheSize);
+    Console.WriteLine("\tElapsed time: {0}ms", timer.ElapsedMilliseconds.ToString());
+    Console.WriteLine("\tCache size: {0}", Regex.CacheSize.ToString());
 
     Console.WriteLine("Compiled Regex:");
     timer.Reset();
@@ -50,34 +51,34 @@ static void OptimizationAndSecurity()
     }
 
     timer.Stop();
-    Console.WriteLine("\tElapsed time: {0}ms", timer.ElapsedMilliseconds);
+    Console.WriteLine("\tElapsed time: {0}ms", timer.ElapsedMilliseconds.ToString());
 
     Console.WriteLine("Slow Regex:");
     timer.Reset();
     timer.Start();
-    Regex.IsMatch("aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaab", "(a+(aa)+(aaa)+(aa)+a+)+b.");
+    Console.WriteLine(Regex.IsMatch("aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaab", "(a+(aa)+(aaa)+(aa)+a+)+b."));
     timer.Stop();
-    Console.WriteLine("\tElapsed time: {0}ms", timer.ElapsedMilliseconds);
+    Console.WriteLine("\tElapsed time: {0}ms", timer.ElapsedMilliseconds.ToString());
 
     Console.WriteLine("Non-Capturing Regex:");
     timer.Reset();
     timer.Start();
-    Regex.IsMatch("aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaab", "(?:a+(?:aa)+(?:aaa)+(?:aa)+a+)+b.");
+    Console.WriteLine(Regex.IsMatch("aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaab", "(?:a+(?:aa)+(?:aaa)+(?:aa)+a+)+b."));
     timer.Stop();
-    Console.WriteLine("\tElapsed time: {0}ms", timer.ElapsedMilliseconds);
+    Console.WriteLine("\tElapsed time: {0}ms", timer.ElapsedMilliseconds.ToString());
 
     Console.WriteLine("Lazy Regex:");
     timer.Reset();
     timer.Start();
-    Regex.IsMatch("aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaab", "a+?b.");
+    Console.WriteLine(Regex.IsMatch("aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaab", "a+?b."));
     timer.Stop();
-    Console.WriteLine("\tElapsed time: {0}ms", timer.ElapsedMilliseconds);
+    Console.WriteLine("\tElapsed time: {0}ms", timer.ElapsedMilliseconds.ToString());
 
     Console.WriteLine("Timed Regex:");
     var timedRegex = new Regex("(a+(aa)+(aaa)+(aa)+a+)+b.", System.Text.RegularExpressions.RegexOptions.None, TimeSpan.FromSeconds(1));
     try
     {
-        timedRegex.IsMatch("aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaab");
+        Console.WriteLine(timedRegex.IsMatch("aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaab"));
     }
     catch (RegexMatchTimeoutException)
     {
@@ -96,7 +97,7 @@ static void CapturingAndBalancingGroups()
     Console.WriteLine("\tDoes {0} match {1}? {2}",
         pattern,
         input,
-        Regex.IsMatch(input, pattern));
+        Regex.IsMatch(input, pattern).ToString());
 
     Console.WriteLine("\tInput's code point: {0}", GetCodePoint(input, 0));
     Console.WriteLine("\tPattern's code point: {0}", GetCodePoint(pattern, 0));
@@ -108,13 +109,13 @@ static void CapturingAndBalancingGroups()
     Console.WriteLine("\tWithout the RightToLeft option:");
     foreach (Match match in Regex.Matches(input, pattern))
     {
-        Console.WriteLine("\t\tMatch at index {0} of length {1}", match.Index, match.Length);
+        Console.WriteLine("\t\tMatch at index {0} of length {1}", match.Index.ToString(), match.Length.ToString());
     }
 
     Console.WriteLine("\tWith the RightToLeft option:");
     foreach (Match match in Regex.Matches(input, pattern, System.Text.RegularExpressions.RegexOptions.RightToLeft))
     {
-        Console.WriteLine("\t\tMatch at index {0} of length {1}", match.Index, match.Length);
+        Console.WriteLine("\t\tMatch at index {0} of length {1}", match.Index.ToString(), match.Length.ToString());
     }
 
     input = "Hello world.";
@@ -126,12 +127,12 @@ static void CapturingAndBalancingGroups()
         Console.WriteLine("\tPattern: {0}", examplePattern);
         foreach (Match match in Regex.Matches(input, examplePattern))
         {
-            Console.WriteLine("\t\t{0}: Match at index {1} of length {2}", match.Value, match.Index, match.Length);
+            Console.WriteLine("\t\t{0}: Match at index {1} of length {2}", match.Value, match.Index.ToString(), match.Length.ToString());
             foreach (Group group in match.Groups)
             {
-                Console.WriteLine("\t\t\t{0}: Group at index {1} of length {2}", group.Value, group.Index, group.Length);
+                Console.WriteLine("\t\t\t{0}: Group at index {1} of length {2}", group.Value, group.Index.ToString(), group.Length.ToString());
                 foreach (Capture capture in group.Captures)
-                    Console.WriteLine("\t\t\t\t{0}: Capture at index {1} of length {2}", capture.Value, capture.Index, capture.Length);
+                    Console.WriteLine("\t\t\t\t{0}: Capture at index {1} of length {2}", capture.Value, capture.Index.ToString(), capture.Length.ToString());
             }
         }
     }
@@ -141,15 +142,15 @@ static void CapturingAndBalancingGroups()
     Console.WriteLine("Balancing Groups:");
     Console.WriteLine("\tInput: {0}", input);
     Console.WriteLine("\tPattern: {0}", pattern);
-    Console.WriteLine("\tIs {0} balanced? {1}", input, Regex.IsMatch(input, pattern));
+    Console.WriteLine("\tIs {0} balanced? {1}", input, Regex.IsMatch(input, pattern).ToString());
     input = @"{}}";
-    Console.WriteLine("\tIs {0} balanced? {1}", input, Regex.IsMatch(input, pattern));
+    Console.WriteLine("\tIs {0} balanced? {1}", input, Regex.IsMatch(input, pattern).ToString());
     input = @"{}{";
-    Console.WriteLine("\tIs {0} balanced? {1}", input, Regex.IsMatch(input, pattern));
+    Console.WriteLine("\tIs {0} balanced? {1}", input, Regex.IsMatch(input, pattern).ToString());
     input = @"}{";
-    Console.WriteLine("\tIs {0} balanced? {1}", input, Regex.IsMatch(input, pattern));
+    Console.WriteLine("\tIs {0} balanced? {1}", input, Regex.IsMatch(input, pattern).ToString());
     input = @"{ {} {   }}";
-    Console.WriteLine("\tIs {0} balanced? {1}", input, Regex.IsMatch(input, pattern));
+    Console.WriteLine("\tIs {0} balanced? {1}", input, Regex.IsMatch(input, pattern).ToString());
 
     Console.WriteLine("Nested Captures:");
     input = @"{ 1 { 2 3 } { 4 { 5 } 6 } 7 }";
@@ -161,7 +162,7 @@ static void CapturingAndBalancingGroups()
     var contents = matches[0].Groups["Contents"];
     Console.WriteLine("\t{0} Group:", contents.Name);
     foreach (Capture capture in contents.Captures)
-        Console.WriteLine("\t\t{0}: Capture at index {1} of length {2}", capture.Value, capture.Index, capture.Length);
+        Console.WriteLine("\t\t{0}: Capture at index {1} of length {2}", capture.Value, capture.Index.ToString(), capture.Length.ToString());
 
     Console.ReadKey();
 }
@@ -172,35 +173,35 @@ static void UnicodeAndCulture()
 
     Console.WriteLine("Cross Mark");
     Console.WriteLine("\tCode point: {0}", GetCodePoint(input, 0));
-    Console.WriteLine("\tLength: {0}", input.Length);
+    Console.WriteLine("\tLength: {0}", input.Length.ToString());
 
     Console.WriteLine("\tDoes the input match \\u274C? {0}",
         Regex.IsMatch(input,
-            "\u274C"));
+            "\u274C").ToString());
 
     Console.WriteLine("\tIs in Dingbats? {0}",
         Regex.IsMatch(input,
-            @"\p{IsDingbats}")); // Dingbats are from U+2700 to U+27BF.
+            @"\p{IsDingbats}").ToString()); // Dingbats are from U+2700 to U+27BF.
     Console.WriteLine("\tIs not in Dingbats? {0}",
         Regex.IsMatch(input,
-            @"\P{IsDingbats}"));
+            @"\P{IsDingbats}").ToString());
 
     input = "😎";
 
     Console.WriteLine("Smiling Face with Sunglasses Emoji");
     Console.WriteLine("\tCode point: {0}", GetCodePoint(input, 0));
-    Console.WriteLine("\tLength: {0}", input.Length); // Two 16-bit code units.
+    Console.WriteLine("\tLength: {0}", input.Length.ToString()); // Two 16-bit code units.
 
     Console.WriteLine("\tDoes the emoji match \\U0001F60E? {0}",
         Regex.IsMatch(input,
-            "\U0001F60E"));
+            "\U0001F60E").ToString());
 
     Console.WriteLine("\tIs the emoji in Dingbats? {0}",
         Regex.IsMatch(input,
-            @"\p{IsDingbats}"));
+            @"\p{IsDingbats}").ToString());
     Console.WriteLine("\tIs the emoji not in Dingbats? {0}",
         Regex.IsMatch(input,
-            @"\P{IsDingbats}"));
+            @"\P{IsDingbats}").ToString());
 
     input = "İ"; // In Turkish, capital i is not I. It is İ.
     var pattern = "i";
@@ -209,12 +210,12 @@ static void UnicodeAndCulture()
     Console.WriteLine("\tMatches without CultureInvariant? {0}",
         Regex.IsMatch(input,
             pattern,
-            System.Text.RegularExpressions.RegexOptions.IgnoreCase));
+            System.Text.RegularExpressions.RegexOptions.IgnoreCase).ToString());
 
     Console.WriteLine("\tMatches with CultureInvariant? {0}",
         Regex.IsMatch(input,
             pattern,
-            System.Text.RegularExpressions.RegexOptions.IgnoreCase | System.Text.RegularExpressions.RegexOptions.CultureInvariant));
+            System.Text.RegularExpressions.RegexOptions.IgnoreCase | System.Text.RegularExpressions.RegexOptions.CultureInvariant).ToString());
 
     Console.ReadKey();
 }
@@ -230,14 +231,14 @@ static void AdvancedTopics()
 
     Console.WriteLine(input);
     Console.WriteLine("\tCode point: {0}", GetCodePoint(input, 0));
-    Console.WriteLine("\tLength: {0}", input.Length);
+    Console.WriteLine("\tLength: {0}", input.Length.ToString());
 
     Console.WriteLine("\tIs uppercase letter? {0}",
         Regex.IsMatch(input,
-            @"\p{Lu}")); // Supported Unicode general categories, where Lu is Letter, Uppercase
+            @"\p{Lu}").ToString()); // Supported Unicode general categories, where Lu is Letter, Uppercase
     Console.WriteLine("\tIs not an uppercase letter? {0}",
         Regex.IsMatch(input,
-            @"\P{Lu}"));
+            @"\P{Lu}").ToString());
 
     Console.ReadKey();
 }
@@ -270,11 +271,11 @@ static void BacktrackingAndRunaways()
                 Console.WriteLine("\t\tNo matches found.");
             foreach (Match result in results)
                 Console.WriteLine("\t\tMatch found at index {0}. Length: {1}.",
-                    result.Index,
-                    result.Length);
+                    result.Index.ToString(),
+                    result.Length.ToString());
             watch.Stop();
             Console.WriteLine("\t\tRuntime: {0}ms",
-                watch.Elapsed.TotalMilliseconds);
+                watch.Elapsed.TotalMilliseconds.ToString(CultureInfo.InvariantCulture));
         });
     });
     Console.ReadKey();
@@ -316,8 +317,8 @@ static void LookaheadsLookBehindsAndPruning()
                 Console.WriteLine("\t\tNo matches found.");
             foreach (Match result in results)
                 Console.WriteLine("\t\tMatch found at index {0}. Length: {1}.",
-                    result.Index,
-                    result.Length);
+                    result.Index.ToString(),
+                    result.Length.ToString());
         });
     });
     Console.ReadKey();
@@ -361,11 +362,11 @@ static void RegexOptions()
             foreach (Match match in results)
             {
                 Console.WriteLine("\t\tMatch found at index {0}. Length: {1}.",
-                    match.Index,
-                    match.Length);
+                    match.Index.ToString(),
+                    match.Length.ToString());
                 foreach (Group group in match.Groups)
                     Console.WriteLine("\t\t\tGroup at index {0} has value {1}",
-                        group.Index,
+                        group.Index.ToString(),
                         group.Value);
             }
         });
@@ -407,8 +408,8 @@ static void AnchorsAndBoundaries()
                 Console.WriteLine("\t\tNo matches found.");
             foreach (Match result in results)
                 Console.WriteLine("\t\tMatch found at index {0}. Length: {1}.",
-                    result.Index,
-                    result.Length);
+                    result.Index.ToString(),
+                    result.Length.ToString());
         });
     });
     Console.ReadKey();
@@ -429,7 +430,7 @@ static void PatternMatching2()
             if (results.Count <= 0)
                 Console.WriteLine("\t\tNo matches found.");
             foreach (Match result in results)
-                Console.WriteLine("\t\tMatch found at index {0}. Length: {1}.", result.Index, result.Length);
+                Console.WriteLine("\t\tMatch found at index {0}. Length: {1}.", result.Index.ToString(), result.Length.ToString());
         });
     });
     Console.ReadKey();
@@ -513,9 +514,9 @@ static void GroupingAndSubstitution()
                 Console.WriteLine("\t\tNo matches found.");
             foreach (Match match in matches)
             {
-                Console.WriteLine("\t\tMatch at index {0} with length {1}", match.Index, match.Length);
+                Console.WriteLine("\t\tMatch at index {0} with length {1}", match.Index.ToString(), match.Length.ToString());
                 foreach (Group group in match.Groups)
-                    Console.WriteLine("\t\t\tGroup at index {0} has value {1}", group.Index, group.Value);
+                    Console.WriteLine("\t\t\tGroup at index {0} has value {1}", group.Index.ToString(), group.Value);
             }
 
             Console.WriteLine("Simple replacement results: {0}", Regex.Replace(input, @"(Chicken)(.*) \$(9.99)", @"$1$2 $$0.00"));
@@ -543,7 +544,7 @@ static void Pruning()
                 Console.WriteLine("\t\tNo matches found.");
             foreach (Match result in results)
             {
-                Console.WriteLine("\t\tMatch at index {0} with length {1}.", result.Index, result.Length);
+                Console.WriteLine("\t\tMatch at index {0} with length {1}.", result.Index.ToString(), result.Length.ToString());
                 foreach (Group group in result.Groups)
                     Console.WriteLine("\t\t\tGroup {0} has value {1}.", group.Name, group.Value);
             }
@@ -567,7 +568,7 @@ static void BackreferenceConstructs()
                 Console.WriteLine("\t\tNo matches found.");
             foreach (Match result in results)
             {
-                Console.WriteLine("\t\tMatch at index {0} with length {1}.", result.Index, result.Length);
+                Console.WriteLine("\t\tMatch at index {0} with length {1}.", result.Index.ToString(), result.Length.ToString());
                 foreach (Group group in result.Groups)
                     Console.WriteLine("\t\t\tGroup {0} has value {1}.", group.Name, group.Value);
             }
@@ -591,7 +592,7 @@ static void GroupingConstructs()
                 Console.WriteLine("\t\tNo matches found.");
             foreach (Match result in results)
             {
-                Console.WriteLine("\t\tMatch at index {0} with length {1}.", result.Index, result.Length);
+                Console.WriteLine("\t\tMatch at index {0} with length {1}.", result.Index.ToString(), result.Length.ToString());
                 foreach (Group group in result.Groups)
                     Console.WriteLine("\t\t\tGroup {0} has value {1}.", group.Name, group.Value);
             }
@@ -614,7 +615,7 @@ static void Alternation()
             if (results.Count <= 0)
                 Console.WriteLine("\t\tNo matches found.");
             foreach (Match result in results)
-                Console.WriteLine("\t\tMatch at index {0} with length {1}.", result.Index, result.Length);
+                Console.WriteLine("\t\tMatch at index {0} with length {1}.", result.Index.ToString(), result.Length.ToString());
         });
     });
 }
@@ -634,7 +635,7 @@ static void CharacterClasses()
             if (results.Count <= 0)
                 Console.WriteLine("\t\tNo matches found.");
             foreach (Match result in results)
-                Console.WriteLine("\t\tMatch at index {0} with length {1}.", result.Index, result.Length);
+                Console.WriteLine("\t\tMatch at index {0} with length {1}.", result.Index.ToString(), result.Length.ToString());
         });
     });
 }
@@ -654,7 +655,7 @@ static void PatternMatching()
             if (results.Count <= 0)
                 Console.WriteLine("\t\tNo matches found.");
             foreach (Match result in results)
-                Console.WriteLine("\t\tMatch found at index {0} with length {1}.", result.Index, result.Length);
+                Console.WriteLine("\t\tMatch found at index {0} with length {1}.", result.Index.ToString(), result.Length.ToString());
         });
     });
 }
