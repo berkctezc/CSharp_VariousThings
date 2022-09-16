@@ -8,12 +8,12 @@
     </PropertyGroup>
 
     <ItemGroup>
-        <PackageReference Include="AWSSDK.DynamoDBv2" Version="3.7.4.7"/>
-        <PackageReference Include="AWSSDK.Extensions.NETCore.Setup" Version="3.7.2"/>
+        <PackageReference Include="AWSSDK.DynamoDBv2" Version="3.7.5" />
+        <PackageReference Include="AWSSDK.Extensions.NETCore.Setup" Version="3.7.2" />
     </ItemGroup>
 
     <ItemGroup>
-        <ProjectReference Include="..\DynamoDb-MovieRank.Contracts\DynamoDb-MovieRank.Contracts.csproj"/>
+        <ProjectReference Include="..\DynamoDb-MovieRank.Contracts\DynamoDb-MovieRank.Contracts.csproj" />
     </ItemGroup>
 
 </Project>

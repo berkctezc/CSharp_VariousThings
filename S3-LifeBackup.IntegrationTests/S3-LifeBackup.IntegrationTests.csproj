@@ -10,13 +10,13 @@
     </PropertyGroup>
 
     <ItemGroup>
-        <PackageReference Include="AWSSDK.Extensions.NETCore.Setup" Version="3.7.2"/>
-        <PackageReference Include="AWSSDK.S3" Version="3.7.9.47"/>
-        <PackageReference Include="Docker.DotNet" Version="3.125.10"/>
-        <PackageReference Include="Microsoft.AspNetCore.App" Version="2.2.8"/>
-        <PackageReference Include="Microsoft.AspNetCore.Mvc.Testing" Version="6.0.8"/>
-        <PackageReference Include="Microsoft.NET.Test.Sdk" Version="17.3.1"/>
-        <PackageReference Include="xunit" Version="2.4.2"/>
+        <PackageReference Include="AWSSDK.Extensions.NETCore.Setup" Version="3.7.2" />
+        <PackageReference Include="AWSSDK.S3" Version="3.7.9.53" />
+        <PackageReference Include="Docker.DotNet" Version="3.125.11" />
+        <PackageReference Include="Microsoft.AspNetCore.App" Version="2.2.8" />
+        <PackageReference Include="Microsoft.AspNetCore.Mvc.Testing" Version="6.0.9" />
+        <PackageReference Include="Microsoft.NET.Test.Sdk" Version="17.3.1" />
+        <PackageReference Include="xunit" Version="2.4.2" />
         <PackageReference Include="xunit.runner.visualstudio" Version="2.4.5">
             <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
             <PrivateAssets>all</PrivateAssets>
@@ -28,8 +28,8 @@
     </ItemGroup>
 
     <ItemGroup>
-        <ProjectReference Include="..\S3-LifeBackup.Api\S3-LifeBackup.Api.csproj"/>
-        <ProjectReference Include="..\S3-LifeBackup.Core\S3-LifeBackup.Core.csproj"/>
+        <ProjectReference Include="..\S3-LifeBackup.Api\S3-LifeBackup.Api.csproj" />
+        <ProjectReference Include="..\S3-LifeBackup.Core\S3-LifeBackup.Core.csproj" />
     </ItemGroup>
 
 </Project>

@@ -8,12 +8,12 @@
     </PropertyGroup>
 
     <ItemGroup>
-        <ProjectReference Include="..\S3-LifeBackup.Core\S3-LifeBackup.Core.csproj"/>
+        <ProjectReference Include="..\S3-LifeBackup.Core\S3-LifeBackup.Core.csproj" />
     </ItemGroup>
 
     <ItemGroup>
-        <PackageReference Include="AWSSDK.S3" Version="3.7.9.47"/>
-        <PackageReference Include="Newtonsoft.Json" Version="13.0.1"/>
+        <PackageReference Include="AWSSDK.S3" Version="3.7.9.53" />
+        <PackageReference Include="Newtonsoft.Json" Version="13.0.1" />
     </ItemGroup>
 
     <ItemGroup>
