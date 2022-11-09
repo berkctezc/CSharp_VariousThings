@@ -1,7 +1,7 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
     <PropertyGroup>
-        <TargetFramework>net6.0</TargetFramework>
+        <TargetFramework>net7.0</TargetFramework>
         <RootNamespace>S3_LifeBackup.IntegrationTests</RootNamespace>
         <ImplicitUsings>enable</ImplicitUsings>
         <Nullable>enable</Nullable>
@@ -11,17 +11,17 @@
 
     <ItemGroup>
         <PackageReference Include="AWSSDK.Extensions.NETCore.Setup" Version="3.7.2"/>
-        <PackageReference Include="AWSSDK.S3" Version="3.7.9.47"/>
-        <PackageReference Include="Docker.DotNet" Version="3.125.10"/>
+        <PackageReference Include="AWSSDK.S3" Version="3.7.101.13"/>
+        <PackageReference Include="Docker.DotNet" Version="3.125.12"/>
         <PackageReference Include="Microsoft.AspNetCore.App" Version="2.2.8"/>
-        <PackageReference Include="Microsoft.AspNetCore.Mvc.Testing" Version="6.0.8"/>
-        <PackageReference Include="Microsoft.NET.Test.Sdk" Version="17.3.1"/>
+        <PackageReference Include="Microsoft.AspNetCore.Mvc.Testing" Version="7.0.0"/>
+        <PackageReference Include="Microsoft.NET.Test.Sdk" Version="17.4.0"/>
         <PackageReference Include="xunit" Version="2.4.2"/>
         <PackageReference Include="xunit.runner.visualstudio" Version="2.4.5">
             <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
             <PrivateAssets>all</PrivateAssets>
         </PackageReference>
-        <PackageReference Include="coverlet.collector" Version="3.1.2">
+        <PackageReference Include="coverlet.collector" Version="3.2.0">
             <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
             <PrivateAssets>all</PrivateAssets>
         </PackageReference>
