@@ -8,6 +8,6 @@
     </PropertyGroup>
 
     <ItemGroup>
-        <PackageReference Include="AWSSDK.SQS" Version="3.7.100.13"/>
+        <PackageReference Include="AWSSDK.SQS" Version="3.7.100.21"/>
     </ItemGroup>
 </Project>
