@@ -56,10 +56,10 @@ public class MovieRankRepository : IMovieRankRepository
 
     public async Task CreateDynamoTable(string tableName)
     {
-        var request = new CreateTableRequest()
+        var request = new CreateTableRequest
         {
             TableName = tableName,
-            AttributeDefinitions = new List<AttributeDefinition>()
+            AttributeDefinitions = new List<AttributeDefinition>
             {
                 new()
                 {
@@ -67,7 +67,7 @@ public class MovieRankRepository : IMovieRankRepository
                     AttributeType = "N"
                 }
             },
-            KeySchema = new List<KeySchemaElement>()
+            KeySchema = new List<KeySchemaElement>
             {
                 new()
                 {
@@ -87,7 +87,7 @@ public class MovieRankRepository : IMovieRankRepository
 
     public async Task DeleteDynamoTable(string tableName)
     {
-        var request = new DeleteTableRequest()
+        var request = new DeleteTableRequest
         {
             TableName = tableName
         };
