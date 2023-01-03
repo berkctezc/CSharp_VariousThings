@@ -1,8 +1,4 @@
-﻿using System.Diagnostics;
-using System.Globalization;
-using System.Text.RegularExpressions;
-
-Run();
+﻿Run();
 
 static void Run()
 {
@@ -23,6 +19,7 @@ static void Run()
     PatternMatching();
     StringSplitting();
     PatternMatching2();
+    Demo();
 }
 
 static void OptimizationAndSecurity()
@@ -658,4 +655,56 @@ static void PatternMatching()
                 Console.WriteLine("\t\tMatch found at index {0} with length {1}.", result.Index.ToString(), result.Length.ToString());
         });
     });
+}
+
+static void Demo()
+{
+    /*
+* ^ - Starts with
+* $ - Ends with
+* [] - Range
+* () - Group
+* . - Single character once
+* + - one or more characters in a row
+* ? - optional preceding character match
+* \ - escape character
+* \n - New line
+* \d - Digit
+* \D - Non-digit
+* \s - White space
+* \S - non-white space
+* \w - alphanumeric/underscore character (word chars)
+* \W - non-word characters
+* {x,y} - Repeat low (x) to high (y) (no "y" means at least x, no ",y" means that many)
+* (x|y) - Alternative - x or y
+* 
+* [^x] - Anything but x (where x is whatever character you want)
+*/
+// (440) 555-1212
+// 12-34567890
+// 123 87876
+
+    var toSearch = File.ReadAllText("test.txt");
+
+// This pattern matches phone numbers in the following patterns
+    var pattern = @"\(?\d{3}\)?(-|.|\s)?\d{3}(-|.)?\d{4}";
+
+    var matches = Regex.Matches(toSearch, pattern);
+
+    foreach (Match match in matches)
+    {
+        Console.WriteLine(match.Value);
+    }
+
+//Regex test = new Regex(pattern);
+
+//for (int i = 0; i < 100000; i++)
+//{
+//    //Regex.IsMatch("Berkc Tezc", pattern);
+//    test.IsMatch("Berkc Tezc");
+//}
+
+//stopwatch.Stop();
+
+//Console.WriteLine($"Time Elapsed in ms: {stopwatch.ElapsedMilliseconds}");
 }
