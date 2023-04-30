@@ -9,8 +9,8 @@
     </PropertyGroup>
 
     <ItemGroup>
-        <PackageReference Include="AWSSDK.Extensions.NETCore.Setup" Version="3.7.5"/>
-        <PackageReference Include="AWSSDK.S3" Version="3.7.103.31"/>
+        <PackageReference Include="AWSSDK.Extensions.NETCore.Setup" Version="3.7.6"/>
+        <PackageReference Include="AWSSDK.S3" Version="3.7.104.7"/>
         <PackageReference Include="Newtonsoft.Json" Version="13.0.3"/>
         <PackageReference Include="Swashbuckle.AspNetCore" Version="6.5.0"/>
     </ItemGroup>
