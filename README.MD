@@ -49,7 +49,6 @@ advanced stuff.
 |                      [_.NET Kubernetes Deployment_](http://youtu.be/cNlxPKy_NPA)                       |       API       |            KubernetesExample.Api             |                    None                    |
 |                        [_Mediator From Scratch_ ](http://youtu.be/4e83trumwcM)                         |       CLI       |           MediatorFromScratch ...            |                    None                    |
 
-
 * marked **bold** means planned
 * marked _italic_ means incomplete
 

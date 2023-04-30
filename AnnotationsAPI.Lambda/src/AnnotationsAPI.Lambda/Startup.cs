@@ -1,6 +1,6 @@
 namespace AnnotationsAPI.Lambda;
 
-[Amazon.Lambda.Annotations.LambdaStartup]
+[LambdaStartup]
 public class Startup
 {
     /// <summary>

@@ -6,9 +6,9 @@ var jsonTxt = $$"""
         { 
                 "name": "berkc",
                 "id" : 1,
-                "uuid":{{ Guid.NewGuid()}}   
+                "uuid":{{Guid.NewGuid()}}   
         }
-        """ ;
+        """;
 
 Console.WriteLine(xmlPrologue);
 Console.WriteLine(jsonTxt);
