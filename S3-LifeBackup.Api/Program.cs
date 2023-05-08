@@ -37,6 +37,9 @@ app.MapControllers();
 
 app.Run();
 
-public partial class Program
+namespace S3_LifeBackup.Api
 {
+    public partial class Program
+    {
+    }
 }

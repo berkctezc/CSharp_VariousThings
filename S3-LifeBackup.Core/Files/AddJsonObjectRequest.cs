@@ -1,6 +1,6 @@
 ﻿using System.Text.Json.Serialization;
 
-namespace S3_LifeBackup.Core.Interfaces;
+namespace S3_LifeBackup.Core.Files;
 
 public class AddJsonObjectRequest
 {

@@ -1,18 +1,17 @@
-﻿namespace S3_LifeBackup.Infrastructure.Repositories;
+﻿using Amazon.S3.Util;
+using S3_LifeBackup.Core.Interfaces;
+
+namespace S3_LifeBackup.Infrastructure.Repositories;
 
 public class BucketRepository : IBucketRepository
 {
     private readonly IAmazonS3 _s3Client;
 
     public BucketRepository(IAmazonS3 s3Client)
-    {
-        _s3Client = s3Client;
-    }
+        => _s3Client = s3Client;
 
     public async Task<bool> DoesS3BucketExists(string bucketName)
-    {
-        return await _s3Client.DoesS3BucketExistAsync(bucketName);
-    }
+        => await AmazonS3Util.DoesS3BucketExistV2Async(_s3Client, bucketName);
 
     public async Task<CreateBucketResponse?> CreateBucket(string bucketName)
     {
@@ -43,7 +42,5 @@ public class BucketRepository : IBucketRepository
     }
 
     public async Task DeleteBucket(string bucketName)
-    {
-        await _s3Client.DeleteBucketAsync(bucketName);
-    }
+        => await _s3Client.DeleteBucketAsync(bucketName);
 }

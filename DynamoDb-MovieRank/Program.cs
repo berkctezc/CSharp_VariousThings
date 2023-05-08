@@ -34,6 +34,9 @@ app.UseEndpoints(e => { e.MapControllers(); });
 
 app.Run();
 
-public partial class Program
+namespace DynamoDb_MovieRank
 {
+    public partial class Program
+    {
+    }
 }

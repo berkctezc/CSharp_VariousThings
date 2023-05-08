@@ -1,4 +1,6 @@
 ﻿using Newtonsoft.Json;
+using S3_LifeBackup.Core.Files;
+using S3_LifeBackup.Core.Interfaces;
 
 namespace S3_LifeBackup.Infrastructure.Repositories;
 
@@ -7,9 +9,7 @@ public class FilesRepository : IFilesRepository
     private readonly IAmazonS3 _s3Client;
 
     public FilesRepository(IAmazonS3 s3Client)
-    {
-        _s3Client = s3Client;
-    }
+        => _s3Client = s3Client;
 
     public async Task<AddFileResponse?> UploadFiles(string bucketName, IList<IFormFile> formFiles)
     {
@@ -118,6 +118,6 @@ public class FilesRepository : IFilesRepository
         using var reader = new StreamReader(response.ResponseStream);
         var contents = await reader.ReadToEndAsync();
 
-        return JsonConvert.DeserializeObject<GetJsonObjectResponse>(contents);
+        return JsonConvert.DeserializeObject<GetJsonObjectResponse>(contents) ?? new GetJsonObjectResponse();
     }
 }
