@@ -1,7 +1,4 @@
-﻿using Amazon.S3.Util;
-using S3_LifeBackup.Core.Interfaces;
-
-namespace S3_LifeBackup.Infrastructure.Repositories;
+﻿namespace S3_LifeBackup.Infrastructure.Repositories;
 
 public class BucketRepository : IBucketRepository
 {
