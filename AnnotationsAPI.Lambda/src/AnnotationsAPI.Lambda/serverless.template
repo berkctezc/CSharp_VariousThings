@@ -61,35 +61,6 @@
         }
       }
     },
-    "AnnotationsAPILambdaFunctionsSubtractGenerated": {
-      "Type": "AWS::Serverless::Function",
-      "Metadata": {
-        "Tool": "Amazon.Lambda.Annotations",
-        "SyncedEvents": [
-          "RootGet"
-        ]
-      },
-      "Properties": {
-        "Runtime": "dotnet6",
-        "CodeUri": ".",
-        "MemorySize": 256,
-        "Timeout": 30,
-        "Policies": [
-          "AWSLambdaBasicExecutionRole"
-        ],
-        "PackageType": "Zip",
-        "Handler": "AnnotationsAPI.Lambda::AnnotationsAPI.Lambda.Functions_Subtract_Generated::Subtract",
-        "Events": {
-          "RootGet": {
-            "Type": "HttpApi",
-            "Properties": {
-              "Path": "/subtract/{x}/{y}",
-              "Method": "GET"
-            }
-          }
-        }
-      }
-    },
     "AnnotationsAPILambdaFunctionsMultiplyGenerated": {
       "Type": "AWS::Serverless::Function",
       "Metadata": {
@@ -142,6 +113,35 @@
             "Type": "HttpApi",
             "Properties": {
               "Path": "/divide/{x}/{y}",
+              "Method": "GET"
+            }
+          }
+        }
+      }
+    },
+    "AnnotationsAPILambdaFunctionsSubtractGenerated": {
+      "Type": "AWS::Serverless::Function",
+      "Metadata": {
+        "Tool": "Amazon.Lambda.Annotations",
+        "SyncedEvents": [
+          "RootGet"
+        ]
+      },
+      "Properties": {
+        "Runtime": "dotnet6",
+        "CodeUri": ".",
+        "MemorySize": 256,
+        "Timeout": 30,
+        "Policies": [
+          "AWSLambdaBasicExecutionRole"
+        ],
+        "PackageType": "Zip",
+        "Handler": "AnnotationsAPI.Lambda::AnnotationsAPI.Lambda.Functions_Subtract_Generated::Subtract",
+        "Events": {
+          "RootGet": {
+            "Type": "HttpApi",
+            "Properties": {
+              "Path": "/subtract/{x}/{y}",
               "Method": "GET"
             }
           }
