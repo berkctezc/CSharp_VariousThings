@@ -1,15 +1,15 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
     <PropertyGroup>
-        <TargetFramework>net7.0</TargetFramework>
+        <TargetFramework>net8.0</TargetFramework>
         <RootNamespace>DynamoDb_MovieRank.Libs</RootNamespace>
         <ImplicitUsings>enable</ImplicitUsings>
         <Nullable>enable</Nullable>
     </PropertyGroup>
 
     <ItemGroup>
-        <PackageReference Include="AWSSDK.DynamoDBv2" Version="3.7.203.2"/>
-        <PackageReference Include="AWSSDK.Extensions.NETCore.Setup" Version="3.7.7"/>
+        <PackageReference Include="AWSSDK.DynamoDBv2" Version="3.7.300.4"/>
+        <PackageReference Include="AWSSDK.Extensions.NETCore.Setup" Version="3.7.300"/>
     </ItemGroup>
 
     <ItemGroup>
