@@ -36,6 +36,7 @@ advanced stuff.
 |              [Mock with Moq and xUnit](http://pluralsight.com/courses/mocking-moq-xunit)               |       Lib       |               MockWithMoq ...                |                 Moq, xUnit                 |
 |                          [Fake Data with Bogus](http://youtu.be/T9pwE1GAr_U)                           |       CLI       |            FakeDataWithBogus ...             |                   Bogus                    |
 |                                  [gRPC](http://youtu.be/QyxCX2GYHxk)                                   |  GRPC,Console   |            GrpcClient, GrpcServer            | Google.Protobuf,Grpc.Net.Client,Grpc.Tools |
+|                  [MassTransit Demo](https://youtu.be/4FFYefcx4Bg?si=ySCx_cx9tLtHEVbm)                  | MassTransitDemo |                 MassTransit                  |                                            |
 |                            [Refit REST Client](http://youtu.be/HH8drNbai8w)                            |   API,Blazor    |            ApiForRefit,UiForRefit            | Google.Protobuf,Grpc.Net.Client,Grpc.Tools |
 |                            [AWS Lambda Intro](http://youtu.be/GZ8_anxgpK8)                             |     Lambda      |                LambdaDemo ...                |                    None                    |
 |                              [AWS SQS Intro](http://youtu.be/7OfUi3h-wmM)                              |     Lib,API     |              WorkingWithSqs ...              |                 AWSSDK.SQS                 |

@@ -228,6 +228,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AnnotationsAPI.Lambda", "An
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AsyncApi", "AsyncApi\AsyncApi.csproj", "{4E8F75BF-B14B-487C-96CE-02103BCA2515}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MassTransitDemo", "MassTransitDemo\MassTransitDemo.csproj", "{5517FD95-5874-4CAD-BD90-9208AE283AF6}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -530,6 +532,10 @@ Global
 		{4E8F75BF-B14B-487C-96CE-02103BCA2515}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4E8F75BF-B14B-487C-96CE-02103BCA2515}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4E8F75BF-B14B-487C-96CE-02103BCA2515}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5517FD95-5874-4CAD-BD90-9208AE283AF6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5517FD95-5874-4CAD-BD90-9208AE283AF6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5517FD95-5874-4CAD-BD90-9208AE283AF6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5517FD95-5874-4CAD-BD90-9208AE283AF6}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -633,6 +639,7 @@ Global
 		{CB6AB56F-EBC5-489E-87DA-975EC3D47BD9} = {DE5408C4-F7DE-4566-8FC7-CF37980D8F89}
 		{CD91B8BB-2B58-42C8-947E-95C5672C4DC9} = {222E8B60-EC25-4EFD-ABF7-6F4DDA524A0C}
 		{4E8F75BF-B14B-487C-96CE-02103BCA2515} = {7A8F945E-51BF-44D9-8AD3-2BE97AF815B2}
+		{5517FD95-5874-4CAD-BD90-9208AE283AF6} = {DE5408C4-F7DE-4566-8FC7-CF37980D8F89}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {40DD54A7-56C5-4FED-9AF4-0550D0EAF60F}
