@@ -26,16 +26,10 @@ public class Demo
         }
     }
 
-    public class Class1
+    public class Class1(string firstName, string lastName)
     {
-        public Class1(string firstName, string lastName)
-        {
-            FirstName = firstName;
-            LastName = lastName;
-        }
+        public string FirstName { get; init; } = firstName;
 
-        public string FirstName { get; init; }
-
-        public string LastName { get; init; }
+        public string LastName { get; init; } = lastName;
     }
 }

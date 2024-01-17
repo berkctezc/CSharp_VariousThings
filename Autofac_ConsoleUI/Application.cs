@@ -1,16 +1,9 @@
 ﻿namespace Autofac_ConsoleUI;
 
-public class Application : IApplication
+public class Application(IBusinessLogic businessLogic) : IApplication
 {
-    private readonly IBusinessLogic _businessLogic;
-
-    public Application(IBusinessLogic businessLogic)
-    {
-        _businessLogic = businessLogic;
-    }
-
     public void Run()
     {
-        _businessLogic.ProcessData();
+        businessLogic.ProcessData();
     }
 }

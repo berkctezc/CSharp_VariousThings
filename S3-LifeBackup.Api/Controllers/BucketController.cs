@@ -2,23 +2,16 @@
 
 [ApiController]
 [Route("[controller]")]
-public class BucketController : ControllerBase
+public class BucketController(IBucketRepository bucketRepository) : ControllerBase
 {
-    private readonly IBucketRepository _bucketRepository;
-
-    public BucketController(IBucketRepository bucketRepository)
-    {
-        _bucketRepository = bucketRepository;
-    }
-
     [HttpPost("create/{bucketName}")]
     public async Task<ActionResult<CreateBucketResponse>> CreateS3Bucket([FromRoute] string bucketName)
     {
-        var bucketExists = await _bucketRepository.DoesS3BucketExists(bucketName);
+        var bucketExists = await bucketRepository.DoesS3BucketExists(bucketName);
 
         if (bucketExists) return BadRequest("S3 bucket already exists");
 
-        var result = await _bucketRepository.CreateBucket(bucketName);
+        var result = await bucketRepository.CreateBucket(bucketName);
 
         if (result is null)
             return BadRequest();
@@ -29,7 +22,7 @@ public class BucketController : ControllerBase
     [HttpGet("list")]
     public async Task<ActionResult<IEnumerable<ListS3BucketResponse>?>> ListS3Buckets()
     {
-        var result = await _bucketRepository.ListBuckets();
+        var result = await bucketRepository.ListBuckets();
 
         if (result is null) return NotFound();
 
@@ -39,7 +32,7 @@ public class BucketController : ControllerBase
     [HttpDelete("delete/{bucketName}")]
     public async Task<IActionResult> DeleteS3Bucket(string bucketName)
     {
-        await _bucketRepository.DeleteBucket(bucketName);
+        await bucketRepository.DeleteBucket(bucketName);
 
         return Ok();
     }

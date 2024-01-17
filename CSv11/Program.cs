@@ -3,12 +3,12 @@
 var xmlPrologue = """<?xml version="1.0" encoding="UTF-8"?> """;
 
 var jsonTxt = $$"""
-        { 
-                "name": "berkc",
-                "id" : 1,
-                "uuid":{{Guid.NewGuid()}}   
-        }
-        """;
+                {
+                        "name": "berkc",
+                        "id" : 1,
+                        "uuid":{{Guid.NewGuid()}}
+                }
+                """;
 
 Console.WriteLine(xmlPrologue);
 Console.WriteLine(jsonTxt);

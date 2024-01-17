@@ -1,23 +1,14 @@
 ﻿namespace MediatorFromScratch.Lib;
 
-public class Mediator : IMediator
+public class Mediator(Func<Type, object> serviceResolver, IDictionary<Type, Type> handlerDetails) : IMediator
 {
-    private readonly IDictionary<Type, Type> _handlerDetails;
-    private readonly Func<Type, object> _serviceResolver;
-
-    public Mediator(Func<Type, object> serviceResolver, IDictionary<Type, Type> handlerDetails)
-    {
-        _serviceResolver = serviceResolver;
-        _handlerDetails = handlerDetails;
-    }
-
     public async Task<TResponse> SendAsync<TResponse>(IRequest<TResponse> request)
     {
         var requestType = request.GetType();
-        if (!_handlerDetails.ContainsKey(requestType)) throw new Exception($"No handler to handle request of type: {requestType}");
+        if (!handlerDetails.ContainsKey(requestType)) throw new Exception($"No handler to handle request of type: {requestType}");
 
-        var requestHandlerType = _handlerDetails[requestType];
-        var handler = _serviceResolver(requestHandlerType);
+        var requestHandlerType = handlerDetails[requestType];
+        var handler = serviceResolver(requestHandlerType);
 
         return await ((Task<TResponse>) handler.GetType().GetMethod("HandleAsync")!
             .Invoke(handler, new[] {request})!)!;

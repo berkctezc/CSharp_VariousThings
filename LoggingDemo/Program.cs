@@ -12,7 +12,7 @@ public class Program
 
     // Levels of Log
     /*
-    - Trace: Lowest level, for heavy debugging. very detailed 
+    - Trace: Lowest level, for heavy debugging. very detailed
     - Debug: Detailed but not as low as Trace
     - Information: More friendly way to see the flow of the application
     - Warning: Exception like issues

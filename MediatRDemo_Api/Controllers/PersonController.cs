@@ -2,30 +2,23 @@
 
 [Route("api/[controller]")]
 [ApiController]
-public class PersonController : ControllerBase
+public class PersonController(IMediator mediator) : ControllerBase
 {
-    private readonly IMediator _mediator;
-
-    public PersonController(IMediator mediator)
-    {
-        _mediator = mediator;
-    }
-
     [HttpGet]
     public async Task<List<PersonModel>> GetAll()
     {
-        return await _mediator.Send(new GetPersonListQuery());
+        return await mediator.Send(new GetPersonListQuery());
     }
 
     [HttpGet("{id}")]
     public async Task<PersonModel> GetById(int id)
     {
-        return await _mediator.Send(new GetPersonByIdQuery(id));
+        return await mediator.Send(new GetPersonByIdQuery(id));
     }
 
     [HttpPost]
     public async Task<PersonModel> AddPersonAsync([FromBody] PersonModel value)
     {
-        return await _mediator.Send(new InsertPersonCommand(value.FirstName, value.LastName));
+        return await mediator.Send(new InsertPersonCommand(value.FirstName, value.LastName));
     }
 }

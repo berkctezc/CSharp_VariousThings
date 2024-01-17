@@ -2,11 +2,9 @@
 
 namespace AnnotationsAPI.Lambda;
 
-public class Functions
+public class Functions(IConfiguration configuration)
 {
-    private readonly IConfiguration _configuration;
-
-    public Functions(IConfiguration configuration) => _configuration = configuration;
+    private readonly IConfiguration _configuration = configuration;
 
     [LambdaFunction]
     [HttpApi(LambdaHttpMethod.Get, "/")]

@@ -1,11 +1,6 @@
 ﻿namespace MediatRDemo_Library.Queries;
 
-public class CLASS_GetPersonByIdQuery : IRequest<PersonModel>
+public class CLASS_GetPersonByIdQuery(int id) : IRequest<PersonModel>
 {
-    public CLASS_GetPersonByIdQuery(int id)
-    {
-        Id = id;
-    }
-
-    public int Id { get; }
+    public int Id { get; } = id;
 }

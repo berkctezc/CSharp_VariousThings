@@ -1,17 +1,10 @@
 ﻿namespace DIFromScratch.DependencyInjection;
 
-public class DiContainer
+public class DiContainer(List<ServiceDescriptor> serviceDescriptors)
 {
-    private readonly List<ServiceDescriptor> _serviceDescriptors;
-
-    public DiContainer(List<ServiceDescriptor> serviceDescriptors)
-    {
-        _serviceDescriptors = serviceDescriptors;
-    }
-
     public object? GetService(Type serviceType)
     {
-        var descriptor = _serviceDescriptors.SingleOrDefault(x => x.ServiceType == serviceType);
+        var descriptor = serviceDescriptors.SingleOrDefault(x => x.ServiceType == serviceType);
 
         if (descriptor is null) throw new Exception($"service of type {serviceType.Name} isn't registered");
 

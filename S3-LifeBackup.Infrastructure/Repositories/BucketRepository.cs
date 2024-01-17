@@ -1,14 +1,9 @@
 ﻿namespace S3_LifeBackup.Infrastructure.Repositories;
 
-public class BucketRepository : IBucketRepository
+public class BucketRepository(IAmazonS3 s3Client) : IBucketRepository
 {
-    private readonly IAmazonS3 _s3Client;
-
-    public BucketRepository(IAmazonS3 s3Client)
-        => _s3Client = s3Client;
-
     public async Task<bool> DoesS3BucketExists(string bucketName)
-        => await AmazonS3Util.DoesS3BucketExistV2Async(_s3Client, bucketName);
+        => await AmazonS3Util.DoesS3BucketExistV2Async(s3Client, bucketName);
 
     public async Task<CreateBucketResponse?> CreateBucket(string bucketName)
     {
@@ -18,7 +13,7 @@ public class BucketRepository : IBucketRepository
             UseClientRegion = true
         };
 
-        var response = await _s3Client.PutBucketAsync(putBucketRequest);
+        var response = await s3Client.PutBucketAsync(putBucketRequest);
 
         return new CreateBucketResponse
         {
@@ -29,7 +24,7 @@ public class BucketRepository : IBucketRepository
 
     public async Task<IEnumerable<ListS3BucketResponse>?> ListBuckets()
     {
-        var response = await _s3Client.ListBucketsAsync();
+        var response = await s3Client.ListBucketsAsync();
 
         return response.Buckets.Select(b => new ListS3BucketResponse
         {
@@ -39,5 +34,5 @@ public class BucketRepository : IBucketRepository
     }
 
     public async Task DeleteBucket(string bucketName)
-        => await _s3Client.DeleteBucketAsync(bucketName);
+        => await s3Client.DeleteBucketAsync(bucketName);
 }
