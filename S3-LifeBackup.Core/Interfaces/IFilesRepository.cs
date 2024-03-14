@@ -1,7 +1,4 @@
-﻿using Microsoft.AspNetCore.Http;
-using S3_LifeBackup.Core.Files;
-
-namespace S3_LifeBackup.Core.Interfaces;
+﻿namespace S3_LifeBackup.Core.Interfaces;
 
 public interface IFilesRepository
 {

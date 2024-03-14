@@ -1,5 +1,3 @@
-using Amazon.Lambda.Serialization.SystemTextJson;
-
 [assembly: LambdaSerializer(typeof(DefaultLambdaJsonSerializer))]
 
 namespace Sqs_WebApi_Lambda;
