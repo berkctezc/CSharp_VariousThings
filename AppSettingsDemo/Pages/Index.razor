@@ -19,16 +19,16 @@
 
     protected override void OnInitialized()
     {
-    // read value from appsettings
-    // read and override hierarchy appsettings.json > appsettings.Development.json > secrets.json
-    // seperate sensitive data by that and leave it blank in appsettings.json and than you could safely put that in source control
+        // read value from appsettings
+        // read and override hierarchy appsettings.json > appsettings.Development.json > secrets.json
+        // seperate sensitive data by that and leave it blank in appsettings.json and than you could safely put that in source control
         mySetting = _config.GetValue<string>("MySetting");
         subSetting = _config.GetValue<string>("MainSetting:SubSetting");
         connectionString = _config.GetConnectionString("Default");
 
-    /* secrets.json
-            Right click to project and select Manage User Secrets
-            */
+        /* secrets.json
+                Right click to project and select Manage User Secrets
+                */
     }
 
 }

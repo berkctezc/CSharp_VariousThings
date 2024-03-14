@@ -1,14 +1,7 @@
 ﻿namespace MoqDemo_Library.Logic;
 
-public class PersonProcessor : IPersonProcessor
+public class PersonProcessor(ISqliteDataAccess database) : IPersonProcessor
 {
-    private readonly ISqliteDataAccess _database;
-
-    public PersonProcessor(ISqliteDataAccess database)
-    {
-        _database = database;
-    }
-
     public PersonModel CreatePerson(string firstName, string lastName, string heightText)
     {
         PersonModel output = new();
@@ -37,7 +30,7 @@ public class PersonProcessor : IPersonProcessor
     {
         var sql = "select * from Person";
 
-        var output = _database.LoadData<PersonModel>(sql);
+        var output = database.LoadData<PersonModel>(sql);
 
         return output;
     }
@@ -51,7 +44,7 @@ public class PersonProcessor : IPersonProcessor
         sql = sql.Replace("@LastName", $"'{person.LastName}'");
         sql = sql.Replace("@HeightInInches", $"{person.HeightInInches}");
 
-        _database.SaveData(person, sql);
+        database.SaveData(person, sql);
     }
 
     public void UpdatePerson(PersonModel person)
@@ -59,7 +52,7 @@ public class PersonProcessor : IPersonProcessor
         var sql = "update Person set FirstName = @FirstName, LastName = @LastName" +
                   ", HeightInInches = @HeightInInches where Id = @Id";
 
-        _database.UpdateData(person, sql);
+        database.UpdateData(person, sql);
     }
 
     public (bool isValid, double heightInInches) ConvertHeightTextToInches(string heightText)

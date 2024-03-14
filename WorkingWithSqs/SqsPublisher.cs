@@ -1,18 +1,11 @@
 ﻿namespace WorkingWithSqs.Publisher;
 
-public class SqsPublisher
+public class SqsPublisher(IAmazonSQS sqs)
 {
-    private readonly IAmazonSQS _sqs;
-
-    public SqsPublisher(IAmazonSQS sqs)
-    {
-        _sqs = sqs;
-    }
-
     public async Task PublishAsync<TMessage>(string queueName, TMessage message)
         where TMessage : IMessage
     {
-        var queueUrl = await _sqs.GetQueueUrlAsync(queueName);
+        var queueUrl = await sqs.GetQueueUrlAsync(queueName);
         var request = new SendMessageRequest
         {
             QueueUrl = queueUrl.QueueUrl,
@@ -29,6 +22,6 @@ public class SqsPublisher
             }
         };
 
-        await _sqs.SendMessageAsync(request);
+        await sqs.SendMessageAsync(request);
     }
 }

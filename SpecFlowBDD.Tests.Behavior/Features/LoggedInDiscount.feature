@@ -16,4 +16,4 @@ I want to have a %5 discount when I am logged in
 
 
 
-    #Find and install Specflow plugins in Rider, Visual Studio or VS Code
+#Find and install Specflow plugins in Rider, Visual Studio or VS Code

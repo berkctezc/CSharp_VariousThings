@@ -1,14 +1,7 @@
 ﻿namespace MoqDemo_ConsoleUI;
 
-public class Application : IApplication
+public class Application(IPersonProcessor personProcessor) : IApplication
 {
-    private readonly IPersonProcessor _personProcessor;
-
-    public Application(IPersonProcessor personProcessor)
-    {
-        _personProcessor = personProcessor;
-    }
-
     public void Run()
     {
         IdentifyNextStep();
@@ -27,7 +20,7 @@ public class Application : IApplication
             switch (selectedAction)
             {
                 case "1":
-                    DisplayPeople(_personProcessor.LoadPeople());
+                    DisplayPeople(personProcessor.LoadPeople());
                     break;
                 case "2":
                     AddPerson();
@@ -54,8 +47,8 @@ public class Application : IApplication
         Console.Write("What is the person's height: ");
         var height = Console.ReadLine();
 
-        var person = _personProcessor.CreatePerson(firstName, lastName, height);
-        _personProcessor.SavePerson(person);
+        var person = personProcessor.CreatePerson(firstName, lastName, height);
+        personProcessor.SavePerson(person);
     }
 
     private void DisplayPeople(List<PersonModel> people)

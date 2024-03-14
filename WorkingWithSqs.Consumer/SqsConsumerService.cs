@@ -1,21 +1,13 @@
 ﻿namespace WorkingWithSqs.Consumer;
 
-public class SqsConsumerService : BackgroundService
+public class SqsConsumerService(IAmazonSQS sqs, MessageDispatcher dispatcher) : BackgroundService
 {
     private const string QueueName = "customers";
     private static readonly List<string> MessageAttributeNames = new() {"All"};
-    private readonly MessageDispatcher _dispatcher;
-    private readonly IAmazonSQS _sqs;
-
-    public SqsConsumerService(IAmazonSQS sqs, MessageDispatcher dispatcher)
-    {
-        _sqs = sqs;
-        _dispatcher = dispatcher;
-    }
 
     protected override async Task ExecuteAsync(CancellationToken ct)
     {
-        var queueUrl = await _sqs.GetQueueUrlAsync(QueueName, ct);
+        var queueUrl = await sqs.GetQueueUrlAsync(QueueName, ct);
         var receiveRequest = new ReceiveMessageRequest
         {
             QueueUrl = queueUrl.QueueUrl,
@@ -25,7 +17,7 @@ public class SqsConsumerService : BackgroundService
 
         while (!ct.IsCancellationRequested)
         {
-            var messageResponse = await _sqs.ReceiveMessageAsync(receiveRequest, ct);
+            var messageResponse = await sqs.ReceiveMessageAsync(receiveRequest, ct);
             if (messageResponse.HttpStatusCode != HttpStatusCode.OK)
                 // logic
                 continue;
@@ -37,15 +29,15 @@ public class SqsConsumerService : BackgroundService
 
                 if (messageTypeName is null) continue;
 
-                if (!_dispatcher.CanHandleMessageType(messageTypeName)) continue;
+                if (!dispatcher.CanHandleMessageType(messageTypeName)) continue;
 
-                var messageType = _dispatcher.GetMessageTypeByName(messageTypeName)!;
+                var messageType = dispatcher.GetMessageTypeByName(messageTypeName)!;
 
                 var messageAsType = (IMessage) JsonSerializer.Deserialize(msg.Body, messageType)!;
 
 
-                await _dispatcher.DispatchAsync(messageAsType);
-                await _sqs.DeleteMessageAsync(queueUrl.QueueUrl, msg.ReceiptHandle, ct);
+                await dispatcher.DispatchAsync(messageAsType);
+                await sqs.DeleteMessageAsync(queueUrl.QueueUrl, msg.ReceiptHandle, ct);
             }
         }
     }

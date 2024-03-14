@@ -1,13 +1,8 @@
 namespace AppSettingsDemo;
 
-public class Startup
+public class Startup(IConfiguration config)
 {
-    private readonly IConfiguration _config;
-
-    public Startup(IConfiguration config)
-    {
-        _config = config;
-    }
+    private readonly IConfiguration _config = config;
 
     public void ConfigureServices(IServiceCollection services)
     {

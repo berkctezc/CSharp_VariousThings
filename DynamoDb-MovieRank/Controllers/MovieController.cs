@@ -1,19 +1,12 @@
 ﻿namespace DynamoDb_MovieRank.Controllers;
 
 [Route("movies")]
-public class MovieController : Controller
+public class MovieController(IMovieRankService movieRankService) : Controller
 {
-    private readonly IMovieRankService _movieRankService;
-
-    public MovieController(IMovieRankService movieRankService)
-    {
-        _movieRankService = movieRankService;
-    }
-
     [HttpGet]
     public async Task<IEnumerable<MovieResponse>> GetAllItemsFromDatabase()
     {
-        var results = await _movieRankService.GetAllItemsFromDatabase();
+        var results = await movieRankService.GetAllItemsFromDatabase();
 
         return results;
     }
@@ -21,7 +14,7 @@ public class MovieController : Controller
     [HttpGet("{userId}/{movieName}")]
     public async Task<MovieResponse> GetMovie(int userId, string movieName)
     {
-        var result = await _movieRankService.GetMovie(userId, movieName);
+        var result = await movieRankService.GetMovie(userId, movieName);
 
         return result;
     }
@@ -29,7 +22,7 @@ public class MovieController : Controller
     [HttpGet("user/{userId}/rankedMovies/{movieName}")]
     public async Task<IEnumerable<MovieResponse>> GetUsersRankedMoviesByMovieTitle(int userId, string movieName)
     {
-        var results = await _movieRankService.GetUsersRankedMoviesByMovieTitle(userId, movieName);
+        var results = await movieRankService.GetUsersRankedMoviesByMovieTitle(userId, movieName);
 
         return results;
     }
@@ -37,7 +30,7 @@ public class MovieController : Controller
     [HttpPost("{userId}")]
     public async Task<IActionResult> AddMovie(int userId, [FromBody] MovieRankRequest movieRankRequest)
     {
-        await _movieRankService.AddMovie(userId, movieRankRequest);
+        await movieRankService.AddMovie(userId, movieRankRequest);
 
         return Ok();
     }
@@ -45,7 +38,7 @@ public class MovieController : Controller
     [HttpPatch("{userId}")]
     public async Task<IActionResult> UpdateMovie(int userId, [FromBody] MovieUpdateRequest request)
     {
-        await _movieRankService.UpdateMovie(userId, request);
+        await movieRankService.UpdateMovie(userId, request);
 
         return Ok();
     }
@@ -54,7 +47,7 @@ public class MovieController : Controller
     [Route("{movieName}/ranking")]
     public async Task<MovieRankResponse> GetMoviesRanking(string movieName)
     {
-        var result = await _movieRankService.GetMovieRank(movieName);
+        var result = await movieRankService.GetMovieRank(movieName);
 
         return result;
     }

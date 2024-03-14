@@ -1,18 +1,11 @@
 ﻿namespace WorkingWithSqs.Consumer.Handlers;
 
-public class CustomerCreatedHandler : IMessageHandler
+public class CustomerCreatedHandler(ILogger<CustomerCreatedHandler> logger) : IMessageHandler
 {
-    private readonly ILogger<CustomerCreatedHandler> _logger;
-
-    public CustomerCreatedHandler(ILogger<CustomerCreatedHandler> logger)
-    {
-        _logger = logger;
-    }
-
     public Task HandleAsync(IMessage message)
     {
         var customerCreated = (CustomerCreated) message;
-        _logger.LogInformation("Customer created with name: {FullName}", customerCreated.FullName);
+        logger.LogInformation("Customer created with name: {FullName}", customerCreated.FullName);
         return Task.CompletedTask;
     }
 

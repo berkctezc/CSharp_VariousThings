@@ -8,14 +8,9 @@ using Newtonsoft.Json;
 namespace DynamoDb_MovieRank.IntegrationTests.Scenarios;
 
 [Collection("api")]
-public class MovieTests : IClassFixture<CustomWebApplicationFactory<Program>>
+public class MovieTests(CustomWebApplicationFactory<Program> factory) : IClassFixture<CustomWebApplicationFactory<Program>>
 {
-    private readonly HttpClient _client;
-
-    public MovieTests(CustomWebApplicationFactory<Program> factory)
-    {
-        _client = factory.CreateClient();
-    }
+    private readonly HttpClient _client = factory.CreateClient();
 
     [Fact]
     public async Task AddMovieRankDataReturnsOkStatus()

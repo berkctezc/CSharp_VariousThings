@@ -1,17 +1,10 @@
 ﻿namespace SerilogDemo.Pages;
 
-public class IndexModel : PageModel
+public class IndexModel(ILogger<IndexModel> logger) : PageModel
 {
-    private readonly ILogger<IndexModel> _logger;
-
-    public IndexModel(ILogger<IndexModel> logger)
-    {
-        _logger = logger;
-    }
-
     public void OnGet()
     {
-        _logger.LogInformation("You requested the Index Page");
+        logger.LogInformation("You requested the Index Page");
 
         try
         {
@@ -19,7 +12,7 @@ public class IndexModel : PageModel
         }
         catch (Exception ex)
         {
-            _logger.LogError(ex, "exception caught in Index");
+            logger.LogError(ex, "exception caught in Index");
         }
     }
 }

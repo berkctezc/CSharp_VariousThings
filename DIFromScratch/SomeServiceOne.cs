@@ -1,13 +1,8 @@
 ﻿namespace DIFromScratch;
 
-public class SomeServiceOne : ISomeService
+public class SomeServiceOne(IRandomGuidProvider randomGuidProvider) : ISomeService
 {
-    private readonly IRandomGuidProvider _randomGuidProvider;
-
-    public SomeServiceOne(IRandomGuidProvider randomGuidProvider)
-    {
-        _randomGuidProvider = randomGuidProvider;
-    }
+    private readonly IRandomGuidProvider _randomGuidProvider = randomGuidProvider;
 
     private Guid RandomGuid { get; } = Guid.NewGuid();
 

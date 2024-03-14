@@ -1,13 +1,8 @@
 ﻿namespace LoggingDemo.Pages;
 
-public class IndexModel : PageModel
+public class IndexModel(ILoggerFactory factory) : PageModel
 {
-    private readonly ILogger _logger;
-
-    public IndexModel(ILoggerFactory factory)
-    {
-        _logger = factory.CreateLogger("CustomCategory");
-    }
+    private readonly ILogger _logger = factory.CreateLogger("CustomCategory");
 
     // When index page loads
     public void OnGet()

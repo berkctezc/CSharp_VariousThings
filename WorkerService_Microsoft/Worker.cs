@@ -1,14 +1,8 @@
 namespace WorkerService_Microsoft;
 
-public class Worker : BackgroundService
+public class Worker(ILogger<Worker> logger) : BackgroundService
 {
-    private readonly ILogger<Worker> _logger;
     private HttpClient client;
-
-    public Worker(ILogger<Worker> logger)
-    {
-        _logger = logger;
-    }
 
     public override Task StartAsync(CancellationToken cancellationToken)
     {
@@ -19,7 +13,7 @@ public class Worker : BackgroundService
     public override Task StopAsync(CancellationToken cancellationToken)
     {
         client.Dispose();
-        _logger.LogInformation("Service has been stopped...");
+        logger.LogInformation("Service has been stopped...");
         return base.StopAsync(cancellationToken);
     }
 
@@ -30,9 +24,9 @@ public class Worker : BackgroundService
             var result = await client.GetAsync("https://www.google.com/", stoppingToken);
 
             if (result.IsSuccessStatusCode)
-                _logger.LogInformation("Website is up. {StatusCode} at {time}", result.StatusCode, DateTimeOffset.Now);
+                logger.LogInformation("Website is up. {StatusCode} at {time}", result.StatusCode, DateTimeOffset.Now);
             else
-                _logger.LogError("Website is down. {StatusCode}", result.StatusCode);
+                logger.LogError("Website is down. {StatusCode}", result.StatusCode);
 
             //_logger.LogInformation("Worker running at: {time}", DateTimeOffset.Now);
             await Task.Delay(2000, stoppingToken);

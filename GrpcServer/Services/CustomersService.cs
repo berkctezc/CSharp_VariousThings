@@ -1,13 +1,8 @@
 namespace GrpcServer.Services;
 
-public class CustomersService : Customer.CustomerBase
+public class CustomersService(ILogger<CustomersService> logger) : Customer.CustomerBase
 {
-    private readonly ILogger<CustomersService> _logger;
-
-    public CustomersService(ILogger<CustomersService> logger)
-    {
-        _logger = logger;
-    }
+    private readonly ILogger<CustomersService> _logger = logger;
 
     public override Task<CustomerModel> GetCustomerInfo(CustomerLookupModel request, ServerCallContext context)
     {

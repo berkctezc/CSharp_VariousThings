@@ -32,6 +32,6 @@ app.Run();
  3 - docker build -t <tag> .
  4 - docker push <tag>
  5 -- (create deploy.yml with config)
- 
+
  6 - kubectl apply -f .\de
  */

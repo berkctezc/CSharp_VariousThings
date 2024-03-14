@@ -1,13 +1,8 @@
 namespace MediatRDemo_Api;
 
-public class Startup
+public class Startup(IConfiguration configuration)
 {
-    public Startup(IConfiguration configuration)
-    {
-        Configuration = configuration;
-    }
-
-    public IConfiguration Configuration { get; }
+    public IConfiguration Configuration { get; } = configuration;
 
     // This method gets called by the runtime. Use this method to add services to the container.
     public void ConfigureServices(IServiceCollection services)
@@ -15,7 +10,7 @@ public class Startup
         services.AddControllers();
         services.AddSwaggerGen(c => { c.SwaggerDoc("v1", new OpenApiInfo {Title = "Api", Version = "v1"}); });
         services.AddSingleton<IDataAccess, DemoDataAccess>();
-        services.AddMediatR(typeof(LibraryMediatREntrypoint).Assembly);
+        services.AddMediatR(cfg => cfg.RegisterServicesFromAssemblyContaining<Startup>());
     }
 
     // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
