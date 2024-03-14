@@ -2,5 +2,5 @@
 
 public interface IServiceInformation
 {
-    ILicenseData License { get; }
+	ILicenseData License { get; }
 }

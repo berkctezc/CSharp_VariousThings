@@ -2,8 +2,8 @@
 
 public enum CreditCardApplicationDecision
 {
-    Unknown,
-    AutoAccepted,
-    AutoDeclined,
-    ReferredToHuman
+	Unknown,
+	AutoAccepted,
+	AutoDeclined,
+	ReferredToHuman
 }

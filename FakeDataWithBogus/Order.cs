@@ -2,9 +2,9 @@
 
 public abstract class Order
 {
-    public Guid Id { get; set; }
-    public string? ItemName { get; set; }
-    public decimal Price { get; set; }
-    public string? Currency { get; set; }
-    public BillingDetails? BillingDetails { get; set; }
+	public Guid Id { get; set; }
+	public string? ItemName { get; set; }
+	public decimal Price { get; set; }
+	public string? Currency { get; set; }
+	public BillingDetails? BillingDetails { get; set; }
 }

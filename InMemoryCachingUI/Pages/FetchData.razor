@@ -5,29 +5,29 @@
 
 @if (_employees is not null)
 {
-    foreach (var e in _employees)
-    {
-        <h3>@e.FirstName @e.LastName</h3>
-    }
+	foreach (var e in _employees)
+	{
+		<h3>@e.FirstName @e.LastName</h3>
+	}
 }
 else
 {
-    <h3>Loading...</h3>
+	<h3>Loading...</h3>
 }
 
 
 @code {
 
-    List<EmployeeModel>? _employees;
+	List<EmployeeModel>? _employees;
 
-    // protected override void OnInitialized()
-    // {
-    //     employees = _data.GetEmployees();
-    // }
+	// protected override void OnInitialized()
+	// {
+	//     employees = _data.GetEmployees();
+	// }
 
-    protected override async Task OnInitializedAsync()
-    {
-        _employees = await _data.GetEmployeesCache();
-    }
+	protected override async Task OnInitializedAsync()
+	{
+		_employees = await _data.GetEmployeesCache();
+	}
 
 }

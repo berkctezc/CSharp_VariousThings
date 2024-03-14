@@ -2,8 +2,8 @@
 
 public class Application(IBusinessLogic businessLogic) : IApplication
 {
-    public void Run()
-    {
-        businessLogic.ProcessData();
-    }
+	public void Run()
+	{
+		businessLogic.ProcessData();
+	}
 }

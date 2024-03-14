@@ -2,5 +2,5 @@
 
 public interface IDigitalProductModel : IProductModel
 {
-    int TotalDownloadsLeft { get; }
+	int TotalDownloadsLeft { get; }
 }

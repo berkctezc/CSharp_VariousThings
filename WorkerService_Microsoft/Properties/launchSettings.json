@@ -1,11 +1,11 @@
 ﻿{
-  "profiles": {
-    "WorkerService_Microsoft": {
-      "commandName": "Project",
-      "dotnetRunMessages": "true",
-      "environmentVariables": {
-        "DOTNET_ENVIRONMENT": "Development"
-      }
-    }
-  }
+	"profiles": {
+		"WorkerService_Microsoft": {
+			"commandName": "Project",
+			"dotnetRunMessages": "true",
+			"environmentVariables": {
+				"DOTNET_ENVIRONMENT": "Development"
+			}
+		}
+	}
 }

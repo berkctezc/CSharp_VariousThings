@@ -4,13 +4,13 @@ var publisher = new SqsPublisher(sqsClient);
 
 await publisher.PublishAsync("customers", new CustomerCreated
 {
-    Id = 1,
-    FullName = "BerkcTezc"
+	Id = 1,
+	FullName = "BerkcTezc"
 });
 
 await Task.Delay(5000);
 
 await publisher.PublishAsync("customers", new CustomerDeleted
 {
-    Id = 1
+	Id = 1
 });

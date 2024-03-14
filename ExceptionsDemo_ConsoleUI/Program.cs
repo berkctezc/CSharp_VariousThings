@@ -2,33 +2,33 @@
 
 internal static class Program
 {
-    private static void Main(string[] args)
-    {
-        var demo = new DemoCode();
+	private static void Main(string[] args)
+	{
+		var demo = new DemoCode();
 
-        // higher the better to put try catch (UI)
-        try
-        {
-            var result = demo.GrandparentMethod(4);
-            Console.WriteLine($"The value at the given pos is {result}");
-        }
-        catch (ArgumentException)
-        {
-            Console.WriteLine("Bad argument given!");
-        }
-        catch (Exception ex)
-        {
-            Console.WriteLine(ex.Message);
-            Console.WriteLine(ex.StackTrace);
+		// higher the better to put try catch (UI)
+		try
+		{
+			var result = demo.GrandparentMethod(4);
+			Console.WriteLine($"The value at the given pos is {result}");
+		}
+		catch (ArgumentException)
+		{
+			Console.WriteLine("Bad argument given!");
+		}
+		catch (Exception ex)
+		{
+			Console.WriteLine(ex.Message);
+			Console.WriteLine(ex.StackTrace);
 
-            // access to inner exception and its data
-            var inner = ex.InnerException;
+			// access to inner exception and its data
+			var inner = ex.InnerException;
 
-            while (inner != null)
-            {
-                Console.WriteLine(inner.StackTrace);
-                inner = inner.InnerException;
-            }
-        }
-    }
+			while (inner != null)
+			{
+				Console.WriteLine(inner.StackTrace);
+				inner = inner.InnerException;
+			}
+		}
+	}
 }

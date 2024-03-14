@@ -4,10 +4,10 @@ var services = builder.Services;
 services.AddControllers();
 services.AddAWSService<IAmazonDynamoDB>();
 services.AddDefaultAWSOptions(
-    new AWSOptions
-    {
-        Region = RegionEndpoint.EUCentral1
-    });
+	new AWSOptions
+	{
+		Region = RegionEndpoint.EUCentral1
+	});
 
 services.AddSingleton<IMovieRankService, MovieRankService>();
 services.AddSingleton<IMovieRankRepository, MovieRankRepository>();
@@ -22,10 +22,10 @@ var env = builder.Environment;
 
 if (env.IsDevelopment())
 {
-    app.UseDeveloperExceptionPage();
+	app.UseDeveloperExceptionPage();
 
-    app.UseSwagger();
-    app.UseSwaggerUI();
+	app.UseSwagger();
+	app.UseSwaggerUI();
 }
 
 app.UseRouting();
@@ -36,7 +36,7 @@ app.Run();
 
 namespace DynamoDb_MovieRank
 {
-    public partial class Program
-    {
-    }
+	public partial class Program
+	{
+	}
 }

@@ -51,7 +51,7 @@ public class Functions
             Body = (x + y).ToString(),
             Headers = new Dictionary<string, string> { { "Content-Type", "text/plain" } }
         };
-    } 
+    }
 }
 ```
 
@@ -265,10 +265,10 @@ verbosity drop down boxes.
 List of .NET attributes currently supported.
 
 * LambdaFunction
-    * Placed on a method. Indicates this method should be exposed as a Lambda function.
+	* Placed on a method. Indicates this method should be exposed as a Lambda function.
 * LambdaStartup
-    * Placed on a class. Indicates this type should be used as the startup class and is used to configure the dependency
-      injection and middleware. There can only be one class in a Lambda project with this attribute.
+	* Placed on a class. Indicates this type should be used as the startup class and is used to configure the dependency
+	  injection and middleware. There can only be one class in a Lambda project with this attribute.
 
 ### Event Attributes
 
@@ -277,28 +277,28 @@ CloudFormation temlate. If an event attribute is not set the
 parameter to the `LambdaFunction` must be the event object and the event source must be configured outside of the code.
 
 * RestApi
-    * Configures the Lambda function to be called from an API Gateway REST API. The HTTP method and resource path are
-      required to be set on the attribute.
+	* Configures the Lambda function to be called from an API Gateway REST API. The HTTP method and resource path are
+	  required to be set on the attribute.
 * HttpApi
-    * Configures the Lambda function to be called from an API Gateway HTTP API. The HTTP method, HTTP API payload
-      version and resource path are required to be set on the attribute.
+	* Configures the Lambda function to be called from an API Gateway HTTP API. The HTTP method, HTTP API payload
+	  version and resource path are required to be set on the attribute.
 
 ### Parameter Attributes
 
 * FromHeader
-    * Map method parameter to HTTP header value
+	* Map method parameter to HTTP header value
 * FromQuery
-    * Map method parameter to query string parameter
+	* Map method parameter to query string parameter
 * FromRoute
-    * Map method parameter to resource path segment
+	* Map method parameter to resource path segment
 * FromBody
-    * Map method parameter to HTTP request body. If parameter is a complex type then request body will be assumed to be
-      JSON and deserialized into the type.
+	* Map method parameter to HTTP request body. If parameter is a complex type then request body will be assumed to be
+	  JSON and deserialized into the type.
 * FromServices
-    * Map method parameter to registered service in IServiceProvider
+	* Map method parameter to registered service in IServiceProvider
 
 ## Project References
 
 If API Gateway event attributes, such as `RestAPI` or `HttpAPI`, are being used then a package reference
 to `Amazon.Lambda.APIGatewayEvents` must be added to the project, otherwise the project will not compile. We do not
-include it by default in order to keep the `Amazon.Lambda.Annotations` library lightweight. 
+include it by default in order to keep the `Amazon.Lambda.Annotations` library lightweight.

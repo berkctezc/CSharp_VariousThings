@@ -2,6 +2,6 @@
 
 public enum DemoEnum
 {
-    [Description("modified the enum value")]
-    EnumValue
+	[Description("modified the enum value")]
+	EnumValue
 }

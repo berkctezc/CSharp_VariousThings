@@ -2,5 +2,5 @@
 
 public interface IConnectionInitializerStage
 {
-    public IDbConnection Connect();
+	public IDbConnection Connect();
 }

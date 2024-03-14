@@ -2,5 +2,5 @@
 
 public interface IPasswordSelectionStage
 {
-    public IConnectionInitializerStage WithPassword(string? password);
+	public IConnectionInitializerStage WithPassword(string? password);
 }

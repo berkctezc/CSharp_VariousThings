@@ -2,6 +2,6 @@
 
 internal enum CalculatorState
 {
-    Active,
-    Cleared
+	Active,
+	Cleared
 }

@@ -2,5 +2,5 @@
 
 public interface IUserSelectionStage
 {
-    public IPasswordSelectionStage AsUser(string? user);
+	public IPasswordSelectionStage AsUser(string? user);
 }

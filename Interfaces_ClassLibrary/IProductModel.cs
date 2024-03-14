@@ -2,8 +2,8 @@
 
 public interface IProductModel
 {
-    string Title { get; set; }
-    bool HasOrderBeenCompleted { get; }
+	string Title { get; set; }
+	bool HasOrderBeenCompleted { get; }
 
-    void ShipItem(CustomerModel customer);
+	void ShipItem(CustomerModel customer);
 }

@@ -2,6 +2,6 @@
 
 public interface IWeatherData
 {
-    [Get("/WeatherForecast")]
-    Task<List<WeatherForecast>?> GetWeather();
+	[Get("/WeatherForecast")]
+	Task<List<WeatherForecast>?> GetWeather();
 }

@@ -2,13 +2,13 @@
 
 public static class RequiredMembers
 {
-    private static void Test()
-    {
-        var user = new User {FullName = "BerkcTezc"};
-    }
+	private static void Test()
+	{
+		var user = new User {FullName = "BerkcTezc"};
+	}
 
-    class User
-    {
-        public required string FullName { get; init; }
-    }
+	class User
+	{
+		public required string FullName { get; init; }
+	}
 }

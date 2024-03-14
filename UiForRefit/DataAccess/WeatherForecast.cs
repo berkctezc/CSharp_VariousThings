@@ -2,9 +2,9 @@ namespace UiForRefit.DataAccess;
 
 public class WeatherForecast
 {
-    public DateTime Date { get; set; }
+	public DateTime Date { get; set; }
 
-    public int TemperatureC { get; set; }
+	public int TemperatureC { get; set; }
 
-    public string? Summary { get; set; }
+	public string? Summary { get; set; }
 }

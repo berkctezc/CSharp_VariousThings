@@ -2,5 +2,5 @@
 
 public interface IBusinessLogic
 {
-    void ProcessData();
+	void ProcessData();
 }

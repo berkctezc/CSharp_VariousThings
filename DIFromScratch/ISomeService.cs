@@ -2,5 +2,5 @@
 
 public interface ISomeService
 {
-    void PrintGuid();
+	void PrintGuid();
 }

@@ -2,5 +2,5 @@
 
 public class DeleteFileResponse
 {
-    public int NumberOfDeletedObjects { get; set; }
+	public int NumberOfDeletedObjects { get; set; }
 }

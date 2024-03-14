@@ -2,5 +2,5 @@
 
 public class AddFileResponse
 {
-    public IList<string> PreSignedUrl { get; set; }
+	public IList<string> PreSignedUrl { get; set; }
 }

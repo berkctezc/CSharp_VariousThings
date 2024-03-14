@@ -2,7 +2,7 @@
 
 public interface ISetupService
 {
-    Task CreateDynamoDbTable(string dynamoDbTableName);
+	Task CreateDynamoDbTable(string dynamoDbTableName);
 
-    Task DeleteDynamoDbTable(string dynamoDbTableName);
+	Task DeleteDynamoDbTable(string dynamoDbTableName);
 }

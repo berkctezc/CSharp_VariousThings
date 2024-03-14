@@ -2,6 +2,6 @@
 
 public interface IDataAccess
 {
-    List<PersonModel> GetPeople();
-    PersonModel InsertPerson(string fname, string lname);
+	List<PersonModel> GetPeople();
+	PersonModel InsertPerson(string fname, string lname);
 }

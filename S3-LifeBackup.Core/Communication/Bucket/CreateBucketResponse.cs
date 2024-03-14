@@ -2,6 +2,6 @@
 
 public class CreateBucketResponse
 {
-    public string RequestId { get; set; }
-    public string BucketName { get; set; }
+	public string RequestId { get; set; }
+	public string BucketName { get; set; }
 }
