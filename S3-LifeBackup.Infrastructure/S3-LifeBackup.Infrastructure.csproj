@@ -12,7 +12,7 @@
     </ItemGroup>
 
     <ItemGroup>
-		<PackageReference Include="AWSSDK.S3" Version="3.7.306"/>
+		<PackageReference Include="AWSSDK.S3" Version="3.7.307.4" />
         <PackageReference Include="Newtonsoft.Json" Version="13.0.3"/>
     </ItemGroup>
 
