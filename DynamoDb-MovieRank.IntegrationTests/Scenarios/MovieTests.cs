@@ -1,10 +1,3 @@
-using System.Net;
-using System.Text;
-using DynamoDb_MovieRank.Contracts;
-using DynamoDb_MovieRank.IntegrationTests.Setup;
-using DynamoDb_MovieRank.Libs.Models;
-using Newtonsoft.Json;
-
 namespace DynamoDb_MovieRank.IntegrationTests.Scenarios;
 
 [Collection("api")]
@@ -31,11 +24,8 @@ public class MovieTests(CustomWebApplicationFactory<Program> factory) : IClassFi
 
 		var response = await _client.GetAsync("movies");
 
-		MovieResponse[] result;
-		using (var content = response.Content.ReadAsStringAsync())
-		{
-			result = JsonConvert.DeserializeObject<MovieResponse[]>(await content);
-		}
+		using var content = response.Content.ReadAsStringAsync();
+		var result = JsonConvert.DeserializeObject<MovieResponse[]>(await content) ?? Array.Empty<MovieResponse>();
 
 		Assert.NotNull(result);
 	}
@@ -50,11 +40,8 @@ public class MovieTests(CustomWebApplicationFactory<Program> factory) : IClassFi
 
 		var response = await _client.GetAsync($"movies/{userId}/{movieName}");
 
-		MovieResponse result;
-		using (var content = response.Content.ReadAsStringAsync())
-		{
-			result = JsonConvert.DeserializeObject<MovieResponse>(await content);
-		}
+		using var content = response.Content.ReadAsStringAsync();
+		var result = JsonConvert.DeserializeObject<MovieResponse>(await content) ?? new MovieResponse();
 
 		Assert.Equal(movieName, result.MovieName);
 	}
@@ -84,7 +71,7 @@ public class MovieTests(CustomWebApplicationFactory<Program> factory) : IClassFi
 		MovieResponse result;
 		using (var content = response.Content.ReadAsStringAsync())
 		{
-			result = JsonConvert.DeserializeObject<MovieResponse>(await content);
+			result = JsonConvert.DeserializeObject<MovieResponse>(await content) ?? new MovieResponse();
 		}
 
 		Assert.Equal(ranking, result.Ranking);
@@ -103,7 +90,7 @@ public class MovieTests(CustomWebApplicationFactory<Program> factory) : IClassFi
 		MovieRankResponse result;
 		using (var content = response.Content.ReadAsStringAsync())
 		{
-			result = JsonConvert.DeserializeObject<MovieRankResponse>(await content);
+			result = JsonConvert.DeserializeObject<MovieRankResponse>(await content) ?? new MovieRankResponse();
 		}
 
 		Assert.NotNull(result);

@@ -1,7 +1,4 @@
-﻿using Docker.DotNet;
-using Docker.DotNet.Models;
-
-namespace DynamoDb_MovieRank.IntegrationTests.Setup;
+﻿namespace DynamoDb_MovieRank.IntegrationTests.Setup;
 
 public class TestContext : IAsyncLifetime
 {
@@ -11,6 +8,7 @@ public class TestContext : IAsyncLifetime
 
 	public TestContext()
 	{
+		_containerId = string.Empty;
 		_dockerClient = new DockerClientConfiguration(new Uri("npipe://./pipe/docker_engine")).CreateClient();
 	}
 

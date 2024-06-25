@@ -1,7 +1,4 @@
-﻿using Amazon.DynamoDBv2;
-using Amazon.DynamoDBv2.Model;
-
-namespace DynamoDb_MovieRank.IntegrationTests.Setup;
+﻿namespace DynamoDb_MovieRank.IntegrationTests.Setup;
 
 public class TestDataSetup
 {
@@ -14,32 +11,34 @@ public class TestDataSetup
 	{
 		var request = new CreateTableRequest
 		{
-			AttributeDefinitions = new List<AttributeDefinition>
-			{
-				new()
+			AttributeDefinitions =
+			[
+				new AttributeDefinition
 				{
 					AttributeName = "UserId",
 					AttributeType = "N"
 				},
-				new()
+
+				new AttributeDefinition
 				{
 					AttributeName = "MovieName",
 					AttributeType = "S"
 				}
-			},
-			KeySchema = new List<KeySchemaElement>
-			{
-				new()
+			],
+			KeySchema =
+			[
+				new KeySchemaElement
 				{
 					AttributeName = "UserId",
 					KeyType = "HASH"
 				},
-				new()
+
+				new KeySchemaElement
 				{
 					AttributeName = "MovieName",
 					KeyType = "RANGE"
 				}
-			},
+			],
 			ProvisionedThroughput = new ProvisionedThroughput
 			{
 				ReadCapacityUnits = 1,
@@ -47,9 +46,9 @@ public class TestDataSetup
 			},
 			TableName = "MovieRank",
 
-			GlobalSecondaryIndexes = new List<GlobalSecondaryIndex>
-			{
-				new()
+			GlobalSecondaryIndexes =
+			[
+				new GlobalSecondaryIndex
 				{
 					IndexName = "MovieName-index",
 					KeySchema = new List<KeySchemaElement>
@@ -70,7 +69,7 @@ public class TestDataSetup
 						ProjectionType = "ALL"
 					}
 				}
-			}
+			]
 		};
 
 		await DynamoDBClient.CreateTableAsync(request);
@@ -79,7 +78,7 @@ public class TestDataSetup
 
 	private static async Task WaitUntilTableActive(string tableName)
 	{
-		string status = null;
+		string? status = null;
 		do
 		{
 			Thread.Sleep(1000);
