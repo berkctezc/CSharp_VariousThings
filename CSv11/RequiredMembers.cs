@@ -1,10 +1,10 @@
-﻿namespace CSv11;
+namespace CSv11;
 
 public static class RequiredMembers
 {
 	private static void Test()
 	{
-		var user = new User {FullName = "BerkcTezc"};
+		var user = new User { FullName = "BerkcTezc" };
 	}
 
 	class User

@@ -1,4 +1,4 @@
-﻿namespace MoqDemo_ConsoleUI;
+namespace MoqDemo_ConsoleUI;
 
 internal static class Program
 {

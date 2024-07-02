@@ -1,4 +1,4 @@
-﻿namespace Autofac_ClassLibrary.Utilities;
+namespace Autofac_ClassLibrary.Utilities;
 
 public class DataAccess(ILogger logger) : IDataAccess
 {

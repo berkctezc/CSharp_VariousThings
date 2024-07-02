@@ -1,4 +1,4 @@
-﻿namespace DIFromScratch.DependencyInjection;
+namespace DIFromScratch.DependencyInjection;
 
 public class DiServiceCollection
 {

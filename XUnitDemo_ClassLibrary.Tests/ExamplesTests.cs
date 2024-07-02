@@ -1,4 +1,4 @@
-﻿namespace XUnitDemo_ClassLibrary.Tests;
+namespace XUnitDemo_ClassLibrary.Tests;
 
 public class ExamplesTests
 {

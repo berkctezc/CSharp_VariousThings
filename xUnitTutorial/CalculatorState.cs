@@ -1,4 +1,4 @@
-﻿namespace xUnitTutorial;
+namespace xUnitTutorial;
 
 internal enum CalculatorState
 {

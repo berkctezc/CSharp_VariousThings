@@ -1,4 +1,4 @@
-﻿namespace DIFromScratch;
+namespace DIFromScratch;
 
 public class RandomGuidProvider : IRandomGuidProvider
 {

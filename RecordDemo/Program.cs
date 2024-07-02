@@ -1,4 +1,4 @@
-﻿using static RecordDemo.Demo;
+using static RecordDemo.Demo;
 
 //main
 var recs = new List<Record1>
@@ -17,7 +17,7 @@ var classes = new List<Class1>
 
 var (fn, ln) = recs[0];
 
-var newRec = recs[0] with {LastName = "Public"};
+var newRec = recs[0] with { LastName = "Public" };
 
 var rec2 = new Record2("Berkc", "Tezc");
 

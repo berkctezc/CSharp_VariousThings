@@ -1,4 +1,4 @@
-﻿// Main
+// Main
 
 var builder = new ConfigurationBuilder();
 BuildConfig(builder);

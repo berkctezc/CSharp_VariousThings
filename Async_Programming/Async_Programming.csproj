@@ -1,10 +1,10 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
-	<PropertyGroup>
-		<OutputType>WinExe</OutputType>
-		<TargetFramework>net7.0-windows</TargetFramework>
-		<EnableWindowsTargeting>true</EnableWindowsTargeting>
-		<UseWPF>true</UseWPF>
-	</PropertyGroup>
+    <PropertyGroup>
+        <OutputType>WinExe</OutputType>
+        <TargetFramework>net7.0-windows</TargetFramework>
+        <EnableWindowsTargeting>true</EnableWindowsTargeting>
+        <UseWPF>true</UseWPF>
+    </PropertyGroup>
 
 </Project>

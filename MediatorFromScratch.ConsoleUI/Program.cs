@@ -1,4 +1,4 @@
-﻿var serviceProvider = new ServiceCollection()
+var serviceProvider = new ServiceCollection()
 	// .AddTransient<PrintToConsole.Handler>()
 	.AddMediator(ServiceLifetime.Scoped, typeof(Program))
 	.BuildServiceProvider();

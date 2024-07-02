@@ -1,4 +1,4 @@
-﻿namespace Autofac_ConsoleUI;
+namespace Autofac_ConsoleUI;
 
 public interface IApplication
 {

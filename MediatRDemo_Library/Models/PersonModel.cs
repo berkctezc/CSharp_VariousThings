@@ -1,4 +1,4 @@
-﻿namespace MediatRDemo_Library.Models;
+namespace MediatRDemo_Library.Models;
 
 public class PersonModel
 {

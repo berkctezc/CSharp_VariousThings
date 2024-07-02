@@ -1,4 +1,4 @@
-﻿namespace DIFromScratch.DependencyInjection;
+namespace DIFromScratch.DependencyInjection;
 
 public class ServiceDescriptor(Type serviceType, Type? implementationType, ServiceLifeTime lifetime)
 {

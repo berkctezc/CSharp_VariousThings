@@ -1,4 +1,4 @@
-﻿namespace WorkingWithSqs.Consumer.Handlers;
+namespace WorkingWithSqs.Consumer.Handlers;
 
 public class CustomerCreatedHandler(ILogger<CustomerCreatedHandler> logger) : IMessageHandler
 {

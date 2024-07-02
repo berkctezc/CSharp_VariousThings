@@ -1,4 +1,4 @@
-﻿namespace RedisDemo.Pages;
+namespace RedisDemo.Pages;
 
 [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
 [IgnoreAntiforgeryToken]

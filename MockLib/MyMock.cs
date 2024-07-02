@@ -1,4 +1,4 @@
-﻿using TypeInfo = System.Reflection.TypeInfo;
+using TypeInfo = System.Reflection.TypeInfo;
 
 namespace MockLib;
 

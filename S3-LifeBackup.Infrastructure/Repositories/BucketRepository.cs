@@ -1,4 +1,4 @@
-﻿namespace S3_LifeBackup.Infrastructure.Repositories;
+namespace S3_LifeBackup.Infrastructure.Repositories;
 
 public class BucketRepository(IAmazonS3 s3Client) : IBucketRepository
 {

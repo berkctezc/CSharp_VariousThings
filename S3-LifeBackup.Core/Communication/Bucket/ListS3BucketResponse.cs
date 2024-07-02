@@ -1,4 +1,4 @@
-﻿namespace S3_LifeBackup.Core.Communication.Bucket;
+namespace S3_LifeBackup.Core.Communication.Bucket;
 
 public class ListS3BucketResponse
 {

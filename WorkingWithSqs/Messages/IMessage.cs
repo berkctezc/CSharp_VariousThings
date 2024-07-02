@@ -1,4 +1,4 @@
-﻿namespace WorkingWithSqs.Publisher.Messages;
+namespace WorkingWithSqs.Publisher.Messages;
 
 public interface IMessage
 {

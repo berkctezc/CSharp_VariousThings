@@ -1,4 +1,4 @@
-﻿var connection1 = new SimpleFluentSqlConnection()
+var connection1 = new SimpleFluentSqlConnection()
 	.ForServer("localhost")
 	.AndDatabase("localDb")
 	.AsUser("postgres")

@@ -1,4 +1,4 @@
-﻿namespace YieldDemo;
+namespace YieldDemo;
 
 internal static class Program
 {

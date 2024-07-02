@@ -1,4 +1,4 @@
-﻿namespace ApiForRefit.Models;
+namespace ApiForRefit.Models;
 
 public class GuestModel
 {

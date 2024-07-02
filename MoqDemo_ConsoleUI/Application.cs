@@ -1,4 +1,4 @@
-﻿namespace MoqDemo_ConsoleUI;
+namespace MoqDemo_ConsoleUI;
 
 public class Application(IPersonProcessor personProcessor) : IApplication
 {

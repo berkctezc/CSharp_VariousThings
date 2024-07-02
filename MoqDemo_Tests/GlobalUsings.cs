@@ -1,4 +1,4 @@
-﻿global using System;
+global using System;
 global using System.Collections.Generic;
 global using Autofac.Extras.Moq;
 global using Moq;

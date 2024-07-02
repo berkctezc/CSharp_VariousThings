@@ -1,4 +1,4 @@
-﻿namespace SpecFlowBDD.Services;
+namespace SpecFlowBDD.Services;
 
 public class Basket
 {

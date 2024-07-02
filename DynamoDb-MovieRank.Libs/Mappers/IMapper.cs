@@ -1,4 +1,4 @@
-﻿namespace DynamoDb_MovieRank.Libs.Mappers;
+namespace DynamoDb_MovieRank.Libs.Mappers;
 
 public interface IMapper
 {

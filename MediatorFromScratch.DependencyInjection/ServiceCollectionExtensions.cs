@@ -1,4 +1,4 @@
-﻿namespace MediatorFromScratch.DependencyInjection;
+namespace MediatorFromScratch.DependencyInjection;
 
 public static class ServiceCollectionExtensions
 {

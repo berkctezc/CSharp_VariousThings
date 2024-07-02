@@ -1,4 +1,4 @@
-﻿namespace DynamoDb_MovieRank.Libs.Repositories;
+namespace DynamoDb_MovieRank.Libs.Repositories;
 
 public class MovieRankRepository : IMovieRankRepository
 {

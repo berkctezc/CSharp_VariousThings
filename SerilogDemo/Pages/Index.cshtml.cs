@@ -1,4 +1,4 @@
-﻿namespace SerilogDemo.Pages;
+namespace SerilogDemo.Pages;
 
 public class IndexModel(ILogger<IndexModel> logger) : PageModel
 {

@@ -1,4 +1,4 @@
-﻿namespace MoqDemo_Library.Logic;
+namespace MoqDemo_Library.Logic;
 
 public interface IPersonProcessor
 {

@@ -1,4 +1,4 @@
-﻿namespace FakeDataWithBogus;
+namespace FakeDataWithBogus;
 
 public abstract class Order
 {

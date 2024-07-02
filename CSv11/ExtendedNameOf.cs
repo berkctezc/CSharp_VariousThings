@@ -1,4 +1,4 @@
-﻿namespace CSv11;
+namespace CSv11;
 
 public static class ExtendedNameOf
 {

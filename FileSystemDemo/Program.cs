@@ -1,4 +1,4 @@
-﻿var projectPath = Directory.GetParent(Directory.GetCurrentDirectory())!.Parent!.Parent!.FullName;
+var projectPath = Directory.GetParent(Directory.GetCurrentDirectory())!.Parent!.Parent!.FullName;
 Console.WriteLine(projectPath);
 
 var demoFilesPath = $"{projectPath}/demoFiles";
@@ -67,11 +67,11 @@ void CopyingFiles(string path)
 			File.Copy(files[i], $"{destination}/{i}.db", false);
 
 	// for (var i = 0; i < files.Length; i++)
-// {
-//     if (!(File.Exists($"{destination}/{i}.db")))
-//     {
-//         //throws exception when overwrite is false if file exists
-//         File.Move(files[i], $"{destination}/{i}.db", false);
-//     }
-// }
+	// {
+	//     if (!(File.Exists($"{destination}/{i}.db")))
+	//     {
+	//         //throws exception when overwrite is false if file exists
+	//         File.Move(files[i], $"{destination}/{i}.db", false);
+	//     }
+	// }
 }

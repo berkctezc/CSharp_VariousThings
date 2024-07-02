@@ -1,4 +1,4 @@
-﻿global using System.Collections.Generic;
+global using System.Collections.Generic;
 global using System.Threading.Tasks;
 global using MediatR;
 global using MediatRDemo_Library;

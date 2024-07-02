@@ -1,4 +1,4 @@
-﻿namespace DynamoDb_MovieRank.Libs.Models;
+namespace DynamoDb_MovieRank.Libs.Models;
 
 [DynamoDBTable("MovieRank")]
 public class MovieDb

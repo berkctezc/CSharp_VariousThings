@@ -1,4 +1,4 @@
-﻿using Newtonsoft.Json;
+using Newtonsoft.Json;
 using S3_LifeBackup.Core.Files;
 
 namespace S3_LifeBackup.Infrastructure.Repositories;

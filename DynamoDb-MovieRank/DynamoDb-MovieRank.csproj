@@ -1,20 +1,20 @@
 <Project Sdk="Microsoft.NET.Sdk.Web">
 
-	<PropertyGroup>
-		<TargetFramework>net8.0</TargetFramework>
-		<Nullable>enable</Nullable>
-		<ImplicitUsings>enable</ImplicitUsings>
-		<RootNamespace>DynamoDb_MovieRank</RootNamespace>
-		<DockerDefaultTargetOS>Linux</DockerDefaultTargetOS>
-	</PropertyGroup>
+    <PropertyGroup>
+        <TargetFramework>net8.0</TargetFramework>
+        <Nullable>enable</Nullable>
+        <ImplicitUsings>enable</ImplicitUsings>
+        <RootNamespace>DynamoDb_MovieRank</RootNamespace>
+        <DockerDefaultTargetOS>Linux</DockerDefaultTargetOS>
+    </PropertyGroup>
 
-	<ItemGroup>
-		<ProjectReference Include="..\DynamoDb-MovieRank.Contracts\DynamoDb-MovieRank.Contracts.csproj"/>
-		<ProjectReference Include="..\DynamoDb-MovieRank.Libs\DynamoDb-MovieRank.Libs.csproj"/>
-	</ItemGroup>
+    <ItemGroup>
+        <ProjectReference Include="..\DynamoDb-MovieRank.Contracts\DynamoDb-MovieRank.Contracts.csproj"/>
+        <ProjectReference Include="..\DynamoDb-MovieRank.Libs\DynamoDb-MovieRank.Libs.csproj"/>
+    </ItemGroup>
 
-	<ItemGroup>
-		<PackageReference Include="Swashbuckle.AspNetCore" Version="6.6.2" />
-	</ItemGroup>
+    <ItemGroup>
+        <PackageReference Include="Swashbuckle.AspNetCore" Version="6.6.2"/>
+    </ItemGroup>
 
 </Project>

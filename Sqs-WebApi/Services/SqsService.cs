@@ -1,4 +1,4 @@
-﻿namespace Sqs_WebApi.Services;
+namespace Sqs_WebApi.Services;
 
 public class SqsService : ISqsService
 {

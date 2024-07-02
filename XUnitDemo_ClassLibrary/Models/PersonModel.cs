@@ -1,4 +1,4 @@
-﻿namespace XUnitDemo_ClassLibrary.Models;
+namespace XUnitDemo_ClassLibrary.Models;
 
 public class PersonModel
 {

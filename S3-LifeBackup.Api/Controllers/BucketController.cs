@@ -1,4 +1,4 @@
-﻿namespace S3_LifeBackup.Api.Controllers;
+namespace S3_LifeBackup.Api.Controllers;
 
 [ApiController]
 [Route("[controller]")]

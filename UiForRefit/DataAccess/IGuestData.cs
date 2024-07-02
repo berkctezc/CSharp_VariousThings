@@ -1,4 +1,4 @@
-﻿namespace UiForRefit.DataAccess;
+namespace UiForRefit.DataAccess;
 
 public interface IGuestData
 {

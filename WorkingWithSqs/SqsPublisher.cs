@@ -1,4 +1,4 @@
-﻿namespace WorkingWithSqs.Publisher;
+namespace WorkingWithSqs.Publisher;
 
 public class SqsPublisher(IAmazonSQS sqs)
 {

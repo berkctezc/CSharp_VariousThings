@@ -9,7 +9,7 @@ public class CreditCardApplicationEvaluatorShould
 
 		var sut = new CreditCardApplicationEvaluator(mockValidator.Object);
 
-		var application = new CreditCardApplication {GrossAnnualIncome = 100_000};
+		var application = new CreditCardApplication { GrossAnnualIncome = 100_000 };
 
 		var decision = sut.Evaluate(application);
 
@@ -25,7 +25,7 @@ public class CreditCardApplicationEvaluatorShould
 
 		var sut = new CreditCardApplicationEvaluator(mockValidator.Object);
 
-		var application = new CreditCardApplication {Age = 18};
+		var application = new CreditCardApplication { Age = 18 };
 
 		var decision = sut.Evaluate(application);
 
@@ -122,7 +122,7 @@ public class CreditCardApplicationEvaluatorShould
 
 		var sut = new CreditCardApplicationEvaluator(mockValidator.Object);
 
-		var application = new CreditCardApplication {Age = 42};
+		var application = new CreditCardApplication { Age = 42 };
 
 		var decision = sut.Evaluate(application);
 

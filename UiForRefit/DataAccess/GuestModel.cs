@@ -1,4 +1,4 @@
-﻿namespace UiForRefit.DataAccess;
+namespace UiForRefit.DataAccess;
 
 public class GuestModel
 {

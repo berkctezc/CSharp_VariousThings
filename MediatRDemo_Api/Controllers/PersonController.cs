@@ -1,4 +1,4 @@
-﻿namespace MediatRDemo_Api.Controllers;
+namespace MediatRDemo_Api.Controllers;
 
 [Route("api/[controller]")]
 [ApiController]

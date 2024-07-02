@@ -1,4 +1,4 @@
-﻿global using System.Diagnostics;
+global using System.Diagnostics;
 global using Microsoft.AspNetCore.Builder;
 global using Microsoft.AspNetCore.Hosting;
 global using Microsoft.AspNetCore.Mvc;

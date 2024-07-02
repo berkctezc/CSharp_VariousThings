@@ -1,4 +1,4 @@
-﻿namespace S3_LifeBackup.Core.Files;
+namespace S3_LifeBackup.Core.Files;
 
 public class ListFilesResponse
 {

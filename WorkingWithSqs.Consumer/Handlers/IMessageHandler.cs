@@ -1,4 +1,4 @@
-﻿namespace WorkingWithSqs.Consumer.Handlers;
+namespace WorkingWithSqs.Consumer.Handlers;
 
 public interface IMessageHandler
 {

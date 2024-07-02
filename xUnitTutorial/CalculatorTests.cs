@@ -1,4 +1,4 @@
-﻿namespace xUnitTutorial;
+namespace xUnitTutorial;
 
 public class CalculatorTests
 {
@@ -49,18 +49,18 @@ public class CalculatorTests
 
 	public static IEnumerable<object[]> TestData()
 	{
-		yield return new object[] {15, new decimal[] {10, 5}};
-		yield return new object[] {15, new decimal[] {5, 5, 5}};
-		yield return new object[] {-10, new decimal[] {-30, 20}};
+		yield return new object[] { 15, new decimal[] { 10, 5 } };
+		yield return new object[] { 15, new decimal[] { 5, 5, 5 } };
+		yield return new object[] { -10, new decimal[] { -30, 20 } };
 	}
 
 	public class DivisionTestData : IEnumerable<object[]>
 	{
 		public IEnumerator<object[]> GetEnumerator()
 		{
-			yield return new object[] {30, new decimal[] {60, 2}};
-			yield return new object[] {0, new decimal[] {0, 1}};
-			yield return new object[] {1, new decimal[] {4124, 4124}};
+			yield return new object[] { 30, new decimal[] { 60, 2 } };
+			yield return new object[] { 0, new decimal[] { 0, 1 } };
+			yield return new object[] { 1, new decimal[] { 4124, 4124 } };
 		}
 
 		IEnumerator IEnumerable.GetEnumerator()

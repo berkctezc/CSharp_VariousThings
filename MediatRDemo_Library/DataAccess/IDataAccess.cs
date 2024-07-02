@@ -1,4 +1,4 @@
-﻿namespace MediatRDemo_Library.DataAccess;
+namespace MediatRDemo_Library.DataAccess;
 
 public interface IDataAccess
 {

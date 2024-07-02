@@ -1,4 +1,4 @@
-﻿namespace XUnitDemo_WinFormsUI;
+namespace XUnitDemo_WinFormsUI;
 
 public partial class Dashboard : Form
 {
@@ -21,7 +21,7 @@ public partial class Dashboard : Form
 
 	private void addPersonButton_Click(object sender, EventArgs e)
 	{
-		DataAccess.AddNewPerson(new PersonModel {FirstName = firstNameText.Text, LastName = lastNameText.Text});
+		DataAccess.AddNewPerson(new PersonModel { FirstName = firstNameText.Text, LastName = lastNameText.Text });
 
 		firstNameText.Text = "";
 		lastNameText.Text = "";

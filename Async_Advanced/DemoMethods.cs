@@ -1,4 +1,4 @@
-﻿namespace Async_Advanced;
+namespace Async_Advanced;
 
 public static class DemoMethods
 {

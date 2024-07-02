@@ -1,4 +1,4 @@
-﻿namespace MediatRDemo_Library.Handlers;
+namespace MediatRDemo_Library.Handlers;
 
 public class InsertPersonHandler(IDataAccess data) : IRequestHandler<InsertPersonCommand, PersonModel>
 {

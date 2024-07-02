@@ -1,4 +1,4 @@
-﻿namespace DynamoDb_MovieRank.Services;
+namespace DynamoDb_MovieRank.Services;
 
 public interface ISetupService
 {

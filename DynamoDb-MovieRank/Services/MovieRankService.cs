@@ -1,4 +1,4 @@
-﻿namespace DynamoDb_MovieRank.Services;
+namespace DynamoDb_MovieRank.Services;
 
 public class MovieRankService(IMovieRankRepository movieRankRepository, IMapper map) : IMovieRankService
 {

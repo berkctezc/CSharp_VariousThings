@@ -1,4 +1,4 @@
-﻿Run();
+Run();
 
 static void Run()
 {
@@ -116,7 +116,7 @@ static void CapturingAndBalancingGroups()
 	}
 
 	input = "Hello world.";
-	var patterns = new List<string> {@"\b\w+\b", @"\b(\w)+\b"};
+	var patterns = new List<string> { @"\b\w+\b", @"\b(\w)+\b" };
 	Console.WriteLine("Captures:");
 	foreach (var examplePattern in patterns)
 	{
@@ -414,8 +414,8 @@ static void AnchorsAndBoundaries()
 
 static void PatternMatching2()
 {
-	var patterns = new List<string> {"\\?", @"\?", Regex.Escape("?")};
-	var inputs = new List<string> {"?"};
+	var patterns = new List<string> { "\\?", @"\?", Regex.Escape("?") };
+	var inputs = new List<string> { "?" };
 	patterns.ForEach(pattern =>
 	{
 		Console.WriteLine("Regular expression: {0}", pattern);
@@ -527,8 +527,8 @@ static void GroupingAndSubstitution()
 
 static void Pruning()
 {
-	var patterns = new List<string> {@"[\w-[ah]]"};
-	var inputs = new List<string> {"ahhhhhhhhhhb"};
+	var patterns = new List<string> { @"[\w-[ah]]" };
+	var inputs = new List<string> { "ahhhhhhhhhhb" };
 	patterns.ForEach(pattern =>
 	{
 		Console.WriteLine("Regular expression: {0}", pattern);
@@ -551,8 +551,8 @@ static void Pruning()
 
 static void BackreferenceConstructs()
 {
-	var patterns = new List<string> {@"(\d)x\1F", @"(?<One>\d)x\k<One>F"};
-	var inputs = new List<string> {"0x0F"};
+	var patterns = new List<string> { @"(\d)x\1F", @"(?<One>\d)x\k<One>F" };
+	var inputs = new List<string> { "0x0F" };
 	patterns.ForEach(pattern =>
 	{
 		Console.WriteLine("Regular expression: {0}", pattern);
@@ -575,8 +575,8 @@ static void BackreferenceConstructs()
 
 static void GroupingConstructs()
 {
-	var patterns = new List<string> {@"(\d)x(\d)F", @"(?<DigitOne>\d)x(?<DigitTwo>\d)F", @"(?:\d)x(?:\d)F"};
-	var inputs = new List<string> {"0x1F"};
+	var patterns = new List<string> { @"(\d)x(\d)F", @"(?<DigitOne>\d)x(?<DigitTwo>\d)F", @"(?:\d)x(?:\d)F" };
+	var inputs = new List<string> { "0x1F" };
 	patterns.ForEach(pattern =>
 	{
 		Console.WriteLine("Regular expression: {0}", pattern);
@@ -599,8 +599,8 @@ static void GroupingConstructs()
 
 static void Alternation()
 {
-	var patterns = new List<string> {@"him|her", @"(?(\wi\w)him|her)"};
-	var inputs = new List<string> {"him", "her", "they", "them"};
+	var patterns = new List<string> { @"him|her", @"(?(\wi\w)him|her)" };
+	var inputs = new List<string> { "him", "her", "they", "them" };
 	patterns.ForEach(pattern =>
 	{
 		Console.WriteLine("Regular expression: {0}", pattern);
@@ -619,8 +619,8 @@ static void Alternation()
 
 static void CharacterClasses()
 {
-	var patterns = new List<string> {@"\w", @"\W", @"\d"};
-	var inputs = new List<string> {"a", "1", ".", " "};
+	var patterns = new List<string> { @"\w", @"\W", @"\d" };
+	var inputs = new List<string> { "a", "1", ".", " " };
 	patterns.ForEach(pattern =>
 	{
 		Console.WriteLine("Regular expression: {0}", pattern);
@@ -639,8 +639,8 @@ static void CharacterClasses()
 
 static void PatternMatching()
 {
-	var patterns = new List<string> {"a*b", "a+b", "a?b", @"\?", Regex.Escape("?")};
-	var inputs = new List<string> {"a", "b", "ab", "aab", "abb", @"a?b"};
+	var patterns = new List<string> { "a*b", "a+b", "a?b", @"\?", Regex.Escape("?") };
+	var inputs = new List<string> { "a", "b", "ab", "aab", "abb", @"a?b" };
 	patterns.ForEach(pattern =>
 	{
 		Console.WriteLine("Regular expression: {0}", pattern);
@@ -680,13 +680,13 @@ static void Demo()
 	 *
 	 * [^x] - Anything but x (where x is whatever character you want)
 	 */
-// (440) 555-1212
-// 12-34567890
-// 123 87876
+	// (440) 555-1212
+	// 12-34567890
+	// 123 87876
 
 	var toSearch = File.ReadAllText("test.txt");
 
-// This pattern matches phone numbers in the following patterns
+	// This pattern matches phone numbers in the following patterns
 	var pattern = @"\(?\d{3}\)?(-|.|\s)?\d{3}(-|.)?\d{4}";
 
 	var matches = Regex.Matches(toSearch, pattern);
@@ -696,15 +696,15 @@ static void Demo()
 		Console.WriteLine(match.Value);
 	}
 
-//Regex test = new Regex(pattern);
+	//Regex test = new Regex(pattern);
 
-//for (int i = 0; i < 100000; i++)
-//{
-//    //Regex.IsMatch("Berkc Tezc", pattern);
-//    test.IsMatch("Berkc Tezc");
-//}
+	//for (int i = 0; i < 100000; i++)
+	//{
+	//    //Regex.IsMatch("Berkc Tezc", pattern);
+	//    test.IsMatch("Berkc Tezc");
+	//}
 
-//stopwatch.Stop();
+	//stopwatch.Stop();
 
-//Console.WriteLine($"Time Elapsed in ms: {stopwatch.ElapsedMilliseconds}");
+	//Console.WriteLine($"Time Elapsed in ms: {stopwatch.ElapsedMilliseconds}");
 }

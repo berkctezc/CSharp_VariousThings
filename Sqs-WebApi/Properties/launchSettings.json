@@ -1,15 +1,15 @@
 ﻿{
-	"$schema": "https://json.schemastore.org/launchsettings.json",
-	"profiles": {
-		"Sqs_WebApi": {
-			"commandName": "Project",
-			"dotnetRunMessages": true,
-			"launchBrowser": true,
-			"launchUrl": "swagger",
-			"applicationUrl": "https://localhost:7162;http://localhost:5211",
-			"environmentVariables": {
-				"ASPNETCORE_ENVIRONMENT": "Development"
-			}
-		}
-	}
+  "$schema": "https://json.schemastore.org/launchsettings.json",
+  "profiles": {
+    "Sqs_WebApi": {
+      "commandName": "Project",
+      "dotnetRunMessages": true,
+      "launchBrowser": true,
+      "launchUrl": "swagger",
+      "applicationUrl": "https://localhost:7162;http://localhost:5211",
+      "environmentVariables": {
+        "ASPNETCORE_ENVIRONMENT": "Development"
+      }
+    }
+  }
 }

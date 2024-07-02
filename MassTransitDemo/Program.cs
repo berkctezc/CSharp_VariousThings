@@ -1,4 +1,4 @@
-﻿var builder = WebApplication.CreateBuilder();
+var builder = WebApplication.CreateBuilder();
 var services = builder.Services;
 
 services.AddMassTransit(x =>

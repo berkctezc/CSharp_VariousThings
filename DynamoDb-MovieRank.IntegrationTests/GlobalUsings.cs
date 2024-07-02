@@ -1,4 +1,4 @@
-﻿global using System.Net;
+global using System.Net;
 global using System.Text;
 global using Amazon.DynamoDBv2;
 global using Amazon.DynamoDBv2.Model;

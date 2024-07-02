@@ -1,4 +1,4 @@
-﻿namespace MockLib;
+namespace MockLib;
 
 internal class AssemblyCompiler
 {
@@ -38,7 +38,7 @@ internal class AssemblyCompiler
 	{
 		return CSharpCompilation.Create(
 			assemblyName,
-			new[] {tree},
+			new[] { tree },
 			_references.Distinct().Select(x => MetadataReference.CreateFromFile(x)).ToList(),
 			new CSharpCompilationOptions(OutputKind.DynamicallyLinkedLibrary));
 	}

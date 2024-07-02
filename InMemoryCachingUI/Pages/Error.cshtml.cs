@@ -1,4 +1,4 @@
-﻿namespace In_Memory_Caching.Pages;
+namespace In_Memory_Caching.Pages;
 
 [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
 [IgnoreAntiforgeryToken]

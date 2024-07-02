@@ -1,4 +1,4 @@
-﻿namespace XUnitDemo_ClassLibrary;
+namespace XUnitDemo_ClassLibrary;
 
 public static class DataAccess
 {
@@ -40,7 +40,7 @@ public static class DataAccess
 		foreach (var line in content)
 		{
 			var data = line.Split(',');
-			output.Add(new PersonModel {FirstName = data[0], LastName = data[1]});
+			output.Add(new PersonModel { FirstName = data[0], LastName = data[1] });
 		}
 
 		return output;

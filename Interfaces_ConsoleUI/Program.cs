@@ -1,4 +1,4 @@
-﻿namespace Interfaces_ConsoleUI;
+namespace Interfaces_ConsoleUI;
 
 internal class Program
 {
@@ -31,22 +31,22 @@ internal class Program
 	{
 		var output = new List<IProductModel>();
 
-		output.Add(new PhysicalProductModel {Title = "Earbuds"});
-		output.Add(new PhysicalProductModel {Title = "Gym Membership Card"});
-		output.Add(new PhysicalProductModel {Title = "Tripod"});
+		output.Add(new PhysicalProductModel { Title = "Earbuds" });
+		output.Add(new PhysicalProductModel { Title = "Gym Membership Card" });
+		output.Add(new PhysicalProductModel { Title = "Tripod" });
 
 
-		output.Add(new DigitalProductModel {Title = "Amazon Membership"});
-		output.Add(new DigitalProductModel {Title = "WinRar Software Key"});
+		output.Add(new DigitalProductModel { Title = "Amazon Membership" });
+		output.Add(new DigitalProductModel { Title = "WinRar Software Key" });
 
-		var digitalProduct = new DigitalProductModel {Title = "A Digital Video Game"};
+		var digitalProduct = new DigitalProductModel { Title = "A Digital Video Game" };
 		output.Add(digitalProduct);
 		output.Add(digitalProduct);
 		output.Add(digitalProduct);
 		output.Add(digitalProduct);
 		output.Add(digitalProduct);
 
-		output.Add(new CourseProductModel {Title = ".NET Core Programming"});
+		output.Add(new CourseProductModel { Title = ".NET Core Programming" });
 
 		return output;
 	}

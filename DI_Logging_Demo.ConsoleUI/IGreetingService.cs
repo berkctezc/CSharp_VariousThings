@@ -1,4 +1,4 @@
-﻿namespace DI_Logging_Demo.ConsoleUI;
+namespace DI_Logging_Demo.ConsoleUI;
 
 public interface IGreetingService
 {

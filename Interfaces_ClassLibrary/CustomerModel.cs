@@ -1,4 +1,4 @@
-﻿namespace Interfaces_ClassLibrary;
+namespace Interfaces_ClassLibrary;
 
 public class CustomerModel : ICustomerModel
 {

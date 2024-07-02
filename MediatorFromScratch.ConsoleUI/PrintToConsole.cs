@@ -1,4 +1,4 @@
-﻿namespace MediatorFromScratch.ConsoleUI;
+namespace MediatorFromScratch.ConsoleUI;
 
 public class PrintToConsole
 {

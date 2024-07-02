@@ -1,4 +1,4 @@
-﻿namespace DynamoDb_MovieRank.Controllers;
+namespace DynamoDb_MovieRank.Controllers;
 
 [Route("movies")]
 public class MovieController(IMovieRankService movieRankService) : Controller

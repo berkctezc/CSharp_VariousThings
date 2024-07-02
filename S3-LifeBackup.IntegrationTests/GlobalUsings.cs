@@ -1,4 +1,4 @@
-﻿global using System.Net;
+global using System.Net;
 global using System.Net.Http.Json;
 global using Amazon.Extensions.NETCore.Setup;
 global using Amazon.Runtime;

@@ -1,4 +1,4 @@
-﻿global using ApiForRefit.Models;
+global using ApiForRefit.Models;
 global using Bogus;
 global using Microsoft.AspNetCore.Builder;
 global using Microsoft.AspNetCore.Hosting;

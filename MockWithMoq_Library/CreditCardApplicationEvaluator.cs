@@ -1,4 +1,4 @@
-﻿namespace MockWithMoq_Library;
+namespace MockWithMoq_Library;
 
 public class CreditCardApplicationEvaluator(IFrequentFlyerNumberValidator validator)
 {

@@ -1,4 +1,4 @@
-﻿namespace YieldDemo;
+namespace YieldDemo;
 
 public static class Generators
 {

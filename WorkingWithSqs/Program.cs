@@ -1,4 +1,4 @@
-﻿var sqsClient = new AmazonSQSClient(RegionEndpoint.EUCentral1);
+var sqsClient = new AmazonSQSClient(RegionEndpoint.EUCentral1);
 
 var publisher = new SqsPublisher(sqsClient);
 

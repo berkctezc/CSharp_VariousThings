@@ -1,2 +1,2 @@
-﻿global using Moq;
+global using Moq;
 global using Xunit;

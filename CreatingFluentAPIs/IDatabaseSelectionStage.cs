@@ -1,4 +1,4 @@
-﻿namespace CreatingFluentAPIs;
+namespace CreatingFluentAPIs;
 
 public interface IDatabaseSelectionStage
 {

@@ -45,7 +45,7 @@ public class Functions
 		{
 			StatusCode = (int) HttpStatusCode.OK,
 			Body = JsonSerializer.Serialize(rsp),
-			Headers = new Dictionary<string, string> {{"Content-Type", "text/plain"}}
+			Headers = new Dictionary<string, string> { { "Content-Type", "text/plain" } }
 		};
 
 		return response;

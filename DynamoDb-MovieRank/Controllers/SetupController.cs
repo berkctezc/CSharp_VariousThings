@@ -1,4 +1,4 @@
-﻿namespace DynamoDb_MovieRank.Controllers;
+namespace DynamoDb_MovieRank.Controllers;
 
 [Route("setup")]
 public class SetupController(ISetupService setupService) : Controller

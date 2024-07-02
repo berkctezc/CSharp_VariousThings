@@ -1,4 +1,4 @@
-﻿namespace RedisDemo.Data;
+namespace RedisDemo.Data;
 
 public class WeatherForecast
 {

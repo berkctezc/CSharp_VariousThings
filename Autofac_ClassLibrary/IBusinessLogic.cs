@@ -1,4 +1,4 @@
-﻿namespace Autofac_ClassLibrary;
+namespace Autofac_ClassLibrary;
 
 public interface IBusinessLogic
 {

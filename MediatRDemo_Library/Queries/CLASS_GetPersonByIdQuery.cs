@@ -1,4 +1,4 @@
-﻿namespace MediatRDemo_Library.Queries;
+namespace MediatRDemo_Library.Queries;
 
 public class CLASS_GetPersonByIdQuery(int id) : IRequest<PersonModel>
 {

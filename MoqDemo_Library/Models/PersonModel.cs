@@ -1,4 +1,4 @@
-﻿namespace MoqDemo_Library.Models;
+namespace MoqDemo_Library.Models;
 
 public class PersonModel
 {

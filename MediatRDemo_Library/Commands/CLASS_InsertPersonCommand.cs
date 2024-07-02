@@ -1,4 +1,4 @@
-﻿namespace MediatRDemo_Library.Commands;
+namespace MediatRDemo_Library.Commands;
 
 public class CLASS_InsertPersonCommand(string firstName, string lastName) : IRequest<PersonModel>
 {

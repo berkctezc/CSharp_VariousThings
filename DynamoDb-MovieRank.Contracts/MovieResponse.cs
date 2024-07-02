@@ -1,4 +1,4 @@
-﻿namespace DynamoDb_MovieRank.Contracts;
+namespace DynamoDb_MovieRank.Contracts;
 
 public class MovieResponse
 {

@@ -1,4 +1,4 @@
-﻿namespace Async_Programming;
+namespace Async_Programming;
 
 /// <summary>
 ///     Interaction logic for App.xaml

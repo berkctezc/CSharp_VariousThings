@@ -1,4 +1,4 @@
-﻿namespace XUnitDemo_ClassLibrary;
+namespace XUnitDemo_ClassLibrary;
 
 public class Calculator
 {

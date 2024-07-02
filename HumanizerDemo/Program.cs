@@ -1,4 +1,4 @@
-﻿var turkishCulture = new CultureInfo("tr-TR");
+var turkishCulture = new CultureInfo("tr-TR");
 
 Vocabularies.Default.AddPlural("boost", "boosters");
 

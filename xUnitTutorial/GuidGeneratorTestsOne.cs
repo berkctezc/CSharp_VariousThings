@@ -1,4 +1,4 @@
-﻿namespace xUnitTutorial;
+namespace xUnitTutorial;
 
 [Collection("Guid generator")]
 public class GuidGeneratorTestsOne(GuidGenerator guidGenerator, ITestOutputHelper output)

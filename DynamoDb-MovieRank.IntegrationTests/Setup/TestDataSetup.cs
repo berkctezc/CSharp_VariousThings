@@ -1,4 +1,4 @@
-﻿namespace DynamoDb_MovieRank.IntegrationTests.Setup;
+namespace DynamoDb_MovieRank.IntegrationTests.Setup;
 
 public class TestDataSetup
 {

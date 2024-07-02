@@ -1,4 +1,4 @@
-﻿Randomizer.Seed = new Random(420); // seed to generate same data always
+Randomizer.Seed = new Random(420); // seed to generate same data always
 
 var fakerBillingDetails = new Faker<BillingDetails>("es") // optional locale option
 	.RuleFor(x => x.CustomerName, x => x.Person.FullName)

@@ -1,4 +1,4 @@
-﻿using System.Runtime.InteropServices;
+using System.Runtime.InteropServices;
 using Docker.DotNet;
 using Docker.DotNet.Models;
 
@@ -31,10 +31,10 @@ public class TestContext : IAsyncLifetime
 	{
 		await _dockerClient.Images
 			.CreateImageAsync(new ImagesCreateParameters
-				{
-					FromImage = ContainerImageUri,
-					Tag = "latest"
-				},
+			{
+				FromImage = ContainerImageUri,
+				Tag = "latest"
+			},
 				new AuthConfig(),
 				new Progress<JSONMessage>());
 	}
@@ -57,7 +57,7 @@ public class TestContext : IAsyncLifetime
 					{"9003", new List<PortBinding> {new() {HostPort = "9003"}}}
 				}
 			},
-			Env = new List<string> {"SERVICES=s3:9003"}
+			Env = new List<string> { "SERVICES=s3:9003" }
 		});
 
 		_containerId = response.ID;

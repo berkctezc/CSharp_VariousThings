@@ -1,16 +1,16 @@
 <Project Sdk="Microsoft.NET.Sdk">
-	<PropertyGroup>
-		<TargetFramework>net8.0</TargetFramework>
-		<ImplicitUsings>enable</ImplicitUsings>
-		<Nullable>enable</Nullable>
-		<GenerateRuntimeConfigurationFiles>true</GenerateRuntimeConfigurationFiles>
-		<AWSProjectType>Lambda</AWSProjectType>
-		<CopyLocalLockFileAssemblies>true</CopyLocalLockFileAssemblies>
-		<PublishReadyToRun>true</PublishReadyToRun>
-	</PropertyGroup>
-	<ItemGroup>
-		<PackageReference Include="Amazon.Lambda.Core" Version="2.2.0"/>
-		<PackageReference Include="Amazon.Lambda.Serialization.SystemTextJson" Version="2.4.3" />
-		<PackageReference Include="Amazon.Lambda.SQSEvents" Version="2.2.0"/>
-	</ItemGroup>
+    <PropertyGroup>
+        <TargetFramework>net8.0</TargetFramework>
+        <ImplicitUsings>enable</ImplicitUsings>
+        <Nullable>enable</Nullable>
+        <GenerateRuntimeConfigurationFiles>true</GenerateRuntimeConfigurationFiles>
+        <AWSProjectType>Lambda</AWSProjectType>
+        <CopyLocalLockFileAssemblies>true</CopyLocalLockFileAssemblies>
+        <PublishReadyToRun>true</PublishReadyToRun>
+    </PropertyGroup>
+    <ItemGroup>
+        <PackageReference Include="Amazon.Lambda.Core" Version="2.2.0"/>
+        <PackageReference Include="Amazon.Lambda.Serialization.SystemTextJson" Version="2.4.3"/>
+        <PackageReference Include="Amazon.Lambda.SQSEvents" Version="2.2.0"/>
+    </ItemGroup>
 </Project>

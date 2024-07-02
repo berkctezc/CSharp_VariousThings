@@ -1,4 +1,4 @@
-﻿namespace LoggingDemo.Pages;
+namespace LoggingDemo.Pages;
 
 public class PrivacyModel(ILogger<PrivacyModel> logger) : PageModel
 {

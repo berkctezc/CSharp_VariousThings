@@ -1,4 +1,4 @@
-﻿namespace MockLib.Test;
+namespace MockLib.Test;
 
 public interface IExample
 {

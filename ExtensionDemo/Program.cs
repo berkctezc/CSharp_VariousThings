@@ -1,4 +1,4 @@
-﻿namespace ExtensionDemo;
+namespace ExtensionDemo;
 
 internal class Program
 {

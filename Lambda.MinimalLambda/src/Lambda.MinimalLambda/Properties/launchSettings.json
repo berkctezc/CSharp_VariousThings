@@ -1,18 +1,18 @@
 {
-	"profiles": {
-		"Lambda.MinimalLambda": {
-			"commandName": "Project",
-			"launchBrowser": true,
-			"environmentVariables": {
-				"ASPNETCORE_ENVIRONMENT": "Development"
-			},
-			"applicationUrl": "https://localhost:59574;http://localhost:59575"
-		},
-		"Mock Lambda Test Tool": {
-			"commandName": "Executable",
-			"commandLineArgs": "--port 5050",
-			"workingDirectory": ".\\bin\\$(Configuration)\\net6.0",
-			"executablePath": "%USERPROFILE%\\.dotnet\\tools\\dotnet-lambda-test-tool-6.0.exe"
-		}
-	}
+  "profiles": {
+    "Lambda.MinimalLambda": {
+      "commandName": "Project",
+      "launchBrowser": true,
+      "environmentVariables": {
+        "ASPNETCORE_ENVIRONMENT": "Development"
+      },
+      "applicationUrl": "https://localhost:59574;http://localhost:59575"
+    },
+    "Mock Lambda Test Tool": {
+      "commandName": "Executable",
+      "commandLineArgs": "--port 5050",
+      "workingDirectory": ".\\bin\\$(Configuration)\\net6.0",
+      "executablePath": "%USERPROFILE%\\.dotnet\\tools\\dotnet-lambda-test-tool-6.0.exe"
+    }
+  }
 }

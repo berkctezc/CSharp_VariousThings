@@ -1,4 +1,4 @@
-﻿namespace WorkingWithSqs.Consumer;
+namespace WorkingWithSqs.Consumer;
 
 public class MessageDispatcher
 {

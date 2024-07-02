@@ -1,4 +1,4 @@
-﻿namespace S3_LifeBackup.Core.Interfaces;
+namespace S3_LifeBackup.Core.Interfaces;
 
 public interface IBucketRepository
 {

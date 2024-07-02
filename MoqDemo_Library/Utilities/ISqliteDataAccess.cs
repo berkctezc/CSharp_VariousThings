@@ -1,4 +1,4 @@
-﻿namespace MoqDemo_Library.Utilities;
+namespace MoqDemo_Library.Utilities;
 
 public interface ISqliteDataAccess
 {
