@@ -39,7 +39,7 @@ public class DemoCode
 
 	public int GetNumber(int position)
 	{
-		var numbers = new[] { 1, 4, 7, 2 };
+		var numbers = new[] {1, 4, 7, 2};
 		var output = numbers[position];
 		return output;
 	}

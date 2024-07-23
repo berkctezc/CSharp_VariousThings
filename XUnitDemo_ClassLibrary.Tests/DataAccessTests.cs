@@ -5,7 +5,7 @@ public class DataAccessTests
 	[Fact]
 	public void AddPersonToPeopleList_ShouldWork()
 	{
-		var newPerson = new PersonModel { FirstName = "Berkcan", LastName = "Tezcaner" };
+		var newPerson = new PersonModel {FirstName = "Berkcan", LastName = "Tezcaner"};
 		var people = new List<PersonModel>();
 
 		DataAccess.AddPersonToPeopleList(people, newPerson);
@@ -19,7 +19,7 @@ public class DataAccessTests
 	[InlineData("", "Tezcaner", "FirstName")]
 	public void AddPersonToPeopleList_ShouldFail(string fName, string lName, string param)
 	{
-		var newPerson = new PersonModel { FirstName = fName, LastName = lName };
+		var newPerson = new PersonModel {FirstName = fName, LastName = lName};
 		var people = new List<PersonModel>();
 
 		Assert.Throws<ArgumentException>(param, () => DataAccess.AddPersonToPeopleList(people, newPerson));
@@ -28,8 +28,8 @@ public class DataAccessTests
 	[Fact]
 	public void ConvertModelsToCSV_ShouldWork()
 	{
-		var newPerson1 = new PersonModel { FirstName = "asdfg", LastName = "sadfg" };
-		var newPerson2 = new PersonModel { FirstName = "asd", LastName = "sadfdaswg" };
+		var newPerson1 = new PersonModel {FirstName = "asdfg", LastName = "sadfg"};
+		var newPerson2 = new PersonModel {FirstName = "asd", LastName = "sadfdaswg"};
 		var people = new List<PersonModel>();
 
 		DataAccess.AddPersonToPeopleList(people, newPerson1);

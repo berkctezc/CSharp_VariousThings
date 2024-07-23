@@ -3,7 +3,7 @@ namespace WorkingWithSqs.Consumer;
 public class SqsConsumerService(IAmazonSQS sqs, MessageDispatcher dispatcher) : BackgroundService
 {
 	private const string QueueName = "customers";
-	private static readonly List<string> MessageAttributeNames = new() { "All" };
+	private static readonly List<string> MessageAttributeNames = new() {"All"};
 
 	protected override async Task ExecuteAsync(CancellationToken ct)
 	{

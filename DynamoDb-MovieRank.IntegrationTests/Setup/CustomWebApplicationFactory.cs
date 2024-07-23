@@ -7,7 +7,7 @@ public class CustomWebApplicationFactory<TStartup> : WebApplicationFactory<TStar
 		builder.ConfigureTestServices(services =>
 			services.AddSingleton<IAmazonDynamoDB>(cc =>
 			{
-				var clientConfig = new AmazonDynamoDBConfig { ServiceURL = "http://localhost:8000" };
+				var clientConfig = new AmazonDynamoDBConfig {ServiceURL = "http://localhost:8000"};
 				return new AmazonDynamoDBClient(clientConfig);
 			}));
 	}

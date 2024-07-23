@@ -24,7 +24,7 @@ app.UseExceptionHandler(a => a.Run(async context =>
 	var exceptionHandlerPathFeature = context.Features.Get<IExceptionHandlerPathFeature>();
 	var exp = exceptionHandlerPathFeature?.Error;
 
-	var result = JsonConvert.SerializeObject(new { error = exp?.Message });
+	var result = JsonConvert.SerializeObject(new {error = exp?.Message});
 	context.Response.ContentType = "application/json";
 	await context.Response.WriteAsync(result);
 }));

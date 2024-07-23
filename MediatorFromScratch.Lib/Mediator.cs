@@ -11,6 +11,6 @@ public class Mediator(Func<Type, object> serviceResolver, IDictionary<Type, Type
 		var handler = serviceResolver(requestHandlerType);
 
 		return await ((Task<TResponse>) handler.GetType().GetMethod("HandleAsync")!
-			.Invoke(handler, new[] { request })!)!;
+			.Invoke(handler, new[] {request})!)!;
 	}
 }

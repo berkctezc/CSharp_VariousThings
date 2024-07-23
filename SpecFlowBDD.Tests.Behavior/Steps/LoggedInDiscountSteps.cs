@@ -28,7 +28,7 @@ public class LoggedInDiscountSteps
 	[When(@"a (.*) that costs (.*) GBP is added to the basket")]
 	public void WhenAThatCostsGbpIsAddedToTheBasket(string itemName, decimal price)
 	{
-		_basket.Products.Add(new Product { Name = itemName, Price = price });
+		_basket.Products.Add(new Product {Name = itemName, Price = price});
 	}
 
 	[Then(@"the basket value is (.*) GBP")]

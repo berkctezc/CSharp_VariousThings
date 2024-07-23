@@ -15,7 +15,7 @@ Console.WriteLine(jsonTxt);
 
 // List patterns
 
-var numbers = new[] { 1, 2, 3 };
+var numbers = new[] {1, 2, 3};
 
 Console.WriteLine(numbers is [1, 2, 3]);
 Console.WriteLine(numbers is [0 or 1, <= 2, >= 3]);

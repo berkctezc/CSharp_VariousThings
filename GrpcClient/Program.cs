@@ -1,6 +1,6 @@
 async Task Demo1(ChannelBase channel)
 {
-	var input = new HelloRequest { Name = "Berkc" };
+	var input = new HelloRequest {Name = "Berkc"};
 
 	var client = new Greeter.GreeterClient(channel);
 
@@ -18,7 +18,7 @@ Console.WriteLine("----");
 
 var customerClient = new Customer.CustomerClient(channel);
 
-var clientRequested = new CustomerLookupModel { UserId = 1 };
+var clientRequested = new CustomerLookupModel {UserId = 1};
 
 var customer = await customerClient.GetCustomerInfoAsync(clientRequested);
 

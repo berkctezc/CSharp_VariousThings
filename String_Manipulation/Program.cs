@@ -118,7 +118,7 @@ internal static class Program
 
 	private static void WorkingWithArrays()
 	{
-		var ages = new[] { 6, 7, 8, 3, 5 };
+		var ages = new[] {6, 7, 8, 3, 5};
 		string results;
 
 		results = string.Concat(ages);

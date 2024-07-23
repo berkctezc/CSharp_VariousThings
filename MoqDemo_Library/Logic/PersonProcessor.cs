@@ -38,7 +38,7 @@ public class PersonProcessor(ISqliteDataAccess database) : IPersonProcessor
 	public void SavePerson(PersonModel person)
 	{
 		var sql = "insert into Person (FirstName, LastName, HeightInInches) " +
-				  "values (@FirstName, @LastName, @HeightInInches)";
+		          "values (@FirstName, @LastName, @HeightInInches)";
 
 		sql = sql.Replace("@FirstName", $"'{person.FirstName}'");
 		sql = sql.Replace("@LastName", $"'{person.LastName}'");
@@ -50,7 +50,7 @@ public class PersonProcessor(ISqliteDataAccess database) : IPersonProcessor
 	public void UpdatePerson(PersonModel person)
 	{
 		var sql = "update Person set FirstName = @FirstName, LastName = @LastName" +
-				  ", HeightInInches = @HeightInInches where Id = @Id";
+		          ", HeightInInches = @HeightInInches where Id = @Id";
 
 		database.UpdateData(person, sql);
 	}
@@ -64,8 +64,8 @@ public class PersonProcessor(ISqliteDataAccess database) : IPersonProcessor
 		var inchesMarkerLocation = heightText.IndexOf('"');
 
 		if (feetMarkerLocation < 0
-			|| inchesMarkerLocation < 0
-			|| inchesMarkerLocation < feetMarkerLocation)
+		    || inchesMarkerLocation < 0
+		    || inchesMarkerLocation < feetMarkerLocation)
 			return (false, 0);
 
 		// Split on both the feet and inches indicators
@@ -74,7 +74,7 @@ public class PersonProcessor(ISqliteDataAccess database) : IPersonProcessor
 
 		// Part 0 should be feet, part 1 should be inches
 		if (int.TryParse(heightParts[0], out var feet) == false
-			|| double.TryParse(heightParts[1], out var inches) == false)
+		    || double.TryParse(heightParts[1], out var inches) == false)
 			return (false, 0);
 
 		heightInInches = feet * 12 + inches;
