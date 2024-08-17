@@ -93,7 +93,7 @@ public class PersonProcessorTests
 			HeightInInches = 80
 		};
 		var sql = "insert into Person (FirstName, LastName, HeightInInches) " +
-		          "values ('Berkcan', 'Tezcaner', 80)";
+				  "values ('Berkcan', 'Tezcaner', 80)";
 
 		mock.Mock<ISqliteDataAccess>()
 			.Setup(x => x.SaveData(person, sql));

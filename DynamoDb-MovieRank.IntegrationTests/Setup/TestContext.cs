@@ -30,10 +30,10 @@ public class TestContext : IAsyncLifetime
 	{
 		await _dockerClient.Images
 			.CreateImageAsync(new ImagesCreateParameters
-				{
-					FromImage = ContainerImageUri,
-					Tag = "latest"
-				},
+			{
+				FromImage = ContainerImageUri,
+				Tag = "latest"
+			},
 				new AuthConfig(),
 				new Progress<JSONMessage>());
 	}

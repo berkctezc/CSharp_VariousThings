@@ -6,8 +6,8 @@ public class DemoDataAccess : IDataAccess
 
 	public DemoDataAccess()
 	{
-		people.Add(new PersonModel {Id = 1, FirstName = "David", LastName = "Bowie"});
-		people.Add(new PersonModel {Id = 2, FirstName = "Angus", LastName = "Young"});
+		people.Add(new PersonModel { Id = 1, FirstName = "David", LastName = "Bowie" });
+		people.Add(new PersonModel { Id = 2, FirstName = "Angus", LastName = "Young" });
 	}
 
 	public List<PersonModel> GetPeople()
