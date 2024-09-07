@@ -48,7 +48,8 @@ public partial class MainWindow
 	{
 		var websites = PrepData();
 
-		foreach (var results in websites.Select(DownloadWebsite)) ReportWebsiteInfo(results);
+		foreach (var results in websites.Select(DownloadWebsite))
+			ReportWebsiteInfo(results);
 	}
 
 	[Obsolete("Obsolete")]
@@ -72,12 +73,14 @@ public partial class MainWindow
 
 		var results = await Task.WhenAll(tasks);
 
-		foreach (var item in results) ReportWebsiteInfo(item);
+		foreach (var item in results)
+			ReportWebsiteInfo(item);
 	}
 
 	private void ReportWebsiteInfo(WebsiteDataModel data)
 	{
-		resultsWindow.Text += $"{data.WebsiteUrl} downloaded: {data.WebsiteData.Length} characters long. {Environment.NewLine}";
+		resultsWindow.Text +=
+			$"{data.WebsiteUrl} downloaded: {data.WebsiteData.Length} characters long. {Environment.NewLine}";
 	}
 
 	[Obsolete("Obsolete")]

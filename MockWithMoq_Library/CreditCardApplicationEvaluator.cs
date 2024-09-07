@@ -5,21 +5,27 @@ public class CreditCardApplicationEvaluator(IFrequentFlyerNumberValidator valida
 	private const int AutoReferralMaxAge = 20;
 	private const int HighIncomeThreshold = 100_000;
 	private const int LowIncomeThreshold = 20_000;
-	private readonly IFrequentFlyerNumberValidator _validator = validator ?? throw new ArgumentNullException(nameof(validator));
+	private readonly IFrequentFlyerNumberValidator _validator =
+		validator ?? throw new ArgumentNullException(nameof(validator));
 
 	public CreditCardApplicationDecision Evaluate(CreditCardApplication application)
 	{
-		if (application.GrossAnnualIncome >= HighIncomeThreshold) return CreditCardApplicationDecision.AutoAccepted;
+		if (application.GrossAnnualIncome >= HighIncomeThreshold)
+			return CreditCardApplicationDecision.AutoAccepted;
 
-		if (_validator.ServiceInformation.License.LicenseKey == "EXPIRED") return CreditCardApplicationDecision.ReferredToHuman;
+		if (_validator.ServiceInformation.License.LicenseKey == "EXPIRED")
+			return CreditCardApplicationDecision.ReferredToHuman;
 
 		var isValidFrequentFlyerNumber = _validator.IsValid(application.FrequentFlyerNumber);
 
-		if (!isValidFrequentFlyerNumber) return CreditCardApplicationDecision.ReferredToHuman;
+		if (!isValidFrequentFlyerNumber)
+			return CreditCardApplicationDecision.ReferredToHuman;
 
-		if (application.Age <= AutoReferralMaxAge) return CreditCardApplicationDecision.AutoDeclined;
+		if (application.Age <= AutoReferralMaxAge)
+			return CreditCardApplicationDecision.AutoDeclined;
 
-		if (application.GrossAnnualIncome < LowIncomeThreshold) return CreditCardApplicationDecision.AutoDeclined;
+		if (application.GrossAnnualIncome < LowIncomeThreshold)
+			return CreditCardApplicationDecision.AutoDeclined;
 
 		return CreditCardApplicationDecision.ReferredToHuman;
 	}

@@ -53,7 +53,8 @@ public class Application(IPersonProcessor personProcessor) : IApplication
 
 	private void DisplayPeople(List<PersonModel> people)
 	{
-		foreach (var p in people) Console.WriteLine(p.FullName);
+		foreach (var p in people)
+			Console.WriteLine(p.FullName);
 	}
 
 	private string GetActionChoice()

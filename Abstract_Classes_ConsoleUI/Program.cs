@@ -4,11 +4,7 @@ internal class Program
 {
 	private static void Main(string[] args)
 	{
-		List<DataAccess> databases = new()
-		{
-			new SqlDataAccess(),
-			new SqliteDataAccess()
-		};
+		List<DataAccess> databases = new() { new SqlDataAccess(), new SqliteDataAccess() };
 
 		foreach (var db in databases)
 		{

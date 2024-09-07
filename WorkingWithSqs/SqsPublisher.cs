@@ -13,13 +13,14 @@ public class SqsPublisher(IAmazonSQS sqs)
 			MessageAttributes = new Dictionary<string, MessageAttributeValue>
 			{
 				{
-					nameof(IMessage.MessageTypeName), new MessageAttributeValue
+					nameof(IMessage.MessageTypeName),
+					new MessageAttributeValue
 					{
 						StringValue = message.MessageTypeName,
-						DataType = "String"
+						DataType = "String",
 					}
-				}
-			}
+				},
+			},
 		};
 
 		await sqs.SendMessageAsync(request);

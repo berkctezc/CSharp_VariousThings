@@ -29,7 +29,8 @@ internal class AssemblyCompiler
 		var ms = new MemoryStream();
 		var result = compilation.Emit(ms);
 
-		if (!result.Success) throw new Exception("Compilation failed");
+		if (!result.Success)
+			throw new Exception("Compilation failed");
 
 		return Assembly.Load(ms.ToArray());
 	}
@@ -40,6 +41,7 @@ internal class AssemblyCompiler
 			assemblyName,
 			new[] { tree },
 			_references.Distinct().Select(x => MetadataReference.CreateFromFile(x)).ToList(),
-			new CSharpCompilationOptions(OutputKind.DynamicallyLinkedLibrary));
+			new CSharpCompilationOptions(OutputKind.DynamicallyLinkedLibrary)
+		);
 	}
 }

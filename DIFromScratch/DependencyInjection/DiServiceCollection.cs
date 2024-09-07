@@ -12,7 +12,13 @@ public class DiServiceCollection
 	public void RegisterSingleton<TService, TImplementation>()
 		where TImplementation : TService
 	{
-		_serviceDescriptors.Add(new ServiceDescriptor(typeof(TService), typeof(TImplementation), ServiceLifeTime.Singleton));
+		_serviceDescriptors.Add(
+			new ServiceDescriptor(
+				typeof(TService),
+				typeof(TImplementation),
+				ServiceLifeTime.Singleton
+			)
+		);
 	}
 
 	public void RegisterSingleton<TService>()
@@ -28,7 +34,13 @@ public class DiServiceCollection
 	public void RegisterTransient<TService, TImplementation>()
 		where TImplementation : TService
 	{
-		_serviceDescriptors.Add(new ServiceDescriptor(typeof(TService), typeof(TImplementation), ServiceLifeTime.Transient));
+		_serviceDescriptors.Add(
+			new ServiceDescriptor(
+				typeof(TService),
+				typeof(TImplementation),
+				ServiceLifeTime.Transient
+			)
+		);
 	}
 
 	public DiContainer Build()

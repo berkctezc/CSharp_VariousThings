@@ -1,5 +1,3 @@
 namespace CSv11;
 
-file class FileScopedTypes
-{
-}
+file class FileScopedTypes { }

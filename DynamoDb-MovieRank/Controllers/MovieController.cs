@@ -20,7 +20,10 @@ public class MovieController(IMovieRankService movieRankService) : Controller
 	}
 
 	[HttpGet("user/{userId}/rankedMovies/{movieName}")]
-	public async Task<IEnumerable<MovieResponse>> GetUsersRankedMoviesByMovieTitle(int userId, string movieName)
+	public async Task<IEnumerable<MovieResponse>> GetUsersRankedMoviesByMovieTitle(
+		int userId,
+		string movieName
+	)
 	{
 		var results = await movieRankService.GetUsersRankedMoviesByMovieTitle(userId, movieName);
 
@@ -28,7 +31,10 @@ public class MovieController(IMovieRankService movieRankService) : Controller
 	}
 
 	[HttpPost("{userId}")]
-	public async Task<IActionResult> AddMovie(int userId, [FromBody] MovieRankRequest movieRankRequest)
+	public async Task<IActionResult> AddMovie(
+		int userId,
+		[FromBody] MovieRankRequest movieRankRequest
+	)
 	{
 		await movieRankService.AddMovie(userId, movieRankRequest);
 

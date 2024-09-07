@@ -11,7 +11,10 @@ internal class Program
 		{
 			prod.ShipItem(customer);
 
-			if (prod is IDigitalProductModel digital) Console.WriteLine($"For the {digital.Title} you have {digital.TotalDownloadsLeft} downloads left.");
+			if (prod is IDigitalProductModel digital)
+				Console.WriteLine(
+					$"For the {digital.Title} you have {digital.TotalDownloadsLeft} downloads left."
+				);
 		}
 	}
 
@@ -23,7 +26,7 @@ internal class Program
 			LastName = "Tezcaner",
 			City = "Istanbul",
 			EmailAddress = "berkcantezcaner@gmail.com",
-			PhoneNumber = "1234567"
+			PhoneNumber = "1234567",
 		};
 	}
 
@@ -34,7 +37,6 @@ internal class Program
 		output.Add(new PhysicalProductModel { Title = "Earbuds" });
 		output.Add(new PhysicalProductModel { Title = "Gym Membership Card" });
 		output.Add(new PhysicalProductModel { Title = "Tripod" });
-
 
 		output.Add(new DigitalProductModel { Title = "Amazon Membership" });
 		output.Add(new DigitalProductModel { Title = "WinRar Software Key" });

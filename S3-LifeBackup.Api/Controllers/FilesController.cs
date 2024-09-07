@@ -7,7 +7,10 @@ namespace S3_LifeBackup.Api.Controllers;
 public class FilesController(IFilesRepository filesRepository) : ControllerBase
 {
 	[HttpPost("{bucketName}/add")]
-	public async Task<ActionResult<AddFileResponse>> AddFiles(string bucketName, IList<IFormFile>? formFiles)
+	public async Task<ActionResult<AddFileResponse>> AddFiles(
+		string bucketName,
+		IList<IFormFile>? formFiles
+	)
 	{
 		if (formFiles is null)
 			return BadRequest("The request doesn't contain any files to be uploaded.");
@@ -37,7 +40,10 @@ public class FilesController(IFilesRepository filesRepository) : ControllerBase
 	}
 
 	[HttpDelete("{bucketName}/delete/{fileName}")]
-	public async Task<ActionResult<DeleteFileResponse>> DeleteFile(string bucketName, string fileName)
+	public async Task<ActionResult<DeleteFileResponse>> DeleteFile(
+		string bucketName,
+		string fileName
+	)
 	{
 		var response = await filesRepository.DeleteFile(bucketName, fileName);
 
@@ -53,7 +59,10 @@ public class FilesController(IFilesRepository filesRepository) : ControllerBase
 	}
 
 	[HttpPost("{bucketName}/getjsonobject")]
-	public async Task<ActionResult<GetJsonObjectResponse>> GetJsonObject(string bucketName, string fileName)
+	public async Task<ActionResult<GetJsonObjectResponse>> GetJsonObject(
+		string bucketName,
+		string fileName
+	)
 	{
 		var jsonObject = await filesRepository.GetJsonObject(bucketName, fileName);
 

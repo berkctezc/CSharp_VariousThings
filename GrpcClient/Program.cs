@@ -28,5 +28,7 @@ using var call = customerClient.GetNewCustomers(new NewCustomerRequest());
 while (await call.ResponseStream.MoveNext())
 {
 	var currentCustomer = call.ResponseStream.Current;
-	Console.WriteLine($"{currentCustomer.FirstName} {currentCustomer.LastName} {currentCustomer.EmailAddress} {currentCustomer.Age} {currentCustomer.IsAlive}");
+	Console.WriteLine(
+		$"{currentCustomer.FirstName} {currentCustomer.LastName} {currentCustomer.EmailAddress} {currentCustomer.Age} {currentCustomer.IsAlive}"
+	);
 }

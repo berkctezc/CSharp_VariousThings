@@ -16,9 +16,11 @@ public static class DataAccess
 
 	public static void AddPersonToPeopleList(List<PersonModel> people, PersonModel person)
 	{
-		if (string.IsNullOrWhiteSpace(person.FirstName)) throw new ArgumentException("You passed in an invalid parameter", "FirstName");
+		if (string.IsNullOrWhiteSpace(person.FirstName))
+			throw new ArgumentException("You passed in an invalid parameter", "FirstName");
 
-		if (string.IsNullOrWhiteSpace(person.LastName)) throw new ArgumentException("You passed in an invalid parameter", "LastName");
+		if (string.IsNullOrWhiteSpace(person.LastName))
+			throw new ArgumentException("You passed in an invalid parameter", "LastName");
 
 		people.Add(person);
 	}
@@ -27,7 +29,8 @@ public static class DataAccess
 	{
 		List<string> output = new();
 
-		foreach (var user in people) output.Add($"{user.FirstName},{user.LastName}");
+		foreach (var user in people)
+			output.Add($"{user.FirstName},{user.LastName}");
 
 		return output;
 	}

@@ -1,5 +1,3 @@
 namespace S3_LifeBackup.Core.Files;
 
-public class AddItemRequest
-{
-}
+public class AddItemRequest { }

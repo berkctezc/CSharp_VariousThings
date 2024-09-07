@@ -17,7 +17,6 @@ builder.Services.AddAWSLambdaHosting(LambdaEventSource.HttpApi); // changed from
 
 var app = builder.Build();
 
-
 app.UseHttpsRedirection();
 app.UseAuthorization();
 app.MapControllers();

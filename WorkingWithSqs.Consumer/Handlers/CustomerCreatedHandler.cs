@@ -4,7 +4,7 @@ public class CustomerCreatedHandler(ILogger<CustomerCreatedHandler> logger) : IM
 {
 	public Task HandleAsync(IMessage message)
 	{
-		var customerCreated = (CustomerCreated) message;
+		var customerCreated = (CustomerCreated)message;
 		logger.LogInformation("Customer created with name: {FullName}", customerCreated.FullName);
 		return Task.CompletedTask;
 	}

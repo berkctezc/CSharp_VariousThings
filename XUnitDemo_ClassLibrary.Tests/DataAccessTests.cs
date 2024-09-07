@@ -22,7 +22,10 @@ public class DataAccessTests
 		var newPerson = new PersonModel { FirstName = fName, LastName = lName };
 		var people = new List<PersonModel>();
 
-		Assert.Throws<ArgumentException>(param, () => DataAccess.AddPersonToPeopleList(people, newPerson));
+		Assert.Throws<ArgumentException>(
+			param,
+			() => DataAccess.AddPersonToPeopleList(people, newPerson)
+		);
 	}
 
 	[Fact]
@@ -34,7 +37,6 @@ public class DataAccessTests
 
 		DataAccess.AddPersonToPeopleList(people, newPerson1);
 		DataAccess.AddPersonToPeopleList(people, newPerson2);
-
 
 		DataAccess.ConvertModelsToCSV(people);
 

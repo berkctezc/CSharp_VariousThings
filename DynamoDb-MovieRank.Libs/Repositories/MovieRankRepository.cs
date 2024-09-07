@@ -21,14 +21,17 @@ public class MovieRankRepository : IMovieRankRepository
 		return await _context.LoadAsync<MovieDb>(userId, movieName);
 	}
 
-	public async Task<IEnumerable<MovieDb>> GetUsersRankedMoviesByMovieTitle(int userId, string movieName)
+	public async Task<IEnumerable<MovieDb>> GetUsersRankedMoviesByMovieTitle(
+		int userId,
+		string movieName
+	)
 	{
 		var config = new DynamoDBOperationConfig
 		{
 			QueryFilter = new List<ScanCondition>
 			{
-				new("MovieName", ScanOperator.BeginsWith, movieName)
-			}
+				new("MovieName", ScanOperator.BeginsWith, movieName),
+			},
 		};
 
 		return await _context.QueryAsync<MovieDb>(userId, config).GetRemainingAsync();
@@ -46,10 +49,7 @@ public class MovieRankRepository : IMovieRankRepository
 
 	public async Task<IEnumerable<MovieDb>> GetMovieRank(string movieName)
 	{
-		var config = new DynamoDBOperationConfig
-		{
-			IndexName = "MovieName-index"
-		};
+		var config = new DynamoDBOperationConfig { IndexName = "MovieName-index" };
 
 		return await _context.QueryAsync<MovieDb>(movieName, config).GetRemainingAsync();
 	}
@@ -61,25 +61,17 @@ public class MovieRankRepository : IMovieRankRepository
 			TableName = tableName,
 			AttributeDefinitions = new List<AttributeDefinition>
 			{
-				new()
-				{
-					AttributeName = "Id",
-					AttributeType = "N"
-				}
+				new() { AttributeName = "Id", AttributeType = "N" },
 			},
 			KeySchema = new List<KeySchemaElement>
 			{
-				new()
-				{
-					AttributeName = "Id",
-					KeyType = "HASH"
-				}
+				new() { AttributeName = "Id", KeyType = "HASH" },
 			},
 			ProvisionedThroughput = new ProvisionedThroughput
 			{
 				ReadCapacityUnits = 1,
-				WriteCapacityUnits = 1
-			}
+				WriteCapacityUnits = 1,
+			},
 		};
 
 		await _dynamoDbClient.CreateTableAsync(request);
@@ -87,10 +79,7 @@ public class MovieRankRepository : IMovieRankRepository
 
 	public async Task DeleteDynamoTable(string tableName)
 	{
-		var request = new DeleteTableRequest
-		{
-			TableName = tableName
-		};
+		var request = new DeleteTableRequest { TableName = tableName };
 
 		await _dynamoDbClient.DeleteTableAsync(request);
 	}

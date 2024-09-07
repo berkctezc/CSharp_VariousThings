@@ -2,12 +2,13 @@ namespace InMemoryCachingDataAccess;
 
 public class SampleDataAccess(IMemoryCache cache)
 {
-	private readonly List<EmployeeModel> Data = new()
-	{
-		new EmployeeModel("David", "Bowie"),
-		new EmployeeModel("Freddie", "Mercury"),
-		new EmployeeModel("Alice", "Cooper")
-	};
+	private readonly List<EmployeeModel> Data =
+		new()
+		{
+			new EmployeeModel("David", "Bowie"),
+			new EmployeeModel("Freddie", "Mercury"),
+			new EmployeeModel("Alice", "Cooper"),
+		};
 
 	public List<EmployeeModel> GetEmployees()
 	{

@@ -31,7 +31,6 @@ public class DemoCode
 		return output;
 	}
 
-
 	public int ParentMethod(int position)
 	{
 		return GetNumber(position);

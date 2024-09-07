@@ -22,7 +22,11 @@ public class CalculatorTests
 	[InlineData(28.4, 14.2, 14.2)]
 	[InlineData(13, 9.29, 3.71)]
 	[InlineData(5928.2421, 5821, 107.2421)]
-	public void AddTwoNumbersShouldEqualTheirEqualTheory(decimal expected, decimal firstToAdd, decimal secondToAdd)
+	public void AddTwoNumbersShouldEqualTheirEqualTheory(
+		decimal expected,
+		decimal firstToAdd,
+		decimal secondToAdd
+	)
 	{
 		_sut.Add(firstToAdd);
 		_sut.Add(secondToAdd);
@@ -31,9 +35,13 @@ public class CalculatorTests
 
 	[Theory]
 	[MemberData(nameof(TestData))]
-	public void AddManyNumbersShouldEqualTheirEqualTheory(decimal expected, params decimal[] valuesToAdd)
+	public void AddManyNumbersShouldEqualTheirEqualTheory(
+		decimal expected,
+		params decimal[] valuesToAdd
+	)
 	{
-		foreach (var val in valuesToAdd) _sut.Add(val);
+		foreach (var val in valuesToAdd)
+			_sut.Add(val);
 
 		Assert.Equal(expected, _sut.Value);
 	}
@@ -42,7 +50,8 @@ public class CalculatorTests
 	[ClassData(typeof(DivisionTestData))]
 	public void DivideManyNumbersTheory(decimal expected, params decimal[] valuesToAdd)
 	{
-		foreach (var val in valuesToAdd) _sut.Divide(val);
+		foreach (var val in valuesToAdd)
+			_sut.Divide(val);
 
 		Assert.Equal(expected, _sut.Value);
 	}

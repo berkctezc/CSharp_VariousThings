@@ -1,4 +1,5 @@
 namespace DeskBooker.Core.Tests.Processor;
+
 /*
  * STEP 1: Get a Red (RED)
  * STEP 2: Write the minimum code to pass the test (GREEN)
@@ -21,18 +22,18 @@ public class DeskBookingRequestProcessorTests
 			FirstName = "Berkc",
 			LastName = "Tezc",
 			Email = "berkctezc@github.com",
-			Date = new DateTime(2021, 2, 8)
+			Date = new DateTime(2021, 2, 8),
 		};
 
 		_availableDesks = new List<Desk> { new() { Id = 7 } };
 
 		_deskBookingRepositoryMock = new Mock<IDeskBookingRepository>();
 		_deskRepositoryMock = new Mock<IDeskRepository>();
-		_deskRepositoryMock.Setup(x => x.GetAvailableDesks(_request.Date))
-			.Returns(_availableDesks);
+		_deskRepositoryMock.Setup(x => x.GetAvailableDesks(_request.Date)).Returns(_availableDesks);
 
 		_processor = new DeskBookingRequestProcessor(
-			_deskBookingRepositoryMock.Object, _deskRepositoryMock.Object
+			_deskBookingRepositoryMock.Object,
+			_deskRepositoryMock.Object
 		);
 	}
 
@@ -62,8 +63,12 @@ public class DeskBookingRequestProcessorTests
 	public void ShouldSaveDeskBooking()
 	{
 		DeskBooking savedDeskBooking = null;
-		_deskBookingRepositoryMock.Setup(x => x.Save(It.IsAny<DeskBooking>()))
-			.Callback<DeskBooking>(dB => { savedDeskBooking = dB; });
+		_deskBookingRepositoryMock
+			.Setup(x => x.Save(It.IsAny<DeskBooking>()))
+			.Callback<DeskBooking>(dB =>
+			{
+				savedDeskBooking = dB;
+			});
 
 		_processor.BookDesk(_request);
 
@@ -90,9 +95,13 @@ public class DeskBookingRequestProcessorTests
 	[Theory]
 	[InlineData(DeskBookingResultCode.Success, true)]
 	[InlineData(DeskBookingResultCode.NoDeskAvailable, false)]
-	public void ShouldReturnExpectedResultCode(DeskBookingResultCode expectedResultCode, bool isDeskAvailable)
+	public void ShouldReturnExpectedResultCode(
+		DeskBookingResultCode expectedResultCode,
+		bool isDeskAvailable
+	)
 	{
-		if (!isDeskAvailable) _availableDesks.Clear();
+		if (!isDeskAvailable)
+			_availableDesks.Clear();
 
 		var result = _processor.BookDesk(_request);
 
@@ -107,8 +116,12 @@ public class DeskBookingRequestProcessorTests
 		if (!isDeskAvailable)
 			_availableDesks.Clear();
 		else
-			_deskBookingRepositoryMock.Setup(x => x.Save(It.IsAny<DeskBooking>()))
-				.Callback<DeskBooking>(deskBooking => { deskBooking.Id = expectedDeskBookingId!.Value; });
+			_deskBookingRepositoryMock
+				.Setup(x => x.Save(It.IsAny<DeskBooking>()))
+				.Callback<DeskBooking>(deskBooking =>
+				{
+					deskBooking.Id = expectedDeskBookingId!.Value;
+				});
 
 		var result = _processor.BookDesk(_request);
 

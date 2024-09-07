@@ -30,7 +30,12 @@ public class Program
 	{
 		return Host.CreateDefaultBuilder(args)
 			.UseWindowsService()
-			.ConfigureServices((hostContext, services) => { services.AddHostedService<Worker>(); })
+			.ConfigureServices(
+				(hostContext, services) =>
+				{
+					services.AddHostedService<Worker>();
+				}
+			)
 			.UseSerilog();
 	}
 }

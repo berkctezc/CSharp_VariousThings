@@ -33,7 +33,9 @@ public class SimpleFluentSqlConnection
 
 	public SqlConnection Connect()
 	{
-		var conn = new SqlConnection($"Server={_server};Database={_database};User Id={_user};Password={_password}");
+		var conn = new SqlConnection(
+			$"Server={_server};Database={_database};User Id={_user};Password={_password}"
+		);
 		conn.Open();
 		return conn;
 	}

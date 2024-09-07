@@ -8,5 +8,9 @@ public interface IMapper
 
 	MovieDb ToMovieDbModel(int userId, MovieRankRequest movieRankRequest);
 
-	MovieDb ToMovieDbModel(int userId, MovieDb movieDbRequest, MovieUpdateRequest movieUpdateRequest);
+	MovieDb ToMovieDbModel(
+		int userId,
+		MovieDb movieDbRequest,
+		MovieUpdateRequest movieUpdateRequest
+	);
 }

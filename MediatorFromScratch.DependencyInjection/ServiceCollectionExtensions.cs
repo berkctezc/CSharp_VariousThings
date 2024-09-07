@@ -5,7 +5,8 @@ public static class ServiceCollectionExtensions
 	public static IServiceCollection AddMediator(
 		this IServiceCollection services,
 		ServiceLifetime lifetime,
-		params Type[] markers)
+		params Type[] markers
+	)
 	{
 		var handlerInfo = new Dictionary<Type, Type>();
 
@@ -17,7 +18,10 @@ public static class ServiceCollectionExtensions
 			var handlers = GetClassesImplementingInterface(assembly, typeof(IHandler<,>));
 
 			requests.ForEach(x =>
-				handlerInfo[x] = handlers.SingleOrDefault(xx => xx == xx.GetInterface("IHandler`2")!.GetGenericArguments()[0])!);
+				handlerInfo[x] = handlers.SingleOrDefault(xx =>
+					xx == xx.GetInterface("IHandler`2")!.GetGenericArguments()[0]
+				)!
+			);
 
 			var serviceDescriptor = handlers.Select(x => new ServiceDescriptor(x, x, lifetime));
 			services.TryAdd(serviceDescriptor);
@@ -30,13 +34,14 @@ public static class ServiceCollectionExtensions
 
 	private static List<Type> GetClassesImplementingInterface(Assembly assembly, Type typeToMatch)
 	{
-		return assembly.ExportedTypes
-			.Where(t =>
+		return assembly
+			.ExportedTypes.Where(t =>
 			{
 				var implementRequestType = t.GetInterfaces()
 					.Where(x => x.IsGenericType)
 					.Any(x => x.GetGenericTypeDefinition() == typeToMatch);
 				return !t.IsInterface && !t.IsAbstract && implementRequestType;
-			}).ToList();
+			})
+			.ToList();
 	}
 }

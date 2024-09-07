@@ -12,17 +12,25 @@ Log.Logger = new LoggerConfiguration()
 Log.Logger.Information("Application Starting");
 
 var host = Host.CreateDefaultBuilder()
-	.ConfigureServices((_, serviceCollection) => { serviceCollection.AddTransient<IGreetingService, GreetingService>(); })
+	.ConfigureServices(
+		(_, serviceCollection) =>
+		{
+			serviceCollection.AddTransient<IGreetingService, GreetingService>();
+		}
+	)
 	.UseSerilog()
 	.Build();
 
 var svc = ActivatorUtilities.CreateInstance<GreetingService>(host.Services);
 svc.Run();
 
-
 static void BuildConfig(IConfigurationBuilder builder)
 {
-	builder.SetBasePath(Directory.GetCurrentDirectory())
+	builder
+		.SetBasePath(Directory.GetCurrentDirectory())
 		.AddJsonFile("appsettings.json", false, true)
-		.AddJsonFile($"appsettings.{Environment.GetEnvironmentVariable("ASPNETCORE_ENVIRONMENT") ?? "Production"}.json", true);
+		.AddJsonFile(
+			$"appsettings.{Environment.GetEnvironmentVariable("ASPNETCORE_ENVIRONMENT") ?? "Production"}.json",
+			true
+		);
 }

@@ -1,6 +1,7 @@
 namespace DynamoDb_MovieRank.Services;
 
-public class MovieRankService(IMovieRankRepository movieRankRepository, IMapper map) : IMovieRankService
+public class MovieRankService(IMovieRankRepository movieRankRepository, IMapper map)
+	: IMovieRankService
 {
 	public async Task<IEnumerable<MovieResponse>> GetAllItemsFromDatabase()
 	{
@@ -16,9 +17,15 @@ public class MovieRankService(IMovieRankRepository movieRankRepository, IMapper 
 		return map.ToMovieContract(response);
 	}
 
-	public async Task<IEnumerable<MovieResponse>> GetUsersRankedMoviesByMovieTitle(int userId, string movieName)
+	public async Task<IEnumerable<MovieResponse>> GetUsersRankedMoviesByMovieTitle(
+		int userId,
+		string movieName
+	)
 	{
-		var response = await movieRankRepository.GetUsersRankedMoviesByMovieTitle(userId, movieName);
+		var response = await movieRankRepository.GetUsersRankedMoviesByMovieTitle(
+			userId,
+			movieName
+		);
 
 		return map.ToMovieContract(response);
 	}
@@ -48,7 +55,7 @@ public class MovieRankService(IMovieRankRepository movieRankRepository, IMapper 
 		return new MovieRankResponse
 		{
 			MovieName = movieName,
-			OverallRanking = overallMovieRanking
+			OverallRanking = overallMovieRanking,
 		};
 	}
 }

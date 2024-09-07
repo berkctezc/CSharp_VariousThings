@@ -1,7 +1,8 @@
 namespace DynamoDb_MovieRank.IntegrationTests.Scenarios;
 
 [Collection("api")]
-public class MovieTests(CustomWebApplicationFactory<Program> factory) : IClassFixture<CustomWebApplicationFactory<Program>>
+public class MovieTests(CustomWebApplicationFactory<Program> factory)
+	: IClassFixture<CustomWebApplicationFactory<Program>>
 {
 	private readonly HttpClient _client = factory.CreateClient();
 
@@ -25,7 +26,9 @@ public class MovieTests(CustomWebApplicationFactory<Program> factory) : IClassFi
 		var response = await _client.GetAsync("movies");
 
 		using var content = response.Content.ReadAsStringAsync();
-		var result = JsonConvert.DeserializeObject<MovieResponse[]>(await content) ?? Array.Empty<MovieResponse>();
+		var result =
+			JsonConvert.DeserializeObject<MovieResponse[]>(await content)
+			?? Array.Empty<MovieResponse>();
 
 		Assert.NotNull(result);
 	}
@@ -41,7 +44,8 @@ public class MovieTests(CustomWebApplicationFactory<Program> factory) : IClassFi
 		var response = await _client.GetAsync($"movies/{userId}/{movieName}");
 
 		using var content = response.Content.ReadAsStringAsync();
-		var result = JsonConvert.DeserializeObject<MovieResponse>(await content) ?? new MovieResponse();
+		var result =
+			JsonConvert.DeserializeObject<MovieResponse>(await content) ?? new MovieResponse();
 
 		Assert.Equal(movieName, result.MovieName);
 	}
@@ -55,11 +59,7 @@ public class MovieTests(CustomWebApplicationFactory<Program> factory) : IClassFi
 
 		await AddMovieRankData(userId, movieName);
 
-		var updateMovie = new MovieUpdateRequest
-		{
-			MovieName = movieName,
-			Ranking = ranking
-		};
+		var updateMovie = new MovieUpdateRequest { MovieName = movieName, Ranking = ranking };
 
 		var json = JsonConvert.SerializeObject(updateMovie);
 		var stringContent = new StringContent(json, Encoding.UTF8, "application/json");
@@ -71,7 +71,8 @@ public class MovieTests(CustomWebApplicationFactory<Program> factory) : IClassFi
 		MovieResponse result;
 		using (var content = response.Content.ReadAsStringAsync())
 		{
-			result = JsonConvert.DeserializeObject<MovieResponse>(await content) ?? new MovieResponse();
+			result =
+				JsonConvert.DeserializeObject<MovieResponse>(await content) ?? new MovieResponse();
 		}
 
 		Assert.Equal(ranking, result.Ranking);
@@ -90,26 +91,27 @@ public class MovieTests(CustomWebApplicationFactory<Program> factory) : IClassFi
 		MovieRankResponse result;
 		using (var content = response.Content.ReadAsStringAsync())
 		{
-			result = JsonConvert.DeserializeObject<MovieRankResponse>(await content) ?? new MovieRankResponse();
+			result =
+				JsonConvert.DeserializeObject<MovieRankResponse>(await content)
+				?? new MovieRankResponse();
 		}
 
 		Assert.NotNull(result);
 	}
 
-	private async Task<HttpResponseMessage> AddMovieRankData(int testUserId, string movieName = "test-MovieName")
+	private async Task<HttpResponseMessage> AddMovieRankData(
+		int testUserId,
+		string movieName = "test-MovieName"
+	)
 	{
 		var movieDbData = new MovieDb
 		{
 			UserId = testUserId,
 			MovieName = movieName,
 			Description = "test-Description",
-			Actors = new List<string>
-			{
-				"testUser1",
-				"testUser2"
-			},
+			Actors = new List<string> { "testUser1", "testUser2" },
 			RankedDateTime = "5/10/2018 6:17:17 PM",
-			Ranking = 4
+			Ranking = 4,
 		};
 
 		var json = JsonConvert.SerializeObject(movieDbData);

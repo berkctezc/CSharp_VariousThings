@@ -21,7 +21,9 @@ public partial class Dashboard : Form
 
 	private void addPersonButton_Click(object sender, EventArgs e)
 	{
-		DataAccess.AddNewPerson(new PersonModel { FirstName = firstNameText.Text, LastName = lastNameText.Text });
+		DataAccess.AddNewPerson(
+			new PersonModel { FirstName = firstNameText.Text, LastName = lastNameText.Text }
+		);
 
 		firstNameText.Text = "";
 		lastNameText.Text = "";
@@ -31,28 +33,36 @@ public partial class Dashboard : Form
 
 	private void addButton_Click(object sender, EventArgs e)
 	{
-		resultsText.Text = Calculator.Add((double) firstNumberValue.Value, (double) secondNumberValue.Value).ToString();
+		resultsText.Text = Calculator
+			.Add((double)firstNumberValue.Value, (double)secondNumberValue.Value)
+			.ToString();
 		firstNumberValue.Value = 0;
 		secondNumberValue.Value = 0;
 	}
 
 	private void subtractButton_Click(object sender, EventArgs e)
 	{
-		resultsText.Text = Calculator.Subtract((double) firstNumberValue.Value, (double) secondNumberValue.Value).ToString();
+		resultsText.Text = Calculator
+			.Subtract((double)firstNumberValue.Value, (double)secondNumberValue.Value)
+			.ToString();
 		firstNumberValue.Value = 0;
 		secondNumberValue.Value = 0;
 	}
 
 	private void multiplyButton_Click(object sender, EventArgs e)
 	{
-		resultsText.Text = Calculator.Multiply((double) firstNumberValue.Value, (double) secondNumberValue.Value).ToString();
+		resultsText.Text = Calculator
+			.Multiply((double)firstNumberValue.Value, (double)secondNumberValue.Value)
+			.ToString();
 		firstNumberValue.Value = 0;
 		secondNumberValue.Value = 0;
 	}
 
 	private void divideButton_Click(object sender, EventArgs e)
 	{
-		resultsText.Text = Calculator.Divide((double) firstNumberValue.Value, (double) secondNumberValue.Value).ToString();
+		resultsText.Text = Calculator
+			.Divide((double)firstNumberValue.Value, (double)secondNumberValue.Value)
+			.ToString();
 		firstNumberValue.Value = 0;
 		secondNumberValue.Value = 0;
 	}

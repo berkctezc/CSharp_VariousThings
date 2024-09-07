@@ -10,10 +10,7 @@ public class TicketRequest
 
 	public string Serialize(TicketRequest value)
 	{
-		var options = new JsonSerializerOptions
-		{
-			WriteIndented = true
-		};
+		var options = new JsonSerializerOptions { WriteIndented = true };
 
 		return JsonSerializer.Serialize(value, options);
 	}

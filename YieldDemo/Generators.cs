@@ -10,7 +10,8 @@ public static class Generators
 
 		while (true)
 		{
-			if (IsPrimeNumber(counter)) yield return counter;
+			if (IsPrimeNumber(counter))
+				yield return counter;
 
 			counter++;
 		}

@@ -12,7 +12,7 @@ public class SqsConsumerService(IAmazonSQS sqs, MessageDispatcher dispatcher) : 
 		{
 			QueueUrl = queueUrl.QueueUrl,
 			MessageAttributeNames = MessageAttributeNames,
-			AttributeNames = MessageAttributeNames
+			AttributeNames = MessageAttributeNames,
 		};
 
 		while (!ct.IsCancellationRequested)
@@ -24,17 +24,19 @@ public class SqsConsumerService(IAmazonSQS sqs, MessageDispatcher dispatcher) : 
 
 			foreach (var msg in messageResponse.Messages)
 			{
-				var messageTypeName = msg.MessageAttributes
-					.GetValueOrDefault(nameof(IMessage.MessageTypeName))?.StringValue;
+				var messageTypeName = msg
+					.MessageAttributes.GetValueOrDefault(nameof(IMessage.MessageTypeName))
+					?.StringValue;
 
-				if (messageTypeName is null) continue;
+				if (messageTypeName is null)
+					continue;
 
-				if (!dispatcher.CanHandleMessageType(messageTypeName)) continue;
+				if (!dispatcher.CanHandleMessageType(messageTypeName))
+					continue;
 
 				var messageType = dispatcher.GetMessageTypeByName(messageTypeName)!;
 
-				var messageAsType = (IMessage) JsonSerializer.Deserialize(msg.Body, messageType)!;
-
+				var messageAsType = (IMessage)JsonSerializer.Deserialize(msg.Body, messageType)!;
 
 				await dispatcher.DispatchAsync(messageAsType);
 				await sqs.DeleteMessageAsync(queueUrl.QueueUrl, msg.ReceiptHandle, ct);

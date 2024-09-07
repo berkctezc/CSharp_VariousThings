@@ -26,13 +26,18 @@ public class Program
 	{
 		return Host.CreateDefaultBuilder(args)
 			// ILogger Configuration
-			.ConfigureLogging((context, logging) =>
+			.ConfigureLogging(
+				(context, logging) =>
+				{
+					logging.ClearProviders();
+					logging.AddConfiguration(context.Configuration.GetSection("Logging")); // Gets Configuration from appsettings.json
+					logging.AddDebug();
+					logging.AddConsole(); // EventSource, EventLog, TraceSource, AzureAppServicesFile, AzureAppServicesBlob
+				}
+			)
+			.ConfigureWebHostDefaults(webBuilder =>
 			{
-				logging.ClearProviders();
-				logging.AddConfiguration(context.Configuration.GetSection("Logging")); // Gets Configuration from appsettings.json
-				logging.AddDebug();
-				logging.AddConsole(); // EventSource, EventLog, TraceSource, AzureAppServicesFile, AzureAppServicesBlob
-			})
-			.ConfigureWebHostDefaults(webBuilder => { webBuilder.UseStartup<Startup>(); });
+				webBuilder.UseStartup<Startup>();
+			});
 	}
 }

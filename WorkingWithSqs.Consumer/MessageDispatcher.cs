@@ -13,6 +13,7 @@ public class MessageDispatcher
 	private readonly Dictionary<string, Type> _messageMappings;
 
 	private readonly IServiceScopeFactory _scopeFactory;
+
 	//     = new()
 	// {
 	//     {nameof(CustomerCreated), p => p.GetRequiredService<CustomerCreatedHandler>()},
@@ -22,15 +23,25 @@ public class MessageDispatcher
 	public MessageDispatcher(IServiceScopeFactory scopeFactory)
 	{
 		_scopeFactory = scopeFactory;
-		_messageMappings = Assembly.GetExecutingAssembly().DefinedTypes
-			.Where(x => typeof(IMessage).IsAssignableFrom(x) && !x.IsInterface && !x.IsAbstract)
+		_messageMappings = Assembly
+			.GetExecutingAssembly()
+			.DefinedTypes.Where(x =>
+				typeof(IMessage).IsAssignableFrom(x) && !x.IsInterface && !x.IsAbstract
+			)
 			.ToDictionary(info => info.Name, info => info.AsType());
 
-		_handlers = Assembly.GetExecutingAssembly().DefinedTypes
-			.Where(x => typeof(IMessageHandler).IsAssignableFrom(x) && !x.IsInterface && !x.IsAbstract)
+		_handlers = Assembly
+			.GetExecutingAssembly()
+			.DefinedTypes.Where(x =>
+				typeof(IMessageHandler).IsAssignableFrom(x) && !x.IsInterface && !x.IsAbstract
+			)
 			.ToDictionary<TypeInfo, string, Func<IServiceProvider, IMessageHandler>>(
-				info => ((Type) info.GetProperty(nameof(IMessageHandler.MessageType))!.GetValue(null)!)!.Name,
-				info => provider => (IMessageHandler) provider.GetRequiredService(info.AsType()));
+				info =>
+					(
+						(Type)info.GetProperty(nameof(IMessageHandler.MessageType))!.GetValue(null)!
+					)!.Name,
+				info => provider => (IMessageHandler)provider.GetRequiredService(info.AsType())
+			);
 	}
 
 	public async Task DispatchAsync<TMessage>(TMessage message)

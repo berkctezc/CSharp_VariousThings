@@ -6,7 +6,16 @@ public class WeatherForecastController(ILogger<WeatherForecastController> logger
 {
 	private static readonly string[] Summaries =
 	{
-		"Freezing", "Bracing", "Chilly", "Cool", "Mild", "Warm", "Balmy", "Hot", "Sweltering", "Scorching"
+		"Freezing",
+		"Bracing",
+		"Chilly",
+		"Cool",
+		"Mild",
+		"Warm",
+		"Balmy",
+		"Hot",
+		"Sweltering",
+		"Scorching",
 	};
 
 	private readonly ILogger<WeatherForecastController> _logger = logger;
@@ -15,12 +24,14 @@ public class WeatherForecastController(ILogger<WeatherForecastController> logger
 	public IEnumerable<WeatherForecast> Get()
 	{
 		var rng = new Random();
-		return Enumerable.Range(1, 5).Select(index => new WeatherForecast
-		{
-			Date = DateTime.Now.AddDays(index),
-			TemperatureC = rng.Next(-20, 55),
-			Summary = Summaries[rng.Next(Summaries.Length)]
-		})
+		return Enumerable
+			.Range(1, 5)
+			.Select(index => new WeatherForecast
+			{
+				Date = DateTime.Now.AddDays(index),
+				TemperatureC = rng.Next(-20, 55),
+				Summary = Summaries[rng.Next(Summaries.Length)],
+			})
 			.ToArray();
 	}
 }

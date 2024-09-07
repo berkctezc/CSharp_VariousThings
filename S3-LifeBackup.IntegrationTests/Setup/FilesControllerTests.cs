@@ -7,20 +7,21 @@ public class FilesControllerTests : IClassFixture<WebApplicationFactory<Program>
 
 	public FilesControllerTests(WebApplicationFactory<Program> factory)
 	{
-		_client = factory.WithWebHostBuilder(builder =>
-		{
-			builder.ConfigureTestServices(services =>
+		_client = factory
+			.WithWebHostBuilder(builder =>
 			{
-				services.AddAWSService<IAmazonS3>(new AWSOptions
+				builder.ConfigureTestServices(services =>
 				{
-					DefaultClientConfig =
-					{
-						ServiceURL = "http://localhost:9003"
-					},
-					Credentials = new BasicAWSCredentials("FAKE", "FAKE")
+					services.AddAWSService<IAmazonS3>(
+						new AWSOptions
+						{
+							DefaultClientConfig = { ServiceURL = "http://localhost:9003" },
+							Credentials = new BasicAWSCredentials("FAKE", "FAKE"),
+						}
+					);
 				});
-			});
-		}).CreateClient();
+			})
+			.CreateClient();
 
 		Task.Run(CreateBucket).Wait();
 	}
@@ -47,7 +48,7 @@ public class FilesControllerTests : IClassFixture<WebApplicationFactory<Program>
 
 		var formData = new MultipartFormDataContent
 		{
-			{fileStreamContent, "formFiles", "IntegrationTest.jpg"}
+			{ fileStreamContent, "formFiles", "IntegrationTest.jpg" },
 		};
 
 		var response = await _client.PostAsync("api/files/testS3Bucket/add", formData);
@@ -105,10 +106,13 @@ public class FilesControllerTests : IClassFixture<WebApplicationFactory<Program>
 		{
 			Id = Guid.NewGuid(),
 			Data = "Test-Data",
-			TimeSent = DateTime.UtcNow
+			TimeSent = DateTime.UtcNow,
 		};
 
-		var response = await _client.PostAsJsonAsync("api/files/testS3Bucket/addjsonobject/", jsonObjectRequest);
+		var response = await _client.PostAsJsonAsync(
+			"api/files/testS3Bucket/addjsonobject/",
+			jsonObjectRequest
+		);
 
 		Assert.Equal(HttpStatusCode.OK, response.StatusCode);
 	}

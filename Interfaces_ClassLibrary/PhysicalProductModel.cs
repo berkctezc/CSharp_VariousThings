@@ -9,7 +9,9 @@ public class PhysicalProductModel : IProductModel
 	{
 		if (HasOrderBeenCompleted == false)
 		{
-			Console.WriteLine($"Simulating shipping {Title} to {customer.FirstName} in {customer.City}");
+			Console.WriteLine(
+				$"Simulating shipping {Title} to {customer.FirstName} in {customer.City}"
+			);
 			Console.WriteLine("========");
 
 			HasOrderBeenCompleted = false;

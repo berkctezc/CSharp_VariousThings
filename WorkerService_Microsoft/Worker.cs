@@ -24,7 +24,11 @@ public class Worker(ILogger<Worker> logger) : BackgroundService
 			var result = await client.GetAsync("https://www.google.com/", stoppingToken);
 
 			if (result.IsSuccessStatusCode)
-				logger.LogInformation("Website is up. {StatusCode} at {time}", result.StatusCode, DateTimeOffset.Now);
+				logger.LogInformation(
+					"Website is up. {StatusCode} at {time}",
+					result.StatusCode,
+					DateTimeOffset.Now
+				);
 			else
 				logger.LogError("Website is down. {StatusCode}", result.StatusCode);
 

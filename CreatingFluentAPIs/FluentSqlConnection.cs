@@ -12,13 +12,13 @@ public class FluentSqlConnection
 	private string? _server;
 	private string? _user;
 
-	private FluentSqlConnection()
-	{
-	}
+	private FluentSqlConnection() { }
 
 	public IDbConnection Connect()
 	{
-		var conn = new SqlConnection($"Server={_server};Database={_database};User Id={_user};Password={_password}");
+		var conn = new SqlConnection(
+			$"Server={_server};Database={_database};User Id={_user};Password={_password}"
+		);
 		conn.Open();
 		return conn;
 	}
@@ -46,7 +46,6 @@ public class FluentSqlConnection
 		_user = user;
 		return this;
 	}
-
 
 	public static IServerSelectionStage CreateConnection(Action<ConnectionConfiguration> config)
 	{

@@ -1,4 +1,8 @@
-[assembly: LambdaSerializer(typeof(Amazon.Lambda.Serialization.SystemTextJson.DefaultLambdaJsonSerializer))]
+using Amazon.Lambda.Serialization.SystemTextJson;
+
+[assembly: LambdaSerializer(
+	typeof(DefaultLambdaJsonSerializer)
+)]
 
 namespace AnnotationsAPI.Lambda;
 
@@ -10,8 +14,7 @@ public class Functions(IConfiguration configuration)
 	[HttpApi(LambdaHttpMethod.Get, "/")]
 	public string Default()
 	{
-		var docs =
-			"""
+		var docs = """
 			    Lambda Calculator Home:
 			            You can make the following requests to invoke other Lambda functions perform calculator operations:
 			                /add/{x}/{y}
@@ -24,7 +27,12 @@ public class Functions(IConfiguration configuration)
 
 	[LambdaFunction]
 	[HttpApi(LambdaHttpMethod.Get, "/add/{x}/{y}")]
-	public IHttpResult Add([FromServices] IConfiguration configuration, int x, int y, ILambdaContext context)
+	public IHttpResult Add(
+		[FromServices] IConfiguration configuration,
+		int x,
+		int y,
+		ILambdaContext context
+	)
 	{
 		context.Logger.LogInformation($"{x} plus {y} is {x + y}");
 		return HttpResults.Ok((x + y).ToString());

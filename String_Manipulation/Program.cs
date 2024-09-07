@@ -29,11 +29,18 @@ internal static class Program
 	{
 		var testString = "tHis iS tHe FBI Calling";
 		Console.WriteLine(
-			testString + "\n" +
-			testString.ToLower() + "\n" +
-			testString.ToUpper() + "\n" +
-			CultureInfo.CurrentCulture.TextInfo.ToTitleCase(testString) + "\n" +
-			new CultureInfo("tr-TR", false).TextInfo.ToTitleCase(testString) + "\n" + "");
+			testString
+				+ "\n"
+				+ testString.ToLower()
+				+ "\n"
+				+ testString.ToUpper()
+				+ "\n"
+				+ CultureInfo.CurrentCulture.TextInfo.ToTitleCase(testString)
+				+ "\n"
+				+ new CultureInfo("tr-TR", false).TextInfo.ToTitleCase(testString)
+				+ "\n"
+				+ ""
+		);
 
 		Console.WriteLine(seperator);
 	}
@@ -43,7 +50,8 @@ internal static class Program
 		// array operations can be done on strings
 		var testString = "Berkcan";
 
-		for (var i = 0; i < testString.Length; i++) Console.WriteLine(testString[i]);
+		for (var i = 0; i < testString.Length; i++)
+			Console.WriteLine(testString[i]);
 
 		Console.WriteLine(seperator);
 	}
@@ -98,16 +106,17 @@ internal static class Program
 
 		var test = "";
 
-		for (var i = 0; i < iterations; i++) test += i;
+		for (var i = 0; i < iterations; i++)
+			test += i;
 		regularStopwatch.Stop();
-
 
 		Stopwatch builderStopwatch = new();
 		builderStopwatch.Start();
 
 		StringBuilder sb = new();
 
-		for (var i = 0; i < iterations; i++) sb.Append(i);
+		for (var i = 0; i < iterations; i++)
+			sb.Append(i);
 		builderStopwatch.Stop();
 
 		Console.WriteLine($"Regular Stopwatch: {regularStopwatch.ElapsedMilliseconds}ms");
@@ -142,7 +151,6 @@ internal static class Program
 
 		results = testString.Trim(); // TrimStart, TrimEnd
 		Console.WriteLine($"|{results}|");
-
 
 		// only chars are acceptible
 		testString = "1.15";
@@ -276,9 +284,13 @@ internal static class Program
 
 		resultsBoolean = string.Equals(testA, testB, StringComparison.InvariantCultureIgnoreCase);
 		if (resultsBoolean)
-			Console.WriteLine($"Equals (ignore case): '{testA ?? "null"}' equals '{testB ?? "null"}'");
+			Console.WriteLine(
+				$"Equals (ignore case): '{testA ?? "null"}' equals '{testB ?? "null"}'"
+			);
 		else
-			Console.WriteLine($"Equals (ignore case): '{testA ?? "null"}' does not equal '{testB ?? "null"}'");
+			Console.WriteLine(
+				$"Equals (ignore case): '{testA ?? "null"}' does not equal '{testB ?? "null"}'"
+			);
 
 		resultsBoolean = testA == testB;
 		if (resultsBoolean)
@@ -298,7 +310,6 @@ internal static class Program
 
 		results = testString.Substring(5, 4); // start from 5 , go 4 characters
 		Console.WriteLine(results);
-
 
 		Console.WriteLine(seperator);
 	}

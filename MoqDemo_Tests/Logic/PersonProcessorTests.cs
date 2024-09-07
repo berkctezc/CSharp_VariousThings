@@ -9,7 +9,8 @@ public class PersonProcessorTests
 	public void ConvertHeightTextToInches_VariousOptions(
 		string heightText,
 		bool expectedIsValid,
-		double expectedHeightInInches)
+		double expectedHeightInInches
+	)
 	{
 		var processor = new PersonProcessor(null);
 
@@ -22,7 +23,12 @@ public class PersonProcessorTests
 	[Theory]
 	[InlineData("Tom", "Column", "8'8\"", 104)]
 	[InlineData("Poppers", "Pizza", "5'4\"", 64)]
-	public void CreatePerson_Successful(string firstName, string lastName, string heightText, double expectedHeight)
+	public void CreatePerson_Successful(
+		string firstName,
+		string lastName,
+		string heightText,
+		double expectedHeight
+	)
 	{
 		var processor = new PersonProcessor(null);
 
@@ -31,7 +37,7 @@ public class PersonProcessorTests
 			FirstName = firstName,
 			LastName = lastName,
 			HeightInInches = expectedHeight,
-			Id = 0
+			Id = 0,
 		};
 
 		var actual = processor.CreatePerson(firstName, lastName, heightText);
@@ -47,7 +53,12 @@ public class PersonProcessorTests
 	[InlineData("CBerry", "CTe2zcy", "5'4\"", "lastName")]
 	[InlineData("Jimmy", "Nolan", "SixTwo", "heightText")]
 	[InlineData("", "Murker", "5'11\"", "firstName")]
-	public void CreatePerson_ThrowsException(string firstName, string lastName, string heightText, string expectedInvalidParameter)
+	public void CreatePerson_ThrowsException(
+		string firstName,
+		string lastName,
+		string heightText,
+		string expectedInvalidParameter
+	)
 	{
 		var processor = new PersonProcessor(null);
 
@@ -55,7 +66,8 @@ public class PersonProcessorTests
 
 		Assert.NotNull(ex);
 		Assert.IsType<ArgumentException>(ex);
-		if (ex is ArgumentException argEx) Assert.Equal(expectedInvalidParameter, argEx.ParamName);
+		if (ex is ArgumentException argEx)
+			Assert.Equal(expectedInvalidParameter, argEx.ParamName);
 	}
 
 	[Fact]
@@ -90,36 +102,27 @@ public class PersonProcessorTests
 			Id = 1,
 			FirstName = "Berkcan",
 			LastName = "Tezcaner",
-			HeightInInches = 80
+			HeightInInches = 80,
 		};
-		var sql = "insert into Person (FirstName, LastName, HeightInInches) " +
-				  "values ('Berkcan', 'Tezcaner', 80)";
+		var sql =
+			"insert into Person (FirstName, LastName, HeightInInches) "
+			+ "values ('Berkcan', 'Tezcaner', 80)";
 
-		mock.Mock<ISqliteDataAccess>()
-			.Setup(x => x.SaveData(person, sql));
+		mock.Mock<ISqliteDataAccess>().Setup(x => x.SaveData(person, sql));
 
 		var cls = mock.Create<PersonProcessor>();
 
 		cls.SavePerson(person);
 
-		mock.Mock<ISqliteDataAccess>()
-			.Verify(x => x.SaveData(person, sql), Times.Exactly(1));
+		mock.Mock<ISqliteDataAccess>().Verify(x => x.SaveData(person, sql), Times.Exactly(1));
 	}
 
 	private List<PersonModel> GetSamplePeople()
 	{
 		var output = new List<PersonModel>
 		{
-			new()
-			{
-				FirstName = "AAA",
-				LastName = "aaa"
-			},
-			new()
-			{
-				FirstName = "BBB",
-				LastName = "bbb"
-			}
+			new() { FirstName = "AAA", LastName = "aaa" },
+			new() { FirstName = "BBB", LastName = "bbb" },
 		};
 		return output;
 	}

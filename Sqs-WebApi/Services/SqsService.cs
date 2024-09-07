@@ -14,7 +14,7 @@ public class SqsService : ISqsService
 		var sendMessageRequest = new SendMessageRequest
 		{
 			QueueUrl = "https://sqs.eu-central-1.amazonaws.com/788698617979/TicketRequest",
-			MessageBody = request.Serialize(request)
+			MessageBody = request.Serialize(request),
 		};
 
 		return await _sqsClient.SendMessageAsync(sendMessageRequest);

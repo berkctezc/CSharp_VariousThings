@@ -8,7 +8,9 @@ public class DigitalProductModel : IDigitalProductModel
 
 	public void ShipItem(CustomerModel customer)
 	{
-		Console.WriteLine($"Simulating shipping {Title} to {customer.FirstName} in {customer.City}");
+		Console.WriteLine(
+			$"Simulating shipping {Title} to {customer.FirstName} in {customer.City}"
+		);
 		Console.WriteLine("========");
 
 		TotalDownloadsLeft -= 1;

@@ -2,14 +2,14 @@ namespace DIFromScratch.DependencyInjection;
 
 public class ServiceDescriptor(Type serviceType, Type? implementationType, ServiceLifeTime lifetime)
 {
-	public ServiceDescriptor(object? implementation, ServiceLifeTime lifetime) : this(implementation!.GetType(), null, lifetime)
+	public ServiceDescriptor(object? implementation, ServiceLifeTime lifetime)
+		: this(implementation!.GetType(), null, lifetime)
 	{
 		Implementation = implementation;
 	}
 
-	public ServiceDescriptor(Type serviceType, ServiceLifeTime lifetime) : this(serviceType, null, lifetime)
-	{
-	}
+	public ServiceDescriptor(Type serviceType, ServiceLifeTime lifetime)
+		: this(serviceType, null, lifetime) { }
 
 	public Type ServiceType { get; } = serviceType;
 

@@ -6,7 +6,8 @@ var demoFilesPath = $"{projectPath}/demoFiles";
 Console.WriteLine("_Dirs_");
 
 var dirs = Directory.GetDirectories(demoFilesPath, "*", SearchOption.AllDirectories);
-foreach (var dir in dirs) Console.WriteLine($"=>{dir}");
+foreach (var dir in dirs)
+	Console.WriteLine($"=>{dir}");
 
 FileReading(demoFilesPath);
 

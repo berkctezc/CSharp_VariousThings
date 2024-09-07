@@ -5,11 +5,14 @@ namespace S3_LifeBackup.Api.Controllers;
 public class BucketController(IBucketRepository bucketRepository) : ControllerBase
 {
 	[HttpPost("create/{bucketName}")]
-	public async Task<ActionResult<CreateBucketResponse>> CreateS3Bucket([FromRoute] string bucketName)
+	public async Task<ActionResult<CreateBucketResponse>> CreateS3Bucket(
+		[FromRoute] string bucketName
+	)
 	{
 		var bucketExists = await bucketRepository.DoesS3BucketExists(bucketName);
 
-		if (bucketExists) return BadRequest("S3 bucket already exists");
+		if (bucketExists)
+			return BadRequest("S3 bucket already exists");
 
 		var result = await bucketRepository.CreateBucket(bucketName);
 
@@ -24,7 +27,8 @@ public class BucketController(IBucketRepository bucketRepository) : ControllerBa
 	{
 		var result = await bucketRepository.ListBuckets();
 
-		if (result is null) return NotFound();
+		if (result is null)
+			return NotFound();
 
 		return Ok(result);
 	}

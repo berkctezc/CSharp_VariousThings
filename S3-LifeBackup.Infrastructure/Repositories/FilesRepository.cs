@@ -16,7 +16,7 @@ public class FilesRepository(IAmazonS3 s3Client) : IFilesRepository
 				InputStream = f.OpenReadStream(),
 				Key = f.FileName,
 				BucketName = bucketName,
-				CannedACL = S3CannedACL.NoACL
+				CannedACL = S3CannedACL.NoACL,
 			};
 
 			using var fileTransferUtility = new TransferUtility(s3Client);
@@ -26,7 +26,7 @@ public class FilesRepository(IAmazonS3 s3Client) : IFilesRepository
 			{
 				BucketName = bucketName,
 				Key = f.FileName,
-				Expires = DateTime.Now.AddDays(5)
+				Expires = DateTime.Now.AddDays(5),
 			};
 
 			var url = s3Client.GetPreSignedURL(expiryUrlRequest);
@@ -34,10 +34,7 @@ public class FilesRepository(IAmazonS3 s3Client) : IFilesRepository
 			response.Add(url);
 		}
 
-		return new AddFileResponse
-		{
-			PreSignedUrl = response
-		};
+		return new AddFileResponse { PreSignedUrl = response };
 	}
 
 	public async Task<IEnumerable<ListFilesResponse>> ListFiles(string bucketName)
@@ -49,7 +46,7 @@ public class FilesRepository(IAmazonS3 s3Client) : IFilesRepository
 			BucketName = b.BucketName,
 			Key = b.Key,
 			Owner = b.Owner.DisplayName,
-			Size = b.Size
+			Size = b.Size,
 		});
 	}
 
@@ -59,7 +56,7 @@ public class FilesRepository(IAmazonS3 s3Client) : IFilesRepository
 		{
 			BucketName = bucketName,
 			Key = fileName,
-			FilePath = OperatingSystem.IsLinux() ? $"~/temp/{fileName}" : @$"C:\temp\{fileName}"
+			FilePath = OperatingSystem.IsLinux() ? $"~/temp/{fileName}" : @$"C:\temp\{fileName}",
 		};
 
 		using var transferUtility = new TransferUtility(s3Client);
@@ -68,19 +65,13 @@ public class FilesRepository(IAmazonS3 s3Client) : IFilesRepository
 
 	public async Task<DeleteFileResponse> DeleteFile(string bucketName, string fileName)
 	{
-		var multiObjectDeleteRequest = new DeleteObjectsRequest
-		{
-			BucketName = bucketName
-		};
+		var multiObjectDeleteRequest = new DeleteObjectsRequest { BucketName = bucketName };
 
 		multiObjectDeleteRequest.AddKey(fileName);
 
 		var response = await s3Client.DeleteObjectsAsync(multiObjectDeleteRequest);
 
-		return new DeleteFileResponse
-		{
-			NumberOfDeletedObjects = response.DeletedObjects.Count
-		};
+		return new DeleteFileResponse { NumberOfDeletedObjects = response.DeletedObjects.Count };
 	}
 
 	public async Task AddJsonObject(string bucketName, AddJsonObjectRequest request)
@@ -93,7 +84,7 @@ public class FilesRepository(IAmazonS3 s3Client) : IFilesRepository
 		{
 			BucketName = bucketName,
 			Key = s3Key,
-			ContentBody = JsonConvert.SerializeObject(request)
+			ContentBody = JsonConvert.SerializeObject(request),
 		};
 
 		await s3Client.PutObjectAsync(putObjectRequest);
@@ -101,17 +92,14 @@ public class FilesRepository(IAmazonS3 s3Client) : IFilesRepository
 
 	public async Task<GetJsonObjectResponse> GetJsonObject(string bucketName, string fileName)
 	{
-		var request = new GetObjectRequest
-		{
-			BucketName = bucketName,
-			Key = fileName
-		};
+		var request = new GetObjectRequest { BucketName = bucketName, Key = fileName };
 
 		var response = await s3Client.GetObjectAsync(request);
 
 		using var reader = new StreamReader(response.ResponseStream);
 		var contents = await reader.ReadToEndAsync();
 
-		return JsonConvert.DeserializeObject<GetJsonObjectResponse>(contents) ?? new GetJsonObjectResponse();
+		return JsonConvert.DeserializeObject<GetJsonObjectResponse>(contents)
+			?? new GetJsonObjectResponse();
 	}
 }

@@ -10,19 +10,13 @@ public class LoggedInDiscountSteps
 	[Given(@"a user that is not logged in")]
 	public void GivenAUserThatIsNotLoggedIn()
 	{
-		_user = new User
-		{
-			IsLoggedIn = false
-		};
+		_user = new User { IsLoggedIn = false };
 	}
 
 	[Given(@"an empty basket")]
 	public void GivenAnEmptyBasket()
 	{
-		_basket = new Basket
-		{
-			User = _user
-		};
+		_basket = new Basket { User = _user };
 	}
 
 	[When(@"a (.*) that costs (.*) GBP is added to the basket")]
@@ -41,9 +35,6 @@ public class LoggedInDiscountSteps
 	[Given(@"a user that is logged in")]
 	public void GivenAUserThatIsLoggedIn()
 	{
-		_user = new User
-		{
-			IsLoggedIn = true
-		};
+		_user = new User { IsLoggedIn = true };
 	}
 }

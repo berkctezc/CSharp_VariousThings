@@ -9,7 +9,9 @@ public class TestContext : IAsyncLifetime
 	public TestContext()
 	{
 		_containerId = string.Empty;
-		_dockerClient = new DockerClientConfiguration(new Uri("npipe://./pipe/docker_engine")).CreateClient();
+		_dockerClient = new DockerClientConfiguration(
+			new Uri("npipe://./pipe/docker_engine")
+		).CreateClient();
 	}
 
 	public async Task InitializeAsync()
@@ -23,41 +25,42 @@ public class TestContext : IAsyncLifetime
 
 	public async Task DisposeAsync()
 	{
-		if (_containerId != null) await _dockerClient.Containers.KillContainerAsync(_containerId, new ContainerKillParameters());
+		if (_containerId != null)
+			await _dockerClient.Containers.KillContainerAsync(
+				_containerId,
+				new ContainerKillParameters()
+			);
 	}
 
 	private async Task PullImage()
 	{
-		await _dockerClient.Images
-			.CreateImageAsync(new ImagesCreateParameters
-			{
-				FromImage = ContainerImageUri,
-				Tag = "latest"
-			},
-				new AuthConfig(),
-				new Progress<JSONMessage>());
+		await _dockerClient.Images.CreateImageAsync(
+			new ImagesCreateParameters { FromImage = ContainerImageUri, Tag = "latest" },
+			new AuthConfig(),
+			new Progress<JSONMessage>()
+		);
 	}
 
 	private async Task StartContainer()
 	{
-		var response = await _dockerClient.Containers.CreateContainerAsync(new CreateContainerParameters
-		{
-			Image = ContainerImageUri,
-			ExposedPorts = new Dictionary<string, EmptyStruct>
+		var response = await _dockerClient.Containers.CreateContainerAsync(
+			new CreateContainerParameters
 			{
+				Image = ContainerImageUri,
+				ExposedPorts = new Dictionary<string, EmptyStruct> { { "8000", default } },
+				HostConfig = new HostConfig
 				{
-					"8000", default
-				}
-			},
-			HostConfig = new HostConfig
-			{
-				PortBindings = new Dictionary<string, IList<PortBinding>>
-				{
-					{"8000", new List<PortBinding> {new() {HostPort = "8000"}}}
+					PortBindings = new Dictionary<string, IList<PortBinding>>
+					{
+						{
+							"8000",
+							new List<PortBinding> { new() { HostPort = "8000" } }
+						},
+					},
+					PublishAllPorts = true,
 				},
-				PublishAllPorts = true
 			}
-		});
+		);
 
 		_containerId = response.ID;
 

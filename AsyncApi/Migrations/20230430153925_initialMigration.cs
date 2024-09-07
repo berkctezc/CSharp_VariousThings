@@ -14,24 +14,25 @@ namespace AsyncApi.Migrations
 				name: "ListingRequests",
 				columns: table => new
 				{
-					Id = table.Column<int>(type: "INTEGER", nullable: false)
+					Id = table
+						.Column<int>(type: "INTEGER", nullable: false)
 						.Annotation("Sqlite:Autoincrement", true),
 					RequestBody = table.Column<string>(type: "TEXT", nullable: true),
 					EstimatedCompletionTime = table.Column<string>(type: "TEXT", nullable: true),
 					RequestStatus = table.Column<string>(type: "TEXT", nullable: true),
-					RequestId = table.Column<string>(type: "TEXT", nullable: false)
+					RequestId = table.Column<string>(type: "TEXT", nullable: false),
 				},
 				constraints: table =>
 				{
 					table.PrimaryKey("PK_ListingRequests", x => x.Id);
-				});
+				}
+			);
 		}
 
 		/// <inheritdoc />
 		protected override void Down(MigrationBuilder migrationBuilder)
 		{
-			migrationBuilder.DropTable(
-				name: "ListingRequests");
+			migrationBuilder.DropTable(name: "ListingRequests");
 		}
 	}
 }
