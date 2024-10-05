@@ -2,5 +2,5 @@ namespace xUnitTutorial;
 
 public class GuidGenerator
 {
-	public Guid RandomGuid { get; } = Guid.NewGuid();
+    public Guid RandomGuid { get; } = Guid.NewGuid();
 }

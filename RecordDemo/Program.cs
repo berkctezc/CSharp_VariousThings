@@ -3,16 +3,16 @@ using static RecordDemo.Demo;
 //main
 var recs = new List<Record1>
 {
-	new("Stanley", "Kubrick"),
-	new("Stanley", "Kubrick"),
-	new("Orson", "Welles"),
+    new("Stanley", "Kubrick"),
+    new("Stanley", "Kubrick"),
+    new("Orson", "Welles"),
 };
 
 var classes = new List<Class1>
 {
-	new("Stanley", "Kubrick"),
-	new("Stanley", "Kubrick"),
-	new("Orson", "Welles"),
+    new("Stanley", "Kubrick"),
+    new("Stanley", "Kubrick"),
+    new("Orson", "Welles"),
 };
 
 var (fn, ln) = recs[0];
@@ -22,7 +22,7 @@ var newRec = recs[0] with { LastName = "Public" };
 var rec2 = new Record2("Berkc", "Tezc");
 
 Console.WriteLine(
-	@$"
+    @$"
          Record type:                 / Class type:
 ToString: {recs[0]}  - {classes[0]}
 Equals  :  {Equals(recs[0], recs[1])} - {Equals(classes[0], classes[1])}

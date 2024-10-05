@@ -17,22 +17,22 @@ var env = builder.Environment;
 
 if (env.IsDevelopment())
 {
-	app.UseDeveloperExceptionPage();
+    app.UseDeveloperExceptionPage();
 
-	app.UseSwagger();
-	app.UseSwaggerUI();
+    app.UseSwagger();
+    app.UseSwaggerUI();
 }
 
 app.UseRouting();
 
 app.UseEndpoints(e =>
 {
-	e.MapControllers();
+    e.MapControllers();
 });
 
 app.Run();
 
 namespace DynamoDb_MovieRank
 {
-	public partial class Program { }
+    public partial class Program { }
 }

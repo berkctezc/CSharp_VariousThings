@@ -27,10 +27,10 @@ namespace LambdaDemo;
 
 public class Function
 {
-	public Casing FunctionHandler(string input, ILambdaContext context)
-	{
-		context.Logger.Log($"got new message: {input}"); //log to cloudwatch
+    public Casing FunctionHandler(string input, ILambdaContext context)
+    {
+        context.Logger.Log($"got new message: {input}"); //log to cloudwatch
 
-		return new Casing(input.ToLower(), input.ToUpper());
-	}
+        return new Casing(input.ToLower(), input.ToUpper());
+    }
 }

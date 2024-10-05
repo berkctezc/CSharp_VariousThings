@@ -4,18 +4,18 @@ namespace Sqs_WebApi.Controllers;
 [Route("[controller]")]
 public class QueueController : ControllerBase
 {
-	private readonly ISqsService _sqsService;
+    private readonly ISqsService _sqsService;
 
-	public QueueController(ISqsService sqsService)
-	{
-		_sqsService = sqsService;
-	}
+    public QueueController(ISqsService sqsService)
+    {
+        _sqsService = sqsService;
+    }
 
-	[HttpPost("SendMessage")]
-	public async Task<IActionResult> SendMessage(TicketRequest request)
-	{
-		var response = await _sqsService.SendMessageToSqsQueue(request);
+    [HttpPost("SendMessage")]
+    public async Task<IActionResult> SendMessage(TicketRequest request)
+    {
+        var response = await _sqsService.SendMessageToSqsQueue(request);
 
-		return Ok(response);
-	}
+        return Ok(response);
+    }
 }
