@@ -40,7 +40,7 @@ namespace SpecFlowBDD.Tests.Behavior.Features
         public static void FeatureSetup()
         {
             testRunner = TechTalk.SpecFlow.TestRunnerManager.GetTestRunner();
-            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "Features", "Logged In users has a discount", "\tAs a user\n\tI want to have a %5 discount when I am logged in", ProgrammingLanguage.CSharp, featureTags);
+            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "Features", "Logged In users has a discount", "\tAs a user\r\n\tI want to have a %5 discount when I am logged in", ProgrammingLanguage.CSharp, featureTags);
             testRunner.OnFeatureStart(featureInfo);
         }
         
@@ -117,7 +117,7 @@ namespace SpecFlowBDD.Tests.Behavior.Features
         [Xunit.SkippableFactAttribute(DisplayName="Logged in users should have a %5 discount")]
         [Xunit.TraitAttribute("FeatureTitle", "Logged In users has a discount")]
         [Xunit.TraitAttribute("Description", "Logged in users should have a %5 discount")]
-        public void LoggedInUsersShouldHaveA5Discount()
+        public void LoggedİnUsersShouldHaveA5Discount()
         {
             string[] tagsOfScenario = ((string[])(null));
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
