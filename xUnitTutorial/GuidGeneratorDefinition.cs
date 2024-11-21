@@ -1,4 +1,6 @@
 namespace xUnitTutorial;
 
 [CollectionDefinition("Guid generator")]
-public class GuidGeneratorDefinition : ICollectionFixture<GuidGenerator> { }
+public class GuidGeneratorDefinition : ICollectionFixture<GuidGenerator>
+{
+}

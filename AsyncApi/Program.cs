@@ -13,53 +13,53 @@ app.UseSwaggerUI();
 app.UseHttpsRedirection();
 
 app.MapPost(
-    "api/v1/products",
-    async (AppDbContext context, ListingRequest? request) =>
-    {
-        if (request is null)
-            return Results.BadRequest();
+	"api/v1/products",
+	async (AppDbContext context, ListingRequest? request) =>
+	{
+		if (request is null)
+			return Results.BadRequest();
 
-        request.RequestStatus = "ACCEPT";
-        request.EstimatedCompletionTime = DateTime
-            .UtcNow.AddMinutes(5)
-            .ToString(CultureInfo.InvariantCulture);
+		request.RequestStatus = "ACCEPT";
+		request.EstimatedCompletionTime = DateTime
+			.UtcNow.AddMinutes(5)
+			.ToString(CultureInfo.InvariantCulture);
 
-        await context.ListingRequests.AddAsync(request);
-        await context.SaveChangesAsync();
+		await context.ListingRequests.AddAsync(request);
+		await context.SaveChangesAsync();
 
-        return Results.Accepted($"api/v1/productStatus/{request.RequestId}", request);
-    }
+		return Results.Accepted($"api/v1/productStatus/{request.RequestId}", request);
+	}
 );
 
 app.MapGet(
-    "api/v1/productStatus/{requestId}",
-    async (AppDbContext context, string requestId) =>
-    {
-        var request = await context.ListingRequests.FirstOrDefaultAsync(r =>
-            r.RequestId == requestId
-        );
+	"api/v1/productStatus/{requestId}",
+	async (AppDbContext context, string requestId) =>
+	{
+		var request = await context.ListingRequests.FirstOrDefaultAsync(r =>
+			r.RequestId == requestId
+		);
 
-        if (request is null)
-            return Results.NotFound();
+		if (request is null)
+			return Results.NotFound();
 
-        var status = new ListingStatus
-        {
-            RequestStatus = request.RequestStatus,
-            ResourceUrl = string.Empty,
-        };
+		var status = new ListingStatus
+		{
+			RequestStatus = request.RequestStatus,
+			ResourceUrl = string.Empty,
+		};
 
-        if (request.RequestStatus!.ToUpper(CultureInfo.InvariantCulture) == "COMPLETE")
-        {
-            status.ResourceUrl = $"api/v1/products/{Guid.NewGuid().ToString()}";
-            return Results.Redirect("https://localhost:5126/" + status.ResourceUrl);
-        }
+		if (request.RequestStatus!.ToUpper(CultureInfo.InvariantCulture) == "COMPLETE")
+		{
+			status.ResourceUrl = $"api/v1/products/{Guid.NewGuid().ToString()}";
+			return Results.Redirect("https://localhost:5126/" + status.ResourceUrl);
+		}
 
-        status.EstimatedCompletionTime = DateTime
-            .UtcNow.AddMinutes(15)
-            .ToString(CultureInfo.InvariantCulture);
+		status.EstimatedCompletionTime = DateTime
+			.UtcNow.AddMinutes(15)
+			.ToString(CultureInfo.InvariantCulture);
 
-        return Results.Ok(status);
-    }
+		return Results.Ok(status);
+	}
 );
 
 // check the status and return from there

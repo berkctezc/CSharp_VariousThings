@@ -1,6 +1,6 @@
 var dockerResults = await Cli.Wrap("docker")
-    .WithArguments(new[] { "--version" })
-    .ExecuteBufferedAsync();
+	.WithArguments(new[] {"--version"})
+	.ExecuteBufferedAsync();
 
 Console.WriteLine(dockerResults.StandardOutput);
 

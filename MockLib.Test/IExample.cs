@@ -2,7 +2,7 @@ namespace MockLib.Test;
 
 public interface IExample
 {
-    string ExampleMethod();
+	string ExampleMethod();
 
-    int MagicNumber(int myNumber);
+	int MagicNumber(int myNumber);
 }

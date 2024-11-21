@@ -2,5 +2,5 @@ namespace DIFromScratch;
 
 public interface IRandomGuidProvider
 {
-    Guid RandomGuid { get; }
+	Guid RandomGuid { get; }
 }

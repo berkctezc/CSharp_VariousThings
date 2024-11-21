@@ -1,7 +1,7 @@
 var serviceProvider = new ServiceCollection()
-    // .AddTransient<PrintToConsole.Handler>()
-    .AddMediator(ServiceLifetime.Scoped, typeof(Program))
-    .BuildServiceProvider();
+	// .AddTransient<PrintToConsole.Handler>()
+	.AddMediator(ServiceLifetime.Scoped, typeof(Program))
+	.BuildServiceProvider();
 
 // var handlerDetails = new Dictionary<Type, Type>()
 // {

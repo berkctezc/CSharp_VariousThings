@@ -15,20 +15,20 @@ var app = builder.Build();
 
 if (app.Environment.IsDevelopment())
 {
-    app.UseSwagger();
-    app.UseSwaggerUI();
+	app.UseSwagger();
+	app.UseSwaggerUI();
 }
 
 app.UseExceptionHandler(a =>
-    a.Run(async context =>
-    {
-        var exceptionHandlerPathFeature = context.Features.Get<IExceptionHandlerPathFeature>();
-        var exp = exceptionHandlerPathFeature?.Error;
+	a.Run(async context =>
+	{
+		var exceptionHandlerPathFeature = context.Features.Get<IExceptionHandlerPathFeature>();
+		var exp = exceptionHandlerPathFeature?.Error;
 
-        var result = JsonConvert.SerializeObject(new { error = exp?.Message });
-        context.Response.ContentType = "application/json";
-        await context.Response.WriteAsync(result);
-    })
+		var result = JsonConvert.SerializeObject(new {error = exp?.Message});
+		context.Response.ContentType = "application/json";
+		await context.Response.WriteAsync(result);
+	})
 );
 
 app.UseHttpsRedirection();
@@ -41,5 +41,7 @@ app.Run();
 
 namespace S3_LifeBackup.Api
 {
-    public partial class Program { }
+	public partial class Program
+	{
+	}
 }

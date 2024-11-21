@@ -1,3 +1,5 @@
 namespace MediatorFromScratch.Lib;
 
-public interface IRequest<TResponse> { }
+public interface IRequest<TResponse>
+{
+}

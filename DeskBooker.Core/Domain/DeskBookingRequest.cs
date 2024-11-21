@@ -1,3 +1,5 @@
 namespace DeskBooker.Core.Domain;
 
-public class DeskBookingRequest : DeskBookingBase { }
+public class DeskBookingRequest : DeskBookingBase
+{
+}
