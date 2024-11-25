@@ -11,7 +11,7 @@
 
     <ItemGroup>
         <PackageReference Include="AWSSDK.Extensions.NETCore.Setup" Version="3.7.301"/>
-        <PackageReference Include="AWSSDK.S3" Version="3.7.406.4"/>
+        <PackageReference Include="AWSSDK.S3" Version="3.7.407.1" />
         <PackageReference Include="Docker.DotNet" Version="3.125.15"/>
         <PackageReference Include="Microsoft.AspNetCore.Mvc.Testing" Version="9.0.0"/>
         <PackageReference Include="Microsoft.NET.Test.Sdk" Version="17.12.0"/>
