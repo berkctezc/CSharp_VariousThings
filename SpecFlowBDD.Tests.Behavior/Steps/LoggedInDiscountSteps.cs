@@ -1,9 +1,11 @@
+using Xunit;
+
 namespace SpecFlowBDD.Tests.Behavior.Steps;
 
 [Binding]
 public class LoggedInDiscountSteps
 {
-	private readonly IPricingService _pricingService = new PricingService();
+	private readonly PricingService _pricingService = new();
 	private Basket _basket = new();
 	private User? _user;
 
@@ -29,7 +31,7 @@ public class LoggedInDiscountSteps
 	public void ThenTheBasketValueIsGbp(decimal expected)
 	{
 		var basketValue = _pricingService.GetBasketTotalAmount(_basket);
-		basketValue.Should().Be(expected);
+		Assert.Equal(expected, basketValue);
 	}
 
 	[Given(@"a user that is logged in")]
