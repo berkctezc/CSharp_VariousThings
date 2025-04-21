@@ -4,11 +4,9 @@ var services = builder.Services;
 services.AddMassTransit(x =>
 {
 	x.AddConsumers(typeof(Program).Assembly);
-	x.UsingInMemory(
-		(ctx, cfg) => { cfg.ConfigureEndpoints(ctx); }
+	x.UsingInMemory((ctx, cfg) => { cfg.ConfigureEndpoints(ctx); }
 	);
-	x.UsingRabbitMq(
-		(ctx, cfg) =>
+	x.UsingRabbitMq((ctx, cfg) =>
 		{
 			cfg.Host(
 				"localhost",

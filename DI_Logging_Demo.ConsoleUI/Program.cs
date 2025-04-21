@@ -12,8 +12,7 @@ Log.Logger = new LoggerConfiguration()
 Log.Logger.Information("Application Starting");
 
 var host = Host.CreateDefaultBuilder()
-	.ConfigureServices(
-		(_, serviceCollection) => { serviceCollection.AddTransient<IGreetingService, GreetingService>(); }
+	.ConfigureServices((_, serviceCollection) => { serviceCollection.AddTransient<IGreetingService, GreetingService>(); }
 	)
 	.UseSerilog()
 	.Build();

@@ -26,8 +26,7 @@ public class Program
 	{
 		return Host.CreateDefaultBuilder(args)
 			// ILogger Configuration
-			.ConfigureLogging(
-				(context, logging) =>
+			.ConfigureLogging((context, logging) =>
 				{
 					logging.ClearProviders();
 					logging.AddConfiguration(context.Configuration.GetSection("Logging")); // Gets Configuration from appsettings.json
