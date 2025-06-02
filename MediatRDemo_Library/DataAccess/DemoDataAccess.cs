@@ -2,11 +2,11 @@ namespace MediatRDemo_Library.DataAccess;
 
 public class DemoDataAccess : IDataAccess
 {
-	private readonly List<PersonModel> people = new();
+	private readonly List<PersonModel> _people = new();
 
 	public DemoDataAccess()
 	{
-		people.Add(
+		_people.Add(
 			new PersonModel
 			{
 				Id = 1,
@@ -14,7 +14,7 @@ public class DemoDataAccess : IDataAccess
 				LastName = "Bowie",
 			}
 		);
-		people.Add(
+		_people.Add(
 			new PersonModel
 			{
 				Id = 2,
@@ -27,14 +27,14 @@ public class DemoDataAccess : IDataAccess
 	public List<PersonModel> GetPeople()
 	{
 		// use normal dataaccess methods here dapper, ef ...
-		return people;
+		return _people;
 	}
 
 	public PersonModel InsertPerson(string fname, string lname)
 	{
 		PersonModel personToCreate = new();
-		personToCreate.Id = people.Max(x => x.Id) + 1;
-		people.Add(personToCreate);
+		personToCreate.Id = _people.Max(x => x.Id) + 1;
+		_people.Add(personToCreate);
 
 		return personToCreate;
 	}
