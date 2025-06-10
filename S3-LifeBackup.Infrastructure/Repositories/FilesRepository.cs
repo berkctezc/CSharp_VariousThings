@@ -16,7 +16,7 @@ public class FilesRepository(IAmazonS3 s3Client) : IFilesRepository
 				InputStream = f.OpenReadStream(),
 				Key = f.FileName,
 				BucketName = bucketName,
-				CannedACL = S3CannedACL.NoACL,
+				CannedACL = S3CannedACL.NoACL
 			};
 
 			using var fileTransferUtility = new TransferUtility(s3Client);
@@ -26,7 +26,7 @@ public class FilesRepository(IAmazonS3 s3Client) : IFilesRepository
 			{
 				BucketName = bucketName,
 				Key = f.FileName,
-				Expires = DateTime.Now.AddDays(5),
+				Expires = DateTime.Now.AddDays(5)
 			};
 
 			var url = s3Client.GetPreSignedURL(expiryUrlRequest);
@@ -46,7 +46,7 @@ public class FilesRepository(IAmazonS3 s3Client) : IFilesRepository
 			BucketName = b.BucketName,
 			Key = b.Key,
 			Owner = b.Owner.DisplayName,
-			Size = b.Size,
+			Size = b.Size
 		});
 	}
 
@@ -56,7 +56,7 @@ public class FilesRepository(IAmazonS3 s3Client) : IFilesRepository
 		{
 			BucketName = bucketName,
 			Key = fileName,
-			FilePath = OperatingSystem.IsLinux() ? $"~/temp/{fileName}" : @$"C:\temp\{fileName}",
+			FilePath = OperatingSystem.IsWindows() ? @$"C:\temp\{fileName}" : $"~/temp/{fileName}"
 		};
 
 		using var transferUtility = new TransferUtility(s3Client);
@@ -84,7 +84,7 @@ public class FilesRepository(IAmazonS3 s3Client) : IFilesRepository
 		{
 			BucketName = bucketName,
 			Key = s3Key,
-			ContentBody = JsonConvert.SerializeObject(request),
+			ContentBody = JsonConvert.SerializeObject(request)
 		};
 
 		await s3Client.PutObjectAsync(putObjectRequest);

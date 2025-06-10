@@ -54,7 +54,7 @@ public class CreditCardApplicationEvaluatorShould
 		{
 			GrossAnnualIncome = 19_999,
 			Age = 42,
-			FrequentFlyerNumber = "x",
+			FrequentFlyerNumber = "x"
 		};
 
 		var decision = sut.Evaluate(application);

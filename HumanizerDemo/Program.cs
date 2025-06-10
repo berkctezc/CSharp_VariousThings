@@ -46,7 +46,7 @@ var strings = new Func<string>[]
 	() => 1.ToOrdinalWords(turkishCulture),
 	() => DateTime.UtcNow.AddHours(-24).Humanize(culture: turkishCulture),
 	() => DateTime.UtcNow.AddHours(24).Humanize(culture: turkishCulture),
-	() => "---",
+	() => "---"
 };
 
 foreach (var textFunc in strings)

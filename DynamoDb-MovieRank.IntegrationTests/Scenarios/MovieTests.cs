@@ -111,7 +111,7 @@ public class MovieTests(CustomWebApplicationFactory<Program> factory)
 			Description = "test-Description",
 			Actors = new List<string> {"testUser1", "testUser2"},
 			RankedDateTime = "5/10/2018 6:17:17 PM",
-			Ranking = 4,
+			Ranking = 4
 		};
 
 		var json = JsonConvert.SerializeObject(movieDbData);

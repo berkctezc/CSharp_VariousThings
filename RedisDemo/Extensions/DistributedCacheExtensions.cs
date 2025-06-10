@@ -13,7 +13,7 @@ public static class DistributedCacheExtensions
 		var options = new DistributedCacheEntryOptions
 		{
 			AbsoluteExpirationRelativeToNow = absoluteExpireTime ?? TimeSpan.FromSeconds(60),
-			SlidingExpiration = unusedExpireTime,
+			SlidingExpiration = unusedExpireTime
 		};
 		var jsonData = JsonSerializer.Serialize(data);
 		await cache.SetStringAsync(recordId, jsonData, options);

@@ -19,7 +19,7 @@ public class WeatherForecastService
 		"Balmy",
 		"Hot",
 		"Sweltering",
-		"Scorching",
+		"Scorching"
 	};
 
 	public async Task<WeatherForecast[]> GetForecastAsync(DateTime startDate)
@@ -32,7 +32,7 @@ public class WeatherForecastService
 			{
 				Date = startDate.AddDays(index),
 				TemperatureC = rng.Next(-20, 55),
-				Summary = Summaries[rng.Next(Summaries.Length)],
+				Summary = Summaries[rng.Next(Summaries.Length)]
 			})
 			.ToArray();
 	}

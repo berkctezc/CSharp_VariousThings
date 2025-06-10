@@ -17,7 +17,7 @@ public static class DemoMethods
 				"https://en.wikipedia.org/wiki/.NET_Framework",
 				"https://www.microsoft.com",
 				"https://tiko.es",
-				"https://www.youtube.com",
+				"https://www.youtube.com"
 			};
 
 		return output;

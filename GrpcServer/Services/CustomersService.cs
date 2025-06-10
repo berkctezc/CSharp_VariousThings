@@ -36,7 +36,7 @@ public class CustomersService(ILogger<CustomersService> logger) : Customer.Custo
 		{
 			new() {FirstName = "A", Age = 4},
 			new() {IsAlive = false, FirstName = "B"},
-			new() {FirstName = "C", EmailAddress = "d"},
+			new() {FirstName = "C", EmailAddress = "d"}
 		};
 
 		foreach (var c in customers)

@@ -54,10 +54,10 @@ public class TestContext : IAsyncLifetime
 						{
 							"9003",
 							new List<PortBinding> {new() {HostPort = "9003"}}
-						},
-					},
+						}
+					}
 				},
-				Env = new List<string> {"SERVICES=s3:9003"},
+				Env = new List<string> {"SERVICES=s3:9003"}
 			}
 		);
 

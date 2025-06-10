@@ -11,7 +11,7 @@ public class DemoDataAccess : IDataAccess
 			{
 				Id = 1,
 				FirstName = "David",
-				LastName = "Bowie",
+				LastName = "Bowie"
 			}
 		);
 		_people.Add(
@@ -19,7 +19,7 @@ public class DemoDataAccess : IDataAccess
 			{
 				Id = 2,
 				FirstName = "Angus",
-				LastName = "Young",
+				LastName = "Young"
 			}
 		);
 	}

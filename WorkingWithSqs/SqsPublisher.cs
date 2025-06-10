@@ -17,10 +17,10 @@ public class SqsPublisher(IAmazonSQS sqs)
 					new MessageAttributeValue
 					{
 						StringValue = message.MessageTypeName,
-						DataType = "String",
+						DataType = "String"
 					}
-				},
-			},
+				}
+			}
 		};
 
 		await sqs.SendMessageAsync(request);

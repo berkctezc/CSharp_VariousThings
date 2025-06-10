@@ -15,7 +15,7 @@ public class WeatherForecastController(ILogger<WeatherForecastController> logger
 		"Balmy",
 		"Hot",
 		"Sweltering",
-		"Scorching",
+		"Scorching"
 	};
 
 	private readonly ILogger<WeatherForecastController> _logger = logger;
@@ -30,7 +30,7 @@ public class WeatherForecastController(ILogger<WeatherForecastController> logger
 			{
 				Date = DateTime.Now.AddDays(index),
 				TemperatureC = rng.Next(-20, 55),
-				Summary = Summaries[rng.Next(Summaries.Length)],
+				Summary = Summaries[rng.Next(Summaries.Length)]
 			})
 			.ToArray();
 	}

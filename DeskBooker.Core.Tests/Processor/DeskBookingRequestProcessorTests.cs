@@ -22,7 +22,7 @@ public class DeskBookingRequestProcessorTests
 			FirstName = "Berkc",
 			LastName = "Tezc",
 			Email = "berkctezc@github.com",
-			Date = new DateTime(2021, 2, 8),
+			Date = new DateTime(2021, 2, 8)
 		};
 
 		_availableDesks = new List<Desk> {new() {Id = 7}};

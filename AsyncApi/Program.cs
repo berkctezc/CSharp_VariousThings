@@ -45,7 +45,7 @@ app.MapGet(
 		var status = new ListingStatus
 		{
 			RequestStatus = request.RequestStatus,
-			ResourceUrl = string.Empty,
+			ResourceUrl = string.Empty
 		};
 
 		if (request.RequestStatus!.ToUpper(CultureInfo.InvariantCulture) == "COMPLETE")

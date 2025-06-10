@@ -10,7 +10,7 @@ public class BucketRepository(IAmazonS3 s3Client) : IBucketRepository
 		var putBucketRequest = new PutBucketRequest
 		{
 			BucketName = bucketName,
-			UseClientRegion = true,
+			UseClientRegion = true
 		};
 
 		var response = await s3Client.PutBucketAsync(putBucketRequest);
@@ -18,7 +18,7 @@ public class BucketRepository(IAmazonS3 s3Client) : IBucketRepository
 		return new CreateBucketResponse
 		{
 			BucketName = bucketName,
-			RequestId = response.ResponseMetadata.RequestId,
+			RequestId = response.ResponseMetadata.RequestId
 		};
 	}
 
@@ -29,7 +29,7 @@ public class BucketRepository(IAmazonS3 s3Client) : IBucketRepository
 		return response.Buckets.Select(b => new ListS3BucketResponse
 		{
 			BucketName = b.BucketName,
-			CreationDate = b.CreationDate,
+			CreationDate = b.CreationDate
 		});
 	}
 

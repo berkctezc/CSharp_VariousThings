@@ -16,7 +16,7 @@ public class FilesControllerTests : IClassFixture<WebApplicationFactory<Program>
 						new AWSOptions
 						{
 							DefaultClientConfig = {ServiceURL = "http://localhost:9003"},
-							Credentials = new BasicAWSCredentials("FAKE", "FAKE"),
+							Credentials = new BasicAWSCredentials("FAKE", "FAKE")
 						}
 					);
 				});
@@ -48,7 +48,7 @@ public class FilesControllerTests : IClassFixture<WebApplicationFactory<Program>
 
 		var formData = new MultipartFormDataContent
 		{
-			{fileStreamContent, "formFiles", "IntegrationTest.jpg"},
+			{fileStreamContent, "formFiles", "IntegrationTest.jpg"}
 		};
 
 		var response = await _client.PostAsync("api/files/testS3Bucket/add", formData);
@@ -106,7 +106,7 @@ public class FilesControllerTests : IClassFixture<WebApplicationFactory<Program>
 		{
 			Id = Guid.NewGuid(),
 			Data = "Test-Data",
-			TimeSent = DateTime.UtcNow,
+			TimeSent = DateTime.UtcNow
 		};
 
 		var response = await _client.PostAsJsonAsync(

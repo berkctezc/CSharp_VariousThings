@@ -10,7 +10,7 @@ public class CustomWebApplicationFactory<TStartup> : WebApplicationFactory<TStar
 			{
 				var clientConfig = new AmazonDynamoDBConfig
 				{
-					ServiceURL = "http://localhost:8000",
+					ServiceURL = "http://localhost:8000"
 				};
 				return new AmazonDynamoDBClient(clientConfig);
 			})

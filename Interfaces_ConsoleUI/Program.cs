@@ -26,7 +26,7 @@ internal class Program
 			LastName = "Tezcaner",
 			City = "Istanbul",
 			EmailAddress = "berkcantezcaner@gmail.com",
-			PhoneNumber = "1234567",
+			PhoneNumber = "1234567"
 		};
 	}
 

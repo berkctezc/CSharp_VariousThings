@@ -55,10 +55,10 @@ public class TestContext : IAsyncLifetime
 						{
 							"8000",
 							new List<PortBinding> {new() {HostPort = "8000"}}
-						},
+						}
 					},
-					PublishAllPorts = true,
-				},
+					PublishAllPorts = true
+				}
 			}
 		);
 

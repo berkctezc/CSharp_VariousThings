@@ -37,7 +37,7 @@ public class PersonProcessorTests
 			FirstName = firstName,
 			LastName = lastName,
 			HeightInInches = expectedHeight,
-			Id = 0,
+			Id = 0
 		};
 
 		var actual = processor.CreatePerson(firstName, lastName, heightText);
@@ -102,7 +102,7 @@ public class PersonProcessorTests
 			Id = 1,
 			FirstName = "Berkcan",
 			LastName = "Tezcaner",
-			HeightInInches = 80,
+			HeightInInches = 80
 		};
 		var sql =
 			"insert into Person (FirstName, LastName, HeightInInches) "
@@ -122,7 +122,7 @@ public class PersonProcessorTests
 		var output = new List<PersonModel>
 		{
 			new() {FirstName = "AAA", LastName = "aaa"},
-			new() {FirstName = "BBB", LastName = "bbb"},
+			new() {FirstName = "BBB", LastName = "bbb"}
 		};
 		return output;
 	}

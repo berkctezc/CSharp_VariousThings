@@ -12,7 +12,7 @@ public class SqsConsumerService(IAmazonSQS sqs, MessageDispatcher dispatcher) : 
 		{
 			QueueUrl = queueUrl.QueueUrl,
 			MessageAttributeNames = MessageAttributeNames,
-			AttributeNames = MessageAttributeNames,
+			AttributeNames = MessageAttributeNames
 		};
 
 		while (!ct.IsCancellationRequested)

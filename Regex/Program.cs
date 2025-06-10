@@ -310,7 +310,7 @@ static void BacktrackingAndRunaways()
 	{
 		"a<tag>b</tag>c",
 		"aaaaaaaaaaaaaaaaaaaab",
-		"aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaab",
+		"aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaab"
 	};
 	patterns.ForEach(pattern =>
 	{
@@ -349,7 +349,7 @@ static void LookaheadsLookBehindsAndPruning()
 		"a(?=b)",
 		"a(?!b)",
 		"(?<=c)a",
-		"(?<!c)a",
+		"(?<!c)a"
 	};
 	var inputs = new List<string> {"", "a", "b", "ab", "ca", "cab", "A", "B", "Z", "AA"};
 	patterns.ForEach(pattern =>
@@ -383,7 +383,7 @@ static void RegexOptions()
 		@"(?m)^hey$",
 		"(he)y",
 		"(?n)(he)(?-n)y",
-		"(?x) \r\n h e y",
+		"(?x) \r\n h e y"
 	};
 	var inputs = new List<string>
 	{
@@ -396,7 +396,7 @@ static void RegexOptions()
 		"HEY",
 		" hey",
 		"hey ",
-		" hey ",
+		" hey "
 	};
 	patterns.ForEach(pattern =>
 	{
@@ -441,7 +441,7 @@ static void AnchorsAndBoundaries()
 		" hi",
 		"him",
 		" him",
-		"him ",
+		"him "
 	};
 	patterns.ForEach(pattern =>
 	{
@@ -505,7 +505,7 @@ static void StringSplitting()
 		"000-000-0000",
 		"a",
 		"5.55-555-5555",
-		"...-...-....",
+		"...-...-...."
 	};
 	patterns.ForEach(pattern =>
 	{
@@ -547,7 +547,7 @@ static void GroupingAndSubstitution()
                   | Beef    |    $12.47 |
                   | Shirt   |     $5.97 |
                   | Salt    |     $2.99 |
-                  |---------|-----------|",
+                  |---------|-----------|"
 	};
 	patterns.ForEach(pattern =>
 	{
@@ -655,7 +655,7 @@ static void GroupingConstructs()
 	{
 		@"(\d)x(\d)F",
 		@"(?<DigitOne>\d)x(?<DigitTwo>\d)F",
-		@"(?:\d)x(?:\d)F",
+		@"(?:\d)x(?:\d)F"
 	};
 	var inputs = new List<string> {"0x1F"};
 	patterns.ForEach(pattern =>

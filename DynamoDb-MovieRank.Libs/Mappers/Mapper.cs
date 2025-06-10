@@ -15,7 +15,7 @@ public class Mapper : IMapper
 			Description = movie.Description,
 			Actors = movie.Actors,
 			Ranking = movie.Ranking,
-			TimeRanked = movie.RankedDateTime,
+			TimeRanked = movie.RankedDateTime
 		};
 	}
 
@@ -28,7 +28,7 @@ public class Mapper : IMapper
 			Description = movieRankRequest.Description,
 			Actors = movieRankRequest.Actors,
 			Ranking = movieRankRequest.Ranking,
-			RankedDateTime = DateTime.UtcNow.ToString(),
+			RankedDateTime = DateTime.UtcNow.ToString()
 		};
 	}
 
@@ -45,7 +45,7 @@ public class Mapper : IMapper
 			Description = movieDbRequest.Description,
 			Actors = movieDbRequest.Actors,
 			Ranking = movieUpdateRequest.Ranking,
-			RankedDateTime = DateTime.UtcNow.ToString(),
+			RankedDateTime = DateTime.UtcNow.ToString()
 		};
 	}
 }

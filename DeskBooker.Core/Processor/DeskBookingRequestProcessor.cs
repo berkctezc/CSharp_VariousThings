@@ -39,7 +39,7 @@ public class DeskBookingRequestProcessor(
 			FirstName = request.FirstName,
 			LastName = request.LastName,
 			Email = request.Email,
-			Date = request.Date,
+			Date = request.Date
 		};
 	}
 }

@@ -7,7 +7,7 @@ public class SampleDataAccess(IMemoryCache cache)
 		{
 			new EmployeeModel("David", "Bowie"),
 			new EmployeeModel("Freddie", "Mercury"),
-			new EmployeeModel("Alice", "Cooper"),
+			new EmployeeModel("Alice", "Cooper")
 		};
 
 	public List<EmployeeModel> GetEmployees()

@@ -55,7 +55,7 @@ public class MovieRankService(IMovieRankRepository movieRankRepository, IMapper 
 		return new MovieRankResponse
 		{
 			MovieName = movieName,
-			OverallRanking = overallMovieRanking,
+			OverallRanking = overallMovieRanking
 		};
 	}
 }

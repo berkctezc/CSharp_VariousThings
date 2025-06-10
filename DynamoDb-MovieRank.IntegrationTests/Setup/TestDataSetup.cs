@@ -13,17 +13,17 @@ public class TestDataSetup
 			AttributeDefinitions =
 			[
 				new AttributeDefinition {AttributeName = "UserId", AttributeType = "N"},
-				new AttributeDefinition {AttributeName = "MovieName", AttributeType = "S"},
+				new AttributeDefinition {AttributeName = "MovieName", AttributeType = "S"}
 			],
 			KeySchema =
 			[
 				new KeySchemaElement {AttributeName = "UserId", KeyType = "HASH"},
-				new KeySchemaElement {AttributeName = "MovieName", KeyType = "RANGE"},
+				new KeySchemaElement {AttributeName = "MovieName", KeyType = "RANGE"}
 			],
 			ProvisionedThroughput = new ProvisionedThroughput
 			{
 				ReadCapacityUnits = 1,
-				WriteCapacityUnits = 1,
+				WriteCapacityUnits = 1
 			},
 			TableName = "MovieRank",
 
@@ -34,16 +34,16 @@ public class TestDataSetup
 					IndexName = "MovieName-index",
 					KeySchema = new List<KeySchemaElement>
 					{
-						new() {AttributeName = "MovieName", KeyType = "HASH"},
+						new() {AttributeName = "MovieName", KeyType = "HASH"}
 					},
 					ProvisionedThroughput = new ProvisionedThroughput
 					{
 						ReadCapacityUnits = 1,
-						WriteCapacityUnits = 1,
+						WriteCapacityUnits = 1
 					},
-					Projection = new Projection {ProjectionType = "ALL"},
-				},
-			],
+					Projection = new Projection {ProjectionType = "ALL"}
+				}
+			]
 		};
 
 		await DynamoDBClient.CreateTableAsync(request);
