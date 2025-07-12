@@ -29,9 +29,9 @@ use [multi-stage](https://docs.docker.com/develop/develop-images/multistage-buil
 have the .NET project built inside the container. Below is an example of building the .NET project inside the image.
 
 ```dockerfile
-FROM public.ecr.aws/lambda/dotnet:6 AS base
+FROM public.ecr.aws/lambda/dotnet:9 AS base
 
-FROM mcr.microsoft.com/dotnet/sdk:6.0-bullseye-slim as build
+FROM mcr.microsoft.com/dotnet/sdk:9.0-bullseye-slim as build
 WORKDIR /src
 COPY ["LambdaDemo.csproj", "LambdaDemo/"]
 RUN dotnet restore "LambdaDemo/LambdaDemo.csproj"
@@ -42,11 +42,11 @@ RUN dotnet build "LambdaDemo.csproj" --configuration Release --output /app/build
 
 FROM build AS publish
 RUN dotnet publish "LambdaDemo.csproj" \
-            --configuration Release \ 
+            --configuration Release \
             --runtime linux-x64 \
-            --self-contained false \ 
+            --self-contained false \
             --output /app/publish \
-            -p:PublishReadyToRun=true  
+            -p:PublishReadyToRun=true
 
 FROM base AS final
 WORKDIR /var/task
