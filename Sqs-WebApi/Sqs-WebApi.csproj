@@ -9,7 +9,7 @@
 
     <ItemGroup>
         <PackageReference Include="AWSSDK.Extensions.NETCore.Setup" Version="4.0.2" />
-        <PackageReference Include="AWSSDK.SQS" Version="4.0.0.14" />
+        <PackageReference Include="AWSSDK.SQS" Version="4.0.0.15" />
         <PackageReference Include="Swashbuckle.AspNetCore" Version="9.0.3" />
     </ItemGroup>
 
