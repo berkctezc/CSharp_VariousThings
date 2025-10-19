@@ -10,8 +10,8 @@
     </PropertyGroup>
 
     <ItemGroup>
-        <PackageReference Include="AWSSDK.Extensions.NETCore.Setup" Version="4.0.3.6" />
-        <PackageReference Include="AWSSDK.S3" Version="4.0.7.10" />
+        <PackageReference Include="AWSSDK.Extensions.NETCore.Setup" Version="4.0.3.7" />
+        <PackageReference Include="AWSSDK.S3" Version="4.0.7.12" />
         <PackageReference Include="Docker.DotNet" Version="3.125.15"/>
         <PackageReference Include="Microsoft.AspNetCore.Mvc.Testing" Version="9.0.10" />
         <PackageReference Include="Microsoft.NET.Test.Sdk" Version="18.0.0" />
