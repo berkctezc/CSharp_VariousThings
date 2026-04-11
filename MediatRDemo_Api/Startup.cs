@@ -1,3 +1,5 @@
+using Microsoft.OpenApi;
+
 namespace MediatRDemo_Api;
 
 public class Startup(IConfiguration configuration)

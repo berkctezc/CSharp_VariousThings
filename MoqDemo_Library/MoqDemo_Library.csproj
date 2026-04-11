@@ -2,14 +2,14 @@
 
     <PropertyGroup>
         <OutputType>Library</OutputType>
-        <TargetFramework>net9.0</TargetFramework>
+        <TargetFramework>net10.0</TargetFramework>
         <ApplicationIcon/>
         <StartupObject/>
     </PropertyGroup>
 
     <ItemGroup>
-        <PackageReference Include="Dapper" Version="2.1.66"/>
-        <PackageReference Include="System.Configuration.ConfigurationManager" Version="9.0.10" />
+        <PackageReference Include="Dapper" Version="2.1.72" />
+        <PackageReference Include="System.Configuration.ConfigurationManager" Version="10.0.5" />
         <PackageReference Include="System.Data.SQLite.Core" Version="1.0.119"/>
     </ItemGroup>
 

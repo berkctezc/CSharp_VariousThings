@@ -1,3 +1,5 @@
+using Microsoft.OpenApi;
+
 namespace ApiForRefit;
 
 public class Startup(IConfiguration configuration)
