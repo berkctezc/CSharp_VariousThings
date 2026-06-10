@@ -7,11 +7,11 @@
     </PropertyGroup>
 
     <ItemGroup>
-        <PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly" Version="10.0.8" />
-        <PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly.DevServer" Version="10.0.8" PrivateAssets="all" />
+        <PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly" Version="10.0.9" />
+        <PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly.DevServer" Version="10.0.9" PrivateAssets="all" />
         <PackageReference Include="Microsoft.DotNet.HotReload.WebAssembly.Browser" Version="10.0.204" />
-        <PackageReference Include="Refit" Version="11.0.1" />
-        <PackageReference Include="Refit.HttpClientFactory" Version="11.0.1" />
+        <PackageReference Include="Refit" Version="12.0.0" />
+        <PackageReference Include="Refit.HttpClientFactory" Version="12.0.0" />
     </ItemGroup>
 
 </Project>
