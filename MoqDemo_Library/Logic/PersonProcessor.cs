@@ -77,8 +77,8 @@ public class PersonProcessor(ISqliteDataAccess database) : IPersonProcessor
 
 		// Part 0 should be feet, part 1 should be inches
 		if (
-			int.TryParse(heightParts[0], out var feet) == false
-			|| double.TryParse(heightParts[1], out var inches) == false
+			!int.TryParse(heightParts[0], out var feet)
+			|| !double.TryParse(heightParts[1], out var inches)
 		)
 			return (false, 0);
 
@@ -87,7 +87,7 @@ public class PersonProcessor(ISqliteDataAccess database) : IPersonProcessor
 		return (isValid, heightInInches);
 	}
 
-	private bool ValidateName(string name)
+	private static bool ValidateName(string name)
 	{
 		var output = true;
 		var invalidCharacters = "`~!@#$%^&*()_+=0123456789<>,.?/\\|{}[]'\"".ToCharArray();

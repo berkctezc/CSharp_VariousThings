@@ -2,7 +2,7 @@ var turkishCulture = new CultureInfo("tr-TR");
 
 Vocabularies.Default.AddPlural("boost", "boosters");
 
-var strings = new Func<string>[]
+var strings = new[]
 {
 	// general
 	() => "user_not_found",

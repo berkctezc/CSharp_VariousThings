@@ -7,7 +7,7 @@ public class PhysicalProductModel : IProductModel
 
 	public void ShipItem(CustomerModel customer)
 	{
-		if (HasOrderBeenCompleted == false)
+		if (!HasOrderBeenCompleted)
 		{
 			Console.WriteLine(
 				$"Simulating shipping {Title} to {customer.FirstName} in {customer.City}"

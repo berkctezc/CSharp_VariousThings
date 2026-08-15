@@ -37,11 +37,4 @@ app.UseAuthorization();
 
 app.MapControllers();
 
-app.Run();
-
-namespace S3_LifeBackup.Api
-{
-	public partial class Program
-	{
-	}
-}
+await app.RunAsync();

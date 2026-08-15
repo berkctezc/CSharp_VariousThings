@@ -12,15 +12,15 @@ file in GitHub.
 ## Executable Assembly ##
 
 .NET Lambda projects that use C# top level statements like this project must be deployed as an executable assembly
-instead of a class library. To indicate to Lambda that the .NET function is an executable assembly the
-Lambda function handler value is set to the .NET Assembly name. This is different then deploying as a class library
-where the function handler string includes the assembly, type and method name.
+instead of a class library. To indicate to Lambda that the .NET function is an executable assembly the Lambda function
+handler value is set to the .NET Assembly name. This is different then deploying as a class library where the function
+handler string includes the assembly, type and method name.
 
 To deploy as an executable assembly the Lambda runtime client must be started to listen for incoming events to process.
 For an ASP.NET Core application the Lambda runtime client is started by included the
 `Amazon.Lambda.AspNetCoreServer.Hosting` NuGet package and calling `AddAWSLambdaHosting(LambdaEventSource.HttpApi)`
-passing in the event source while configuring the services of the application. The
-event source can be API Gateway REST API and HTTP API or Application Load Balancer.
+passing in the event source while configuring the services of the application. The event source can be API Gateway REST
+API and HTTP API or Application Load Balancer.
 
 ### Project Files ###
 
@@ -29,9 +29,8 @@ event source can be API Gateway REST API and HTTP API or Application Load Balanc
 * aws-lambda-tools-defaults.json - default argument settings for use with Visual Studio and command line deployment
   tools for AWS
 * Program.cs - entry point to the application that contains all of the top level statements initializing the ASP.NET
-  Core application.
-  The call to `AddAWSLambdaHosting` configures the application to work in Lambda when it detects Lambda is the executing
-  environment.
+  Core application. The call to `AddAWSLambdaHosting` configures the application to work in Lambda when it detects
+  Lambda is the executing environment.
 * Controllers\CalculatorController - example Web API controller
 
 You may also have a test project depending on the options selected.

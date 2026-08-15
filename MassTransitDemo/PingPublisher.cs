@@ -10,10 +10,8 @@ public class PingPublisher(IBus bus) : BackgroundService
 
 			var keyPressed = Console.ReadKey(true);
 			if (keyPressed.Key != ConsoleKey.Q)
-			{
 				// _logger.LogInformation("Pressed {Button}",keyPressed.Key.ToString());
 				await bus.Publish(new Ping(keyPressed.Key.ToString()), stoppingToken);
-			}
 
 			await Task.Delay(200, stoppingToken);
 		}

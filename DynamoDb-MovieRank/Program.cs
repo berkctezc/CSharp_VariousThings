@@ -27,11 +27,9 @@ app.UseRouting();
 
 app.UseEndpoints(e => { e.MapControllers(); });
 
-app.Run();
+await app.RunAsync();
 
 namespace DynamoDb_MovieRank
 {
-	public partial class Program
-	{
-	}
+	public abstract class Program;
 }

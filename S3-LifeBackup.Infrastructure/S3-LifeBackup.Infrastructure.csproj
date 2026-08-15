@@ -12,8 +12,8 @@
     </ItemGroup>
 
     <ItemGroup>
-        <PackageReference Include="AWSSDK.S3" Version="4.0.102.1" />
-        <PackageReference Include="Newtonsoft.Json" Version="13.0.4" />
+        <PackageReference Include="AWSSDK.S3" Version="4.0.102.1"/>
+        <PackageReference Include="Newtonsoft.Json" Version="13.0.4"/>
     </ItemGroup>
 
     <ItemGroup>

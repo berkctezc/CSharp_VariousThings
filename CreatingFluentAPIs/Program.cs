@@ -1,11 +1,11 @@
-var connection1 = new SimpleFluentSqlConnection()
+new SimpleFluentSqlConnection()
 	.ForServer("localhost")
 	.AndDatabase("localDb")
 	.AsUser("postgres")
 	.AndPassword("postgres")
 	.Connect();
 
-var connection2 = FluentSqlConnection
+FluentSqlConnection
 	.CreateConnection(configuration => configuration.ConnectionName = "test")
 	.ForServer("localhost")
 	.AndDatabase("postgres")

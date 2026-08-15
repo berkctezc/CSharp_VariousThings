@@ -8,8 +8,8 @@
     </PropertyGroup>
 
     <ItemGroup>
-        <PackageReference Include="Humanizer.Core" Version="3.0.10" />
-        <PackageReference Include="Humanizer.Core.tr" Version="3.0.10" />
+        <PackageReference Include="Humanizer.Core" Version="3.0.10"/>
+        <PackageReference Include="Humanizer.Core.tr" Version="3.0.10"/>
     </ItemGroup>
 
 </Project>

@@ -29,10 +29,7 @@ static void OptimizationAndSecurity()
 	var timer = new Stopwatch();
 	timer.Start();
 	var interpretedRegex = new Regex("(fox|dog)*");
-	for (var i = 0; i < 1000000; i++)
-	{
-		Console.WriteLine(interpretedRegex.Match(input));
-	}
+	for (var i = 0; i < 1000000; i++) Console.WriteLine(interpretedRegex.Match(input));
 
 	timer.Stop();
 	Console.WriteLine("\tElapsed time: {0}ms", timer.ElapsedMilliseconds.ToString());
@@ -45,10 +42,7 @@ static void OptimizationAndSecurity()
 		"(fox|dog)*",
 		System.Text.RegularExpressions.RegexOptions.Compiled
 	);
-	for (var i = 0; i < 1000000; i++)
-	{
-		Console.WriteLine(compiledRegex.Match(input));
-	}
+	for (var i = 0; i < 1000000; i++) Console.WriteLine(compiledRegex.Match(input));
 
 	timer.Stop();
 	Console.WriteLine("\tElapsed time: {0}ms", timer.ElapsedMilliseconds.ToString());
@@ -121,13 +115,11 @@ static void CapturingAndBalancingGroups()
 	Console.WriteLine("Right to Left Option:");
 	Console.WriteLine("\tWithout the RightToLeft option:");
 	foreach (Match match in Regex.Matches(input, pattern))
-	{
 		Console.WriteLine(
 			"\t\tMatch at index {0} of length {1}",
 			match.Index.ToString(),
 			match.Length.ToString()
 		);
-	}
 
 	Console.WriteLine("\tWith the RightToLeft option:");
 	foreach (
@@ -137,13 +129,11 @@ static void CapturingAndBalancingGroups()
 			System.Text.RegularExpressions.RegexOptions.RightToLeft
 		)
 	)
-	{
 		Console.WriteLine(
 			"\t\tMatch at index {0} of length {1}",
 			match.Index.ToString(),
 			match.Length.ToString()
 		);
-	}
 
 	input = "Hello world.";
 	var patterns = new List<string> {@"\b\w+\b", @"\b(\w)+\b"};
@@ -788,10 +778,7 @@ static void Demo()
 
 	var matches = Regex.Matches(toSearch, pattern);
 
-	foreach (Match match in matches)
-	{
-		Console.WriteLine(match.Value);
-	}
+	foreach (Match match in matches) Console.WriteLine(match.Value);
 
 	//Regex test = new Regex(pattern);
 

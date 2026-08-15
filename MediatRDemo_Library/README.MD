@@ -2,8 +2,8 @@
 
 ## Data Access
 
-- Firstly we need to create Data Access and models. In this project we used a fake In Memory database with two methods (
-  Read and Create).
+- Firstly we need to create Data Access and models. In this project we used a fake In Memory database with two methods
+  (Read and Create).
 - *todo: move this to SQLite and Dapper.*
 
 ```cs
@@ -46,7 +46,7 @@ namespace Library.Queries
 {
     public record GetPersonListQuery() : IRequest<List<PersonModel>>;
 
-    #region class 
+    #region class
         // CLASS EQUIVALENT OF RECORD
         public class CLASS_GetPersonListQuery : IRequest<List<PersonModel>>
         {}
@@ -61,7 +61,7 @@ namespace Library.Queries
 {
     public record GetPersonByIdQuery(int Id) : IRequest<PersonModel>;
 
-    #region class 
+    #region class
     // CLASS EQUIVALENT OF RECORD
     public class CLASS_GetPersonByIdQuery : IRequest<PersonModel>
     {
@@ -211,4 +211,3 @@ namespace Api.Controllers
   blazor project, wpf project. In all of them the things we will need to do and implement will stay the same and we
   could focus on the Logic & DataAccess layer for testing and adding stuff.
 - Resources used : Tim Corey https://www.youtube.com/watch?v=yozD5Tnd8nw
-

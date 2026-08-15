@@ -16,7 +16,7 @@ var service1 = container.GetService<ISomeService>();
 Thread.Sleep(1000);
 var service2 = container.GetService<ISomeService>();
 
-var mainApp = container.GetService<MainApp>();
+container.GetService<MainApp>();
 
 await MainApp.StartAsync();
 

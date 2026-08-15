@@ -20,10 +20,9 @@ var numbers = new[] {1, 2, 3};
 Console.WriteLine(numbers is [1, 2, 3]);
 Console.WriteLine(numbers is [0 or 1, <= 2, >= 3]);
 
-if (numbers is [var a, .. var rest])
+if (numbers is [var a, ..])
 	Console.WriteLine(a);
 
 // UTF8 string literals
-var str = "BerkcTezc"u8;
 
 Console.ReadKey();
