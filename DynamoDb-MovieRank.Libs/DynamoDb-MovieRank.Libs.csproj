@@ -8,8 +8,8 @@
     </PropertyGroup>
 
     <ItemGroup>
-        <PackageReference Include="AWSSDK.DynamoDBv2" Version="4.0.103.6" />
-        <PackageReference Include="AWSSDK.Extensions.NETCore.Setup" Version="4.0.101.2" />
+        <PackageReference Include="AWSSDK.DynamoDBv2" Version="4.0.104" />
+        <PackageReference Include="AWSSDK.Extensions.NETCore.Setup" Version="4.0.101.4" />
     </ItemGroup>
 
     <ItemGroup>
