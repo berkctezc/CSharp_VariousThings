@@ -8,8 +8,8 @@
     </PropertyGroup>
 
     <ItemGroup>
-        <PackageReference Include="AWSSDK.Extensions.NETCore.Setup" Version="4.0.101.4" />
-        <PackageReference Include="AWSSDK.SQS" Version="4.0.100.14" />
+        <PackageReference Include="AWSSDK.Extensions.NETCore.Setup" Version="4.0.102.1" />
+        <PackageReference Include="AWSSDK.SQS" Version="4.0.100.15" />
         <PackageReference Include="Swashbuckle.AspNetCore" Version="10.2.3"/>
     </ItemGroup>
 
