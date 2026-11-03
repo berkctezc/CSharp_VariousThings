@@ -8,8 +8,8 @@
     </PropertyGroup>
 
     <ItemGroup>
-        <PackageReference Include="MassTransit" Version="9.2.4" />
-        <PackageReference Include="MassTransit.RabbitMQ" Version="9.2.4" />
+        <PackageReference Include="MassTransit" Version="9.2.5" />
+        <PackageReference Include="MassTransit.RabbitMQ" Version="9.2.5" />
     </ItemGroup>
 
 </Project>
